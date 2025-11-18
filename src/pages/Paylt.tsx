@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Carousel } from '../components/ui/Carousel';
 import payltHeroMobileImage from '../assets/DRSsm.webp';
 import paytVideo from '../assets/payt.mp4';
+import screenImage from '../assets/screen.webp';
+import payltSystemsImage from '../assets/payltsystems.webp';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -88,7 +90,7 @@ export const Paylt: React.FC = () => {
           <div className="paylt__content-grid">
             <div className="paylt__content-image">
               <img 
-                src="/src/assets/screen.webp" 
+                src={screenImage} 
                 alt="Dados obtidos" 
                 className="paylt__data-image"
               />
@@ -111,7 +113,7 @@ export const Paylt: React.FC = () => {
               O SOTKIS PAYT é compatível com os seguintes sistemas:
             </p>
             <img 
-              src="/src/assets/payltsystems.webp" 
+              src={payltSystemsImage} 
               alt="Sistemas compatíveis" 
               className="paylt__systems-image"
             />

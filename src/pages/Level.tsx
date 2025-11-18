@@ -1,5 +1,13 @@
 import React from 'react';
 import levelVideo from '../assets/level.mp4';
+import levelPhotoImage from '../assets/levelphoto.webp';
+import levelSondaImage from '../assets/LEVEL-SondaREEN2.webp';
+import sensorImage from '../assets/sensor.webp';
+import l1Image from '../assets/l1.webp';
+import l2Image from '../assets/l2.webp';
+import l3Image from '../assets/l3.webp';
+import l4Image from '../assets/l4.webp';
+import levelCompativelImage from '../assets/levelcompativel.webp';
 import './Level.css';
 
 export const Level: React.FC = () => {
@@ -31,12 +39,12 @@ export const Level: React.FC = () => {
           </div>
           <div className="level__intro-images">
             <img 
-              src="/src/assets/levelphoto.webp" 
+              src={levelPhotoImage} 
               alt="Level photo" 
               className="level__intro-image level__intro-image--left"
             />
             <img 
-              src="/src/assets/LEVEL-SondaREEN2.webp" 
+              src={levelSondaImage} 
               alt="Level SondaREEN" 
               className="level__intro-image level__intro-image--right"
             />
@@ -58,7 +66,7 @@ export const Level: React.FC = () => {
       <section className="level__image-section">
         <div className="container">
           <img 
-            src="/src/assets/sensor.webp" 
+            src={sensorImage} 
             alt="Sensor" 
             className="level__sensor-image"
           />
@@ -70,22 +78,22 @@ export const Level: React.FC = () => {
           <h2 className="level__stages-title">Características Principais</h2>
           <div className="level__stages-grid">
             <img 
-              src="/src/assets/l1.webp" 
+              src={l1Image} 
               alt="Level stage 1" 
               className="level__stage-image"
             />
             <img 
-              src="/src/assets/l2.webp" 
+              src={l2Image} 
               alt="Level stage 2" 
               className="level__stage-image"
             />
             <img 
-              src="/src/assets/l3.webp" 
+              src={l3Image} 
               alt="Level stage 3" 
               className="level__stage-image"
             />
             <img 
-              src="/src/assets/l4.webp" 
+              src={l4Image} 
               alt="Level stage 4" 
               className="level__stage-image"
             />
@@ -97,7 +105,7 @@ export const Level: React.FC = () => {
         <div className="container">
           <h2 className="level__compatible-title">Compatibilidade:</h2>
           <img 
-            src="/src/assets/levelcompativel.webp" 
+            src={levelCompativelImage} 
             alt="Sistemas de resíduos compatíveis" 
             className="level__compatible-image"
           />

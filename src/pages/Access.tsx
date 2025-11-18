@@ -5,6 +5,7 @@ import accessHeroImage from '../assets/ACCESS.webp';
 import access1Image from '../assets/access1.webp';
 import accessCar1Image from '../assets/access_car1.webp';
 import screenImage from '../assets/screen.webp';
+import systemsImage from '../assets/systems.webp';
 import './Access.css';
 
 export const Access: React.FC = () => {
@@ -68,7 +69,7 @@ export const Access: React.FC = () => {
         <div className="container">
           <div className="access__text-content">
             <h2>O SOTKIS ACCESS é compatível com os seguintes sistemas de resíduos:</h2>
-            <img src="/src/assets/systems.webp" alt="Sistemas de resíduos compatíveis" />
+            <img src={systemsImage} alt="Sistemas de resíduos compatíveis" />
           </div>
         </div>
       </section>

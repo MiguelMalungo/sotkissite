@@ -4,6 +4,17 @@ import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
 import animationVideo from '../assets/Animation.mp4';
 import video1 from '../assets/video1.mp4';
 import bandImage from '../assets/band.webp';
+import logoImage from '../assets/logotipo-sotkon-neg-preto.webp';
+import squareImage from '../assets/square.webp';
+import accessSmImage from '../assets/accesssm.webp';
+import levelSmImage from '../assets/levelsm.webp';
+import drsSmImage from '../assets/DRSsm.webp';
+import playtSmImage from '../assets/playtsm.webp';
+import testImage from '../assets/test.webp';
+import featurephoneImage from '../assets/Featurephone.webp';
+import mobile2Image from '../assets/mobile2.webp';
+import appleImage from '../assets/apple.webp';
+import googleImage from '../assets/google.webp';
 import './Home.css';
 
 export const Home: React.FC = () => {
@@ -50,7 +61,7 @@ export const Home: React.FC = () => {
       <section className="home__logo-section">
         <div className="container">
           <img 
-            src="/src/assets/logotipo-sotkon-neg-preto.webp" 
+            src={logoImage} 
             alt="Sotkon Logo" 
             className="home__logo-image"
           />
@@ -61,7 +72,7 @@ export const Home: React.FC = () => {
       <section className="home__rise-above-container">
         <div className="home__rise-above-video-wrapper">
           <img 
-            src="/src/assets/square.webp" 
+            src={squareImage} 
             alt="" 
             className="home__rise-background-image"
           />
@@ -110,7 +121,7 @@ export const Home: React.FC = () => {
             <div className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img 
-                  src="/src/assets/accesssm.webp" 
+                  src={accessSmImage} 
                   alt="Access control system"
                 />
               </div>
@@ -126,7 +137,7 @@ export const Home: React.FC = () => {
             <div className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img 
-                  src="/src/assets/levelsm.webp" 
+                  src={levelSmImage} 
                   alt="Level monitoring sensors"
                 />
               </div>
@@ -160,7 +171,7 @@ export const Home: React.FC = () => {
             <div className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img 
-                  src="/src/assets/DRSsm.webp" 
+                  src={drsSmImage} 
                   alt="Deposit return system"
                 />
               </div>
@@ -176,7 +187,7 @@ export const Home: React.FC = () => {
             <div className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img 
-                  src="/src/assets/playtsm.webp" 
+                  src={playtSmImage} 
                   alt="Paylt solution"
                 />
               </div>
@@ -212,7 +223,7 @@ export const Home: React.FC = () => {
             <div className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img 
-                  src="/src/assets/test.webp" 
+                  src={testImage} 
                   alt="Trash4Goods App"
                 />
               </div>
@@ -225,12 +236,12 @@ export const Home: React.FC = () => {
       <section className="home__app-section">
         <div className="home__app-hero">
           <img
-            src="/src/assets/Featurephone.webp"
+            src={featurephoneImage}
             alt="SOTKIS mobile app interface"
             className="home__app-background home__app-background-desktop"
           />
           <img
-            src="/src/assets/mobile2.webp"
+            src={mobile2Image}
             alt="SOTKIS mobile app interface"
             className="home__app-background home__app-background-mobile"
           />
@@ -238,10 +249,10 @@ export const Home: React.FC = () => {
             <div className="home__app-content">
               <div className="home__app-badges">
                 <a href="#" className="home__app-badge">
-                  <img src="/src/assets/apple.webp" alt="Download on App Store" />
+                  <img src={appleImage} alt="Download on App Store" />
                 </a>
                 <a href="#" className="home__app-badge">
-                  <img src="/src/assets/google.webp" alt="Get it on Google Play" />
+                  <img src={googleImage} alt="Get it on Google Play" />
                 </a>
               </div>
               <h2 className="home__app-title">DOWNLOAD A NOSSA SMARTPHONE APP</h2>

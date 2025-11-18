@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoImage from '../../assets/logotipo-sotkon-neg-preto.webp';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
@@ -12,7 +13,7 @@ export const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="footer__section footer__section--brand">
             <img
-              src="/src/assets/logotipo-sotkon-neg-preto.webp"
+              src={logoImage}
               alt="Sotkon"
               className="footer__logo-image"
             />
