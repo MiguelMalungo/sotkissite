@@ -141,6 +141,33 @@ export const Platform: React.FC = () => {
     };
   }, [animatingIndex, autoAnimating, features.length, isMobile]);
 
+  // Update image when animatingIndex changes during auto-animation (desktop only)
+  useEffect(() => {
+    if (!autoAnimating || isMobile) return;
+    if (animatingIndex === displayedImageIndex) return;
+
+    // Clear any pending transition
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+    }
+
+    setIsTransitioning(true);
+    
+    // Update displayed image after transition starts
+    transitionTimeoutRef.current = setTimeout(() => {
+      setDisplayedImageIndex(animatingIndex);
+      requestAnimationFrame(() => {
+        setIsTransitioning(false);
+      });
+    }, 1500); // Match CSS transition duration
+
+    return () => {
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, [animatingIndex, autoAnimating, isMobile, displayedImageIndex]);
+
   // Handle mobile navigation dot clicks - trigger image transition
   useEffect(() => {
     if (!isMobile) return;
@@ -175,6 +202,9 @@ export const Platform: React.FC = () => {
     const targetIndex = activeFeature === index ? 0 : index;
     const newActiveFeature = activeFeature === index ? null : index;
     
+    // Sync animating index with user selection
+    setAnimatingIndex(targetIndex);
+    
     if (targetIndex !== displayedImageIndex) {
       // Start transition - update activeFeature first so getNextImage() returns the target
       setActiveFeature(newActiveFeature);
@@ -205,7 +235,8 @@ export const Platform: React.FC = () => {
       if (isMobile) {
         targetIndex = mobileSelectedIndex;
       } else {
-        targetIndex = activeFeature === null ? 0 : activeFeature;
+        // For desktop: use animatingIndex during auto-animation, otherwise use activeFeature
+        targetIndex = autoAnimating ? animatingIndex : (activeFeature === null ? 0 : activeFeature);
       }
       return imageMap[targetIndex] || (isMobile ? image1M : image1);
     } else {
