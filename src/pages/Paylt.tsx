@@ -4,6 +4,10 @@ import payltHeroMobileImage from '../assets/DRSsm.webp';
 import paytVideo from '../assets/payt.mp4';
 import screenImage from '../assets/screen.webp';
 import payltSystemsImage from '../assets/payltsystems.webp';
+import contPayltImage from '../assets/cont_paylt.webp';
+import cardImage from '../assets/card.webp';
+import keyImage from '../assets/key.webp';
+import payltTecnoImage from '../assets/paylt_tecno.webp';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -21,25 +25,25 @@ export const Paylt: React.FC = () => {
       id: '1',
       title: 'Sistemas Enterrados e Semi-Enterrados',
       description: 'Para sistemas enterrados é necessário um marco de deposição com um limitador de volume, já para sistemas semi-enterrados é utilizado um tambor duplo. Para ambos os sistemas, é também necessário ter o módulo SOTKIS ACCESS instalado.',
-      image: '/src/assets/cont_paylt.webp'
+      image: contPayltImage
     },
     {
       id: '2',
       title: 'Identificação do Utilizador',
       description: 'Do ponto de vista do utilizador, é necessária identificação no momento do depósito, que pode ser feita através de uma chave RFID (smart-tag), de um cartão de acesso (smart-card) ou de um telemóvel com Bluetooth.',
-      image: '/src/assets/card.webp'
+      image: cardImage
     },
     {
       id: '3',
       title: 'Chaves de Acesso e Limitador Volumétrico',
       description: 'Cada chave de acesso é programada com um ID de utilizador, que contém um código de 8 bytes exclusivo. Os dados do utilizador são registados na memória do sistema sempre que um cartão de acesso ou uma chave inteligente interage com o marco de deposição. Uma vez desbloqueado o acesso do utilizador ao marco de deposição, um limitador volumétrico restringe a quantidade de resíduos que pode ser depositado no marco após a tampa ter sido aberta e até a mesma ser novamente fechada. Nesse momento os resíduos descem até ao contentor e o acesso ao marco de deposição volta a estar bloqueado.',
-      image: '/src/assets/key.webp'
+      image: keyImage
     },
     {
       id: '4',
       title: 'Processamento de Dados e Faturação',
       description: 'Numa data e hora pré-configurada, os dados armazenados na memória do módulo de acesso SOTKIS são transferidos através de GSM/GPRS/Bluetooth para o portal web de gestão de acessos. Neste portal, a entidade responsável pode verificar todos os acessos, bem como gerir os dados obtidos. Estes dados de acesso dos utilizadores podem ser transferidos para um software de faturação certificado (não incluído no SOTKIS). Após a definição da tarifa aplicável, a empresa de gestão de resíduos sólidos urbanos está pronta para faturar a cada utilizador o valor mensal das suas deposições.',
-      image: '/src/assets/paylt_tecno.webp'
+      image: payltTecnoImage
     }
   ];
 

@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   background-color: white !important;
-  background-image: url('/src/assets/Hero1.webp');
+  background-image: url('/sotkissite/Hero1.webp');
   background-size: cover;
   background-position: center;
   padding: var(--spacing-5xl) 0;

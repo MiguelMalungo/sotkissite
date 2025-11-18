@@ -6,6 +6,7 @@ import access1Image from '../assets/access1.webp';
 import accessCar1Image from '../assets/access_car1.webp';
 import screenImage from '../assets/screen.webp';
 import systemsImage from '../assets/systems.webp';
+import payltTecnoImage from '../assets/paylt_tecno.webp';
 import './Access.css';
 
 export const Access: React.FC = () => {
@@ -26,7 +27,7 @@ export const Access: React.FC = () => {
       id: '3',
       title: 'Transferência de Dados',
       description: 'A transferência de dados é feita através de GPRS/GSM/Bluetooth e estes são centralizados e apresentados num portal online gerido pelo município ou pela empresa operadora.',
-      image: '/src/assets/paylt_tecno.webp'
+      image: payltTecnoImage
     }
   ];
 
