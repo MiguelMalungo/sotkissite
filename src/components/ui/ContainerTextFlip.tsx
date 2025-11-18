@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useId, useRef } from "react";
+import { useState, useEffect, useId, useRef } from "react";
 import { motion } from "framer-motion";
 import './ContainerTextFlip.css';
 
