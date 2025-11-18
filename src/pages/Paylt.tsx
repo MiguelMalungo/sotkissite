@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel } from '../components/ui/Carousel';
 import payltHeroMobileImage from '../assets/DRSsm.webp';
+import paytVideo from '../assets/payt.mp4';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -51,7 +52,7 @@ export const Paylt: React.FC = () => {
           muted 
           playsInline
         >
-          <source src="/src/assets/payt.mp4" type="video/mp4" />
+          <source src={paytVideo} type="video/mp4" />
         </video>
         <div className="paylt__hero-overlay"></div>
         <div className="paylt__hero-content container">

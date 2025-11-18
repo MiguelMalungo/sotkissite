@@ -1,4 +1,5 @@
 import React from 'react';
+import levelVideo from '../assets/level.mp4';
 import './Level.css';
 
 export const Level: React.FC = () => {
@@ -13,7 +14,7 @@ export const Level: React.FC = () => {
           muted 
           playsInline
         >
-          <source src="/src/assets/level.mp4" type="video/mp4" />
+          <source src={levelVideo} type="video/mp4" />
         </video>
         <div className="level__hero-overlay"></div>
         <div className="level__hero-content container">

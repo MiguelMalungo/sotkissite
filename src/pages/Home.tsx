@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from '../components/common/Button';
 import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
+import animationVideo from '../assets/Animation.mp4';
+import video1 from '../assets/video1.mp4';
+import bandImage from '../assets/band.webp';
 import './Home.css';
 
 export const Home: React.FC = () => {
@@ -10,12 +13,12 @@ export const Home: React.FC = () => {
       <section className="home__hero">
         <div className="home__hero-scrolling-container">
           <img 
-            src="/src/assets/band.webp" 
+            src={bandImage} 
             alt="" 
             className="home__hero-scrolling-image"
           />
           <img 
-            src="/src/assets/band.webp" 
+            src={bandImage} 
             alt="" 
             className="home__hero-scrolling-image"
           />
@@ -32,7 +35,7 @@ export const Home: React.FC = () => {
             }
           }}
         >
-          <source src="/src/assets/Animation.mp4" type="video/mp4" />
+          <source src={animationVideo} type="video/mp4" />
         </video>
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
@@ -69,7 +72,7 @@ export const Home: React.FC = () => {
             muted 
             playsInline
           >
-            <source src="/src/assets/video1.mp4" type="video/mp4" />
+            <source src={video1} type="video/mp4" />
           </video>
           <div className="home__rise-title-overlay">
             <ContainerTextFlip

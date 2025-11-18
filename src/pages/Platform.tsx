@@ -16,6 +16,7 @@ import image5M from '../assets/5VerificacaoM.webp';
 import image6M from '../assets/6ImplementacaoM.webp';
 import image7M from '../assets/7GestaoM.webp';
 import image8M from '../assets/8ComunicacaoM.webp';
+import videoplatVideo from '../assets/videoplat.mp4';
 import './Platform.css';
 
 export const Platform: React.FC = () => {
@@ -255,7 +256,7 @@ export const Platform: React.FC = () => {
           muted 
           playsInline
         >
-          <source src="/src/assets/videoplat.mp4" type="video/mp4" />
+          <source src={videoplatVideo} type="video/mp4" />
         </video>
         <div className="platform__hero-overlay"></div>
         <div className="platform__hero-content container">
@@ -392,7 +393,7 @@ export const Platform: React.FC = () => {
               autoPlay
               onClick={togglePlayPause}
             >
-              <source src="/src/assets/videoplat.mp4" type="video/mp4" />
+              <source src={videoplatVideo} type="video/mp4" />
             </video>
             <div className="platform__video-modal-controls">
               <button onClick={togglePlayPause} aria-label={isVideoPlaying ? "Pause" : "Play"}>
