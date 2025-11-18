@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Button.css';
 
 export interface ButtonProps {
@@ -25,10 +26,23 @@ export const Button: React.FC<ButtonProps> = ({
   const baseClassName = `button button--${variant} button--${size} ${className}`;
 
   if (href) {
+    // Check if it's an external link or hash link
+    const isExternal = href.startsWith('http://') || href.startsWith('https://');
+    const isHash = href.startsWith('#');
+    
+    if (isExternal || isHash) {
+      return (
+        <a href={href} className={baseClassName}>
+          {children}
+        </a>
+      );
+    }
+    
+    // Use React Router Link for internal navigation
     return (
-      <a href={href} className={baseClassName}>
+      <Link to={href} className={baseClassName}>
         {children}
-      </a>
+      </Link>
     );
   }
 
