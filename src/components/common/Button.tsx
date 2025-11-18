@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Button.css';
 
 export interface ButtonProps {
@@ -23,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   type = 'button',
 }) => {
+  const navigate = useNavigate();
   const baseClassName = `button button--${variant} button--${size} ${className}`;
 
   if (href) {
@@ -38,11 +39,15 @@ export const Button: React.FC<ButtonProps> = ({
       );
     }
     
-    // Use React Router Link for internal navigation
+    // Use navigate for internal navigation
     return (
-      <Link to={href} className={baseClassName}>
+      <button
+        type="button"
+        className={baseClassName}
+        onClick={() => navigate(href)}
+      >
         {children}
-      </Link>
+      </button>
     );
   }
 
