@@ -19,8 +19,8 @@
   --color-text-secondary: #6b7280;
   --color-text-light: #9ca3af;
   
-  --color-bg-primary: #F6FFF7;
-  --color-bg-secondary: #F6FFF7;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
   --color-bg-dark: #111827;
   
   --color-border: #e5e7eb;
@@ -106,8 +106,8 @@
     --color-text-secondary: #4b5563;
     --color-text-light: #9ca3af;
     
-    --color-bg-primary: #F6FFF7;
-    --color-bg-secondary: #F6FFF7;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f9fafb;
     --color-bg-dark: #111827;
     
     --color-border: #e5e7eb;

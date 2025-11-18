@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F6FFF7 !important;
+  background-color: white !important;
   background-image: url('/sotkissite/Hero1.webp');
   background-size: cover;
   background-position: center;
@@ -146,7 +146,7 @@
   padding-top: calc(var(--spacing-xl) * 2);
   padding-bottom: 0;
   margin-bottom: calc(var(--spacing-xl) * -1);
-  background-color: #F6FFF7;
+  background-color: white;
   text-align: center;
 }
 
@@ -165,7 +165,7 @@
 
 /* Rise Above Section */
 .home__rise-above-container {
-  background-color: #F6FFF7;
+  background-color: white;
   border-radius: 6rem;
   margin: var(--spacing-5xl) auto;
   overflow: hidden;
@@ -246,7 +246,7 @@
   justify-content: center;
   gap: var(--spacing-lg);
   padding: var(--spacing-xl) var(--spacing-3xl);
-  background-color: #F6FFF7;
+  background-color: white;
   min-height: 150px;
 }
 
@@ -273,23 +273,23 @@
 }
 
 .home__section--paylt {
-  background-color: var(--color-bg-secondary);
+  background-color: white;
 }
 
 .home__section--access {
-  background-color: var(--color-bg-secondary);
+  background-color: white;
 }
 
 .home__section--level {
-  background-color: var(--color-bg-secondary);
+  background-color: white;
 }
 
 .home__section--drs {
-  background-color: var(--color-bg-secondary);
+  background-color: white;
 }
 
 .home__section--t4g {
-  background-color: var(--color-bg-secondary);
+  background-color: white;
 }
 
 .home__section-grid {

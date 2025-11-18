@@ -1,5 +1,5 @@
 .carousel {
-  background-color: #F6FFF7;
+  background-color: #f5f5f7;
   padding: 6.4rem 0;
 }
 
@@ -34,7 +34,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
   align-items: center;
-  background-color: #F6FFF7;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
