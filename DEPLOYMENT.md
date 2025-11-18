@@ -1,84 +1,66 @@
-# GitHub Pages Deployment Guide
+# GitHub Pages Deployment Guide (gh-pages Branch Method)
 
 ## Initial Setup (One-Time Only)
 
-Your repository has been successfully initialized and pushed to GitHub! Now you need to enable GitHub Pages:
+Your repository has been successfully initialized and pushed to GitHub!
 
-### 1. Enable GitHub Pages
+### Enable GitHub Pages
 
 1. Go to your repository: https://github.com/MiguelMalungo/sotkissite
 2. Click on **Settings** (top navigation)
 3. Navigate to **Pages** (left sidebar under "Code and automation")
-4. Under **Source**, select:
-   - Source: **GitHub Actions**
-5. Save the changes
+4. Under **Build and deployment**, select:
+   - **Source**: Deploy from a branch
+   - **Branch**: `gh-pages` / `(root)`
+5. Click **Save**
 
-### 2. First Deployment
+**Note:** The `gh-pages` branch will be created automatically on your first deployment.
 
-The GitHub Actions workflow will automatically trigger on your next push to the `main` branch. To trigger the first deployment:
+## Deployment
 
-```bash
-# Make a small change or just trigger the workflow
-git commit --allow-empty -m "Trigger GitHub Pages deployment"
-git push origin main
-```
+### Deploy Your Site
 
-Alternatively, you can trigger it manually:
-1. Go to **Actions** tab in your repository
-2. Select the "Deploy to GitHub Pages" workflow
-3. Click "Run workflow" button
-4. Select the `main` branch and click "Run workflow"
-
-### 3. Access Your Site
-
-Once deployed, your site will be available at:
-**https://miguelmalungo.github.io/sotkissite/**
-
-## Deployment Methods
-
-### Method 1: Automatic Deployment (Recommended)
-
-Every time you push to the `main` branch, GitHub Actions will automatically build and deploy your site.
-
-```bash
-git add .
-git commit -m "Your commit message"
-git push origin main
-```
-
-Then check the **Actions** tab to monitor the deployment progress.
-
-### Method 2: Manual Deployment using gh-pages
-
-You can also deploy manually using the gh-pages package:
+Simply run the deployment command:
 
 ```bash
 npm run deploy
 ```
 
-This will:
-1. Build the project (`npm run build`)
-2. Push the `dist` folder to the `gh-pages` branch
+This command will:
+1. Build your project (`npm run build`)
+2. Create/update the `gh-pages` branch
+3. Push the built files to the `gh-pages` branch
+4. GitHub will automatically publish the site
 
-**Note:** If using this method, you'll need to change the GitHub Pages source to deploy from the `gh-pages` branch instead of GitHub Actions.
+### First Deployment
 
-## Troubleshooting
+The first time you deploy:
 
-### Deployment Failed
-- Check the **Actions** tab for error logs
-- Ensure all dependencies are correctly listed in `package.json`
-- Verify that the build completes successfully locally with `npm run build`
+```bash
+cd /Users/josemiguelferrazguedes/Sotkissite/sotkis-website
+npm run deploy
+```
 
-### 404 Error on Routes
-- React Router requires proper configuration for GitHub Pages
-- The `base: '/sotkissite/'` in `vite.config.ts` handles this
-- Ensure your router uses `BrowserRouter` with the correct basename
+Wait 2-3 minutes, then your site will be live at:
+**https://miguelmalungo.github.io/sotkissite/**
 
-### Assets Not Loading
-- Verify the `base` path in `vite.config.ts` matches your repository name
-- Check that asset paths are relative or use the public folder
+### Subsequent Deployments
+
+After making changes:
+
+```bash
+# 1. Save and commit your changes to main
+git add .
+git commit -m "Your changes"
+git push origin main
+
+# 2. Deploy to GitHub Pages
+npm run deploy
+```
 
 ## Development Workflow
+
+### Daily Development
 
 1. **Local Development:**
    ```bash
@@ -86,31 +68,77 @@ This will:
    ```
    Access at: http://localhost:3000
 
-2. **Build Locally:**
-   ```bash
-   npm run build
-   ```
+2. **Make Your Changes**
+   - Edit your code
+   - Test locally
 
-3. **Preview Production Build:**
+3. **Commit to Main Branch:**
    ```bash
-   npm run preview
-   ```
-
-4. **Deploy:**
-   ```bash
+   git add .
+   git commit -m "Description of changes"
    git push origin main
    ```
 
+4. **Deploy to GitHub Pages:**
+   ```bash
+   npm run deploy
+   ```
+
+## Troubleshooting
+
+### "Failed to get remote" Error
+If you see a git authentication error:
+- Make sure you're logged into GitHub
+- Check that you have push permissions to the repository
+
+### 404 Error After Deployment
+- Wait 2-3 minutes for GitHub to process the deployment
+- Clear your browser cache
+- Verify the `gh-pages` branch was created in your repository
+
+### Assets Not Loading
+- Check that the `base` path in `vite.config.ts` matches your repository name
+- Ensure the base is set to: `base: '/sotkissite/'`
+
+### Build Errors
+Test the build locally first:
+```bash
+npm run build
+```
+
+If it fails, fix the errors before deploying.
+
 ## Configuration Files
 
-- **vite.config.ts**: Contains base path configuration for GitHub Pages
-- **.github/workflows/deploy.yml**: GitHub Actions workflow for automatic deployment
-- **package.json**: Contains deployment scripts
+- **vite.config.ts**: Contains `base: '/sotkissite/'` for proper asset paths
+- **package.json**: Contains deployment scripts:
+  - `predeploy`: Builds the project automatically before deploy
+  - `deploy`: Pushes the `dist` folder to `gh-pages` branch
 
 ## Important Notes
 
-- The site is configured to deploy from the `main` branch
-- Build files are generated in the `dist` folder (ignored by git)
-- The base URL is set to `/sotkissite/` to match your repository name
-- First deployment may take 2-5 minutes to become available
+- Your source code lives on the `main` branch
+- The built site lives on the `gh-pages` branch (auto-generated)
+- You only need to run `npm run deploy` - the build happens automatically
+- The `dist` folder is in `.gitignore` and never committed to `main`
+- GitHub Pages serves from the `gh-pages` branch
 
+## Branches
+
+- **main**: Your source code (you commit here)
+- **gh-pages**: Built site (auto-generated by `npm run deploy`)
+
+## Quick Reference
+
+```bash
+# Start development server
+npm run dev
+
+# Build locally (optional - testing)
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+That's it! 🚀
