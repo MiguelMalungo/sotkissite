@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import whiteLogo from '../../assets/sotkisbranco.webp';
+import coloredLogo from '../../assets/SotKis.webp';
 import './Header.css';
 
 export const Header: React.FC = () => {
@@ -48,12 +50,9 @@ export const Header: React.FC = () => {
     location.pathname === '/drs' ||
     location.pathname === '/contact';
 
-  const whiteLogoSrc = "/src/assets/sotkisbranco.webp";
-  const coloredLogoSrc = "/src/assets/sotkis.webp";
-
   // Use white logo initially on pages with hero backgrounds, otherwise use colored logo
   const logoSrc =
-    !isScrolled && isVideoHeroPage ? whiteLogoSrc : coloredLogoSrc;
+    !isScrolled && isVideoHeroPage ? whiteLogo : coloredLogo;
 
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''}`}>
