@@ -1,12 +1,14 @@
 .header {
   position: fixed;
-  top: -25px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
   padding-top: var(--spacing-lg);
   padding-bottom: calc(var(--spacing-sm) + 15px);
   transition: background var(--transition-base), backdrop-filter var(--transition-base);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .header--scrolled {
