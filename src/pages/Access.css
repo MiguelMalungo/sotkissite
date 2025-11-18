@@ -1,0 +1,223 @@
+.access {
+  background-color: white;
+}
+
+/* Logo Section */
+.access__logo-section {
+  padding-top: calc(var(--spacing-xl) * 2);
+  padding-bottom: 0;
+  margin-bottom: calc(var(--spacing-xl) * -2.5);
+  background-color: white;
+  text-align: center;
+}
+
+.access__logo-section .container {
+  display: flex;
+  justify-content: center;
+}
+
+.access__logo-image {
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%) brightness(0.4);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Intro Section */
+.access__intro {
+  background-color: white;
+  padding-top: calc(var(--spacing-4xl) * 0.15);
+  padding-bottom: calc(var(--spacing-4xl) / 2);
+}
+
+.access__intro-content {
+  width: 100%;
+  margin: 0;
+}
+
+.access__intro-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__intro-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.access__image-section {
+  padding-top: calc(var(--spacing-4xl) / 2);
+  padding-bottom: var(--spacing-4xl);
+  background-color: white;
+}
+
+.access__image-section .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.access__car-image {
+  width: 66.5%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.access__content {
+  background-color: white;
+  padding-top: 0;
+}
+
+.access__text-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.access__text-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__text-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.access__text-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--spacing-lg);
+}
+
+/* Round carousel images on Access page */
+.access .carousel__slide {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.access .carousel__slide-image {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.access .carousel__slide-image img {
+  border-radius: inherit !important;
+}
+
+/* Reduce carousel spacing on Access page */
+.access .carousel {
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.access .carousel__dots {
+  bottom: calc(var(--spacing-lg) / 2);
+}
+
+.access .full-page-hero__cta {
+  justify-content: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .access__logo-section {
+    padding-top: var(--spacing-xl);
+    margin-bottom: calc(var(--spacing-xl) * -1.2);
+  }
+
+  .access__logo-image {
+    max-width: 120px;
+  }
+
+  .access__intro {
+    padding-top: 0;
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .access__intro-content h2 {
+    font-size: var(--font-size-3xl);
+    text-align: left;
+  }
+
+  .access__intro-content p {
+    font-size: var(--font-size-base);
+  }
+
+  .access__image-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .access__car-image {
+    width: 90%;
+  }
+
+  .access__text-content h2 {
+    font-size: var(--font-size-3xl);
+    text-align: left;
+  }
+
+  .access__text-content p {
+    font-size: var(--font-size-base);
+  }
+
+  .access .carousel__slide {
+    border-radius: 1.5rem;
+  }
+
+  .access .carousel__slide-image {
+    border-radius: 1.5rem;
+  }
+
+  .access .carousel__dots {
+    bottom: calc(var(--spacing-sm) / 2);
+  }
+
+  .access .full-page-hero__cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .access__logo-image {
+    max-width: 100px;
+  }
+
+  .access__intro-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .access__intro-content p {
+    font-size: var(--font-size-sm);
+  }
+
+  .access__car-image {
+    width: 100%;
+  }
+
+  .access__text-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .access__text-content p {
+    font-size: var(--font-size-sm);
+  }
+
+  .access .carousel__slide {
+    border-radius: 1rem;
+  }
+
+  .access .carousel__slide-image {
+    border-radius: 1rem;
+  }
+}
