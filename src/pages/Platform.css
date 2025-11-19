@@ -601,15 +601,15 @@
 
 @media (max-width: 480px) {
   .platform__screenshot-wrapper {
-    border-radius: 40px 0 40px 0;
+    border-radius: 40px 0 40px 40px;
   }
 
   .platform__screenshot-images {
-    border-radius: 40px 0 40px 0;
+    border-radius: 40px 0 40px 40px;
   }
 
   .platform__screenshot-image {
-    border-radius: 40px 0 40px 0;
+    border-radius: 40px 0 40px 40px;
   }
 
   .platform__screenshot-intro-text {
