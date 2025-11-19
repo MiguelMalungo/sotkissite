@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -22,6 +22,34 @@ import './Home.css';
 export const Home: React.FC = () => {
   const { language } = useLanguage();
   const t = homeTranslations[language];
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.currentTime = 0; // Reset to start
+            videoElement.play();
+          }
+        });
+      },
+      {
+        threshold: 0, // Play as soon as any part is visible
+        rootMargin: '0px 0px 0px 0px'
+      }
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -81,9 +109,8 @@ export const Home: React.FC = () => {
             className="home__rise-background-image"
           />
           <video 
+            ref={videoRef}
             className="home__rise-video" 
-            autoPlay 
-            loop 
             muted 
             playsInline
           >
