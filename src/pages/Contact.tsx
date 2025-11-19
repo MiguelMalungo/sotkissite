@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { contactTranslations } from '../translations/contact';
 import './Contact.css';
 
 export const Contact: React.FC = () => {
+  const { language } = useLanguage();
+  const t = contactTranslations[language];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,31 +53,21 @@ export const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="contact__info">
             <div className="contact__header">
-              <h1 className="contact__title">Contacte-nos</h1>
-              <p className="contact__subtitle">Vamos discutir o seu projeto!</p>
+              <h1 className="contact__title">{t.title}</h1>
+              <p className="contact__subtitle">{t.subtitle}</p>
             </div>
 
             <div className="contact__info-item contact__info-item--process">
-              <h3 className="contact__info-title">O que acontece a seguir?</h3>
+              <h3 className="contact__info-title">{t.process.title}</h3>
               <div className="contact__process">
-                <div className="contact__process-step">
-                  <span className="contact__process-number">1</span>
-                  <p className="contact__process-text">
-                    Um especialista entra em contacto após analisar os seus requisitos
-                  </p>
-                </div>
-                <div className="contact__process-step">
-                  <span className="contact__process-number">2</span>
-                  <p className="contact__process-text">
-                    Se necessário, assinamos um NDA para garantir o mais elevado nível de privacidade
-                  </p>
-                </div>
-                <div className="contact__process-step">
-                  <span className="contact__process-number">3</span>
-                  <p className="contact__process-text">
-                    Enviamos uma proposta de projeto completa com estimativas, cronogramas, CVs, etc.
-                  </p>
-                </div>
+                {t.process.steps.map((step, index) => (
+                  <div key={index} className="contact__process-step">
+                    <span className="contact__process-number">{index + 1}</span>
+                    <p className="contact__process-text">
+                      {step}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -83,7 +77,7 @@ export const Contact: React.FC = () => {
             <form className="contact__form" onSubmit={handleSubmit}>
               <div className="contact__form-group">
                 <label htmlFor="name" className="contact__form-label">
-                  Nome *
+                  {t.form.name.label}
                 </label>
                 <input
                   type="text"
@@ -93,14 +87,14 @@ export const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="O seu nome"
+                  placeholder={t.form.name.placeholder}
                   autoComplete="name"
                 />
               </div>
 
               <div className="contact__form-group">
                 <label htmlFor="email" className="contact__form-label">
-                  Correio Eletrónico *
+                  {t.form.email.label}
                 </label>
                 <input
                   type="email"
@@ -110,14 +104,14 @@ export const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="exemplo@email.com"
+                  placeholder={t.form.email.placeholder}
                   autoComplete="email"
                 />
               </div>
 
               <div className="contact__form-group">
                 <label htmlFor="phone" className="contact__form-label">
-                  Telefone
+                  {t.form.phone.label}
                 </label>
                 <input
                   type="tel"
@@ -126,14 +120,14 @@ export const Contact: React.FC = () => {
                   className="contact__form-input"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+351 900 000 000"
+                  placeholder={t.form.phone.placeholder}
                   autoComplete="tel"
                 />
               </div>
 
               <div className="contact__form-group">
                 <label htmlFor="company" className="contact__form-label">
-                  Empresa
+                  {t.form.company.label}
                 </label>
                 <input
                   type="text"
@@ -142,14 +136,14 @@ export const Contact: React.FC = () => {
                   className="contact__form-input"
                   value={formData.company}
                   onChange={handleChange}
-                  placeholder="Nome da empresa"
+                  placeholder={t.form.company.placeholder}
                   autoComplete="organization"
                 />
               </div>
 
               <div className="contact__form-group contact__form-group--full">
                 <label htmlFor="service" className="contact__form-label">
-                  Serviço de Interesse *
+                  {t.form.service.label}
                 </label>
                 <select
                   id="service"
@@ -158,23 +152,19 @@ export const Contact: React.FC = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  aria-label="Selecione o serviço de interesse"
+                  aria-label={t.form.service.placeholder}
                 >
-                  <option value="">Selecione um serviço</option>
-                  <option value="sensors">Sensores Inteligentes</option>
-                  <option value="readers">Módulos de Leitura</option>
-                  <option value="iot">Dispositivos IoT/LTE</option>
-                  <option value="cards">Cartões Inteligentes</option>
-                  <option value="access">ADVANTACCESS</option>
-                  <option value="pay">ADVANTAPAY</option>
-                  <option value="integration">Integrações & Gestão</option>
-                  <option value="other">Outro</option>
+                  {t.form.service.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <div className="contact__form-group contact__form-group--full">
                 <label htmlFor="message" className="contact__form-label">
-                  Mensagem *
+                  {t.form.message.label}
                 </label>
                 <textarea
                   id="message"
@@ -184,13 +174,13 @@ export const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Conte-nos sobre o seu projeto..."
+                  placeholder={t.form.message.placeholder}
                 />
               </div>
 
               <div className="contact__form-group contact__form-group--full">
                 <label htmlFor="file" className="contact__form-label">
-                  Anexar Ficheiro
+                  {t.form.file.label}
                 </label>
                 <div className="contact__form-file">
                   <input
@@ -219,7 +209,7 @@ export const Contact: React.FC = () => {
                     <span>
                       {formData.file
                         ? formData.file.name
-                        : 'Escolher Ficheiro'}
+                        : t.form.file.button}
                     </span>
                   </label>
                 </div>
@@ -229,9 +219,9 @@ export const Contact: React.FC = () => {
                 <button 
                   type="submit" 
                   className="contact__form-submit"
-                  aria-label="Enviar mensagem de contacto"
+                  aria-label={t.form.submit}
                 >
-                  Enviar Mensagem
+                  {t.form.submit}
                 </button>
               </div>
             </form>

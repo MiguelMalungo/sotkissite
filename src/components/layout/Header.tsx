@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
 import whiteLogo from '../../assets/sotkisbranco.webp';
 import coloredLogo from '../../assets/SotKis.webp';
 import './Header.css';
@@ -7,6 +8,7 @@ import './Header.css';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage: contextToggleLanguage } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -41,6 +43,10 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const toggleLanguage = () => {
+    contextToggleLanguage();
+  };
+
   const isVideoHeroPage =
     location.pathname === '/' ||
     location.pathname === '/platform' ||
@@ -68,7 +74,7 @@ export const Header: React.FC = () => {
         {/* Mobile actions container */}
         <div className={`header__actions ${isMobileMenuOpen ? 'header__actions--expanded' : ''}`}>
           <Link to="/contact" className="header__enquire-btn">
-            Enquire now
+            {language === 'pt' ? 'Fale conosco' : 'Enquire now'}
           </Link>
 
           <button
@@ -93,8 +99,16 @@ export const Header: React.FC = () => {
         <div className="header__nav-wrapper" onClick={closeMobileMenu}>
           {/* Desktop CTA Button - 30px gap from nav */}
           <div className="header__nav-desktop-cta">
+            {/* Desktop language toggle - beside CTA button */}
+            <button
+              onClick={toggleLanguage}
+              className="header__lang-link header__lang-link--desktop"
+              aria-label={`Switch to ${language === 'pt' ? 'English' : 'Portuguese'}`}
+            >
+              {language === 'pt' ? 'EN' : 'PT'}
+            </button>
             <Link to="/contact" className="header__enquire-btn">
-              Enquire now
+              {language === 'pt' ? 'Fale conosco' : 'Enquire now'}
             </Link>
           </div>
 
@@ -112,6 +126,16 @@ export const Header: React.FC = () => {
                   </Link>
                 </li>
               ))}
+              {/* Mobile language toggle - inside menu */}
+              <li className="header__nav-item header__nav-item--lang-mobile">
+                <button
+                  onClick={toggleLanguage}
+                  className="header__lang-link"
+                  aria-label={`Switch to ${language === 'pt' ? 'English' : 'Portuguese'}`}
+                >
+                  {language === 'pt' ? 'EN' : 'PT'}
+                </button>
+              </li>
             </ul>
           </nav>
         </div>

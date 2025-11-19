@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/common/Button';
+import { useLanguage } from '../contexts/LanguageContext';
+import { platformTranslations } from '../translations/platform';
 import image1 from '../assets/1.webp';
 import image2 from '../assets/2Informacoes.webp';
 import image3 from '../assets/3Planeamento.webp';
@@ -16,10 +18,12 @@ import image5M from '../assets/5VerificacaoM.webp';
 import image6M from '../assets/6ImplementacaoM.webp';
 import image7M from '../assets/7GestaoM.webp';
 import image8M from '../assets/8ComunicacaoM.webp';
-import videoplatVideo from '../assets/videoplat.mp4';
+const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
 import './Platform.css';
 
 export const Platform: React.FC = () => {
+  const { language } = useLanguage();
+  const t = platformTranslations[language];
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const [displayedImageIndex, setDisplayedImageIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -34,40 +38,7 @@ export const Platform: React.FC = () => {
   const animationTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const transitionTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const features = [
-    { 
-      title: 'Aplicação', 
-      description: 'de tarifários PAYT;'
-    },
-    { 
-      title: 'Informações', 
-      description: 'sobre o nível de enchimento dos contentores;'
-    },
-    { 
-      title: 'Planeamento', 
-      description: 'de rotas de recolha mais eficientes;'
-    },
-    { 
-      title: 'Acesso', 
-      description: 'a frequências de deposição e tipo de resíduos depositados;'
-    },
-    { 
-      title: 'Verificação', 
-      description: 'de localizações e histórico de instalação;'
-    },
-    { 
-      title: 'Implementação', 
-      description: 'de sistemas de recompensas pela correta deposição de resíduos;'
-    },
-    { 
-      title: 'Gestão', 
-      description: 'das informações sobre operações de manutenção preventiva e/ou corretiva;'
-    },
-    { 
-      title: 'Comunicação', 
-      description: 'em tempo real de eventuais irregularidades nos equipamentos.'
-    }
-  ];
+  const features = t.features.items;
 
   const imageMapDesktop = [
     image1,  // index 0 - Aplicação
@@ -298,15 +269,15 @@ export const Platform: React.FC = () => {
       <section className="platform__intro section">
         <div className="container">
           <div className="platform__intro-content">
-            <h2 className="platform__intro-title">Plataforma Digital Sotkis</h2>
+            <h2 className="platform__intro-title">{t.intro.title}</h2>
             <p className="platform__intro-text">
-              O SOTKIS (Sotkon Intelligent Systems) consiste numa ferramenta digital que a Sotkon disponibiliza de forma gratuita, tratando-se de um sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.
+              {t.intro.text1}
             </p>
             <p className="platform__intro-text">
-              Esta plataforma permite gerir online o seu parque de contentores enterrados Sotkon, onde através dos vários módulos de gestão de resíduos é possível otimizar a eficiência dos recursos alocados, aumentar a rentabilidade da operação, potenciar o aumento das taxas de reciclagem e melhorar a qualidade dos resíduos.
+              {t.intro.text2}
             </p>
             <p className="platform__intro-text">
-              A plataforma SOTKIS permite uma gestão integrada e inteligente de todos os processos relacionados com a deposição e recolha de resíduos, proporcionando às entidades responsáveis ferramentas avançadas para otimizar operações e melhorar a sustentabilidade ambiental.
+              {t.intro.text3}
             </p>
           </div>
         </div>
@@ -329,7 +300,7 @@ export const Platform: React.FC = () => {
                 />
               </div>
               <p className="platform__screenshot-intro-text">
-                Através dos módulos existentes na plataforma SOTKIS a entidade responsável pela operação pode aceder de forma simples a várias funcionalidades:
+                {t.features.intro}
               </p>
               <div className="platform__screenshot-overlay">
               {/* Mobile carousel navigation */}
@@ -381,7 +352,7 @@ export const Platform: React.FC = () => {
               </div>
               <div className="platform__cta-wrapper">
                 <Button href="#platform-details" size="sm" className="platform__screenshot-cta-overlay">
-                  Visite a Plataforma
+                  {t.features.button}
                 </Button>
               </div>
             </div>
@@ -395,10 +366,10 @@ export const Platform: React.FC = () => {
         <div className="container">
           <div className="platform__access-content">
             <p className="platform__access-text">
-              O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço <a href="https://www.sotkis.com" target="_blank" rel="noopener noreferrer" className="platform__access-link">www.sotkis.com</a> ou através da app Sotkis.
+              {t.access.text} <a href="https://www.sotkis.com" target="_blank" rel="noopener noreferrer" className="platform__access-link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
             </p>
             <button className="platform__access-button" onClick={openVideoModal}>
-              <span>Play Video</span>
+              <span>{t.access.buttonText}</span>
               <div className="platform__access-button-icon">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

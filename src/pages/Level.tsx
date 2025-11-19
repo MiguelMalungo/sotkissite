@@ -1,5 +1,7 @@
 import React from 'react';
-import levelVideo from '../assets/level.mp4';
+import { useLanguage } from '../contexts/LanguageContext';
+import { levelTranslations } from '../translations/level';
+const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import levelPhotoImage from '../assets/levelphoto.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2.webp';
 import sensorImage from '../assets/sensor.webp';
@@ -11,6 +13,8 @@ import levelCompativelImage from '../assets/levelcompativel.webp';
 import './Level.css';
 
 export const Level: React.FC = () => {
+  const { language } = useLanguage();
+  const t = levelTranslations[language];
 
   return (
     <div className="level">
@@ -32,9 +36,9 @@ export const Level: React.FC = () => {
       <section className="level__intro section">
         <div className="container">
           <div className="level__intro-content">
-            <h2>SOTKIS LEVEL</h2>
+            <h2>{t.intro.title}</h2>
             <p>
-              O SOTKIS LEVEL é uma solução eficiente e rentável, ao permitir realocar recursos e programar as rotas essenciais de forma estratégica, económica e ambientalmente sustentável! Na sua essência, este módulo inteligente tem como objetivo monitorizar o nível de enchimento de resíduos em cada contentor enterrado. Desta forma, evita-se deslocações desnecessárias e contribui-se para otimizar rotas, economizar combustível e reduzir custos com as equipas e equipamentos.
+              {t.intro.description}
             </p>
           </div>
           <div className="level__intro-images">
@@ -55,9 +59,9 @@ export const Level: React.FC = () => {
       <section className="level__sensor-section section">
         <div className="container">
           <div className="level__sensor-content">
-            <h2>Sensor Ultrasónico</h2>
+            <h2>{t.sensor.title}</h2>
             <p>
-              O SOTKIS Level usa um sensor ultrassónico disponibilizando, no portal online e na app, as informações recolhidas. Num horário predefinido, o sistema envia as informações do nível de enchimento para a plataforma web usando uma comunicação GSM.
+              {t.sensor.description}
             </p>
           </div>
         </div>
@@ -75,7 +79,7 @@ export const Level: React.FC = () => {
       
       <section className="level__stages-section">
         <div className="container">
-          <h2 className="level__stages-title">Características Principais</h2>
+          <h2 className="level__stages-title">{t.stages.title}</h2>
           <div className="level__stages-grid">
             <img 
               src={l1Image} 
@@ -103,7 +107,7 @@ export const Level: React.FC = () => {
       
       <section className="level__content section">
         <div className="container">
-          <h2 className="level__compatible-title">Compatibilidade:</h2>
+          <h2 className="level__compatible-title">{t.compatibility.title}</h2>
           <img 
             src={levelCompativelImage} 
             alt="Sistemas de resíduos compatíveis" 

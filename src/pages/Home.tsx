@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button } from '../components/common/Button';
 import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
-import animationVideo from '../assets/Animation.mp4';
-import video1 from '../assets/video1.mp4';
+import { useLanguage } from '../contexts/LanguageContext';
+import { homeTranslations } from '../translations/home';
+const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
+const video1 = new URL('../assets/video1.mp4', import.meta.url).href;
 import bandImage from '../assets/band.webp';
 import logoImage from '../assets/logotipo-sotkon-neg-preto.webp';
 import squareImage from '../assets/square.webp';
@@ -18,6 +20,8 @@ import googleImage from '../assets/google.webp';
 import './Home.css';
 
 export const Home: React.FC = () => {
+  const { language } = useLanguage();
+  const t = homeTranslations[language];
   return (
     <div className="home">
       {/* Hero Section */}
@@ -50,9 +54,9 @@ export const Home: React.FC = () => {
         </video>
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
-          <h1 className="home__hero-heading">Conheça os nossos sistemas inteligentes para gestão de resíduos</h1>
+          <h1 className="home__hero-heading">{t.hero.title}</h1>
           <div className="home__hero-description">
-            <p>Estamos preparados para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes.<br />Ao utilizar os sistemas associados ao SOTKIS, a entidade responsável pela operação pode obter informações sobre o nível de enchimento dos contentores de resíduos, planear rotas de recolha de forma muito mais eficiente, saber frequências de deposição e tipo de resíduos depositados, entre muitas outras variáveis. Está pronto para conduzir a sua cidade para um futuro sustentável a partir da gestão dos resíduos?</p>
+            <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
         </div>
       </section>
@@ -95,10 +99,18 @@ export const Home: React.FC = () => {
         </div>
         <div className="home__rise-above-content">
           <p className="home__rise-above-text">
-            <span className="home__rise-above-text--black">O SOTKIS (Sotkon Intelligent Systems)</span> consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. <span className="home__rise-above-text--black">O software SOTKIS</span> permite assim agregar os diferentes módulos inteligentes e foi desenhado para otimizar a eficiência dos recursos alocados à gestão de resíduos e aumentar a rentabilidade desta operação.
+            {language === 'pt' ? (
+              <>
+                <span className="home__rise-above-text--black">O SOTKIS (Sotkon Intelligent Systems)</span> consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. <span className="home__rise-above-text--black">O software SOTKIS</span> permite assim agregar os diferentes módulos inteligentes e foi desenhado para otimizar a eficiência dos recursos alocados à gestão de resíduos e aumentar a rentabilidade desta operação.
+              </>
+            ) : (
+              <>
+                <span className="home__rise-above-text--black">SOTKIS (Sotkon Intelligent Systems)</span> is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. <span className="home__rise-above-text--black">The SOTKIS software</span> thus allows aggregating the different intelligent modules and was designed to optimize the efficiency of resources allocated to waste management and increase the profitability of this operation.
+              </>
+            )}
           </p>
           <Button href="/platform" variant="primary" size="sm">
-            Ver Mais
+            {t.riseAbove.button}
           </Button>
         </div>
       </section>
@@ -108,14 +120,14 @@ export const Home: React.FC = () => {
         <div className="container">
           <div className="home__section-grid">
             <div className="home__section-content">
-              <h2 className="home__section-heading">Access</h2>
+              <h2 className="home__section-heading">{t.access.title}</h2>
               <div className="home__section-text-wrapper">
                 <p className="home__section-text">
-                  O módulo de acesso SOTKIS ACCESS pode ser instalado facilmente num sistema enterrado Sotkon já existente. É a solução perfeita para cidades que desejem introduzir um sistema de tarifação de resíduos PAYT! Este módulo inclui a recolha e transmissão de dados para a faturação dos resíduos depositados, conforme a política que esteja em vigor, de acordo com as especificidades locais. O SOTKIS ACCESS recolhe informação sempre que uma chave de acesso é utilizada e converte dados sobre quem, quando e que resíduos foram depositados em informações valiosas que conduzem a uma melhoria da qualidade dos resíduos, a um aumento de taxas de reciclagem e à redução do custo global de gestão de resíduos. Conheça aqui como a sua cidade pode beneficiar com o SOTKIS ACCESS.
+                  {t.access.description}
                 </p>
               </div>
               <Button href="/access" variant="primary" size="sm">
-                Ver mais
+                {t.access.button}
               </Button>
             </div>
             <div className="home__section-image">
@@ -143,12 +155,12 @@ export const Home: React.FC = () => {
               </div>
             </div>
             <div className="home__section-content">
-              <h2 className="home__section-heading">Level</h2>
+              <h2 className="home__section-heading">{t.level.title}</h2>
               <p className="home__section-text">
-                Este módulo inteligente monitoriza o nível de enchimento de resíduos nos contentores onde é aplicado, tornando-se assim uma solução muito eficiente e rentável ao permitir realocar recursos e programar as rotas essenciais de forma estratégica, económica e ambientalmente sustentável. Com esta solução desenhada para cidades inteligentes é possível evitar deslocações desnecessárias, otimizar rotas e reduzir os custos em combustível, em mão-de-obra e em equipamentos. Perceba aqui como pode beneficiar de todas estas vantagens!
+                {t.level.description}
               </p>
               <Button href="/level" variant="primary" size="sm">
-                Ver mais
+                {t.level.button}
               </Button>
             </div>
           </div>
@@ -160,12 +172,12 @@ export const Home: React.FC = () => {
         <div className="container">
           <div className="home__section-grid">
             <div className="home__section-content">
-              <h2 className="home__section-heading">DRS</h2>
+              <h2 className="home__section-heading">{t.drs.title}</h2>
               <p className="home__section-text">
-                O "Digital Return System" oferece aos municípios um instrumento importante para o aumento das taxas de reciclagem e para uma melhoria significativa na qualidade dos resíduos seletivos. Equipado com uma tecnologia inovadora que identifica individualmente cada embalagem de deposição seletiva (vidro, plástico e metal), o Sotkis DRS permite a atribuição de incentivos aos utilizadores após cada deposição de resíduos.
+                {t.drs.description}
               </p>
               <Button href="/drs" variant="primary" size="sm">
-                Ver mais
+                {t.drs.button}
               </Button>
             </div>
             <div className="home__section-image">
@@ -193,14 +205,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
             <div className="home__section-content">
-              <h2 className="home__section-heading">P(L)ayt</h2>
+              <h2 className="home__section-heading">{t.paylt.title}</h2>
               <div className="home__section-text-wrapper">
                 <p className="home__section-text">
-                  Os sistemas inteligentes SOTKIS estão também disponíveis para a implementação de sistemas PAYT, com objetivo de sensibilizar cidadãos e empresas e para um sistema mais justo e responsável. O PAYT é a abreviatura para "pay-as-you-throw", um sistema que prevê que os residentes paguem os resíduos com base na quantidade que produzem. Entende-se como o sistema de pagamento mais justo e deverá, no médio prazo, ser aplicado em todos os países da União Europeia. A Sotkon apresenta o ecossistema P(L)AYT, que significa Pay-less-as-you-throw e inclui um sistema PAYT quantifica os resíduos depositados por cada utilizador medindo o seu volume, a possibilidade de reduzir o valor cobrado pelas deposições de resíduos indiferenciados de acordo com reciclagem efetuada e a inclusão de recompensas em forma de pontos e gamificação, para incentivar a separação correta e a devolução de recicláveis. O PLAYT é um ecossistema integrado de hardware, software e inteligência artificial, capaz de transformar o modelo atual de deposição e recolha de resíduos num sistema mais eficiente, rastreável e participativo, alinhado com os princípios da economia circular e da transição verde e digital. Saiba como podemos ajudar a instalar o sistema P(L)AYT mais adequado à sua cidade.
+                  {t.paylt.description}
                 </p>
               </div>
               <Button href="/paylt" variant="primary" size="sm">
-                Ver mais
+                {t.paylt.button}
               </Button>
             </div>
           </div>
@@ -212,12 +224,12 @@ export const Home: React.FC = () => {
         <div className="container">
           <div className="home__section-grid">
             <div className="home__section-content">
-              <h2 className="home__section-heading">APP DE CIDADÃO T4G</h2>
+              <h2 className="home__section-heading">{t.t4g.title}</h2>
               <p className="home__section-text">
-                A aplicação Trash4Goods atua como interface digital entre o cidadão e o sistema municipal de gestão de resíduos, promovendo a gamificação, a recompensa e a consciencialização ambiental. A app móvel permite que cada utilizador se conecte por bluetooth com os dispositivos Sotkis Access e Sotkis DRS, efetue as suas ações de reciclagem, ganhando pontos que podem ser trocados por produtos, serviços digitais ou descontos. A T4G permite a dinamização económica, ao canalizar incentivos para comércio e serviços.
+                {t.t4g.description}
               </p>
               <Button href="#contact" variant="primary" size="sm">
-                Ver mais
+                {t.t4g.button}
               </Button>
             </div>
             <div className="home__section-image">
@@ -255,9 +267,9 @@ export const Home: React.FC = () => {
                   <img src={googleImage} alt="Get it on Google Play" />
                 </a>
               </div>
-              <h2 className="home__app-title">DOWNLOAD A NOSSA SMARTPHONE APP</h2>
+              <h2 className="home__app-title">{t.app.title}</h2>
               <p className="home__app-description">
-                A aplicação permite que veja todos os contentores enterrados da sua cidade e ter todos os registos de deposição.
+                {t.app.description}
               </p>
             </div>
           </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FullPageHero } from '../components/common/FullPageHero';
 import { Carousel } from '../components/ui/Carousel';
+import { useLanguage } from '../contexts/LanguageContext';
+import { drsTranslations } from '../translations/drs';
 import drsHeroImage from '../assets/DRS.webp';
 import drs1Image from '../assets/drs1.webp';
 import drs2Image from '../assets/drs2.webp';
@@ -9,26 +11,23 @@ import drs4Image from '../assets/drs4.webp';
 import './DRS.css';
 
 export const DRS: React.FC = () => {
-  const carouselItems = [
-    {
-      id: '1',
-      title: 'Tecnologia Inovadora',
-      description: 'O "Digital Return System" é equipado com uma tecnologia inovadora que identifica individualmente cada embalagem de deposição seletiva (vidro, plástico e metal), permitindo a atribuição de incentivos a cada utilizador, motivando assim toda a população a reciclar de forma mais organizada e frequente.',
-      image: drs3Image
-    },
-    {
-      id: '2',
-      title: 'Recompensas e Incentivos',
-      description: 'A identificação de cada depósito permite assim recompensar os utilizadores, contribuindo para o aumento das taxas de reciclagem e a diminuição da quantidade de resíduos inadequados nas frações seletivas.',
-      image: drs4Image
-    }
-  ];
+  const { language } = useLanguage();
+  const t = drsTranslations[language];
+
+  const images = [drs3Image, drs4Image];
+  
+  const carouselItems = t.carousel.map((item, index) => ({
+    id: String(index + 1),
+    title: item.title,
+    description: item.description,
+    image: images[index]
+  }));
 
   return (
     <div className="drs">
       <FullPageHero 
-        title="Sotkon Waste Systems"
-        description="Sistema de Retorno Digital"
+        title={t.hero.title}
+        description={t.hero.description}
         backgroundImage={drsHeroImage}
         showButton={false}
       />
@@ -36,15 +35,15 @@ export const DRS: React.FC = () => {
       <section className="drs__content section">
         <div className="container">
           <div className="drs__text-content">
-            <h2>Deposit Return System</h2>
+            <h2>{t.content.title}</h2>
             <p>
-              Para se conectarem aos equipamentos DRS, os cidadãos apenas necessitam de um dispositivo móvel para ligação via Bluetooth ou de um cartão RFID. Após esta ligação, o utilizador deposita as suas garrafas de vidro, embalagens de plástico e latas de metal. O sistema DRS reconhece todos os tipos de materiais de embalagem.
+              {t.content.text1}
             </p>
             <p>
-              Depois deste processo, o utilizador recebe o incentivo que a sua cidade quer atribuir!
+              {t.content.text2}
             </p>
             <p>
-              Os incentivos a atribuir são decididos por cada município e podem ser "pontos" recebidos após cada depósito. Esses pontos podem depois ser convertidos em vários benefícios para cada cidadão - descontos nas tarifas de resíduos, transportes públicos, utilização de equipamentos municipais ou incentivos à participação em eventos da cidade.
+              {t.content.text3}
             </p>
           </div>
           <div className="drs__content-image">

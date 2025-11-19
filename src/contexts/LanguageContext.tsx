@@ -1,0 +1,43 @@
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+type Language = 'pt' | 'en';
+
+interface LanguageContextType {
+  language: Language;
+  toggleLanguage: () => void;
+  t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+interface LanguageProviderProps {
+  children: ReactNode;
+}
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>('pt');
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === 'pt' ? 'en' : 'pt'));
+  };
+
+  // Placeholder translation function - will be implemented with actual translations
+  const t = (key: string): string => {
+    return key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = (): LanguageContextType => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
+

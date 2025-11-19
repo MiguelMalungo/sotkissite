@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { footerTranslations } from '../../translations/footer';
 import logoImage from '../../assets/logotipo-sotkon-neg-preto.webp';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
+  const { language } = useLanguage();
+  const t = footerTranslations[language];
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,7 +22,7 @@ export const Footer: React.FC = () => {
               className="footer__logo-image"
             />
             <p className="footer__description">
-              Simple and Efficient.
+              {t.description}
             </p>
             <div className="footer__social-icons">
               <a href="#" aria-label="Facebook" className="footer__social-icon footer__social-icon--facebook">
@@ -41,50 +45,47 @@ export const Footer: React.FC = () => {
 
           {/* Our Products */}
           <div className="footer__section">
-            <h4 className="footer__title">OUR PRODUCTS</h4>
+            <h4 className="footer__title">{t.products.title}</h4>
             <ul className="footer__links">
-              <li><Link to="/platform" className="footer__link">Our Sensors</Link></li>
-              <li><Link to="/paylt" className="footer__link">Reader Modules</Link></li>
-              <li><Link to="/access" className="footer__link">IoT/LTE Devices</Link></li>
-              <li><Link to="/level" className="footer__link">Smart Cards</Link></li>
-              <li><Link to="/" className="footer__link">ADVANTACCESS</Link></li>
-              <li><Link to="/" className="footer__link">ADVANTAPAY</Link></li>
-              <li><Link to="/" className="footer__link">Integrations & Management</Link></li>
+              {t.products.links.map((link, index) => (
+                <li key={index}><Link to={link.path} className="footer__link">{link.label}</Link></li>
+              ))}
             </ul>
           </div>
 
           {/* About */}
           <div className="footer__section">
-            <h4 className="footer__title">ABOUT</h4>
+            <h4 className="footer__title">{t.about.title}</h4>
             <ul className="footer__links">
-              <li><Link to="/" className="footer__link">Career</Link></li>
-              <li><Link to="/" className="footer__link">Partners</Link></li>
+              {t.about.links.map((link, index) => (
+                <li key={index}><Link to={link.path} className="footer__link">{link.label}</Link></li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* Newsletter */}
         <div className="footer__newsletter">
-          <h4 className="footer__newsletter-title">Subscribe to our Newsletter</h4>
+          <h4 className="footer__newsletter-title">{t.newsletter.title}</h4>
           <form className="footer__newsletter-form">
             <input
               type="email"
-              placeholder="Your e-mail / Your ID number"
+              placeholder={t.newsletter.placeholder}
               className="footer__newsletter-input"
             />
             <button type="submit" className="footer__newsletter-button">
-              Send
+              {t.newsletter.button}
             </button>
           </form>
           <p className="footer__newsletter-note">
-            Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website.
+            {t.newsletter.note}
           </p>
         </div>
 
         {/* Bottom Bar */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © {currentYear} Networked by <a href="https://humanaty.pt" className="footer__link" target="_blank" rel="noopener noreferrer">Humanaty</a>
+            © {currentYear} {t.copyright} <a href="https://humanaty.pt" className="footer__link" target="_blank" rel="noopener noreferrer">Humanaty</a>
           </p>
         </div>
       </div>
