@@ -5,10 +5,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
 const video1 = new URL('../assets/video1.mp4', import.meta.url).href;
-import heroImage1 from '../assets/1.jpg';
-import heroImage2 from '../assets/2.jpg';
-import heroImage3 from '../assets/3.jpg';
-import heroImage4 from '../assets/4.jpg';
+import heroImage1 from '../assets/11.webp';
+import heroImage2 from '../assets/2.webp';
+import heroImage3 from '../assets/3.webp';
+import heroImage4 from '../assets/4.webp';
 import logoImage from '../assets/logotipo-sotkon-neg-preto.webp';
 import squareImage from '../assets/square.webp';
 import accessSmImage from '../assets/accesssm.webp';
@@ -62,18 +62,28 @@ export const Home: React.FC = () => {
 
     let isVideo1Active = true;
     let isTransitioning = false;
+    let transitionStarted = false;
     const transitionDuration = 2.5; // seconds
 
     const startTransition = () => {
-      if (isTransitioning) return;
+      if (isTransitioning || transitionStarted) return;
+      transitionStarted = true;
       isTransitioning = true;
 
       const activeVideo = isVideo1Active ? video1 : video2;
       const inactiveVideo = isVideo1Active ? video2 : video1;
       
-      // Start the inactive video from the beginning
-      inactiveVideo.currentTime = 0;
-      inactiveVideo.play().catch(() => {});
+      // Ensure inactive video is ready
+      if (inactiveVideo.readyState < 2) {
+        inactiveVideo.load();
+        inactiveVideo.addEventListener('canplay', () => {
+          inactiveVideo.currentTime = 0;
+          inactiveVideo.play().catch(() => {});
+        }, { once: true });
+      } else {
+        inactiveVideo.currentTime = 0;
+        inactiveVideo.play().catch(() => {});
+      }
       
       // Set initial opacities
       activeVideo.style.opacity = '1';
@@ -95,7 +105,15 @@ export const Home: React.FC = () => {
           activeVideo.pause();
           activeVideo.currentTime = 0;
           isVideo1Active = !isVideo1Active;
+          
+          // Ensure the new active video is playing
+          const newActiveVideo = isVideo1Active ? video1 : video2;
+          if (newActiveVideo.paused) {
+            newActiveVideo.play().catch(() => {});
+          }
+          
           isTransitioning = false;
+          transitionStarted = false;
         }
       };
       
@@ -103,14 +121,26 @@ export const Home: React.FC = () => {
     };
 
     const handleTimeUpdate = () => {
-      if (isTransitioning) return;
+      if (isTransitioning || transitionStarted) return;
       
       const activeVideo = isVideo1Active ? video1 : video2;
-      if (!activeVideo.duration) return;
+      if (!activeVideo.duration || activeVideo.paused) return;
       
       const timeRemaining = activeVideo.duration - activeVideo.currentTime;
       
-      if (timeRemaining <= transitionDuration) {
+      if (timeRemaining <= transitionDuration && timeRemaining > 0) {
+        startTransition();
+      }
+    };
+
+    const handleVideoEnded = () => {
+      if (isTransitioning) {
+        // If we're already transitioning, just reset the video
+        const endedVideo = isVideo1Active ? video1 : video2;
+        endedVideo.currentTime = 0;
+        return;
+      }
+      if (!transitionStarted) {
         startTransition();
       }
     };
@@ -120,6 +150,13 @@ export const Home: React.FC = () => {
       if (video1.readyState >= 2 && video2.readyState >= 2) {
         video1.addEventListener('timeupdate', handleTimeUpdate);
         video2.addEventListener('timeupdate', handleTimeUpdate);
+        video1.addEventListener('ended', handleVideoEnded);
+        video2.addEventListener('ended', handleVideoEnded);
+        
+        // Ensure video1 starts playing
+        if (video1.paused) {
+          video1.play().catch(() => {});
+        }
       } else {
         video1.addEventListener('loadedmetadata', setupVideos, { once: true });
         video2.addEventListener('loadedmetadata', setupVideos, { once: true });
@@ -131,6 +168,8 @@ export const Home: React.FC = () => {
     return () => {
       video1.removeEventListener('timeupdate', handleTimeUpdate);
       video2.removeEventListener('timeupdate', handleTimeUpdate);
+      video1.removeEventListener('ended', handleVideoEnded);
+      video2.removeEventListener('ended', handleVideoEnded);
     };
   }, []);
 
