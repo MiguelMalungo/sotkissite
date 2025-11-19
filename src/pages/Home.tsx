@@ -62,27 +62,32 @@ export const Home: React.FC = () => {
 
     let isVideo1Active = true;
     let isTransitioning = false;
-    let transitionStarted = false;
     const transitionDuration = 2.5; // seconds
+    let checkInterval: number | null = null;
 
     const startTransition = () => {
-      if (isTransitioning || transitionStarted) return;
-      transitionStarted = true;
+      if (isTransitioning) return;
       isTransitioning = true;
 
       const activeVideo = isVideo1Active ? video1 : video2;
       const inactiveVideo = isVideo1Active ? video2 : video1;
       
-      // Ensure inactive video is ready
-      if (inactiveVideo.readyState < 2) {
-        inactiveVideo.load();
-        inactiveVideo.addEventListener('canplay', () => {
-          inactiveVideo.currentTime = 0;
-          inactiveVideo.play().catch(() => {});
-        }, { once: true });
+      // Ensure inactive video is ready and reset
+      inactiveVideo.currentTime = 0;
+      
+      // Start playing the inactive video
+      const playInactive = () => {
+        inactiveVideo.play().catch(() => {
+          // Retry if play fails
+          setTimeout(playInactive, 100);
+        });
+      };
+      
+      if (inactiveVideo.readyState >= 2) {
+        playInactive();
       } else {
-        inactiveVideo.currentTime = 0;
-        inactiveVideo.play().catch(() => {});
+        inactiveVideo.addEventListener('canplay', playInactive, { once: true });
+        inactiveVideo.load();
       }
       
       // Set initial opacities
@@ -92,6 +97,8 @@ export const Home: React.FC = () => {
       let startTime = Date.now();
       
       const fadeStep = () => {
+        if (!isTransitioning) return; // Safety check
+        
         const elapsed = (Date.now() - startTime) / 1000;
         const progress = Math.min(elapsed / transitionDuration, 1);
         
@@ -108,73 +115,67 @@ export const Home: React.FC = () => {
           
           // Ensure the new active video is playing
           const newActiveVideo = isVideo1Active ? video1 : video2;
-          if (newActiveVideo.paused) {
-            newActiveVideo.play().catch(() => {});
+          if (newActiveVideo.paused || newActiveVideo.ended) {
+            newActiveVideo.currentTime = 0;
+            newActiveVideo.play().catch(() => {
+              // Retry if play fails
+              setTimeout(() => newActiveVideo.play().catch(() => {}), 100);
+            });
           }
           
           isTransitioning = false;
-          transitionStarted = false;
         }
       };
       
       requestAnimationFrame(fadeStep);
     };
 
-    const handleTimeUpdate = () => {
-      if (isTransitioning || transitionStarted) return;
+    // Continuous monitoring to ensure video keeps playing
+    const monitorPlayback = () => {
+      if (isTransitioning) return;
       
       const activeVideo = isVideo1Active ? video1 : video2;
-      if (!activeVideo.duration || activeVideo.paused) return;
       
-      const timeRemaining = activeVideo.duration - activeVideo.currentTime;
-      
-      if (timeRemaining <= transitionDuration && timeRemaining > 0) {
+      // If video ended or paused, start transition
+      if (activeVideo.ended || (activeVideo.paused && activeVideo.currentTime > 0)) {
         startTransition();
+        return;
+      }
+      
+      // Check if we need to start transition
+      if (activeVideo.duration && activeVideo.duration > 0) {
+        const timeRemaining = activeVideo.duration - activeVideo.currentTime;
+        
+        if (timeRemaining <= transitionDuration && timeRemaining > 0.1) {
+          startTransition();
+        }
+      }
+      
+      // Ensure active video is playing
+      if (activeVideo.paused && !activeVideo.ended && activeVideo.readyState >= 2) {
+        activeVideo.play().catch(() => {});
       }
     };
 
     const handleVideoEnded = () => {
-      const endedVideo = isVideo1Active ? video1 : video2;
-      
-      if (isTransitioning) {
-        // If we're already transitioning, just reset the video
-        endedVideo.currentTime = 0;
-        return;
-      }
-      
-      // Force transition if video ended without transition starting
-      if (!transitionStarted) {
-        // Immediately start the other video
-        const otherVideo = isVideo1Active ? video2 : video1;
-        otherVideo.currentTime = 0;
-        otherVideo.play().catch(() => {});
-        
-        // Switch active video
-        isVideo1Active = !isVideo1Active;
-        
-        // Reset the ended video
-        endedVideo.currentTime = 0;
-        endedVideo.pause();
-        
-        // Update opacities
-        const newActive = isVideo1Active ? video1 : video2;
-        const newInactive = isVideo1Active ? video2 : video1;
-        newActive.style.opacity = '1';
-        newInactive.style.opacity = '0';
-      }
+      if (isTransitioning) return;
+      startTransition();
     };
 
     // Wait for videos to be ready
     const setupVideos = () => {
       if (video1.readyState >= 2 && video2.readyState >= 2) {
-        video1.addEventListener('timeupdate', handleTimeUpdate);
-        video2.addEventListener('timeupdate', handleTimeUpdate);
         video1.addEventListener('ended', handleVideoEnded);
         video2.addEventListener('ended', handleVideoEnded);
         
+        // Start monitoring
+        checkInterval = window.setInterval(monitorPlayback, 100); // Check every 100ms
+        
         // Ensure video1 starts playing
         if (video1.paused) {
-          video1.play().catch(() => {});
+          video1.play().catch(() => {
+            setTimeout(() => video1.play().catch(() => {}), 100);
+          });
         }
       } else {
         video1.addEventListener('loadedmetadata', setupVideos, { once: true });
@@ -185,8 +186,9 @@ export const Home: React.FC = () => {
     setupVideos();
 
     return () => {
-      video1.removeEventListener('timeupdate', handleTimeUpdate);
-      video2.removeEventListener('timeupdate', handleTimeUpdate);
+      if (checkInterval !== null) {
+        clearInterval(checkInterval);
+      }
       video1.removeEventListener('ended', handleVideoEnded);
       video2.removeEventListener('ended', handleVideoEnded);
     };
