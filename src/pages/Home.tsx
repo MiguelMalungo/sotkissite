@@ -134,14 +134,33 @@ export const Home: React.FC = () => {
     };
 
     const handleVideoEnded = () => {
+      const endedVideo = isVideo1Active ? video1 : video2;
+      
       if (isTransitioning) {
         // If we're already transitioning, just reset the video
-        const endedVideo = isVideo1Active ? video1 : video2;
         endedVideo.currentTime = 0;
         return;
       }
+      
+      // Force transition if video ended without transition starting
       if (!transitionStarted) {
-        startTransition();
+        // Immediately start the other video
+        const otherVideo = isVideo1Active ? video2 : video1;
+        otherVideo.currentTime = 0;
+        otherVideo.play().catch(() => {});
+        
+        // Switch active video
+        isVideo1Active = !isVideo1Active;
+        
+        // Reset the ended video
+        endedVideo.currentTime = 0;
+        endedVideo.pause();
+        
+        // Update opacities
+        const newActive = isVideo1Active ? video1 : video2;
+        const newInactive = isVideo1Active ? video2 : video1;
+        newActive.style.opacity = '1';
+        newInactive.style.opacity = '0';
       }
     };
 
