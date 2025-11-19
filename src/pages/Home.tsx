@@ -5,7 +5,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
 const video1 = new URL('../assets/video1.mp4', import.meta.url).href;
-import bandImage from '../assets/band.webp';
+import heroImage1 from '../assets/1.jpg';
+import heroImage2 from '../assets/2.jpg';
+import heroImage3 from '../assets/3.jpg';
+import heroImage4 from '../assets/4.jpg';
 import logoImage from '../assets/logotipo-sotkon-neg-preto.webp';
 import squareImage from '../assets/square.webp';
 import accessSmImage from '../assets/accesssm.webp';
@@ -23,6 +26,8 @@ export const Home: React.FC = () => {
   const { language } = useLanguage();
   const t = homeTranslations[language];
   const videoRef = useRef<HTMLVideoElement>(null);
+  const heroVideo1Ref = useRef<HTMLVideoElement>(null);
+  const heroVideo2Ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -50,32 +55,132 @@ export const Home: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const video1 = heroVideo1Ref.current;
+    const video2 = heroVideo2Ref.current;
+    if (!video1 || !video2) return;
+
+    let isVideo1Active = true;
+    let isTransitioning = false;
+    const transitionDuration = 2.5; // seconds
+
+    const startTransition = () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const activeVideo = isVideo1Active ? video1 : video2;
+      const inactiveVideo = isVideo1Active ? video2 : video1;
+      
+      // Start the inactive video from the beginning
+      inactiveVideo.currentTime = 0;
+      inactiveVideo.play().catch(() => {});
+      
+      // Set initial opacities
+      activeVideo.style.opacity = '1';
+      inactiveVideo.style.opacity = '0';
+      
+      let startTime = Date.now();
+      
+      const fadeStep = () => {
+        const elapsed = (Date.now() - startTime) / 1000;
+        const progress = Math.min(elapsed / transitionDuration, 1);
+        
+        activeVideo.style.opacity = String(1 - progress);
+        inactiveVideo.style.opacity = String(progress);
+        
+        if (progress < 1) {
+          requestAnimationFrame(fadeStep);
+        } else {
+          // Transition complete
+          activeVideo.pause();
+          activeVideo.currentTime = 0;
+          isVideo1Active = !isVideo1Active;
+          isTransitioning = false;
+        }
+      };
+      
+      requestAnimationFrame(fadeStep);
+    };
+
+    const handleTimeUpdate = () => {
+      if (isTransitioning) return;
+      
+      const activeVideo = isVideo1Active ? video1 : video2;
+      if (!activeVideo.duration) return;
+      
+      const timeRemaining = activeVideo.duration - activeVideo.currentTime;
+      
+      if (timeRemaining <= transitionDuration) {
+        startTransition();
+      }
+    };
+
+    // Wait for videos to be ready
+    const setupVideos = () => {
+      if (video1.readyState >= 2 && video2.readyState >= 2) {
+        video1.addEventListener('timeupdate', handleTimeUpdate);
+        video2.addEventListener('timeupdate', handleTimeUpdate);
+      } else {
+        video1.addEventListener('loadedmetadata', setupVideos, { once: true });
+        video2.addEventListener('loadedmetadata', setupVideos, { once: true });
+      }
+    };
+
+    setupVideos();
+
+    return () => {
+      video1.removeEventListener('timeupdate', handleTimeUpdate);
+      video2.removeEventListener('timeupdate', handleTimeUpdate);
+    };
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="home__hero">
-        <div className="home__hero-scrolling-container">
+        <div className="home__hero-slideshow">
           <img 
-            src={bandImage} 
+            src={heroImage1} 
             alt="" 
-            className="home__hero-scrolling-image"
+            className="home__hero-slide home__hero-slide--1"
           />
           <img 
-            src={bandImage} 
+            src={heroImage2} 
             alt="" 
-            className="home__hero-scrolling-image"
+            className="home__hero-slide home__hero-slide--2"
+          />
+          <img 
+            src={heroImage3} 
+            alt="" 
+            className="home__hero-slide home__hero-slide--3"
+          />
+          <img 
+            src={heroImage4} 
+            alt="" 
+            className="home__hero-slide home__hero-slide--4"
           />
         </div>
         <video 
-          className="home__hero-video" 
+          ref={heroVideo1Ref}
+          className="home__hero-video home__hero-video--1" 
           autoPlay 
-          loop 
           muted 
           playsInline
-          ref={(video) => {
-            if (video) {
-              video.playbackRate = 0.175;
-            }
+          preload="auto"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.playbackRate = 1.0;
+          }}
+        >
+          <source src={animationVideo} type="video/mp4" />
+        </video>
+        <video 
+          ref={heroVideo2Ref}
+          className="home__hero-video home__hero-video--2" 
+          muted 
+          playsInline
+          preload="auto"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.playbackRate = 1.0;
           }}
         >
           <source src={animationVideo} type="video/mp4" />

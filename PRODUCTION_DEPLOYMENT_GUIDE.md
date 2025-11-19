@@ -552,3 +552,4 @@ Then build (`npm run build`) and deploy the `dist/` folder.
 For questions about the SEO implementation, refer to `SEO_OPTIMIZATION_SUMMARY.md`
 
 
+
