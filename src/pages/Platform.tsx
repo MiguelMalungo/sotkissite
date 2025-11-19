@@ -351,7 +351,7 @@ export const Platform: React.FC = () => {
                 })}
               </div>
               <div className="platform__cta-wrapper">
-                <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay" target="_blank" rel="noopener noreferrer">
+                <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay">
                   {t.features.button}
                 </Button>
               </div>
@@ -366,7 +366,7 @@ export const Platform: React.FC = () => {
         <div className="container">
           <div className="platform__access-content">
             <p className="platform__access-text">
-              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform__access-link">miguelmalungo.github.io/sotkis</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
+              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform__access-link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
             </p>
             <button className="platform__access-button" onClick={openVideoModal}>
               <span>{t.access.buttonText}</span>

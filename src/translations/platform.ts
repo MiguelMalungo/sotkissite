@@ -42,7 +42,7 @@ export const platformTranslations = {
           description: "em tempo real de eventuais irregularidades nos equipamentos."
         }
       ],
-      button: "Acesse a Plataforma"
+      button: "Acesse a plataforma"
     },
     access: {
       text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço",
@@ -92,7 +92,7 @@ export const platformTranslations = {
           description: "in real time of any irregularities in the equipment."
         }
       ],
-      button: "Access the Platform"
+      button: "Access the platform"
     },
     access: {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",

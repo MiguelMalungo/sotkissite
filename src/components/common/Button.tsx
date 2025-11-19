@@ -11,8 +11,6 @@ export interface ButtonProps {
   className?: string;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  target?: string;
-  rel?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -24,8 +22,6 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   disabled = false,
   type = 'button',
-  target,
-  rel,
 }) => {
   const baseClassName = `button button--${variant} button--${size} ${className}`;
 
@@ -36,7 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
     
     if (isExternal || isHash) {
       return (
-        <a href={href} className={baseClassName} target={target} rel={rel}>
+        <a href={href} className={baseClassName}>
           {children}
         </a>
       );
