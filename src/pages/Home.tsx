@@ -118,7 +118,7 @@ export const Home: React.FC = () => {
           </video>
           <div className="home__rise-title-overlay">
             <ContainerTextFlip
-              words={["Rise", "Innovate", "Transform", "Elevate"]}
+              words={["Create", "Innovate", "Transform", "Evolve"]}
               interval={3000}
               animationDuration={700}
             />
