@@ -62,8 +62,15 @@ export const Home: React.FC = () => {
 
     let isVideo1Active = true;
     let isTransitioning = false;
-    const transitionDuration = 2.5; // seconds
+    const transitionDuration = 2.5;
     let checkInterval: number | null = null;
+    let animationFrameId: number | null = null;
+
+    // Preload both videos
+    video1.preload = 'auto';
+    video2.preload = 'auto';
+    video1.load();
+    video2.load();
 
     const startTransition = () => {
       if (isTransitioning) return;
@@ -72,114 +79,114 @@ export const Home: React.FC = () => {
       const activeVideo = isVideo1Active ? video1 : video2;
       const inactiveVideo = isVideo1Active ? video2 : video1;
       
-      // Ensure inactive video is ready and reset
+      // Reset and prepare inactive video
       inactiveVideo.currentTime = 0;
       
-      // Start playing the inactive video
-      const playInactive = () => {
-        inactiveVideo.play().catch(() => {
-          // Retry if play fails
-          setTimeout(playInactive, 100);
-        });
-      };
-      
-      if (inactiveVideo.readyState >= 2) {
-        playInactive();
-      } else {
-        inactiveVideo.addEventListener('canplay', playInactive, { once: true });
-        inactiveVideo.load();
-      }
-      
-      // Set initial opacities
-      activeVideo.style.opacity = '1';
-      inactiveVideo.style.opacity = '0';
-      
-      let startTime = Date.now();
-      
-      const fadeStep = () => {
-        if (!isTransitioning) return; // Safety check
+      // Wait for inactive video to be ready before starting transition
+      const beginFade = () => {
+        activeVideo.style.opacity = '1';
+        inactiveVideo.style.opacity = '0';
         
-        const elapsed = (Date.now() - startTime) / 1000;
-        const progress = Math.min(elapsed / transitionDuration, 1);
-        
-        activeVideo.style.opacity = String(1 - progress);
-        inactiveVideo.style.opacity = String(progress);
-        
-        if (progress < 1) {
-          requestAnimationFrame(fadeStep);
-        } else {
-          // Transition complete
-          activeVideo.pause();
-          activeVideo.currentTime = 0;
-          isVideo1Active = !isVideo1Active;
-          
-          // Ensure the new active video is playing
-          const newActiveVideo = isVideo1Active ? video1 : video2;
-          if (newActiveVideo.paused || newActiveVideo.ended) {
-            newActiveVideo.currentTime = 0;
-            newActiveVideo.play().catch(() => {
-              // Retry if play fails
-              setTimeout(() => newActiveVideo.play().catch(() => {}), 100);
-            });
-          }
-          
+        // Start playing inactive video
+        inactiveVideo.play().catch(err => {
+          console.error('Failed to play inactive video:', err);
           isTransitioning = false;
-        }
+        });
+        
+        let startTime = Date.now();
+        
+        const fadeStep = () => {
+          if (!isTransitioning) return;
+          
+          const elapsed = (Date.now() - startTime) / 1000;
+          const progress = Math.min(elapsed / transitionDuration, 1);
+          
+          activeVideo.style.opacity = String(1 - progress);
+          inactiveVideo.style.opacity = String(progress);
+          
+          if (progress < 1) {
+            animationFrameId = requestAnimationFrame(fadeStep);
+          } else {
+            // Transition complete
+            activeVideo.pause();
+            activeVideo.currentTime = 0;
+            isVideo1Active = !isVideo1Active;
+            isTransitioning = false;
+          }
+        };
+        
+        animationFrameId = requestAnimationFrame(fadeStep);
       };
       
-      requestAnimationFrame(fadeStep);
+      // Ensure inactive video is ready
+      if (inactiveVideo.readyState >= 3) { // HAVE_FUTURE_DATA or better
+        beginFade();
+      } else {
+        const onCanPlay = () => {
+          inactiveVideo.removeEventListener('canplay', onCanPlay);
+          beginFade();
+        };
+        inactiveVideo.addEventListener('canplay', onCanPlay);
+        inactiveVideo.load();
+        
+        // Timeout fallback
+        setTimeout(() => {
+          if (isTransitioning) {
+            inactiveVideo.removeEventListener('canplay', onCanPlay);
+            isTransitioning = false;
+            console.warn('Video load timeout');
+          }
+        }, 5000);
+      }
     };
 
-    // Continuous monitoring to ensure video keeps playing
     const monitorPlayback = () => {
       if (isTransitioning) return;
       
       const activeVideo = isVideo1Active ? video1 : video2;
       
-      // If video ended or paused, start transition
-      if (activeVideo.ended || (activeVideo.paused && activeVideo.currentTime > 0)) {
+      // Check if video has valid duration
+      if (!activeVideo.duration || activeVideo.duration === 0) return;
+      
+      const timeRemaining = activeVideo.duration - activeVideo.currentTime;
+      
+      // Start transition before video ends
+      if (timeRemaining <= transitionDuration && timeRemaining > 0.1) {
         startTransition();
         return;
       }
       
-      // Check if we need to start transition
-      if (activeVideo.duration && activeVideo.duration > 0) {
-        const timeRemaining = activeVideo.duration - activeVideo.currentTime;
-        
-        if (timeRemaining <= transitionDuration && timeRemaining > 0.1) {
-          startTransition();
-        }
-      }
-      
       // Ensure active video is playing
       if (activeVideo.paused && !activeVideo.ended && activeVideo.readyState >= 2) {
-        activeVideo.play().catch(() => {});
+        activeVideo.play().catch(err => {
+          console.error('Failed to resume active video:', err);
+        });
       }
     };
 
-    const handleVideoEnded = () => {
-      if (isTransitioning) return;
-      startTransition();
-    };
-
-    // Wait for videos to be ready
     const setupVideos = () => {
-      if (video1.readyState >= 2 && video2.readyState >= 2) {
-        video1.addEventListener('ended', handleVideoEnded);
-        video2.addEventListener('ended', handleVideoEnded);
-        
+      const bothReady = video1.readyState >= 3 && video2.readyState >= 3;
+      
+      if (bothReady) {
         // Start monitoring
-        checkInterval = window.setInterval(monitorPlayback, 100); // Check every 100ms
+        checkInterval = window.setInterval(monitorPlayback, 200);
         
-        // Ensure video1 starts playing
-        if (video1.paused) {
-          video1.play().catch(() => {
-            setTimeout(() => video1.play().catch(() => {}), 100);
-          });
-        }
+        // Start first video
+        video1.play().catch(err => {
+          console.error('Failed to start video1:', err);
+          // Try with muted if autoplay fails
+          video1.muted = true;
+          video1.play().catch(() => {});
+        });
       } else {
-        video1.addEventListener('loadedmetadata', setupVideos, { once: true });
-        video2.addEventListener('loadedmetadata', setupVideos, { once: true });
+        const checkReady = () => {
+          if (video1.readyState >= 3 && video2.readyState >= 3) {
+            setupVideos();
+          }
+        };
+        
+        video1.addEventListener('canplaythrough', checkReady, { once: true });
+        video2.addEventListener('canplaythrough', checkReady, { once: true });
       }
     };
 
@@ -189,8 +196,10 @@ export const Home: React.FC = () => {
       if (checkInterval !== null) {
         clearInterval(checkInterval);
       }
-      video1.removeEventListener('ended', handleVideoEnded);
-      video2.removeEventListener('ended', handleVideoEnded);
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      isTransitioning = false;
     };
   }, []);
 
