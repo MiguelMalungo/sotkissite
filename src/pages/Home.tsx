@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
+import SplitText from '../components/ui/SplitText';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
@@ -256,7 +257,20 @@ export const Home: React.FC = () => {
         </video>
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
-          <h1 className="home__hero-heading">{t.hero.title}</h1>
+          <SplitText
+            text={t.hero.title}
+            className="home__hero-heading"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="left"
+            tag="h1"
+          />
           <div className="home__hero-description">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
