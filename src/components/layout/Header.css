@@ -212,6 +212,17 @@
   color: #ffffff;
 }
 
+.header--scrolled .header__lang-link--desktop {
+  color: #808080;
+  border-color: rgba(128, 128, 128, 0.3);
+}
+
+.header--scrolled .header__lang-link--desktop:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+  border-color: rgba(128, 128, 128, 0.5);
+  color: #808080;
+}
+
 /* Hide mobile language toggle on desktop */
 .header__nav-item--lang-mobile {
   display: none;
