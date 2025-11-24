@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { ContainerTextFlip } from '../components/ui/ContainerTextFlip';
 import SplitText from '../components/ui/SplitText';
+import { NetworkVisualization } from '../components/ui/NetworkVisualization';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
@@ -458,6 +459,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Network Visualization Section */}
+      <NetworkVisualization />
 
       {/* App Download Section */}
       <section className="home__app-section">
