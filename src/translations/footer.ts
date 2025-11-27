@@ -48,6 +48,56 @@ export const footerTranslations = {
       label: "Privacy and Cookie Policy",
       url: "https://sotkon.com/en/privacy-cookie-policy/"
     }
+  },
+  es: {
+    description: "Simple and Efficient.",
+    products: {
+      title: "OUR PRODUCTS",
+      links: [
+        { label: "Platform", path: "/platform" },
+        { label: "Level", path: "/level" },
+        { label: "Access", path: "/access" },
+        { label: "DRS", path: "/drs" },
+        { label: "P(L)ayt", path: "/paylt" },
+        { label: "Trash4Goods", path: "/trash4goods" }
+      ]
+    },
+    newsletter: {
+      title: "Subscribe to our Newsletter",
+      placeholder: "Your e-mail / Your ID number",
+      button: "Send",
+      note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
+    },
+    copyright: "Networked by",
+    privacyPolicy: {
+      label: "Privacy and Cookie Policy",
+      url: "https://sotkon.com/en/privacy-cookie-policy/"
+    }
+  },
+  fr: {
+    description: "Simple and Efficient.",
+    products: {
+      title: "OUR PRODUCTS",
+      links: [
+        { label: "Platform", path: "/platform" },
+        { label: "Level", path: "/level" },
+        { label: "Access", path: "/access" },
+        { label: "DRS", path: "/drs" },
+        { label: "P(L)ayt", path: "/paylt" },
+        { label: "Trash4Goods", path: "/trash4goods" }
+      ]
+    },
+    newsletter: {
+      title: "Subscribe to our Newsletter",
+      placeholder: "Your e-mail / Your ID number",
+      button: "Send",
+      note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
+    },
+    copyright: "Networked by",
+    privacyPolicy: {
+      label: "Privacy and Cookie Policy",
+      url: "https://sotkon.com/en/privacy-cookie-policy/"
+    }
   }
 };
 
