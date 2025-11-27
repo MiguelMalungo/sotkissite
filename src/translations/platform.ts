@@ -3,7 +3,7 @@ export const platformTranslations = {
     intro: {
       title: "Plataforma Digital Sotkis",
       text1: "O SOTKIS (Sotkon Intelligent Systems) consiste numa ferramenta digital que a Sotkon disponibiliza de forma gratuita, tratando-se de um sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
-      text2: "Esta plataforma permite gerir online o seu parque de contentores enterrados Sotkon, onde através dos vários módulos de gestão de resíduos é possível otimizar a eficiência dos recursos alocados, aumentar a rentabilidade da operação, potenciar o aumento das taxas de reciclagem e melhorar a qualidade dos resíduos.",
+      text2: "Esta plataforma permite gerir online o parque de contentores, onde através dos vários módulos de gestão de resíduos é possível otimizar a eficiência dos recursos alocados, aumentar a rentabilidade da operação, potenciar o aumento das taxas de reciclagem e melhorar a qualidade dos resíduos.",
       text3: "A plataforma SOTKIS permite uma gestão integrada e inteligente de todos os processos relacionados com a deposição e recolha de resíduos, proporcionando às entidades responsáveis ferramentas avançadas para otimizar operações e melhorar a sustentabilidade ambiental."
     },
     features: {
@@ -53,7 +53,7 @@ export const platformTranslations = {
     intro: {
       title: "Sotkis Digital Platform",
       text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your Sotkon underground container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
+      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
       text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
     },
     features: {

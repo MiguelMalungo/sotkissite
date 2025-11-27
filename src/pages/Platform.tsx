@@ -18,6 +18,7 @@ import image5M from '../assets/5VerificacaoM.webp';
 import image6M from '../assets/6ImplementacaoM.webp';
 import image7M from '../assets/7GestaoM.webp';
 import image8M from '../assets/8ComunicacaoM.webp';
+import platformHeroImage from '../assets/platformhero.webp';
 const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
 import './Platform.css';
 
@@ -70,16 +71,16 @@ export const Platform: React.FC = () => {
     const checkMobile = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      
+
       // Sync mobile selected index with displayed image index when switching to mobile
       if (mobile) {
         setMobileSelectedIndex(displayedImageIndex);
       }
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, [displayedImageIndex]);
 
@@ -123,7 +124,7 @@ export const Platform: React.FC = () => {
     }
 
     setIsTransitioning(true);
-    
+
     // Update displayed image after transition starts
     transitionTimeoutRef.current = setTimeout(() => {
       setDisplayedImageIndex(animatingIndex);
@@ -150,7 +151,7 @@ export const Platform: React.FC = () => {
     }
 
     setIsTransitioning(true);
-    
+
     // Update displayed image after transition completes
     transitionTimeoutRef.current = setTimeout(() => {
       setDisplayedImageIndex(mobileSelectedIndex);
@@ -169,18 +170,18 @@ export const Platform: React.FC = () => {
   const toggleFeature = (index: number) => {
     // Stop auto-animation when user clicks
     setAutoAnimating(false);
-    
+
     const targetIndex = activeFeature === index ? 0 : index;
     const newActiveFeature = activeFeature === index ? null : index;
-    
+
     // Sync animating index with user selection
     setAnimatingIndex(targetIndex);
-    
+
     if (targetIndex !== displayedImageIndex) {
       // Start transition - update activeFeature first so getNextImage() returns the target
       setActiveFeature(newActiveFeature);
       setIsTransitioning(true);
-      
+
       // Update displayed image after transition completes
       setTimeout(() => {
         // Update the displayed index first
@@ -248,20 +249,30 @@ export const Platform: React.FC = () => {
     }
   };
 
+
   return (
     <div className="platform">
       <section className="platform__hero">
-        <video 
-          className="platform__hero-video" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-        >
-          <source src={videoplatVideo} type="video/mp4" />
-        </video>
+        <img
+          src={platformHeroImage}
+          alt="SOTKIS Platform"
+          className="platform__hero-image"
+        />
         <div className="platform__hero-overlay"></div>
         <div className="platform__hero-content container">
+          <div className="platform__hero-text-content">
+            <p className="platform__hero-text">
+              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform__hero-link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
+            </p>
+            <button className="platform__hero-button" onClick={openVideoModal}>
+              <span>{t.access.buttonText}</span>
+              <div className="platform__hero-button-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -282,100 +293,84 @@ export const Platform: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="platform__screenshot section">
         <div className="container">
           <div className="platform__screenshot-container">
             <div className="platform__screenshot-wrapper">
               <div className="platform__screenshot-images">
-                <img 
-                  src={getCurrentImage()} 
-                  alt="SOTKIS platform dashboard" 
+                <img
+                  src={getCurrentImage()}
+                  alt="SOTKIS platform dashboard"
                   className={`platform__screenshot-image platform__screenshot-image--current ${isTransitioning ? 'platform__screenshot-image--fade-out' : 'platform__screenshot-image--visible'}`}
                 />
-                <img 
-                  src={getNextImage()} 
-                  alt="SOTKIS platform dashboard" 
+                <img
+                  src={getNextImage()}
+                  alt="SOTKIS platform dashboard"
                   className={`platform__screenshot-image platform__screenshot-image--next ${isTransitioning ? 'platform__screenshot-image--fade-in' : 'platform__screenshot-image--hidden'}`}
                 />
               </div>
-              <p className="platform__screenshot-intro-text">
-                {t.features.intro}
-              </p>
-              <div className="platform__screenshot-overlay">
-              {/* Mobile carousel navigation */}
-              <div className="platform__features-mobile-nav">
-                {features.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`platform__features-mobile-nav-dot ${mobileSelectedIndex === index ? 'platform__features-mobile-nav-dot--active' : ''}`}
-                    onClick={() => setMobileSelectedIndex(index)}
-                    aria-label={`View feature ${index + 1}`}
-                  />
-                ))}
-              </div>
-              {/* Mobile content - single feature displayed inline */}
-              <div className="platform__features-mobile-content">
-                <p className="platform__features-mobile-text">
-                  <strong>{features[mobileSelectedIndex].title}</strong> {features[mobileSelectedIndex].description}
+              <div className="platform__intro-container">
+                <p className="platform__screenshot-intro-text">
+                  {t.features.intro}
                 </p>
+                <div className="platform__intro-cta">
+                  <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay">
+                    {t.features.button}
+                  </Button>
+                </div>
               </div>
-              <div className="platform__features-list">
-                {features.map((feature, index) => {
-                  const isActive = activeFeature === index;
-                  const isAnimating = autoAnimating && animatingIndex === index;
-                  const shouldExpand = isActive || isAnimating;
-                  
-                  return (
-                    <div 
-                      key={index} 
-                      className={`platform__feature-item ${isAnimating ? 'platform__feature-item--animating' : ''}`}
-                    >
-                      <div className="platform__feature-row">
-                        <button
-                          className={`platform__feature-dot ${shouldExpand ? 'platform__feature-dot--active' : ''} ${isAnimating ? 'platform__feature-dot--animating' : ''}`}
-                          onClick={() => toggleFeature(index)}
-                          aria-label={`Toggle feature ${index + 1}`}
-                        />
-                        <div className="platform__feature-content">
-                          <h4 className="platform__feature-title">
-                            {feature.title}
-                          </h4>
-                          <p className={`platform__feature-description ${!shouldExpand ? 'platform__feature-description--hidden' : ''} ${isAnimating ? 'platform__feature-description--animating' : ''}`}>
-                            {feature.description}
-                          </p>
+              <div className="platform__screenshot-overlay">
+                {/* Mobile carousel navigation */}
+                <div className="platform__features-mobile-nav">
+                  {features.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`platform__features-mobile-nav-dot ${mobileSelectedIndex === index ? 'platform__features-mobile-nav-dot--active' : ''}`}
+                      onClick={() => setMobileSelectedIndex(index)}
+                      aria-label={`View feature ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                {/* Mobile content - single feature displayed inline */}
+                <div className="platform__features-mobile-content">
+                  <p className="platform__features-mobile-text">
+                    <strong>{features[mobileSelectedIndex].title}</strong> {features[mobileSelectedIndex].description}
+                  </p>
+                </div>
+                <div className="platform__features-list">
+                  {features.map((feature, index) => {
+                    const isActive = activeFeature === index;
+                    const isAnimating = autoAnimating && animatingIndex === index;
+                    const shouldExpand = isActive || isAnimating;
+
+                    return (
+                      <div
+                        key={index}
+                        className={`platform__feature-item ${isAnimating ? 'platform__feature-item--animating' : ''}`}
+                      >
+                        <div className="platform__feature-row">
+                          <button
+                            className={`platform__feature-dot ${shouldExpand ? 'platform__feature-dot--active' : ''} ${isAnimating ? 'platform__feature-dot--animating' : ''}`}
+                            onClick={() => toggleFeature(index)}
+                            aria-label={`Toggle feature ${index + 1}`}
+                          />
+                          <div className="platform__feature-content">
+                            <h4 className="platform__feature-title">
+                              {feature.title}
+                            </h4>
+                            <p className="platform__feature-description">
+                              {feature.description}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="platform__cta-wrapper">
-                <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay">
-                  {t.features.button}
-                </Button>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    );
+                  })}
+                </div>
 
-      {/* Access Section */}
-      <section className="platform__access section">
-        <div className="container">
-          <div className="platform__access-content">
-            <p className="platform__access-text">
-              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform__access-link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
-            </p>
-            <button className="platform__access-button" onClick={openVideoModal}>
-              <span>{t.access.buttonText}</span>
-              <div className="platform__access-button-icon">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </section>
@@ -386,13 +381,14 @@ export const Platform: React.FC = () => {
           <div className="platform__video-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="platform__video-modal-close" onClick={closeVideoModal} aria-label="Close video">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <video 
+            <video
               ref={videoRef}
               className="platform__video-modal-video"
               autoPlay
+              controls
               onClick={togglePlayPause}
             >
               <source src={videoplatVideo} type="video/mp4" />
@@ -401,26 +397,26 @@ export const Platform: React.FC = () => {
               <button onClick={togglePlayPause} aria-label={isVideoPlaying ? "Pause" : "Play"}>
                 {isVideoPlaying ? (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 4H6V20H10V4Z" fill="currentColor"/>
-                    <path d="M18 4H14V20H18V4Z" fill="currentColor"/>
+                    <path d="M10 4H6V20H10V4Z" fill="currentColor" />
+                    <path d="M18 4H14V20H18V4Z" fill="currentColor" />
                   </svg>
                 ) : (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
                   </svg>
                 )}
               </button>
               <button onClick={toggleMute} aria-label={isVideoMuted ? "Unmute" : "Mute"}>
                 {isVideoMuted ? (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M23 9L17 15M17 9L23 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M23 9L17 15M17 9L23 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ) : (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
               </button>

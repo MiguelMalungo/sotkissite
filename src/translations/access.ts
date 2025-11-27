@@ -6,8 +6,9 @@ export const accessTranslations = {
     },
     intro: {
       title: "SOTKIS ACCESS",
-      text1: "A solução perfeita para introduzir o sistema PAYT são os controlos de acesso Sotkon.",
-      text2: "Descubra aqui as várias funcionalidades do nosso módulo!"
+      text1: "Ecossistema composto por um conjunto de funcionalidades avançadas, direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final.",
+      text2: "O SOTKIS ACCESS recolhe informação sempre que uma chave de acesso é utilizada e converte dados sobre quem, quando e que resíduos foram depositados em informações valiosas que conduzem a uma melhoria da qualidade dos resíduos, a um aumento de taxas de reciclagem e à redução do custo global de gestão de resíduos. Conheça aqui como a sua cidade pode beneficiar com o SOTKIS ACCESS.",
+      text3: "Descubra aqui as várias funcionalidades do nosso módulo!"
     },
     carousel: [
       {
@@ -34,8 +35,9 @@ export const accessTranslations = {
     },
     intro: {
       title: "SOTKIS ACCESS",
-      text1: "The perfect solution to introduce the PAYT system is Sotkon access controls.",
-      text2: "Discover here the various functionalities of our module!"
+      text1: "Ecosystem composed of a set of advanced functionalities, aimed at optimizing operational efficiency, supporting municipal decision-making and enhancing the end-user experience.",
+      text2: "SOTKIS ACCESS collects information whenever an access key is used and converts data about who, when and what waste was deposited into valuable information that leads to improved waste quality, increased recycling rates and reduced overall waste management costs. Find out here how your city can benefit from SOTKIS ACCESS.",
+      text3: "Discover here the various functionalities of our module!"
     },
     carousel: [
       {

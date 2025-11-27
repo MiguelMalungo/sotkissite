@@ -7,21 +7,17 @@
   position: relative;
   min-height: 822px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 0 0 3rem 3rem;
   background-color: white !important;
   padding: var(--spacing-5xl) 0;
   padding-top: calc(var(--spacing-5xl) + 90px);
-  padding-bottom: calc(var(--spacing-3xl) / 2);
+  padding-bottom: var(--spacing-3xl);
 }
 
-.paylt__hero-mobile-image {
-  display: none;
-}
-
-.paylt__hero-video {
+.paylt__hero-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 2;
   border-radius: 0 0 3rem 3rem;
 }
@@ -45,18 +41,91 @@
 .paylt__hero-content {
   position: relative;
   z-index: 3;
-  text-align: left;
-  color: white;
+  width: 100%;
   max-width: var(--container-max-width);
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacing-2xl) / 2);
-  margin-top: -50px;
+  margin: 0 auto;
 }
 
-.paylt__hero-cta {
+.paylt__hero-text-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 700px;
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  justify-items: start;
+  align-items: flex-start;
+  color: white;
+  text-align: left;
+}
+
+.paylt__hero-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: calc(((var(--font-size-xl) - 2px) * 2) - 3px);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  max-width: 100%;
+  align-self: start;
+}
+
+.paylt__hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 60px;
+  font-size: calc(var(--font-size-base) - 3px);
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.paylt__hero-button span {
+  padding: 0 20px;
+}
+
+.paylt__hero-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.paylt__hero-button-icon {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #FDE363;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.paylt__hero-button:hover .paylt__hero-button-icon {
+  background-color: #000000;
+  color: white;
+  transform: translateX(4px);
+}
+
+.paylt__hero-button-icon svg {
+  width: 12px;
+  height: 12px;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .paylt__hero-text-content {
+    max-width: 100%;
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
 }
 
 .paylt__hero-cta .button {
@@ -108,55 +177,27 @@
 @media (max-width: 768px) {
   .paylt__hero {
     min-height: 600px;
-    height: 600px;
-    padding: 0;
-    padding-top: 0;
+    padding: var(--spacing-3xl) 0;
+    padding-top: calc(var(--spacing-4xl) + 60px);
     border-radius: 0 0 2rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .paylt__hero-mobile-image {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 0 2rem 2rem;
-  }
-
-  .paylt__hero-video {
-    display: none;
   }
 
   .paylt__hero-overlay {
     border-radius: 0 0 2rem 2rem;
   }
 
+  .paylt__hero-text-content {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
   .paylt__hero-title {
     font-size: var(--font-size-3xl);
-  }
-
-  .paylt__hero-subtitle {
-    font-size: var(--font-size-base);
-  }
-
-  .paylt__hero-content {
     text-align: left;
-    margin-top: 0;
-    padding-left: calc(var(--spacing-md) + 25px);
-    padding-right: var(--spacing-md);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: calc(100% - var(--spacing-md) * 2 - 25px);
   }
 
-  .paylt__hero-title,
-  .paylt__hero-subtitle {
-    margin-left: -55px;
+  .paylt__hero-text {
+    font-size: var(--font-size-base);
   }
 
   .paylt__logo-section {
@@ -286,12 +327,31 @@
     border-radius: 0 0 1.5rem 1.5rem;
   }
 
+  .paylt__hero {
+    min-height: 500px;
+    padding: var(--spacing-2xl) 0;
+    padding-top: calc(var(--spacing-3xl) + 50px);
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .paylt__hero-overlay {
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
   .paylt__hero-title {
     font-size: var(--font-size-2xl);
   }
 
-  .paylt__hero-subtitle {
+  .paylt__hero-text {
     font-size: var(--font-size-sm);
+  }
+
+  .paylt__hero-button {
+    font-size: var(--font-size-sm);
+  }
+
+  .paylt__hero-button span {
+    padding: 0 var(--spacing-md);
   }
 
   .paylt__intro-content h2 {
@@ -580,7 +640,8 @@
 .paylt__video-modal-iframe-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
 }
@@ -593,4 +654,3 @@
   height: 100%;
   border: none;
 }
-

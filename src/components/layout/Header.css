@@ -14,29 +14,14 @@
 .header--scrolled {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.12) 30%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 70%,
-    rgba(255, 255, 255, 0.01) 85%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 80%,
-    rgba(0, 0, 0, 0.5) 90%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 80%,
-    rgba(0, 0, 0, 0.5) 90%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.12) 30%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.04) 70%,
+      rgba(255, 255, 255, 0.01) 85%,
+      rgba(255, 255, 255, 0) 100%);
+  /* Removed mask-image to prevent dropdown clipping */
 }
 
 .header__container {
@@ -56,6 +41,12 @@
   width: auto;
   transition: opacity var(--transition-base);
   margin-top: -10px;
+}
+
+/* Add glow/shadow to the colored logo (SotKis.webp) */
+.header:not(.header--video-hero) .header__logo-image,
+.header--scrolled .header__logo-image {
+  filter: drop-shadow(0 0 8px rgba(253, 227, 99, 0.4));
 }
 
 .header__actions {
@@ -215,12 +206,78 @@
 .header--scrolled .header__lang-link--desktop {
   color: #808080;
   border-color: rgba(128, 128, 128, 0.3);
+  box-shadow: 0 0 10px rgba(253, 227, 99, 0.4);
+  /* Glow effect when scrolled */
 }
 
 .header--scrolled .header__lang-link--desktop:hover {
   background-color: rgba(128, 128, 128, 0.1);
   border-color: rgba(128, 128, 128, 0.5);
   color: #808080;
+}
+
+.header__lang-wrapper {
+  position: relative;
+}
+
+.header__lang-arrow {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.header__lang-arrow--open {
+  transform: rotate(180deg);
+}
+
+.header__lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 80px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header__lang-dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__lang-option {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.header__lang-option:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header__lang-option--active {
+  background-color: #FDE363;
+  font-weight: 700;
+}
+
+.header__lang-option--active:hover {
+  background-color: #FDE363;
 }
 
 /* Hide mobile language toggle on desktop */
@@ -499,6 +556,72 @@
   .header__nav-item--lang-mobile .header__lang-link:hover {
     background-color: transparent;
     color: #1a2530;
+  }
+
+  /* Mobile Language Dropdown - Balloon style expanding left */
+  .header__lang-wrapper-mobile {
+    position: relative;
+    width: 100%;
+  }
+
+  .header__lang-dropdown-mobile {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    /* Start from right side */
+    margin-bottom: 0;
+    margin-left: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: row;
+    /* Horizontal list */
+    gap: 8px;
+    z-index: 1002;
+    pointer-events: none;
+  }
+
+  .header__lang-dropdown-mobile--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(calc(-100% - 60px)) scale(1);
+    /* Move left of the button */
+    pointer-events: auto;
+  }
+
+  /* Balloon arrow pointing right (towards the button) */
+  .header__lang-dropdown-mobile::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+  }
+
+  .header__lang-option-mobile {
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3D4F5C;
+    transition: all 0.2s ease;
+  }
+
+  .header__lang-option-mobile:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
   }
 
   /* Hide desktop language toggle on mobile */

@@ -8,7 +8,8 @@ import './Header.css';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, toggleLanguage: contextToggleLanguage } = useLanguage();
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -43,9 +44,22 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const toggleLanguage = () => {
-    contextToggleLanguage();
+  const toggleLanguageDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsLangDropdownOpen(!isLangDropdownOpen);
   };
+
+  const handleLanguageChange = (lang: 'pt' | 'en' | 'es' | 'fr') => {
+    setLanguage(lang);
+    setIsLangDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => setIsLangDropdownOpen(false);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   const isVideoHeroPage =
     location.pathname === '/' ||
@@ -54,6 +68,8 @@ export const Header: React.FC = () => {
     location.pathname === '/level' ||
     location.pathname === '/access' ||
     location.pathname === '/drs' ||
+    location.pathname === '/paylt' ||
+    location.pathname === '/trash4goods' ||
     location.pathname === '/contact';
 
   // Use white logo initially on pages with hero backgrounds, otherwise use colored logo
@@ -64,9 +80,9 @@ export const Header: React.FC = () => {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''}`}>
       <div className="header__container container">
         <Link to="/" className="header__logo">
-          <img 
+          <img
             src={logoSrc}
-            alt="SOTKIS - Intelligent Systems" 
+            alt="SOTKIS - Intelligent Systems"
             className="header__logo-image"
           />
         </Link>
@@ -84,7 +100,7 @@ export const Header: React.FC = () => {
           >
             {isMobileMenuOpen ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             ) : (
               <>
@@ -100,13 +116,38 @@ export const Header: React.FC = () => {
           {/* Desktop CTA Button - 30px gap from nav */}
           <div className="header__nav-desktop-cta">
             {/* Desktop language toggle - beside CTA button */}
-            <button
-              onClick={toggleLanguage}
-              className="header__lang-link header__lang-link--desktop"
-              aria-label={`Switch to ${language === 'pt' ? 'English' : 'Portuguese'}`}
-            >
-              {language === 'pt' ? 'EN' : 'PT'}
-            </button>
+            <div className="header__lang-wrapper">
+              <button
+                onClick={toggleLanguageDropdown}
+                className={`header__lang-link header__lang-link--desktop ${isLangDropdownOpen ? 'header__lang-link--active' : ''}`}
+                aria-label="Select language"
+                aria-expanded={isLangDropdownOpen}
+              >
+                {language.toUpperCase()}
+                <svg
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`header__lang-arrow ${isLangDropdownOpen ? 'header__lang-arrow--open' : ''}`}
+                >
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <div className={`header__lang-dropdown ${isLangDropdownOpen ? 'header__lang-dropdown--open' : ''}`}>
+                {['pt', 'en', 'es', 'fr'].map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => handleLanguageChange(lang as any)}
+                    className={`header__lang-option ${language === lang ? 'header__lang-option--active' : ''}`}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </div>
             <Link to="/contact" className="header__enquire-btn">
               {language === 'pt' ? 'Fale conosco' : 'Enquire now'}
             </Link>
@@ -118,9 +159,8 @@ export const Header: React.FC = () => {
                 <li key={item.path} className="header__nav-item">
                   <Link
                     to={item.path}
-                    className={`header__nav-link ${
-                      location.pathname === item.path ? 'header__nav-link--active' : ''
-                    }`}
+                    className={`header__nav-link ${location.pathname === item.path ? 'header__nav-link--active' : ''
+                      }`}
                   >
                     {item.label}
                   </Link>
@@ -128,13 +168,36 @@ export const Header: React.FC = () => {
               ))}
               {/* Mobile language toggle - inside menu */}
               <li className="header__nav-item header__nav-item--lang-mobile">
-                <button
-                  onClick={toggleLanguage}
-                  className="header__lang-link"
-                  aria-label={`Switch to ${language === 'pt' ? 'English' : 'Portuguese'}`}
-                >
-                  {language === 'pt' ? 'EN' : 'PT'}
-                </button>
+                <div className="header__lang-wrapper-mobile">
+                  <button
+                    onClick={toggleLanguageDropdown}
+                    className="header__lang-link"
+                    aria-label="Select language"
+                  >
+                    {language.toUpperCase()}
+                    <svg
+                      width="10"
+                      height="6"
+                      viewBox="0 0 10 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`header__lang-arrow ${isLangDropdownOpen ? 'header__lang-arrow--open' : ''}`}
+                    >
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  <div className={`header__lang-dropdown-mobile ${isLangDropdownOpen ? 'header__lang-dropdown-mobile--open' : ''}`}>
+                    {['pt', 'en', 'es', 'fr'].filter(l => l !== language).map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => handleLanguageChange(lang as any)}
+                        className="header__lang-option-mobile"
+                      >
+                        {lang.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </li>
             </ul>
           </nav>

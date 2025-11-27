@@ -15,7 +15,7 @@ export const DRS: React.FC = () => {
   const t = drsTranslations[language];
 
   const images = [drs3Image, drs4Image];
-  
+
   const carouselItems = t.carousel.map((item, index) => ({
     id: String(index + 1),
     title: item.title,
@@ -25,13 +25,13 @@ export const DRS: React.FC = () => {
 
   return (
     <div className="drs">
-      <FullPageHero 
+      <FullPageHero
         title={t.hero.title}
         description={t.hero.description}
         backgroundImage={drsHeroImage}
         showButton={false}
       />
-      
+
       <section className="drs__content section">
         <div className="container">
           <div className="drs__text-content">
@@ -47,22 +47,22 @@ export const DRS: React.FC = () => {
             </p>
           </div>
           <div className="drs__content-image">
-            <img 
-              src={drs1Image} 
-              alt="DRS system" 
+            <img
+              src={drs1Image}
+              alt="DRS system"
               className="drs__image"
             />
           </div>
         </div>
       </section>
-      
+
       <Carousel items={carouselItems} />
-      
+
       <section className="drs__image-section drs__image-section--bottom">
         <div className="container">
-          <img 
-            src={drs2Image} 
-            alt="DRS system" 
+          <img
+            src={drs2Image}
+            alt="DRS system"
             className="drs__image"
           />
         </div>

@@ -7,6 +7,7 @@ import { Access } from './pages/Access';
 import { Level } from './pages/Level';
 import { DRS } from './pages/DRS';
 import { Contact } from './pages/Contact';
+import { Trash4Goods } from './pages/Trash4Goods';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="drs" element={<DRS />} />
         <Route path="paylt" element={<Paylt />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="trash4goods" element={<Trash4Goods />} />
       </Route>
     </Routes>
   );

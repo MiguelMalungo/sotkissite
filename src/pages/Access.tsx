@@ -43,6 +43,11 @@ export const Access: React.FC = () => {
             <p>
               {t.intro.text2}
             </p>
+            {t.intro.text3 && (
+              <p>
+                {t.intro.text3}
+              </p>
+            )}
           </div>
         </div>
       </section>

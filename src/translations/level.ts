@@ -1,5 +1,9 @@
 export const levelTranslations = {
   pt: {
+    hero: {
+      text: "O SOTKIS LEVEL permite monitorizar o nível de enchimento de resíduos em cada contentor enterrado, otimizando rotas e reduzindo custos operacionais.",
+      buttonText: "Play Video"
+    },
     intro: {
       title: "SOTKIS LEVEL",
       description: "O SOTKIS LEVEL é uma solução eficiente e rentável, ao permitir realocar recursos e programar as rotas essenciais de forma estratégica, económica e ambientalmente sustentável! Na sua essência, este módulo inteligente tem como objetivo monitorizar o nível de enchimento de resíduos em cada contentor enterrado. Desta forma, evita-se deslocações desnecessárias e contribui-se para otimizar rotas, economizar combustível e reduzir custos com as equipas e equipamentos."
@@ -16,6 +20,10 @@ export const levelTranslations = {
     }
   },
   en: {
+    hero: {
+      text: "SOTKIS LEVEL allows monitoring the waste fill level in each underground container, optimizing routes and reducing operational costs.",
+      buttonText: "Play Video"
+    },
     intro: {
       title: "SOTKIS LEVEL",
       description: "SOTKIS LEVEL is an efficient and cost-effective solution, allowing resource reallocation and programming essential routes in a strategic, economical and environmentally sustainable way! At its core, this intelligent module aims to monitor the waste fill level in each underground container. This way, unnecessary trips are avoided and it contributes to optimizing routes, saving fuel and reducing costs with teams and equipment."

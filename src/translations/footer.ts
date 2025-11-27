@@ -4,20 +4,12 @@ export const footerTranslations = {
     products: {
       title: "OS NOSSOS PRODUTOS",
       links: [
-        { label: "Os Nossos Sensores", path: "/platform" },
-        { label: "Módulos de Leitura", path: "/paylt" },
-        { label: "Dispositivos IoT/LTE", path: "/access" },
-        { label: "Cartões Inteligentes", path: "/level" },
-        { label: "ADVANTACCESS", path: "/" },
-        { label: "ADVANTAPAY", path: "/" },
-        { label: "Integrações & Gestão", path: "/" }
-      ]
-    },
-    about: {
-      title: "SOBRE",
-      links: [
-        { label: "Carreira", path: "/" },
-        { label: "Parceiros", path: "/" }
+        { label: "Platform", path: "/platform" },
+        { label: "Level", path: "/level" },
+        { label: "Access", path: "/access" },
+        { label: "DRS", path: "/drs" },
+        { label: "P(L)ayt", path: "/paylt" },
+        { label: "Trash4Goods", path: "/trash4goods" }
       ]
     },
     newsletter: {
@@ -26,27 +18,23 @@ export const footerTranslations = {
       button: "Enviar",
       note: "A privacidade é importante para nós, por isso tem a opção de desativar certos tipos de armazenamento que podem não ser necessários para o funcionamento básico do website. Bloquear categorias pode impactar a sua experiência no website."
     },
-    copyright: "Networked by"
+    copyright: "Networked by",
+    privacyPolicy: {
+      label: "Política de Privacidade e Cookies",
+      url: "https://sotkon.com/pt/privacy-policy/"
+    }
   },
   en: {
     description: "Simple and Efficient.",
     products: {
       title: "OUR PRODUCTS",
       links: [
-        { label: "Our Sensors", path: "/platform" },
-        { label: "Reader Modules", path: "/paylt" },
-        { label: "IoT/LTE Devices", path: "/access" },
-        { label: "Smart Cards", path: "/level" },
-        { label: "ADVANTACCESS", path: "/" },
-        { label: "ADVANTAPAY", path: "/" },
-        { label: "Integrations & Management", path: "/" }
-      ]
-    },
-    about: {
-      title: "ABOUT",
-      links: [
-        { label: "Career", path: "/" },
-        { label: "Partners", path: "/" }
+        { label: "Platform", path: "/platform" },
+        { label: "Level", path: "/level" },
+        { label: "Access", path: "/access" },
+        { label: "DRS", path: "/drs" },
+        { label: "P(L)ayt", path: "/paylt" },
+        { label: "Trash4Goods", path: "/trash4goods" }
       ]
     },
     newsletter: {
@@ -55,7 +43,11 @@ export const footerTranslations = {
       button: "Send",
       note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
     },
-    copyright: "Networked by"
+    copyright: "Networked by",
+    privacyPolicy: {
+      label: "Privacy and Cookie Policy",
+      url: "https://sotkon.com/en/privacy-cookie-policy/"
+    }
   }
 };
 
