@@ -1,14 +1,10 @@
 export const contactTranslations = {
   pt: {
-    title: "Contacte-nos",
-    subtitle: "Vamos discutir o seu projeto!",
-    process: {
-      title: "O que acontece a seguir?",
-      steps: [
-        "Um especialista entra em contacto após analisar os seus requisitos",
-        "Se necessário, assinamos um NDA para garantir o mais elevado nível de privacidade",
-        "Enviamos uma proposta de projeto completa com estimativas, cronogramas, CVs, etc."
-      ]
+    title: "Fale connosco",
+    subtitle: "Se precisa de informações sobre os nossos produtos e serviços.",
+    privacy: {
+      policy: "Ao introduzir os meus dados eu aceito a [Política de Privacidade e Cookies da Sotkon](https://sotkon.com/pt/privacy-policy/)",
+      newsletter: "Ao introduzir os meus dados, autorizo a receção da newsletter da Sotkon"
     },
     form: {
       name: {
@@ -32,14 +28,14 @@ export const contactTranslations = {
         placeholder: "Selecione um serviço",
         options: [
           { value: "", label: "Selecione um serviço" },
-          { value: "sensors", label: "Sensores Inteligentes" },
-          { value: "readers", label: "Módulos de Leitura" },
-          { value: "iot", label: "Dispositivos IoT/LTE" },
-          { value: "cards", label: "Cartões Inteligentes" },
-          { value: "access", label: "ADVANTACCESS" },
-          { value: "pay", label: "ADVANTAPAY" },
-          { value: "integration", label: "Integrações & Gestão" },
-          { value: "other", label: "Outro" }
+          { value: "complete_solution", label: "Solução completa Sotkis" },
+          { value: "level", label: "Sotkis Level - Sensores de enchimento" },
+          { value: "access", label: "Sotkis Access - Controlos de acesso" },
+          { value: "access_payt", label: "Sotkis Access - Controlos de acesso PAYT" },
+          { value: "drs", label: "Sotkis DRS – Sistemas de deteção de deposição" },
+          { value: "payt", label: "Solução Sotkis PLAYT" },
+          { value: "t4g", label: "App de Cidadão Trash4Goods" },
+          { value: "integration", label: "Integrações com plataformas externas" }
         ]
       },
       message: {
@@ -54,15 +50,11 @@ export const contactTranslations = {
     }
   },
   en: {
-    title: "Contact us",
-    subtitle: "Let's discuss your project!",
-    process: {
-      title: "What happens next?",
-      steps: [
-        "A specialist contacts you after analyzing your requirements",
-        "If necessary, we sign an NDA to ensure the highest level of privacy",
-        "We send a complete project proposal with estimates, timelines, CVs, etc."
-      ]
+    title: "Talk to us",
+    subtitle: "If you need information about our products and services.",
+    privacy: {
+      policy: "By entering my data I accept Sotkon's [Privacy and Cookie Policy](https://sotkon.com/en/privacy-cookie-policy/)",
+      newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
     },
     form: {
       name: {
@@ -86,14 +78,14 @@ export const contactTranslations = {
         placeholder: "Select a service",
         options: [
           { value: "", label: "Select a service" },
-          { value: "sensors", label: "Smart Sensors" },
-          { value: "readers", label: "Reading Modules" },
-          { value: "iot", label: "IoT/LTE Devices" },
-          { value: "cards", label: "Smart Cards" },
-          { value: "access", label: "ADVANTACCESS" },
-          { value: "pay", label: "ADVANTAPAY" },
-          { value: "integration", label: "Integrations & Management" },
-          { value: "other", label: "Other" }
+          { value: "complete_solution", label: "Sotkis Complete Solution" },
+          { value: "level", label: "Sotkis Level - Fill Sensors" },
+          { value: "access", label: "Sotkis Access - Access Controls" },
+          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
+          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
+          { value: "payt", label: "Sotkis PLAYT Solution" },
+          { value: "t4g", label: "Trash4Goods Citizen App" },
+          { value: "integration", label: "Integrations with external platforms" }
         ]
       },
       message: {
@@ -108,15 +100,11 @@ export const contactTranslations = {
     }
   },
   es: {
-    title: "Contact us",
-    subtitle: "Let's discuss your project!",
-    process: {
-      title: "What happens next?",
-      steps: [
-        "A specialist contacts you after analyzing your requirements",
-        "If necessary, we sign an NDA to ensure the highest level of privacy",
-        "We send a complete project proposal with estimates, timelines, CVs, etc."
-      ]
+    title: "Hable con nosotros",
+    subtitle: "Si necesita información sobre nuestros productos y servicios.",
+    privacy: {
+      policy: "Al introducir mis datos acepto la [Política de Privacidad y Cookies de Sotkon](https://sotkon.com/en/privacy-cookie-policy/)",
+      newsletter: "Al introducir mis datos, autorizo la recepción del boletín de Sotkon"
     },
     form: {
       name: {
@@ -140,14 +128,14 @@ export const contactTranslations = {
         placeholder: "Select a service",
         options: [
           { value: "", label: "Select a service" },
-          { value: "sensors", label: "Smart Sensors" },
-          { value: "readers", label: "Reading Modules" },
-          { value: "iot", label: "IoT/LTE Devices" },
-          { value: "cards", label: "Smart Cards" },
-          { value: "access", label: "ADVANTACCESS" },
-          { value: "pay", label: "ADVANTAPAY" },
-          { value: "integration", label: "Integrations & Management" },
-          { value: "other", label: "Other" }
+          { value: "complete_solution", label: "Sotkis Complete Solution" },
+          { value: "level", label: "Sotkis Level - Fill Sensors" },
+          { value: "access", label: "Sotkis Access - Access Controls" },
+          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
+          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
+          { value: "payt", label: "Sotkis PLAYT Solution" },
+          { value: "t4g", label: "Trash4Goods Citizen App" },
+          { value: "integration", label: "Integrations with external platforms" }
         ]
       },
       message: {
@@ -162,15 +150,11 @@ export const contactTranslations = {
     }
   },
   fr: {
-    title: "Contact us",
-    subtitle: "Let's discuss your project!",
-    process: {
-      title: "What happens next?",
-      steps: [
-        "A specialist contacts you after analyzing your requirements",
-        "If necessary, we sign an NDA to ensure the highest level of privacy",
-        "We send a complete project proposal with estimates, timelines, CVs, etc."
-      ]
+    title: "Parlez-nous",
+    subtitle: "Si vous avez besoin d'informations sur nos produits et services.",
+    privacy: {
+      policy: "En saisissant mes données, j'accepte la [Politique de Confidentialité et Cookies de Sotkon](https://sotkon.com/en/privacy-cookie-policy/)",
+      newsletter: "En saisissant mes données, j'autorise la réception de la newsletter de Sotkon"
     },
     form: {
       name: {
@@ -194,14 +178,14 @@ export const contactTranslations = {
         placeholder: "Select a service",
         options: [
           { value: "", label: "Select a service" },
-          { value: "sensors", label: "Smart Sensors" },
-          { value: "readers", label: "Reading Modules" },
-          { value: "iot", label: "IoT/LTE Devices" },
-          { value: "cards", label: "Smart Cards" },
-          { value: "access", label: "ADVANTACCESS" },
-          { value: "pay", label: "ADVANTAPAY" },
-          { value: "integration", label: "Integrations & Management" },
-          { value: "other", label: "Other" }
+          { value: "complete_solution", label: "Sotkis Complete Solution" },
+          { value: "level", label: "Sotkis Level - Fill Sensors" },
+          { value: "access", label: "Sotkis Access - Access Controls" },
+          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
+          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
+          { value: "payt", label: "Sotkis PLAYT Solution" },
+          { value: "t4g", label: "Trash4Goods Citizen App" },
+          { value: "integration", label: "Integrations with external platforms" }
         ]
       },
       message: {

@@ -14,6 +14,8 @@ export const Contact: React.FC = () => {
     service: '',
     message: '',
     file: null as File | null,
+    privacyPolicy: false,
+    newsletter: false,
   });
 
   // Scroll to top on mount
@@ -24,10 +26,12 @@ export const Contact: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -46,6 +50,22 @@ export const Contact: React.FC = () => {
     console.log('Form submitted:', formData);
   };
 
+  // Helper to render markdown links in privacy text
+  const renderPrivacyText = (text: string) => {
+    const parts = text.split(/\[(.*?)\]\((.*?)\)/g);
+    if (parts.length === 1) return text;
+
+    return (
+      <>
+        {parts[0]}
+        <a href={parts[2]} target="_blank" rel="noopener noreferrer" className="contact__privacy-link">
+          {parts[1]}
+        </a>
+        {parts[3]}
+      </>
+    );
+  };
+
   return (
     <div className="contact">
       <div className="contact__container container">
@@ -55,20 +75,6 @@ export const Contact: React.FC = () => {
             <div className="contact__header">
               <h1 className="contact__title">{t.title}</h1>
               <p className="contact__subtitle">{t.subtitle}</p>
-            </div>
-
-            <div className="contact__info-item contact__info-item--process">
-              <h3 className="contact__info-title">{t.process.title}</h3>
-              <div className="contact__process">
-                {t.process.steps.map((step, index) => (
-                  <div key={index} className="contact__process-step">
-                    <span className="contact__process-number">{index + 1}</span>
-                    <p className="contact__process-text">
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -215,9 +221,39 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
+              <div className="contact__privacy-section">
+                <div className="contact__privacy-option">
+                  <input
+                    type="checkbox"
+                    id="privacyPolicy"
+                    name="privacyPolicy"
+                    checked={formData.privacyPolicy}
+                    onChange={handleChange}
+                    required
+                    className="contact__privacy-checkbox"
+                  />
+                  <label htmlFor="privacyPolicy" className="contact__privacy-label">
+                    {renderPrivacyText(t.privacy.policy)}
+                  </label>
+                </div>
+                <div className="contact__privacy-option">
+                  <input
+                    type="checkbox"
+                    id="newsletter"
+                    name="newsletter"
+                    checked={formData.newsletter}
+                    onChange={handleChange}
+                    className="contact__privacy-checkbox"
+                  />
+                  <label htmlFor="newsletter" className="contact__privacy-label">
+                    {t.privacy.newsletter}
+                  </label>
+                </div>
+              </div>
+
               <div className="contact__form-actions">
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="contact__form-submit"
                   aria-label={t.form.submit}
                 >

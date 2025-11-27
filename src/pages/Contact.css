@@ -320,7 +320,7 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-.contact__form-file-input:focus-visible + .contact__form-file-label {
+.contact__form-file-input:focus-visible+.contact__form-file-label {
   outline: 2px solid #FDE363;
   outline-offset: 2px;
 }
@@ -381,6 +381,78 @@
   background-color: #FDE363;
   transform: none;
   box-shadow: 0 10px 25px rgba(253, 227, 99, 0.3);
+}
+
+
+/* Privacy Section */
+.contact__privacy-section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.contact__privacy-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.contact__privacy-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  margin-top: 3px;
+  transition: all var(--transition-base);
+}
+
+.contact__privacy-checkbox:checked {
+  background-color: #FDE363;
+  border-color: #FDE363;
+}
+
+.contact__privacy-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%232c3e3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.contact__privacy-checkbox:focus-visible {
+  outline: 2px solid #FDE363;
+  outline-offset: 2px;
+}
+
+.contact__privacy-label {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.contact__privacy-link {
+  color: #FDE363;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.contact__privacy-link:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -535,7 +607,7 @@
   }
 
   .contact__title {
-    font-size: clamp(1.75rem, 6vw, 2rem);
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
     margin-bottom: var(--spacing-sm);
   }
 
@@ -564,7 +636,8 @@
   .contact__form-select,
   .contact__form-textarea {
     padding: 10px var(--spacing-md);
-    font-size: 1rem; /* Prevent zoom on iOS */
+    font-size: 1rem;
+    /* Prevent zoom on iOS */
   }
 
   .contact__form-textarea {
@@ -734,4 +807,3 @@
     display: none;
   }
 }
-
