@@ -106,6 +106,114 @@ export const contactTranslations = {
       },
       submit: "Send Message"
     }
+  },
+  es: {
+    title: "Contact us",
+    subtitle: "Let's discuss your project!",
+    process: {
+      title: "What happens next?",
+      steps: [
+        "A specialist contacts you after analyzing your requirements",
+        "If necessary, we sign an NDA to ensure the highest level of privacy",
+        "We send a complete project proposal with estimates, timelines, CVs, etc."
+      ]
+    },
+    form: {
+      name: {
+        label: "Name *",
+        placeholder: "Your name"
+      },
+      email: {
+        label: "Email *",
+        placeholder: "example@email.com"
+      },
+      phone: {
+        label: "Phone",
+        placeholder: "+351 900 000 000"
+      },
+      company: {
+        label: "Company",
+        placeholder: "Company name"
+      },
+      service: {
+        label: "Service of Interest *",
+        placeholder: "Select a service",
+        options: [
+          { value: "", label: "Select a service" },
+          { value: "sensors", label: "Smart Sensors" },
+          { value: "readers", label: "Reading Modules" },
+          { value: "iot", label: "IoT/LTE Devices" },
+          { value: "cards", label: "Smart Cards" },
+          { value: "access", label: "ADVANTACCESS" },
+          { value: "pay", label: "ADVANTAPAY" },
+          { value: "integration", label: "Integrations & Management" },
+          { value: "other", label: "Other" }
+        ]
+      },
+      message: {
+        label: "Message *",
+        placeholder: "Tell us about your project..."
+      },
+      file: {
+        label: "Attach File",
+        button: "Choose File"
+      },
+      submit: "Send Message"
+    }
+  },
+  fr: {
+    title: "Contact us",
+    subtitle: "Let's discuss your project!",
+    process: {
+      title: "What happens next?",
+      steps: [
+        "A specialist contacts you after analyzing your requirements",
+        "If necessary, we sign an NDA to ensure the highest level of privacy",
+        "We send a complete project proposal with estimates, timelines, CVs, etc."
+      ]
+    },
+    form: {
+      name: {
+        label: "Name *",
+        placeholder: "Your name"
+      },
+      email: {
+        label: "Email *",
+        placeholder: "example@email.com"
+      },
+      phone: {
+        label: "Phone",
+        placeholder: "+351 900 000 000"
+      },
+      company: {
+        label: "Company",
+        placeholder: "Company name"
+      },
+      service: {
+        label: "Service of Interest *",
+        placeholder: "Select a service",
+        options: [
+          { value: "", label: "Select a service" },
+          { value: "sensors", label: "Smart Sensors" },
+          { value: "readers", label: "Reading Modules" },
+          { value: "iot", label: "IoT/LTE Devices" },
+          { value: "cards", label: "Smart Cards" },
+          { value: "access", label: "ADVANTACCESS" },
+          { value: "pay", label: "ADVANTAPAY" },
+          { value: "integration", label: "Integrations & Management" },
+          { value: "other", label: "Other" }
+        ]
+      },
+      message: {
+        label: "Message *",
+        placeholder: "Tell us about your project..."
+      },
+      file: {
+        label: "Attach File",
+        button: "Choose File"
+      },
+      submit: "Send Message"
+    }
   }
 };
 

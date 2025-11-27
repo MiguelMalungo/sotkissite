@@ -20,5 +20,27 @@ export const trash4goodsTranslations = {
             title: "What is Trash4Goods?",
             text: "Trash4Goods is an innovative solution that encourages recycling through a reward system."
         }
+    },
+    es: {
+        hero: {
+            title: "Trash4Goods",
+            subtitle: "Value your waste",
+            button: "Watch Video"
+        },
+        intro: {
+            title: "What is Trash4Goods?",
+            text: "Trash4Goods is an innovative solution that encourages recycling through a reward system."
+        }
+    },
+    fr: {
+        hero: {
+            title: "Trash4Goods",
+            subtitle: "Value your waste",
+            button: "Watch Video"
+        },
+        intro: {
+            title: "What is Trash4Goods?",
+            text: "Trash4Goods is an innovative solution that encourages recycling through a reward system."
+        }
     }
 };

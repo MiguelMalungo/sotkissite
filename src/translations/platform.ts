@@ -98,6 +98,106 @@ export const platformTranslations = {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
       buttonText: "Play Video"
     }
+  },
+  es: {
+    intro: {
+      title: "Sotkis Digital Platform",
+      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
+      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
+      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+    },
+    features: {
+      intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
+      items: [
+        {
+          title: "Application",
+          description: "of PAYT tariffs;"
+        },
+        {
+          title: "Information",
+          description: "about container fill levels;"
+        },
+        {
+          title: "Planning",
+          description: "of more efficient collection routes;"
+        },
+        {
+          title: "Access",
+          description: "to deposition frequencies and types of waste deposited;"
+        },
+        {
+          title: "Verification",
+          description: "of locations and installation history;"
+        },
+        {
+          title: "Implementation",
+          description: "of reward systems for correct waste disposal;"
+        },
+        {
+          title: "Management",
+          description: "of information on preventive and/or corrective maintenance operations;"
+        },
+        {
+          title: "Communication",
+          description: "in real time of any irregularities in the equipment."
+        }
+      ],
+      button: "Access the platform"
+    },
+    access: {
+      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
+      buttonText: "Play Video"
+    }
+  },
+  fr: {
+    intro: {
+      title: "Sotkis Digital Platform",
+      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
+      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
+      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+    },
+    features: {
+      intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
+      items: [
+        {
+          title: "Application",
+          description: "of PAYT tariffs;"
+        },
+        {
+          title: "Information",
+          description: "about container fill levels;"
+        },
+        {
+          title: "Planning",
+          description: "of more efficient collection routes;"
+        },
+        {
+          title: "Access",
+          description: "to deposition frequencies and types of waste deposited;"
+        },
+        {
+          title: "Verification",
+          description: "of locations and installation history;"
+        },
+        {
+          title: "Implementation",
+          description: "of reward systems for correct waste disposal;"
+        },
+        {
+          title: "Management",
+          description: "of information on preventive and/or corrective maintenance operations;"
+        },
+        {
+          title: "Communication",
+          description: "in real time of any irregularities in the equipment."
+        }
+      ],
+      button: "Access the platform"
+    },
+    access: {
+      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
+      buttonText: "Play Video"
+    }
   }
 };
 
