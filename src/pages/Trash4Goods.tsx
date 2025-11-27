@@ -80,7 +80,7 @@ export const Trash4Goods: React.FC = () => {
                             </div>
                             <h2 className="trash4goods__app-title">TRASH<span style={{ color: 'black' }}>4</span>GOODS</h2>
                             <p className="trash4goods__app-description">
-                                Recicle, ganhe pontos e troque-os pelos seu premios favotitos
+                                Recicle, ganhe pontos e troque-os pelos seu premios favoritos
                             </p>
                         </div>
                     </div>

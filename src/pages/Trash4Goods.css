@@ -325,7 +325,7 @@
 }
 
 .trash4goods__app-title {
-    font-size: calc((var(--font-size-4xl) - 10px) * 2);
+    font-size: calc(((var(--font-size-4xl) - 10px) * 2) - 5px);
     font-weight: var(--font-weight-bold);
     margin-bottom: calc(var(--spacing-lg) - 20px);
     margin-top: 30px;
@@ -358,4 +358,5 @@
 .trash4goods__app-badge img {
     height: 50px;
     width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
