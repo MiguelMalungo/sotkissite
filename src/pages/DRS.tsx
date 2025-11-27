@@ -42,8 +42,7 @@ export const DRS: React.FC = () => {
         <div className="drs__hero-overlay"></div>
         <div className="drs__hero-content container">
           <div className="drs__hero-text-content">
-            <h2 className="drs__hero-title">{t.hero.title}</h2>
-            <p className="drs__hero-subtitle">{t.hero.description}</p>
+            <h2 className="drs__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h2>
             <button className="drs__hero-button" onClick={openVideoModal}>
               <span>{t.hero.button}</span>
               <div className="drs__hero-button-icon">

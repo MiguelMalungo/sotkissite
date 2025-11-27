@@ -1,8 +1,8 @@
 export const trash4goodsTranslations = {
     pt: {
         hero: {
-            title: "Trash4Goods",
-            subtitle: "Valorize os seus resíduos",
+            title: "Trash4Goods\nValorize os seus resíduos",
+            subtitle: "",
             button: "Ver Vídeo"
         },
         intro: {
@@ -12,8 +12,8 @@ export const trash4goodsTranslations = {
     },
     en: {
         hero: {
-            title: "Trash4Goods",
-            subtitle: "Value your waste",
+            title: "Trash4Goods\nValue your waste",
+            subtitle: "",
             button: "Watch Video"
         },
         intro: {
@@ -23,8 +23,8 @@ export const trash4goodsTranslations = {
     },
     es: {
         hero: {
-            title: "Trash4Goods",
-            subtitle: "Value your waste",
+            title: "Trash4Goods\nValue your waste",
+            subtitle: "",
             button: "Watch Video"
         },
         intro: {
@@ -34,8 +34,8 @@ export const trash4goodsTranslations = {
     },
     fr: {
         hero: {
-            title: "Trash4Goods",
-            subtitle: "Value your waste",
+            title: "Trash4Goods\nValue your waste",
+            subtitle: "",
             button: "Watch Video"
         },
         intro: {

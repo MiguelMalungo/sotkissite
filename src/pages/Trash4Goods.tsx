@@ -32,8 +32,7 @@ export const Trash4Goods: React.FC = () => {
                 <div className="trash4goods__hero-overlay"></div>
                 <div className="trash4goods__hero-content container">
                     <div className="trash4goods__hero-text-content">
-                        <h1 className="trash4goods__hero-title">{t.hero.title}</h1>
-                        <p className="trash4goods__hero-subtitle">{t.hero.subtitle}</p>
+                        <h1 className="trash4goods__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h1>
                         <button className="trash4goods__hero-button" onClick={openVideoModal}>
                             <span>{t.hero.button}</span>
                             <div className="trash4goods__hero-button-icon">

@@ -71,14 +71,7 @@
     align-self: start;
 }
 
-.trash4goods__hero-subtitle {
-    font-size: calc(var(--font-size-xl) - 2px);
-    font-weight: 300;
-    line-height: var(--line-height-relaxed);
-    color: #ffffff;
-    margin: 0;
-    max-width: 700px;
-}
+
 
 .trash4goods__hero-button {
     display: inline-flex;
@@ -256,6 +249,12 @@
 
     .trash4goods__hero-title {
         font-size: var(--font-size-3xl);
+        text-align: left;
+    }
+
+    .trash4goods__intro {
+        padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+        margin-top: 0 !important;
     }
 
     .trash4goods__intro .container {
@@ -291,6 +290,11 @@
 
     .trash4goods__hero-title {
         font-size: var(--font-size-2xl);
+    }
+
+    .trash4goods__intro {
+        padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
+        margin-top: 0 !important;
     }
 }
 

@@ -1,8 +1,8 @@
 export const drsTranslations = {
   pt: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Sistema de Retorno Digital",
+      title: "SOTKIS DRS\nSistema de Retorno Digital",
+      description: "",
       button: "Play Video"
     },
     content: {
@@ -24,8 +24,8 @@ export const drsTranslations = {
   },
   en: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Digital Return System",
+      title: "SOTKIS DRS\nDigital Return System",
+      description: "",
       button: "Play Video"
     },
     content: {
@@ -47,8 +47,8 @@ export const drsTranslations = {
   },
   es: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Digital Return System",
+      title: "SOTKIS DRS\nDigital Return System",
+      description: "",
       button: "Play Video"
     },
     content: {
@@ -70,8 +70,8 @@ export const drsTranslations = {
   },
   fr: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Digital Return System",
+      title: "SOTKIS DRS\nDigital Return System",
+      description: "",
       button: "Play Video"
     },
     content: {

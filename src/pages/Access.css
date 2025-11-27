@@ -192,14 +192,7 @@
   align-self: start;
 }
 
-.access__hero-subtitle {
-  font-size: calc(var(--font-size-xl) - 2px);
-  font-weight: 300;
-  line-height: var(--line-height-relaxed);
-  color: #ffffff;
-  margin: 0;
-  max-width: 700px;
-}
+
 
 .access__hero-button {
   display: inline-flex;
@@ -419,19 +412,12 @@
   height: 100%;
 }
 
-@media (max-width: 768px) {
-  .access__logo-section {
-    padding-top: var(--spacing-xl);
-    margin-bottom: calc(var(--spacing-xl) * -1.2);
-  }
 
-  .access__logo-image {
-    max-width: 120px;
-  }
+@media (max-width: 768px) {
 
   .access__intro {
-    padding-top: 0;
-    padding-bottom: var(--spacing-2xl);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+    margin-top: 0 !important;
   }
 
   .access__intro-content h2 {
@@ -478,7 +464,70 @@
   }
 }
 
+@media (max-width: 768px) {
+  .access__hero {
+    min-height: 600px;
+    padding: var(--spacing-3xl) 0;
+    padding-top: calc(var(--spacing-4xl) + 60px);
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .access__hero-overlay {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .access__hero-text-content {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  .access__hero-title {
+    font-size: var(--font-size-3xl);
+    text-align: left;
+  }
+
+  .access__access {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .access__access-content {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .access__access-text {
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+
+  .access__access-button {
+    min-height: 48px;
+    font-size: var(--font-size-base);
+  }
+}
+
 @media (max-width: 480px) {
+  .access__hero {
+    min-height: 500px;
+    padding: var(--spacing-2xl) 0;
+    padding-top: calc(var(--spacing-3xl) + 50px);
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .access__hero-overlay {
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .access__hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .access__intro {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
+    margin-top: 0 !important;
+  }
+
   .access__logo-image {
     max-width: 100px;
   }

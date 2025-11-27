@@ -1,8 +1,8 @@
 export const accessTranslations = {
   pt: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Controlos de Acesso para deposição de resíduos",
+      title: "SOTKIS Access\nControlos de Acesso para deposição de resíduos",
+      description: "",
       button: "Play Video"
     },
     intro: {
@@ -31,8 +31,8 @@ export const accessTranslations = {
   },
   en: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal",
+      title: "SOTKIS Access\nAccess Controls for waste disposal",
+      description: "",
       button: "Play Video"
     },
     intro: {
@@ -61,8 +61,8 @@ export const accessTranslations = {
   },
   es: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal",
+      title: "SOTKIS Access\nAccess Controls for waste disposal",
+      description: "",
       button: "Play Video"
     },
     intro: {
@@ -91,8 +91,8 @@ export const accessTranslations = {
   },
   fr: {
     hero: {
-      title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal",
+      title: "SOTKIS Access\nAccess Controls for waste disposal",
+      description: "",
       button: "Play Video"
     },
     intro: {

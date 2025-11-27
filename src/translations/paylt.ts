@@ -39,7 +39,7 @@ export const payltTranslations = {
       text: "O SOTKIS PAYT é compatível com os seguintes sistemas:"
     },
     video: {
-      title: "Sotkis – Vídeo Sistemas Inteligentes PAYT",
+      title: "SOTKIS P(L)ayt\nSistema \"Pay Less as you throw\"",
       button: "Play Video"
     }
   },
@@ -83,7 +83,7 @@ export const payltTranslations = {
       text: "SOTKIS PAYT is compatible with the following systems:"
     },
     video: {
-      title: "Sotkis – PAYT Intelligent Systems Video",
+      title: "SOTKIS P(L)ayt\nSystem \"Pay Less as you throw\"",
       button: "Play Video"
     }
   },
@@ -127,7 +127,7 @@ export const payltTranslations = {
       text: "SOTKIS PAYT is compatible with the following systems:"
     },
     video: {
-      title: "Sotkis – PAYT Intelligent Systems Video",
+      title: "SOTKIS P(L)ayt\nSistema \"Pay Less as you throw\"",
       button: "Play Video"
     }
   },
@@ -171,7 +171,7 @@ export const payltTranslations = {
       text: "SOTKIS PAYT is compatible with the following systems:"
     },
     video: {
-      title: "Sotkis – PAYT Intelligent Systems Video",
+      title: "SOTKIS P(L)ayt\nSystème \"Pay Less as you throw\"",
       button: "Play Video"
     }
   }

@@ -60,13 +60,7 @@
   text-align: left;
 }
 
-.level__hero-text {
-  font-size: calc(var(--font-size-xl) - 2px);
-  font-weight: 300;
-  line-height: var(--line-height-relaxed);
-  color: #ffffff !important;
-  margin: 0;
-}
+
 
 .level__hero-button {
   display: inline-flex;
@@ -129,10 +123,14 @@
 }
 
 .level__hero-title {
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-bold);
-  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: calc(((var(--font-size-xl) - 2px) * 2) - 3px);
+  line-height: 1.1;
+  color: #ffffff;
   margin: 0;
+  max-width: 100%;
+  align-self: start;
 }
 
 /* Logo Section */
@@ -362,6 +360,11 @@
     padding-right: var(--spacing-lg);
   }
 
+  .level__hero-title {
+    font-size: var(--font-size-3xl);
+    text-align: left;
+  }
+
   .level__hero-text {
     font-size: var(--font-size-base);
   }
@@ -384,8 +387,8 @@
   }
 
   .level__intro {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+    margin-top: 0 !important;
   }
 
   .level__intro .container {
@@ -514,6 +517,10 @@
     border-radius: 0 0 1.5rem 1.5rem;
   }
 
+  .level__hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
   .level__hero-text {
     font-size: var(--font-size-sm);
   }
@@ -524,6 +531,11 @@
 
   .level__hero-button span {
     padding: 0 var(--spacing-md);
+  }
+
+  .level__intro {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
+    margin-top: 0 !important;
   }
 
   .level__intro-content h2 {

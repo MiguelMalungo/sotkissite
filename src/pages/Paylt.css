@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 2;
   border-radius: 0 0 3rem 3rem;
 }
@@ -214,8 +214,8 @@
   }
 
   .paylt__intro {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+    margin-top: 0 !important;
   }
 
   .paylt__intro-content h2 {
@@ -303,10 +303,9 @@
 @media (max-width: 480px) {
   .paylt__hero {
     min-height: 500px;
-    height: 500px;
-    padding: 0;
+    padding: var(--spacing-2xl) 0;
+    padding-top: calc(var(--spacing-3xl) + 50px);
     border-radius: 0 0 1.5rem 1.5rem;
-    overflow: hidden;
   }
 
   .paylt__hero-mobile-image {
@@ -321,17 +320,6 @@
 
   .paylt__logo-image {
     max-width: 100px;
-  }
-
-  .paylt__hero-overlay {
-    border-radius: 0 0 1.5rem 1.5rem;
-  }
-
-  .paylt__hero {
-    min-height: 500px;
-    padding: var(--spacing-2xl) 0;
-    padding-top: calc(var(--spacing-3xl) + 50px);
-    border-radius: 0 0 1.5rem 1.5rem;
   }
 
   .paylt__hero-overlay {
@@ -360,6 +348,11 @@
 
   .paylt__intro-content p {
     font-size: var(--font-size-sm);
+  }
+
+  .paylt__intro {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
+    margin-top: 0 !important;
   }
 
   .paylt__text-content h2 {
@@ -408,8 +401,9 @@
 /* Intro Section */
 .paylt__intro {
   background-color: white;
-  padding-top: calc(var(--spacing-4xl) * 0.15);
+  padding-top: calc(var(--spacing-4xl) * 0.3);
   padding-bottom: var(--spacing-4xl);
+  margin-top: 0;
 }
 
 .paylt__intro-content {

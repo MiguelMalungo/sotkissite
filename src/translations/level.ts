@@ -1,7 +1,7 @@
 export const levelTranslations = {
   pt: {
     hero: {
-      text: "O SOTKIS LEVEL permite monitorizar o nível de enchimento de resíduos em cada contentor enterrado, otimizando rotas e reduzindo custos operacionais.",
+      title: "SOTKIS Level\nMonitorização de Nível de Enchimento",
       buttonText: "Play Video"
     },
     intro: {
@@ -21,7 +21,7 @@ export const levelTranslations = {
   },
   en: {
     hero: {
-      text: "SOTKIS LEVEL allows monitoring the waste fill level in each underground container, optimizing routes and reducing operational costs.",
+      title: "SOTKIS Level\nFill Level Monitoring",
       buttonText: "Play Video"
     },
     intro: {
@@ -41,7 +41,7 @@ export const levelTranslations = {
   },
   es: {
     hero: {
-      text: "SOTKIS LEVEL allows monitoring the waste fill level in each underground container, optimizing routes and reducing operational costs.",
+      title: "SOTKIS Level\nFill Level Monitoring",
       buttonText: "Play Video"
     },
     intro: {
@@ -61,7 +61,7 @@ export const levelTranslations = {
   },
   fr: {
     hero: {
-      text: "SOTKIS LEVEL allows monitoring the waste fill level in each underground container, optimizing routes and reducing operational costs.",
+      title: "SOTKIS Level\nFill Level Monitoring",
       buttonText: "Play Video"
     },
     intro: {

@@ -42,8 +42,7 @@ export const Access: React.FC = () => {
         <div className="access__hero-overlay"></div>
         <div className="access__hero-content container">
           <div className="access__hero-text-content">
-            <h2 className="access__hero-title">{t.hero.title}</h2>
-            <p className="access__hero-subtitle">{t.hero.description}</p>
+            <h2 className="access__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h2>
             <button className="access__hero-button" onClick={openVideoModal}>
               <span>{t.hero.button}</span>
               <div className="access__hero-button-icon">

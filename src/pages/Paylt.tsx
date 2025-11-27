@@ -44,7 +44,7 @@ export const Paylt: React.FC = () => {
         <div className="paylt__hero-overlay"></div>
         <div className="paylt__hero-content container">
           <div className="paylt__hero-text-content">
-            <h2 className="paylt__hero-title">{t.video.title}</h2>
+            <h2 className="paylt__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.video.title}</h2>
             <button className="paylt__hero-button" onClick={openVideoModal}>
               <span>{t.video.button}</span>
               <div className="paylt__hero-button-icon">
