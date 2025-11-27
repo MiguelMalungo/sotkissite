@@ -257,6 +257,24 @@
     .trash4goods__hero-title {
         font-size: var(--font-size-3xl);
     }
+
+    .trash4goods__intro .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .trash4goods__intro-content h2,
+    .trash4goods__intro-content p {
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+
+    .trash4goods__intro-image {
+        border-radius: 0;
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -285,11 +303,13 @@
     padding: 0;
     margin-top: -30px;
     z-index: 10;
+    background-color: white !important;
 }
 
 .trash4goods__app-hero {
     position: relative;
     width: 100%;
+    background-color: white !important;
 }
 
 .trash4goods__app-background {
@@ -299,6 +319,7 @@
     position: relative;
     z-index: 1;
     object-fit: cover;
+    background-color: white !important;
 }
 
 .trash4goods__app-content {
@@ -328,7 +349,7 @@
     font-size: calc(((var(--font-size-4xl) - 10px) * 2) - 5px);
     font-weight: var(--font-weight-bold);
     margin-bottom: calc(var(--spacing-lg) - 20px);
-    margin-top: 30px;
+    margin-top: 60px;
     color: white;
     white-space: nowrap;
 }
@@ -342,7 +363,7 @@
 
 .trash4goods__app-badges {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: calc(var(--spacing-lg) / 2);
     flex-wrap: wrap;
 }
 
@@ -367,16 +388,16 @@
     }
 
     .trash4goods__app-content {
-        transform: none;
-        padding: var(--spacing-2xl);
-        text-align: center;
-        align-items: center;
+        transform: translate(-20px, 10px);
+        padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0;
+        text-align: left;
+        align-items: flex-start;
         max-width: 100%;
     }
 
     .trash4goods__app-title {
         font-size: var(--font-size-3xl);
-        margin-top: 0;
+        margin-top: 40px;
         white-space: normal;
     }
 
@@ -385,7 +406,11 @@
     }
 
     .trash4goods__app-badges {
-        justify-content: center;
+        justify-content: flex-start;
+    }
+
+    .trash4goods__app-badge img {
+        height: 42.5px;
     }
 
     .trash4goods__app-background {
@@ -395,6 +420,6 @@
     }
 
     .trash4goods__app-overlay {
-        background: rgba(0, 0, 0, 0.4);
+        background: transparent !important;
     }
 }
