@@ -436,6 +436,14 @@
   margin-bottom: 0;
 }
 
+.paylt__intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--spacing-2xl);
+  border-radius: 1.5rem;
+}
+
 /* Content Section */
 .paylt__content {
   background-color: white;

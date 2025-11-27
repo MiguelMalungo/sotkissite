@@ -9,6 +9,7 @@ import contPayltImage from '../assets/cont_paylt.webp';
 import cardImage from '../assets/card.webp';
 import keyImage from '../assets/key.webp';
 import payltTecnoImage from '../assets/paylt_tecno.webp';
+import playtInfoImage from '../assets/playtinfo.webp';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -77,6 +78,11 @@ export const Paylt: React.FC = () => {
                 {t.intro.text5}
               </p>
             )}
+            <img
+              src={playtInfoImage}
+              alt="SOTKIS Paylt Info"
+              className="paylt__intro-image"
+            />
           </div>
         </div>
       </section>
