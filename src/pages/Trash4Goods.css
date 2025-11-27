@@ -14,7 +14,7 @@
     background-color: white !important;
     padding: var(--spacing-5xl) 0;
     padding-top: calc(var(--spacing-5xl) + 90px);
-    padding-bottom: var(--spacing-3xl);
+    padding-bottom: 0;
 }
 
 .trash4goods__hero-image {
@@ -133,7 +133,7 @@
 .trash4goods__intro {
     background-color: white;
     padding-top: calc(var(--spacing-4xl) * 0.15);
-    padding-bottom: var(--spacing-4xl);
+    padding-bottom: 0;
 }
 
 .trash4goods__intro-content {
@@ -154,6 +154,14 @@
     color: var(--color-text-secondary);
     margin: 0;
     margin-bottom: var(--spacing-lg);
+}
+
+.trash4goods__intro-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 0;
+    border-radius: 1.5rem;
 }
 
 /* Video Modal */
@@ -266,4 +274,88 @@
     .trash4goods__hero-title {
         font-size: var(--font-size-2xl);
     }
+}
+
+/* App Section */
+.trash4goods__app-section {
+    position: relative;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    padding: 0;
+    margin-top: -30px;
+    z-index: 10;
+}
+
+.trash4goods__app-hero {
+    position: relative;
+    width: 100%;
+}
+
+.trash4goods__app-background {
+    width: 100vw;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.trash4goods__app-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-2xl) * 0.3);
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+    padding: var(--spacing-5xl) var(--spacing-2xl);
+    transform: translate(-215px, 110px);
+}
+
+.trash4goods__app-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-5xl) var(--spacing-2xl);
+    z-index: 2;
+}
+
+.trash4goods__app-title {
+    font-size: calc((var(--font-size-4xl) - 10px) * 2);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: calc(var(--spacing-lg) - 20px);
+    margin-top: 30px;
+    color: white;
+    white-space: nowrap;
+}
+
+.trash4goods__app-description {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-2xl);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.trash4goods__app-badges {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.trash4goods__app-badge {
+    display: block;
+    transition: transform var(--transition-base);
+}
+
+.trash4goods__app-badge:hover {
+    transform: translateY(-4px);
+}
+
+.trash4goods__app-badge img {
+    height: 50px;
+    width: auto;
 }

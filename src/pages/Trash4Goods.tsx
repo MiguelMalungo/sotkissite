@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trash4goodsTranslations } from '../translations/trash4goods';
 import trash4goodsHeroImage from '../assets/trash4goods.webp';
+import trash4goodsGrafImage from '../assets/trash4goodsgraf.webp';
+import appCidadaoImage from '../assets/appcidadao.webp';
+import appleImage from '../assets/apple.webp';
+import googleImage from '../assets/google.webp';
 import './Trash4Goods.css';
 
 export const Trash4Goods: React.FC = () => {
@@ -47,6 +51,38 @@ export const Trash4Goods: React.FC = () => {
                     <div className="trash4goods__intro-content">
                         <h2>{t.intro.title}</h2>
                         <p>{t.intro.text}</p>
+                        <img
+                            src={trash4goodsGrafImage}
+                            alt="Trash4Goods Info"
+                            className="trash4goods__intro-image"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* App Download Section */}
+            <section className="trash4goods__app-section">
+                <div className="trash4goods__app-hero">
+                    <img
+                        src={appCidadaoImage}
+                        alt="SOTKIS mobile app interface"
+                        className="trash4goods__app-background"
+                    />
+                    <div className="trash4goods__app-overlay">
+                        <div className="trash4goods__app-content">
+                            <div className="trash4goods__app-badges">
+                                <a href="#" className="trash4goods__app-badge">
+                                    <img src={appleImage} alt="Download on App Store" />
+                                </a>
+                                <a href="#" className="trash4goods__app-badge">
+                                    <img src={googleImage} alt="Get it on Google Play" />
+                                </a>
+                            </div>
+                            <h2 className="trash4goods__app-title">TRASH<span style={{ color: 'black' }}>4</span>GOODS</h2>
+                            <p className="trash4goods__app-description">
+                                Recicle, ganhe pontos e troque-os pelos seu premios favotitos
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
