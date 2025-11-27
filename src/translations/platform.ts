@@ -42,7 +42,7 @@ export const platformTranslations = {
           description: "em tempo real de eventuais irregularidades nos equipamentos."
         }
       ],
-      button: "Acesse a plataforma"
+      button: "Aceda à plataforma"
     },
     access: {
       text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço",

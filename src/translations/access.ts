@@ -2,7 +2,8 @@ export const accessTranslations = {
   pt: {
     hero: {
       title: "Sotkon Waste Systems",
-      description: "Controlos de Acesso para deposição de resíduos"
+      description: "Controlos de Acesso para deposição de resíduos",
+      button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",
@@ -13,15 +14,15 @@ export const accessTranslations = {
     carousel: [
       {
         title: "Solução PAYT",
-        description: "Esta é a solução ideal para as cidades que pretendem introduzir um sistema de tarifação PAYT! O módulo do acesso SOTKIS é instalado facilmente em qualquer sistema enterrado Sotkon já existente e permite a recolha e transmissão de dados para a faturação em função do volume de lixo depositado, e de acordo com as exigências locais."
+        description: "O módulo do acesso SOTKIS é instalado facilmente em qualquer sistema enterrado Sotkon e permite a recolha e transmissão de dados para a faturação em função do volume de lixo depositado, e de acordo com as exigências locais."
       },
       {
         title: "Recolha de Dados",
-        description: "Assim, o sistema recolhe informação sempre que um utilizador se identifica no sistema e converte esses dados em informações que são úteis para a definição de políticas municipais e para o aumento da eficiência global na gestão de resíduos."
+        description: "Assim, o sistema recolhe informação sempre que um utilizador se identifica no sistema e converte esses dados em informações que são úteis para a definição de políticas municipais e para o aumento da eficiência global na gestão de resíduos. Os vários relatórios obtidos através das informações armazenadas podem ser visualizados e trabalhados para permitir que a cobrança seja baseada no princípio PAYT, e assim, introduzindo maior equidade na taxação dos resíduos."
       },
       {
         title: "Transferência de Dados",
-        description: "A transferência de dados é feita através de GPRS/GSM/Bluetooth e estes são centralizados e apresentados num portal online gerido pelo município ou pela empresa operadora."
+        description: "Após a utilização, os dados sobre o comportamento do utilizador e das suas frequências de abertura são armazenados no módulo eletrónico. A transferência de dados é depois feita através de GPRS/GSM/Bluetooth e os dados armazenados são transmitidos para a plataforma SOTKIS, permitindo uma comunicação bidirecional, via ligação GSM/SIM ou usando um OBC (computador de bordo) dentro do camião."
       }
     ],
     compatibility: {
@@ -31,7 +32,8 @@ export const accessTranslations = {
   en: {
     hero: {
       title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal"
+      description: "Access Controls for waste disposal",
+      button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",
@@ -60,7 +62,8 @@ export const accessTranslations = {
   es: {
     hero: {
       title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal"
+      description: "Access Controls for waste disposal",
+      button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",
@@ -89,7 +92,8 @@ export const accessTranslations = {
   fr: {
     hero: {
       title: "Sotkon Waste Systems",
-      description: "Access Controls for waste disposal"
+      description: "Access Controls for waste disposal",
+      button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",

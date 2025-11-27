@@ -296,7 +296,7 @@
 }
 
 .level__sensor-image {
-  width: 72%;
+  width: 80%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -387,13 +387,13 @@
     padding-top: var(--spacing-2xl);
     padding-bottom: var(--spacing-2xl);
   }
-  
+
   .level__intro .container {
     max-width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__intro-content {
     padding-left: 0;
     padding-right: 0;
@@ -424,7 +424,7 @@
     padding-top: var(--spacing-2xl);
     padding-bottom: var(--spacing-2xl);
   }
-  
+
   .level__image-section .container {
     max-width: 100%;
     padding-left: var(--container-padding);
@@ -444,13 +444,13 @@
     padding-top: calc(var(--spacing-2xl) + 10px);
     padding-bottom: var(--spacing-2xl);
   }
-  
+
   .level__stages-section .container {
     max-width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__stages-title {
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
@@ -479,7 +479,7 @@
     padding-top: var(--spacing-2xl);
     padding-bottom: var(--spacing-2xl);
   }
-  
+
   .level__content .container {
     max-width: 100%;
     padding-left: var(--container-padding);
@@ -539,12 +539,12 @@
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__intro-content {
     padding-left: 0;
     padding-right: 0;
   }
-  
+
   .level__intro-image {
     border-radius: 1.5rem;
     max-width: 100%;
@@ -563,13 +563,13 @@
   .level__stages-title {
     font-size: var(--font-size-2xl);
   }
-  
+
   .level__stages-section .container {
     max-width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__stages-title {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
@@ -587,7 +587,7 @@
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__sensor-image {
     max-width: 100%;
     width: 100%;
@@ -598,13 +598,13 @@
     font-size: var(--font-size-2xl);
     text-align: left;
   }
-  
+
   .level__content .container {
     max-width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
-  
+
   .level__compatible-title {
     padding-left: 0;
     padding-right: 0;

@@ -18,7 +18,7 @@ export const footerTranslations = {
       button: "Enviar",
       note: "A privacidade é importante para nós, por isso tem a opção de desativar certos tipos de armazenamento que podem não ser necessários para o funcionamento básico do website. Bloquear categorias pode impactar a sua experiência no website."
     },
-    copyright: "Networked by",
+    copyright: "Desenvolvido por",
     privacyPolicy: {
       label: "Política de Privacidade e Cookies",
       url: "https://sotkon.com/pt/privacy-policy/"
@@ -43,7 +43,7 @@ export const footerTranslations = {
       button: "Send",
       note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
     },
-    copyright: "Networked by",
+    copyright: "Developed by",
     privacyPolicy: {
       label: "Privacy and Cookie Policy",
       url: "https://sotkon.com/en/privacy-cookie-policy/"
@@ -68,7 +68,7 @@ export const footerTranslations = {
       button: "Send",
       note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
     },
-    copyright: "Networked by",
+    copyright: "Desarrollado por",
     privacyPolicy: {
       label: "Privacy and Cookie Policy",
       url: "https://sotkon.com/en/privacy-cookie-policy/"
@@ -93,7 +93,7 @@ export const footerTranslations = {
       button: "Send",
       note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
     },
-    copyright: "Networked by",
+    copyright: "Développé par",
     privacyPolicy: {
       label: "Privacy and Cookie Policy",
       url: "https://sotkon.com/en/privacy-cookie-policy/"

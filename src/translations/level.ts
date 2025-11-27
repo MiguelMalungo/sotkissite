@@ -9,7 +9,7 @@ export const levelTranslations = {
       description: "O SOTKIS LEVEL é uma solução eficiente e rentável, ao permitir realocar recursos e programar as rotas essenciais de forma estratégica, económica e ambientalmente sustentável! Na sua essência, este módulo inteligente tem como objetivo monitorizar o nível de enchimento de resíduos em cada contentor enterrado. Desta forma, evita-se deslocações desnecessárias e contribui-se para otimizar rotas, economizar combustível e reduzir custos com as equipas e equipamentos."
     },
     sensor: {
-      title: "Sensor Ultrasónico",
+      title: "Sensor Ultrassónico",
       description: "O SOTKIS Level usa um sensor ultrassónico disponibilizando, no portal online e na app, as informações recolhidas. Num horário predefinido, o sistema envia as informações do nível de enchimento para a plataforma web usando uma comunicação GSM."
     },
     stages: {

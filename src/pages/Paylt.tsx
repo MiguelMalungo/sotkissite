@@ -35,7 +35,7 @@ export const Paylt: React.FC = () => {
   return (
     <div className="paylt">
       <section className="paylt__hero">
-        <img 
+        <img
           src={payltHeroImage}
           alt="SOTKIS Paylt"
           className="paylt__hero-image"
@@ -72,6 +72,11 @@ export const Paylt: React.FC = () => {
             <p>
               {t.intro.text4}
             </p>
+            {t.intro.text5 && (
+              <p>
+                {t.intro.text5}
+              </p>
+            )}
           </div>
         </div>
       </section>

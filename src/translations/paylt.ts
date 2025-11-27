@@ -6,10 +6,11 @@ export const payltTranslations = {
     },
     intro: {
       title: "P(L)ayt",
-      text1: "O PAYT é a abreviatura para \"pay-as-you-throw\", um sistema que prevê que os residentes paguem os resíduos com base na quantidade que produzem. Entende-se como o sistema de pagamento mais justo e deverá, em médio prazo, ser aplicado em todos os países da União Europeia.",
-      text2: "Um sistema PAYT quantifica os resíduos depositados por cada utilizador medindo o seu peso ou o seu volume. Podem ser utilizadas diversas tecnologias na identificação, tanto dos utilizadores como das suas deposições, com objetivos de aplicação de tarifários ou de outras políticas de incentivo à Economia Circular.",
-      text3: "O SOTKIS PAYT fornece as ferramentas necessárias para desenhar e implementar políticas de sucesso que incentivam os utilizadores a uma gestão mais cuidada dos resíduos, com maior separação e melhoria da qualidade dos resíduos para tratamento e revalorização.",
-      text4: "O módulo SOTKIS ACCESS permite controlar e monitorizar o acesso aos contentores de resíduos, garantindo uma gestão eficiente e segura do sistema de deposição."
+      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva que utiliza tecnologia para promover mudanças de comportamento nos cidadãos e reforçar a colaboração entre utilizadores, municípios e empresas.",
+      text2: "Integrando os princípios PAYT (Pay As You Throw), RAYT (Reward As You Throw) e SAYT (Save As You Throw), a plataforma incentiva práticas sustentáveis através de gamificação, sistemas de recompensa e inteligência artificial, contribuindo para a redução de resíduos em aterro e para o aumento das taxas de reciclagem.",
+      text3: "A plataforma agrega software e hardware num ecossistema universal, aplicável a qualquer tipo de contentor e fabricante.",
+      text4: "No software, destaca-se uma infraestrutura tecnológica dinâmica com dashboards interativos, aplicação móvel com acesso Bluetooth e NFC, marketplace integrado e funcionalidades de gamificação. No hardware, integra dispositivos inteligentes instalados em qualquer tipo de contentores para deposição de resíduos, sensores IoT para deteção de diferentes materiais, RFID para recolha porta-a-porta, câmaras com IA para prevenir contaminação e sistemas de controlo de acessos para utilizadores individuais.",
+      text5: "Ao permitir a recolha e análise de dados em tempo real, suportada por algoritmos de inteligência artificial, o Sotkis P(L)AYT aumenta a capacidade de monitorização das autarquias. Esta visibilidade sobre os hábitos dos cidadãos possibilita ajustar estratégias de gestão e desenvolver políticas públicas mais eficazes, alinhadas com as metas ambientais e as necessidades reais da população."
     },
     carousel: [
       {
@@ -52,7 +53,8 @@ export const payltTranslations = {
       text1: "PAYT is the abbreviation for \"pay-as-you-throw\", a system that provides for residents to pay for waste based on the amount they produce. It is understood as the fairest payment system and should, in the medium term, be applied in all European Union countries.",
       text2: "A PAYT system quantifies the waste deposited by each user by measuring its weight or volume. Various technologies can be used to identify both users and their deposits, with the aim of applying tariffs or other policies to encourage the Circular Economy.",
       text3: "SOTKIS PAYT provides the necessary tools to design and implement successful policies that encourage users to manage waste more carefully, with greater separation and improvement of waste quality for treatment and recovery.",
-      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system."
+      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
+      text5: ""
     },
     carousel: [
       {
@@ -95,7 +97,8 @@ export const payltTranslations = {
       text1: "PAYT is the abbreviation for \"pay-as-you-throw\", a system that provides for residents to pay for waste based on the amount they produce. It is understood as the fairest payment system and should, in the medium term, be applied in all European Union countries.",
       text2: "A PAYT system quantifies the waste deposited by each user by measuring its weight or volume. Various technologies can be used to identify both users and their deposits, with the aim of applying tariffs or other policies to encourage the Circular Economy.",
       text3: "SOTKIS PAYT provides the necessary tools to design and implement successful policies that encourage users to manage waste more carefully, with greater separation and improvement of waste quality for treatment and recovery.",
-      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system."
+      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
+      text5: ""
     },
     carousel: [
       {
@@ -138,7 +141,8 @@ export const payltTranslations = {
       text1: "PAYT is the abbreviation for \"pay-as-you-throw\", a system that provides for residents to pay for waste based on the amount they produce. It is understood as the fairest payment system and should, in the medium term, be applied in all European Union countries.",
       text2: "A PAYT system quantifies the waste deposited by each user by measuring its weight or volume. Various technologies can be used to identify both users and their deposits, with the aim of applying tariffs or other policies to encourage the Circular Economy.",
       text3: "SOTKIS PAYT provides the necessary tools to design and implement successful policies that encourage users to manage waste more carefully, with greater separation and improvement of waste quality for treatment and recovery.",
-      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system."
+      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
+      text5: ""
     },
     carousel: [
       {

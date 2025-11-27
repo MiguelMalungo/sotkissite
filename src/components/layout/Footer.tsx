@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © {currentYear} {t.copyright} <a href="https://humanaty.pt" className="footer__link" target="_blank" rel="noopener noreferrer">Humanaty</a>
+            © {currentYear} {t.copyright} <a href="https://sotkon.com" className="footer__link" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 400 }}>SOTKON</a>
           </p>
           <div className="footer__legal">
             <a href={t.privacyPolicy.url} className="footer__link" target="_blank" rel="noopener noreferrer">
