@@ -33,7 +33,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     border-radius: 0 0 3rem 3rem;
 }
@@ -359,4 +359,42 @@
     height: 50px;
     width: auto;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 768px) {
+    .trash4goods__app-section {
+        margin-top: 0;
+    }
+
+    .trash4goods__app-content {
+        transform: none;
+        padding: var(--spacing-2xl);
+        text-align: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .trash4goods__app-title {
+        font-size: var(--font-size-3xl);
+        margin-top: 0;
+        white-space: normal;
+    }
+
+    .trash4goods__app-description {
+        font-size: var(--font-size-base);
+    }
+
+    .trash4goods__app-badges {
+        justify-content: center;
+    }
+
+    .trash4goods__app-background {
+        height: 100%;
+        min-height: 500px;
+        object-position: center;
+    }
+
+    .trash4goods__app-overlay {
+        background: rgba(0, 0, 0, 0.4);
+    }
 }
