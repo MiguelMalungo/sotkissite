@@ -217,8 +217,8 @@
 
 .home__hero-heading {
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: calc(((var(--font-size-xl) - 2px) * 2) - 8px);
+  font-weight: 100;
+  font-size: calc((((var(--font-size-xl) - 2px) * 2) - 3px) * 0.8 - 3px);
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
@@ -238,7 +238,7 @@
   z-index: 6;
   font-size: calc(var(--font-size-xl) - 2px);
   font-weight: 300;
-  line-height: var(--line-height-relaxed);
+  line-height: 1.95;
   color: #ffffff !important;
   max-width: 700px;
   margin: 0;
@@ -379,7 +379,7 @@
 .home__rise-above-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-xl) var(--spacing-3xl);
@@ -540,13 +540,13 @@
   padding: var(--spacing-2xl);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .home__section--paylt .home__section-content {
   max-height: none;
   /* Removed max-height constraint */
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .home__section--access .home__section-content {
@@ -594,6 +594,7 @@
   margin-bottom: var(--spacing-xl);
   font-weight: var(--font-weight-bold);
   align-self: flex-start;
+  text-align: left;
 }
 
 .home__section-content--yellow .home__section-heading {
@@ -610,6 +611,10 @@
 
 .home__section-content--yellow .home__section-text {
   color: var(--color-text-primary);
+}
+
+.home__section-content .button {
+  align-self: flex-end;
 }
 
 .home__section-image {
