@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Carousel } from '../components/ui/Carousel';
+
 import { useLanguage } from '../contexts/LanguageContext';
 import { drsTranslations } from '../translations/drs';
 import drsHeroImage from '../assets/DRS.webp';
-import drs1Image from '../assets/drs1.webp';
 import drs2Image from '../assets/drs2.webp';
-import drs3Image from '../assets/drs3.webp';
-import drs4Image from '../assets/drs4.webp';
+import infograficDRS from '../assets/infograficDRS.webp';
+import infograficDRS2 from '../assets/infograficDRS2.webp';
 import './DRS.css';
 
 export const DRS: React.FC = () => {
@@ -21,15 +20,6 @@ export const DRS: React.FC = () => {
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
   };
-
-  const images = [drs3Image, drs4Image];
-
-  const carouselItems = t.carousel.map((item, index) => ({
-    id: String(index + 1),
-    title: item.title,
-    description: item.description,
-    image: images[index]
-  }));
 
   return (
     <div className="drs">
@@ -69,17 +59,29 @@ export const DRS: React.FC = () => {
               {t.content.text3}
             </p>
           </div>
-          <div className="drs__content-image">
-            <img
-              src={drs1Image}
-              alt="DRS system"
-              className="drs__image"
-            />
-          </div>
+
         </div>
       </section>
 
-      <Carousel items={carouselItems} />
+      <section className="drs__image-section">
+        <div className="container">
+          <img
+            src={infograficDRS2}
+            alt="Infographic DRS 2"
+            className="drs__image"
+          />
+        </div>
+      </section>
+
+      <section className="drs__image-section" style={{ backgroundColor: '#F4FBFC' }}>
+        <div className="container">
+          <img
+            src={infograficDRS}
+            alt="Infographic DRS"
+            className="drs__image"
+          />
+        </div>
+      </section>
 
       <section className="drs__image-section drs__image-section--bottom">
         <div className="container">

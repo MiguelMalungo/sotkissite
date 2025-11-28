@@ -99,20 +99,7 @@
   margin-top: var(--spacing-lg);
 }
 
-/* Round carousel images on Access page */
-.access .carousel__slide {
-  border-radius: 2rem;
-  overflow: hidden;
-}
 
-.access .carousel__slide-image {
-  border-radius: 2rem;
-  overflow: hidden;
-}
-
-.access .carousel__slide-image img {
-  border-radius: inherit !important;
-}
 
 /* Reduce carousel spacing on Access page */
 .access .carousel {
@@ -323,20 +310,20 @@
   margin-top: var(--spacing-lg);
 }
 
-/* Round carousel images on Access page */
-.access .carousel__slide {
-  border-radius: 2rem;
-  overflow: hidden;
+/* Straight corners for main carousel container on Access page */
+.access .carousel {
+  border-radius: 0;
 }
 
-.access .carousel__slide-image {
-  border-radius: 2rem;
-  overflow: hidden;
+.access .carousel__container {
+  border-radius: 0;
 }
 
-.access .carousel__slide-image img {
-  border-radius: inherit !important;
+.access .carousel__wrapper {
+  border-radius: 0;
 }
+
+/* Keep slides rounded as they are */
 
 /* Reduce carousel spacing on Access page */
 .access .carousel {
@@ -447,13 +434,7 @@
     font-size: var(--font-size-base);
   }
 
-  .access .carousel__slide {
-    border-radius: 1.5rem;
-  }
 
-  .access .carousel__slide-image {
-    border-radius: 1.5rem;
-  }
 
   .access .carousel__dots {
     bottom: calc(var(--spacing-sm) / 2);
@@ -552,11 +533,5 @@
     font-size: var(--font-size-sm);
   }
 
-  .access .carousel__slide {
-    border-radius: 1rem;
-  }
 
-  .access .carousel__slide-image {
-    border-radius: 1rem;
-  }
 }
