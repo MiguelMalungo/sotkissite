@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
-import SplitText from '../components/ui/SplitText';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { NetworkVisualization } from '../components/ui/NetworkVisualization';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
@@ -256,19 +257,12 @@ export const Home: React.FC = () => {
         </video>
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
-          <SplitText
+          <AnimatedHeroTitle
             text={t.hero.title}
             className="home__hero-heading"
             delay={100}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="left"
-            tag="h1"
+            as="h1"
+            animateAllLines={true}
           />
           <div className="home__hero-description">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
@@ -290,21 +284,27 @@ export const Home: React.FC = () => {
           </video>
         </div>
         <div className="home__rise-above-content">
-          <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
-          <p className="home__rise-above-text">
-            {language === 'pt' ? (
-              <>
-                <span className="home__rise-above-text--black">A plataforma SOTKIS (Sotkon Intelligent Systems)</span> consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. <span className="home__rise-above-text--black">O portal e a app</span> foram desenhados para otimizar a eficiência dos recursos alocados à gestão de resíduos, aumentando a rentabilidade desta operação.
-              </>
-            ) : (
-              <>
-                <span className="home__rise-above-text--black">The SOTKIS platform (Sotkon Intelligent Systems)</span> is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. <span className="home__rise-above-text--black">The portal and app</span> were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.
-              </>
-            )}
-          </p>
-          <Button href="/platform" variant="primary" size="sm">
-            {t.riseAbove.button}
-          </Button>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+            <p className="home__rise-above-text">
+              {language === 'pt' ? (
+                <>
+                  <span className="home__rise-above-text--black">A plataforma SOTKIS (Sotkon Intelligent Systems)</span> consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. <span className="home__rise-above-text--black">O portal e a app</span> foram desenhados para otimizar a eficiência dos recursos alocados à gestão de resíduos, aumentando a rentabilidade desta operação.
+                </>
+              ) : (
+                <>
+                  <span className="home__rise-above-text--black">The SOTKIS platform (Sotkon Intelligent Systems)</span> is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. <span className="home__rise-above-text--black">The portal and app</span> were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.
+                </>
+              )}
+            </p>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+            <Button href="/platform" variant="primary" size="sm">
+              {t.riseAbove.button}
+            </Button>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -312,22 +312,28 @@ export const Home: React.FC = () => {
       <section className="home__section home__section--level">
         <div className="container">
           <div className="home__section-grid home__section-grid--reverse">
-            <div className="home__section-image">
+            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="home__section-image">
               <div className="home__section-image-placeholder home__section-image-placeholder--contain">
                 <img
                   src={levelSmImage}
                   alt="Level monitoring sensors"
                 />
               </div>
-            </div>
+            </AnimateOnScroll>
             <div className="home__section-content">
-              <h2 className="home__section-heading">{t.level.title}</h2>
-              <p className="home__section-text">
-                {t.level.description}
-              </p>
-              <Button href="/level" variant="primary" size="sm">
-                {t.level.button}
-              </Button>
+              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+                <h2 className="home__section-heading">{t.level.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+                <p className="home__section-text">
+                  {t.level.description}
+                </p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+                <Button href="/level" variant="primary" size="sm">
+                  {t.level.button}
+                </Button>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -338,24 +344,30 @@ export const Home: React.FC = () => {
         <div className="container">
           <div className="home__section-grid">
             <div className="home__section-content">
-              <h2 className="home__section-heading">{t.access.title}</h2>
-              <div className="home__section-text-wrapper">
-                <p className="home__section-text">
-                  {t.access.description}
-                </p>
-              </div>
-              <Button href="/access" variant="primary" size="sm">
-                {t.access.button}
-              </Button>
+              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+                <h2 className="home__section-heading">{t.access.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+                <div className="home__section-text-wrapper">
+                  <p className="home__section-text">
+                    {t.access.description}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+                <Button href="/access" variant="primary" size="sm">
+                  {t.access.button}
+                </Button>
+              </AnimateOnScroll>
             </div>
-            <div className="home__section-image">
+            <AnimateOnScroll animation="fadeSlideRight" delay={0} duration={0.9} className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img
                   src={accessSmImage}
                   alt="Access control system"
                 />
               </div>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -364,22 +376,28 @@ export const Home: React.FC = () => {
       <section className="home__section home__section--drs">
         <div className="container">
           <div className="home__section-grid home__section-grid--reverse">
-            <div className="home__section-image">
+            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="home__section-image">
               <div className="home__section-image-placeholder">
                 <img
                   src={drsSmImage}
                   alt="Deposit return system"
                 />
               </div>
-            </div>
+            </AnimateOnScroll>
             <div className="home__section-content">
-              <h2 className="home__section-heading">{t.drs.title}</h2>
-              <p className="home__section-text">
-                {t.drs.description}
-              </p>
-              <Button href="/drs" variant="primary" size="sm">
-                {t.drs.button}
-              </Button>
+              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+                <h2 className="home__section-heading">{t.drs.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+                <p className="home__section-text">
+                  {t.drs.description}
+                </p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+                <Button href="/drs" variant="primary" size="sm">
+                  {t.drs.button}
+                </Button>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -389,24 +407,30 @@ export const Home: React.FC = () => {
       <section className="home__section home__section--paylt">
         <div className="container">
           <div className="home__section-grid home__section-grid--stacked">
-            <div className="home__section-image">
+            <AnimateOnScroll animation="scaleUp" delay={0} duration={0.9} className="home__section-image">
               <div className="home__section-image-placeholder home__section-image-placeholder--full">
                 <img
                   src={playtSmImage}
                   alt="Paylt solution"
                 />
               </div>
-            </div>
+            </AnimateOnScroll>
             <div className="home__section-content">
-              <h2 className="home__section-heading">{t.paylt.title}</h2>
-              <div className="home__section-text-wrapper">
-                <p className="home__section-text">
-                  {t.paylt.description}
-                </p>
-              </div>
-              <Button href="/paylt" variant="primary" size="sm">
-                {t.paylt.button}
-              </Button>
+              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+                <h2 className="home__section-heading">{t.paylt.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+                <div className="home__section-text-wrapper">
+                  <p className="home__section-text">
+                    {t.paylt.description}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+                <Button href="/paylt" variant="primary" size="sm">
+                  {t.paylt.button}
+                </Button>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -415,22 +439,28 @@ export const Home: React.FC = () => {
       {/* T4G App Section */}
       <section className="home__section home__section--t4g">
         <div className="home__section--t4g-wrapper">
-          <div className="home__section--t4g-image">
+          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1} className="home__section--t4g-image">
             <img
               src={trash4goodsImage}
               alt="Trash4Goods App"
             />
-          </div>
+          </AnimateOnScroll>
           <div className="container">
             <div className="home__section-grid home__section-grid--reverse">
               <div className="home__section-content">
-                <h2 className="home__section-heading">{t.t4g.title}</h2>
-                <p className="home__section-text">
-                  {t.t4g.description}
-                </p>
-                <Button href="#contact" variant="primary" size="sm">
-                  {t.t4g.button}
-                </Button>
+                <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+                  <h2 className="home__section-heading">{t.t4g.title}</h2>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8}>
+                  <p className="home__section-text">
+                    {t.t4g.description}
+                  </p>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8}>
+                  <Button href="#contact" variant="primary" size="sm">
+                    {t.t4g.button}
+                  </Button>
+                </AnimateOnScroll>
               </div>
             </div>
           </div>
@@ -455,18 +485,24 @@ export const Home: React.FC = () => {
           />
           <div className="home__app-overlay">
             <div className="home__app-content">
-              <div className="home__app-badges">
-                <a href="#" className="home__app-badge">
-                  <img src={appleImage} alt="Download on App Store" />
-                </a>
-                <a href="#" className="home__app-badge">
-                  <img src={googleImage} alt="Get it on Google Play" />
-                </a>
-              </div>
-              <h2 className="home__app-title">{t.app.title}</h2>
-              <p className="home__app-description">
-                {t.app.description}
-              </p>
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <div className="home__app-badges">
+                  <a href="#" className="home__app-badge">
+                    <img src={appleImage} alt="Download on App Store" />
+                  </a>
+                  <a href="#" className="home__app-badge">
+                    <img src={googleImage} alt="Get it on Google Play" />
+                  </a>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                <h2 className="home__app-title">{t.app.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                <p className="home__app-description">
+                  {t.app.description}
+                </p>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
