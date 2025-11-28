@@ -30,6 +30,38 @@ export const levelTranslations = {
     compatibility: {
       title: "Compatibility:"
     }
+  },
+  es: {
+    intro: {
+      title: "SOTKIS LEVEL",
+      description: "SOTKIS LEVEL es una solución eficiente y rentable, que permite reasignar recursos y programar rutas esenciales de manera estratégica, económica y ambientalmente sostenible. En su esencia, este módulo inteligente tiene como objetivo monitorear el nivel de llenado de residuos en cada contenedor subterráneo. De esta forma, se evitan viajes innecesarios y se contribuye a optimizar rutas, ahorrar combustible y reducir costos con equipos y personal."
+    },
+    sensor: {
+      title: "Sensor Ultrasónico",
+      description: "SOTKIS Level utiliza un sensor ultrasónico, poniendo la información recopilada a disposición en el portal en línea y la aplicación. En un horario predefinido, el sistema envía la información del nivel de llenado a la plataforma web utilizando comunicación GSM."
+    },
+    stages: {
+      title: "Características Principais"
+    },
+    compatibility: {
+      title: "Compatibilidad:"
+    }
+  },
+  fr: {
+    intro: {
+      title: "SOTKIS LEVEL",
+      description: "SOTKIS LEVEL est une solution efficace et rentable, permettant de réaffecter les ressources et de programmer les itinéraires essentiels de manière stratégique, économique et écologiquement durable ! À la base, ce module intelligent vise à surveiller le niveau de remplissage des déchets dans chaque conteneur enterré. Ainsi, les déplacements inutiles sont évités et cela contribue à optimiser les itinéraires, à économiser du carburant et à réduire les coûts des équipes et des équipements."
+    },
+    sensor: {
+      title: "Capteur Ultrasonique",
+      description: "SOTKIS Level utilise un capteur ultrasonique, rendant les informations collectées disponibles sur le portail en ligne et l'application. À une heure prédéfinie, le système envoie les informations de niveau de remplissage à la plateforme web via une communication GSM."
+    },
+    stages: {
+      title: "Caractéristiques Principales"
+    },
+    compatibility: {
+      title: "Compatibilité :"
+    }
   }
 };
 
