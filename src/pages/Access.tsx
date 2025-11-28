@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel } from '../components/ui/Carousel';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
 import accessHeroImage from '../assets/ACCESS.webp';
@@ -42,7 +44,7 @@ export const Access: React.FC = () => {
         <div className="access__hero-overlay"></div>
         <div className="access__hero-content container">
           <div className="access__hero-text-content">
-            <h2 className="access__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h2>
+            <AnimatedHeroTitle text={t.hero.title} className="access__hero-title" delay={0} />
             <button className="access__hero-button" onClick={openVideoModal}>
               <span>{t.hero.button}</span>
               <div className="access__hero-button-icon">
@@ -58,17 +60,25 @@ export const Access: React.FC = () => {
       <section className="access__intro section">
         <div className="container">
           <div className="access__intro-content">
-            <h2>{t.intro.title}</h2>
-            <p>
-              {t.intro.text1}
-            </p>
-            <p>
-              {t.intro.text2}
-            </p>
-            {t.intro.text3 && (
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.intro.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
               <p>
-                {t.intro.text3}
+                {t.intro.text1}
               </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+              <p>
+                {t.intro.text2}
+              </p>
+            </AnimateOnScroll>
+            {t.intro.text3 && (
+              <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+                <p>
+                  {t.intro.text3}
+                </p>
+              </AnimateOnScroll>
             )}
           </div>
         </div>
@@ -79,8 +89,12 @@ export const Access: React.FC = () => {
       <section className="access__content section">
         <div className="container">
           <div className="access__text-content">
-            <h2>{t.compatibility.title}</h2>
-            <img src={systemsImage} alt="Sistemas de resíduos compatíveis" />
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.compatibility.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
+              <img src={systemsImage} alt="Sistemas de resíduos compatíveis" />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

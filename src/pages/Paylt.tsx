@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel } from '../components/ui/Carousel';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/Beyond Recycling.jpg';
@@ -44,7 +46,7 @@ export const Paylt: React.FC = () => {
         <div className="paylt__hero-overlay"></div>
         <div className="paylt__hero-content container">
           <div className="paylt__hero-text-content">
-            <h2 className="paylt__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.video.title}</h2>
+            <AnimatedHeroTitle text={t.video.title} className="paylt__hero-title" delay={0} />
             <button className="paylt__hero-button" onClick={openVideoModal}>
               <span>{t.video.button}</span>
               <div className="paylt__hero-button-icon">
@@ -60,29 +62,43 @@ export const Paylt: React.FC = () => {
       <section className="paylt__intro section">
         <div className="container">
           <div className="paylt__intro-content">
-            <h2>{t.intro.title}</h2>
-            <p>
-              {t.intro.text1}
-            </p>
-            <p>
-              {t.intro.text2}
-            </p>
-            <p>
-              {t.intro.text3}
-            </p>
-            <p>
-              {t.intro.text4}
-            </p>
-            {t.intro.text5 && (
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.intro.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
               <p>
-                {t.intro.text5}
+                {t.intro.text1}
               </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+              <p>
+                {t.intro.text2}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+              <p>
+                {t.intro.text3}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+              <p>
+                {t.intro.text4}
+              </p>
+            </AnimateOnScroll>
+            {t.intro.text5 && (
+              <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8}>
+                <p>
+                  {t.intro.text5}
+                </p>
+              </AnimateOnScroll>
             )}
-            <img
-              src={playtInfoImage}
-              alt="SOTKIS Paylt Info"
-              className="paylt__intro-image"
-            />
+            <AnimateOnScroll animation="scaleUp" delay={200} duration={1}>
+              <img
+                src={playtInfoImage}
+                alt="SOTKIS Paylt Info"
+                className="paylt__intro-image"
+              />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -92,18 +108,22 @@ export const Paylt: React.FC = () => {
       <section className="paylt__content section">
         <div className="container">
           <div className="paylt__content-grid">
-            <div className="paylt__content-image">
+            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="paylt__content-image">
               <img
                 src={screenImage}
                 alt="Dados obtidos"
                 className="paylt__data-image"
               />
-            </div>
+            </AnimateOnScroll>
             <div className="paylt__text-content">
-              <h2>{t.data.title}</h2>
-              <p>
-                {t.data.description}
-              </p>
+              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+                <h2>{t.data.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+                <p>
+                  {t.data.description}
+                </p>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -112,15 +132,21 @@ export const Paylt: React.FC = () => {
       <section className="paylt__compatibility section">
         <div className="container">
           <div className="paylt__compatibility-content">
-            <h2 className="paylt__compatibility-title">{t.compatibility.title}</h2>
-            <p className="paylt__compatibility-text">
-              {t.compatibility.text}
-            </p>
-            <img
-              src={payltSystemsImage}
-              alt="Sistemas compatíveis"
-              className="paylt__systems-image"
-            />
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="paylt__compatibility-title">{t.compatibility.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p className="paylt__compatibility-text">
+                {t.compatibility.text}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="scaleUp" delay={300} duration={0.9}>
+              <img
+                src={payltSystemsImage}
+                alt="Sistemas compatíveis"
+                className="paylt__systems-image"
+              />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

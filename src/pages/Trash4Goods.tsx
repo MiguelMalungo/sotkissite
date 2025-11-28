@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trash4goodsTranslations } from '../translations/trash4goods';
 import trash4goodsHeroImage from '../assets/trash4goods.webp';
@@ -32,7 +34,7 @@ export const Trash4Goods: React.FC = () => {
                 <div className="trash4goods__hero-overlay"></div>
                 <div className="trash4goods__hero-content container">
                     <div className="trash4goods__hero-text-content">
-                        <h1 className="trash4goods__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h1>
+                        <AnimatedHeroTitle text={t.hero.title} className="trash4goods__hero-title" delay={0} />
                         <button className="trash4goods__hero-button" onClick={openVideoModal}>
                             <span>{t.hero.button}</span>
                             <div className="trash4goods__hero-button-icon">
@@ -48,13 +50,19 @@ export const Trash4Goods: React.FC = () => {
             <section className="trash4goods__intro section">
                 <div className="container">
                     <div className="trash4goods__intro-content">
-                        <h2>{t.intro.title}</h2>
-                        <p>{t.intro.text}</p>
-                        <img
-                            src={trash4goodsGrafImage}
-                            alt="Trash4Goods Info"
-                            className="trash4goods__intro-image"
-                        />
+                        <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                            <h2>{t.intro.title}</h2>
+                        </AnimateOnScroll>
+                        <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                            <p>{t.intro.text}</p>
+                        </AnimateOnScroll>
+                        <AnimateOnScroll animation="scaleUp" delay={300} duration={1}>
+                            <img
+                                src={trash4goodsGrafImage}
+                                alt="Trash4Goods Info"
+                                className="trash4goods__intro-image"
+                            />
+                        </AnimateOnScroll>
                     </div>
                 </div>
             </section>
@@ -69,18 +77,24 @@ export const Trash4Goods: React.FC = () => {
                     />
                     <div className="trash4goods__app-overlay">
                         <div className="trash4goods__app-content">
-                            <div className="trash4goods__app-badges">
-                                <a href="#" className="trash4goods__app-badge">
-                                    <img src={appleImage} alt="Download on App Store" />
-                                </a>
-                                <a href="#" className="trash4goods__app-badge">
-                                    <img src={googleImage} alt="Get it on Google Play" />
-                                </a>
-                            </div>
-                            <h2 className="trash4goods__app-title">TRASH<span style={{ color: 'black' }}>4</span>GOODS</h2>
-                            <p className="trash4goods__app-description">
-                                Recicle, ganhe pontos e troque-os pelos seu premios favoritos
-                            </p>
+                            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                                <div className="trash4goods__app-badges">
+                                    <a href="#" className="trash4goods__app-badge">
+                                        <img src={appleImage} alt="Download on App Store" />
+                                    </a>
+                                    <a href="#" className="trash4goods__app-badge">
+                                        <img src={googleImage} alt="Get it on Google Play" />
+                                    </a>
+                                </div>
+                            </AnimateOnScroll>
+                            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                                <h2 className="trash4goods__app-title">TRASH<span style={{ color: 'black' }}>4</span>GOODS</h2>
+                            </AnimateOnScroll>
+                            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                                <p className="trash4goods__app-description">
+                                    Recicle, ganhe pontos e troque-os pelos seu premios favoritos
+                                </p>
+                            </AnimateOnScroll>
                         </div>
                     </div>
                 </div>

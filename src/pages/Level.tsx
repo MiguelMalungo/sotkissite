@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
@@ -61,11 +63,9 @@ export const Level: React.FC = () => {
         <div className="level__hero-overlay"></div>
         <div className="level__hero-content container">
           <div className="level__hero-text-content">
-            <p className="level__hero-text">
-              {t.hero.text}
-            </p>
+            <AnimatedHeroTitle text={t.hero.title} className="level__hero-title" delay={0} />
             <button className="level__hero-button" onClick={openVideoModal}>
-              <span>{t.hero.buttonText}</span>
+              <span>{t.hero.button}</span>
               <div className="level__hero-button-icon">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -79,22 +79,30 @@ export const Level: React.FC = () => {
       <section className="level__intro section">
         <div className="container">
           <div className="level__intro-content">
-            <h2>{t.intro.title}</h2>
-            <p>
-              {t.intro.description}
-            </p>
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.intro.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                {t.intro.description}
+              </p>
+            </AnimateOnScroll>
           </div>
           <div className="level__intro-images">
-            <img
-              src={levelPhotoImage}
-              alt="Level photo"
-              className="level__intro-image level__intro-image--left"
-            />
-            <img
-              src={levelSondaImage}
-              alt="Level SondaREEN"
-              className="level__intro-image level__intro-image--right"
-            />
+            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9}>
+              <img
+                src={levelPhotoImage}
+                alt="Level photo"
+                className="level__intro-image level__intro-image--left"
+              />
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideRight" delay={200} duration={0.9}>
+              <img
+                src={levelSondaImage}
+                alt="Level SondaREEN"
+                className="level__intro-image level__intro-image--right"
+              />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -102,43 +110,57 @@ export const Level: React.FC = () => {
       <section className="level__sensor-section section">
         <div className="container">
           <div className="level__sensor-content">
-            <h2>{t.sensor.title}</h2>
-            <p>
-              {t.sensor.description}
-            </p>
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.sensor.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                {t.sensor.description}
+              </p>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
       <section className="level__image-section">
         <div className="container">
-          <img
-            src={sensorImage}
-            alt="Sensor"
-            className="level__sensor-image"
-          />
+          <AnimateOnScroll animation="scaleUp" delay={0} duration={1}>
+            <img
+              src={sensorImage}
+              alt="Sensor"
+              className="level__sensor-image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
       <section className="level__stages-section">
         <div className="container">
-          <h2 className="level__stages-title">{t.stages.title}</h2>
-          <img
-            src={infographicImage}
-            alt="Infographic"
-            className="level__infographic-image"
-          />
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="level__stages-title">{t.stages.title}</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
+            <img
+              src={infographicImage}
+              alt="Infographic"
+              className="level__infographic-image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
       <section className="level__content section">
         <div className="container">
-          <h2 className="level__compatible-title">{t.compatibility.title}</h2>
-          <img
-            src={levelCompativelImage}
-            alt="Sistemas de resíduos compatíveis"
-            className="level__compatible-image"
-          />
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="level__compatible-title">{t.compatibility.title}</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
+            <img
+              src={levelCompativelImage}
+              alt="Sistemas de resíduos compatíveis"
+              className="level__compatible-image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 

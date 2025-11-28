@@ -171,7 +171,7 @@
 .access__hero-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: calc(((var(--font-size-xl) - 2px) * 2) - 3px);
+  font-size: calc((((var(--font-size-xl) - 2px) * 2) - 3px) * 0.8);
   line-height: 1.1;
   color: #ffffff;
   margin: 0;

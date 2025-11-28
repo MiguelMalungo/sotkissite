@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/common/Button';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import image1 from '../assets/1.webp';
@@ -280,16 +281,24 @@ export const Platform: React.FC = () => {
       <section className="platform__intro section">
         <div className="container">
           <div className="platform__intro-content">
-            <h2 className="platform__intro-title">{t.intro.title}</h2>
-            <p className="platform__intro-text">
-              {t.intro.text1}
-            </p>
-            <p className="platform__intro-text">
-              {t.intro.text2}
-            </p>
-            <p className="platform__intro-text">
-              {t.intro.text3}
-            </p>
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="platform__intro-title">{t.intro.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p className="platform__intro-text">
+                {t.intro.text1}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+              <p className="platform__intro-text">
+                {t.intro.text2}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+              <p className="platform__intro-text">
+                {t.intro.text3}
+              </p>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

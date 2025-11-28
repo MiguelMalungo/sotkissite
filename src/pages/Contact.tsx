@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { contactTranslations } from '../translations/contact';
 import './Contact.css';
@@ -73,15 +74,20 @@ export const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="contact__info">
             <div className="contact__header">
-              <h1 className="contact__title">{t.title}</h1>
-              <p className="contact__subtitle">{t.subtitle}</p>
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <h1 className="contact__title">{t.title}</h1>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                <p className="contact__subtitle">{t.subtitle}</p>
+              </AnimateOnScroll>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="contact__form-wrapper">
-            <form className="contact__form" onSubmit={handleSubmit}>
-              <div className="contact__form-group">
+          <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.9}>
+            <div className="contact__form-wrapper">
+              <form className="contact__form" onSubmit={handleSubmit}>
+                <div className="contact__form-group">
                 <label htmlFor="name" className="contact__form-label">
                   {t.form.name.label}
                 </label>
@@ -261,7 +267,8 @@ export const Contact: React.FC = () => {
                 </button>
               </div>
             </form>
-          </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </div>

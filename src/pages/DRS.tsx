@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { drsTranslations } from '../translations/drs';
 import drsHeroImage from '../assets/DRS.webp';
@@ -32,7 +33,7 @@ export const DRS: React.FC = () => {
         <div className="drs__hero-overlay"></div>
         <div className="drs__hero-content container">
           <div className="drs__hero-text-content">
-            <h2 className="drs__hero-title" style={{ whiteSpace: 'pre-line' }}>{t.hero.title}</h2>
+            <AnimatedHeroTitle text={t.hero.title} className="drs__hero-title" delay={0} />
             <button className="drs__hero-button" onClick={openVideoModal}>
               <span>{t.hero.button}</span>
               <div className="drs__hero-button-icon">
@@ -48,16 +49,24 @@ export const DRS: React.FC = () => {
       <section className="drs__content section">
         <div className="container">
           <div className="drs__text-content">
-            <h2>{t.content.title}</h2>
-            <p>
-              {t.content.text1}
-            </p>
-            <p>
-              {t.content.text2}
-            </p>
-            <p>
-              {t.content.text3}
-            </p>
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>{t.content.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                {t.content.text1}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+              <p>
+                {t.content.text2}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+              <p>
+                {t.content.text3}
+              </p>
+            </AnimateOnScroll>
           </div>
 
         </div>
@@ -65,31 +74,37 @@ export const DRS: React.FC = () => {
 
       <section className="drs__image-section">
         <div className="container">
-          <img
-            src={infograficDRS2}
-            alt="Infographic DRS 2"
-            className="drs__image"
-          />
+          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1}>
+            <img
+              src={infograficDRS2}
+              alt="Infographic DRS 2"
+              className="drs__image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
       <section className="drs__image-section" style={{ backgroundColor: '#F4FBFC' }}>
         <div className="container">
-          <img
-            src={infograficDRS}
-            alt="Infographic DRS"
-            className="drs__image"
-          />
+          <AnimateOnScroll animation="scaleUp" delay={0} duration={1}>
+            <img
+              src={infograficDRS}
+              alt="Infographic DRS"
+              className="drs__image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
       <section className="drs__image-section drs__image-section--bottom">
         <div className="container">
-          <img
-            src={drs2Image}
-            alt="DRS system"
-            className="drs__image"
-          />
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.9}>
+            <img
+              src={drs2Image}
+              alt="DRS system"
+              className="drs__image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 

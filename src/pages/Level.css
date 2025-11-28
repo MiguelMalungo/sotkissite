@@ -60,12 +60,15 @@
   text-align: left;
 }
 
-.level__hero-text {
-  font-size: calc(var(--font-size-xl) - 2px);
-  font-weight: 300;
-  line-height: var(--line-height-relaxed);
-  color: #ffffff !important;
+.level__hero-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: calc((((var(--font-size-xl) - 2px) * 2) - 3px) * 0.8);
+  line-height: 1.1;
+  color: #ffffff;
   margin: 0;
+  max-width: 100%;
+  align-self: start;
 }
 
 .level__hero-button {
@@ -128,12 +131,7 @@
   font-size: calc(var(--font-size-base) - 3px);
 }
 
-.level__hero-title {
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-bold);
-  color: white;
-  margin: 0;
-}
+
 
 /* Logo Section */
 .level__logo-section {
@@ -371,13 +369,12 @@
     padding-right: var(--spacing-lg);
   }
 
-  .level__hero-text {
-    font-size: var(--font-size-base);
+  .level__hero-title {
+    font-size: var(--font-size-3xl);
+    text-align: left;
   }
 
-  .level__hero-title {
-    font-size: var(--font-size-4xl);
-  }
+
 
   .level__logo-section {
     padding-top: var(--spacing-xl);
@@ -524,8 +521,8 @@
     border-radius: 0 0 1.5rem 1.5rem;
   }
 
-  .level__hero-text {
-    font-size: var(--font-size-sm);
+  .level__hero-title {
+    font-size: var(--font-size-2xl);
   }
 
   .level__hero-button {
