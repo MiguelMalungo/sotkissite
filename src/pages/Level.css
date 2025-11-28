@@ -393,8 +393,8 @@
   }
 
   .level__intro {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+    margin-top: 0 !important;
   }
 
   .level__intro .container {
@@ -451,7 +451,7 @@
 
   .level__stages-section {
     padding-top: calc(var(--spacing-2xl) + 10px);
-    padding-bottom: var(--spacing-2xl);
+    padding-bottom: 0;
   }
 
   .level__stages-section .container {
@@ -464,6 +464,7 @@
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
     font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-xl);
   }
 
   .level__stages-grid {
@@ -485,7 +486,7 @@
   }
 
   .level__content {
-    padding-top: var(--spacing-2xl);
+    padding-top: 0;
     padding-bottom: var(--spacing-2xl);
   }
 
@@ -533,6 +534,11 @@
 
   .level__hero-button span {
     padding: 0 var(--spacing-md);
+  }
+
+  .level__intro {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
+    margin-top: 0 !important;
   }
 
   .level__intro-content h2 {

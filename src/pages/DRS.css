@@ -317,6 +317,10 @@
     padding: var(--spacing-2xl) 0;
   }
 
+  .drs__content+.drs__image-section {
+    padding-top: var(--spacing-sm);
+  }
+
   .drs__image {
     width: 90%;
     border-radius: 1.5rem;
@@ -340,8 +344,12 @@
   }
 
   .drs__content {
-    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
+    padding: var(--spacing-sm) 0 var(--spacing-2xl) !important;
     margin-top: 0 !important;
+  }
+
+  .drs__text-content {
+    margin-bottom: var(--spacing-xl);
   }
 
   .drs__content-image .drs__image {
