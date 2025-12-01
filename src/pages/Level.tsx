@@ -89,18 +89,18 @@ export const Level: React.FC = () => {
             </AnimateOnScroll>
           </div>
           <div className="level__intro-images">
-            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9}>
+            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="level__intro-wrapper--left">
               <img
                 src={levelPhotoImage}
                 alt="Level photo"
-                className="level__intro-image level__intro-image--left"
+                className="level__intro-image"
               />
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideRight" delay={200} duration={0.9}>
+            <AnimateOnScroll animation="fadeSlideRight" delay={200} duration={0.9} className="level__intro-wrapper--right">
               <img
                 src={levelSondaImage}
                 alt="Level SondaREEN"
-                className="level__intro-image level__intro-image--right"
+                className="level__intro-image"
               />
             </AnimateOnScroll>
           </div>

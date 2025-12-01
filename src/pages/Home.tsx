@@ -300,7 +300,7 @@ export const Home: React.FC = () => {
               )}
             </p>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+          <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
             <Button href="/platform" variant="primary" size="sm">
               {t.riseAbove.button}
             </Button>
@@ -329,7 +329,7 @@ export const Home: React.FC = () => {
                   {t.level.description}
                 </p>
               </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
                 <Button href="/level" variant="primary" size="sm">
                   {t.level.button}
                 </Button>
@@ -354,7 +354,7 @@ export const Home: React.FC = () => {
                   </p>
                 </div>
               </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
                 <Button href="/access" variant="primary" size="sm">
                   {t.access.button}
                 </Button>
@@ -393,7 +393,7 @@ export const Home: React.FC = () => {
                   {t.drs.description}
                 </p>
               </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
                 <Button href="/drs" variant="primary" size="sm">
                   {t.drs.button}
                 </Button>
@@ -426,7 +426,7 @@ export const Home: React.FC = () => {
                   </p>
                 </div>
               </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
                 <Button href="/paylt" variant="primary" size="sm">
                   {t.paylt.button}
                 </Button>
@@ -456,7 +456,7 @@ export const Home: React.FC = () => {
                     {t.t4g.description}
                   </p>
                 </AnimateOnScroll>
-                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8}>
+                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
                   <Button href="#contact" variant="primary" size="sm">
                     {t.t4g.button}
                   </Button>

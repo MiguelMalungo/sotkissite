@@ -9,6 +9,7 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
@@ -28,12 +29,28 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/platform', label: 'Platform' },
-    { path: '/level', label: 'Level' },
-    { path: '/access', label: 'Access' },
-    { path: '/drs', label: 'DRS' },
+    {
+      label: 'Software',
+      dropdown: [
+        { path: '/platform', label: 'Plataforma Digital' },
+        { path: '/mobile-app', label: 'Aplicação Mobile' },
+      ],
+    },
+    {
+      label: 'Hardware',
+      dropdown: [
+        { path: '/access', label: 'Access' },
+        { path: '/level', label: 'Level' },
+        { path: '/drs', label: 'DRS' },
+      ],
+    },
+    {
+      label: 'App Cidadão',
+      dropdown: [
+        { path: '/trash4goods', label: 'Trash4Goods' },
+      ],
+    },
     { path: '/paylt', label: 'P(L)ayt' },
-    { path: '/trash4goods', label: 'Trash4Goods' },
   ];
 
   const toggleMobileMenu = () => {
@@ -54,9 +71,21 @@ export const Header: React.FC = () => {
     setIsLangDropdownOpen(false);
   };
 
+  const toggleDropdown = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  const handleDropdownItemClick = () => {
+    setOpenDropdown(null);
+    setIsMobileMenuOpen(false);
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => setIsLangDropdownOpen(false);
+    const handleClickOutside = () => {
+      setIsLangDropdownOpen(false);
+      setOpenDropdown(null);
+    };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
@@ -155,17 +184,51 @@ export const Header: React.FC = () => {
 
           <nav className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`} onClick={(e) => e.stopPropagation()}>
             <ul className="header__nav-list">
-              {navItems.map((item) => (
-                <li key={item.path} className="header__nav-item">
-                  <Link
-                    to={item.path}
-                    className={`header__nav-link ${location.pathname === item.path ? 'header__nav-link--active' : ''
-                      }`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {navItems.map((item, index) => {
+                const hasDropdown = 'dropdown' in item;
+                const isDropdownOpen = openDropdown === item.label;
+                const isActive = hasDropdown
+                  ? item.dropdown?.some((subItem) => location.pathname === subItem.path)
+                  : location.pathname === item.path;
+
+                return (
+                  <li key={index} className={`header__nav-item ${hasDropdown ? 'header__nav-item--dropdown' : ''}`}>
+                    {hasDropdown ? (
+                      <div className="header__nav-dropdown-wrapper">
+                        <button
+                          className={`header__nav-link header__nav-link--dropdown ${isActive ? 'header__nav-link--active' : ''} ${isDropdownOpen ? 'header__nav-link--open' : ''}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleDropdown(item.label);
+                          }}
+                          aria-expanded={isDropdownOpen}
+                        >
+                          {item.label}
+                        </button>
+                        <div className={`header__nav-dropdown ${isDropdownOpen ? 'header__nav-dropdown--open' : ''}`}>
+                          {item.dropdown?.map((subItem) => (
+                            <Link
+                              key={subItem.path}
+                              to={subItem.path}
+                              className={`header__nav-dropdown-link ${location.pathname === subItem.path ? 'header__nav-dropdown-link--active' : ''}`}
+                              onClick={handleDropdownItemClick}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.path!}
+                        className={`header__nav-link ${isActive ? 'header__nav-link--active' : ''}`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
               {/* Mobile language toggle - inside menu */}
               <li className="header__nav-item header__nav-item--lang-mobile">
                 <div className="header__lang-wrapper-mobile">
