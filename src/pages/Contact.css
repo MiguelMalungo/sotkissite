@@ -72,8 +72,9 @@
 
 /* Contact Info */
 .contact__info {
-  order: 1;
+  order: 1 !important;
   width: 100%;
+  display: block;
 }
 
 .contact__info-item {
@@ -180,7 +181,7 @@
 
 /* Form */
 .contact__form-wrapper {
-  order: 2;
+  order: 2 !important;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-xl);
   padding: var(--spacing-3xl);
