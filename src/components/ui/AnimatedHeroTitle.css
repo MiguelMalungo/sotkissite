@@ -16,6 +16,21 @@
   color: white;
 }
 
+/* Responsive: Allow wrapping on mobile for better text display */
+@media (max-width: 768px) {
+  .animated-hero-title__line {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .animated-hero-title__line--static {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 .animated-hero-title__letter {
   display: inline-block;
   opacity: 0;

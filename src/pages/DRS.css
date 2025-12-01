@@ -154,6 +154,8 @@
   margin: 0;
   max-width: 100%;
   align-self: start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 
@@ -288,6 +290,7 @@
     padding: var(--spacing-3xl) 0;
     padding-top: calc(var(--spacing-4xl) + 60px);
     border-radius: 0 0 2rem 2rem;
+    overflow-x: hidden;
   }
 
   .drs__hero-overlay {
@@ -295,8 +298,10 @@
   }
 
   .drs__hero-text-content {
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .drs__hero-title {

@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/sotkissite/',
   server: {
-    port: 3000,
+    port: 8080,
     hmr: {
       overlay: true
     },

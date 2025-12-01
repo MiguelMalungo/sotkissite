@@ -141,6 +141,8 @@
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .paylt__hero-subtitle {
@@ -180,6 +182,7 @@
     padding: var(--spacing-3xl) 0;
     padding-top: calc(var(--spacing-4xl) + 60px);
     border-radius: 0 0 2rem 2rem;
+    overflow-x: hidden;
   }
 
   .paylt__hero-overlay {
@@ -187,8 +190,10 @@
   }
 
   .paylt__hero-text-content {
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .paylt__hero-title {

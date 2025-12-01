@@ -445,6 +445,14 @@
 @media (max-width: 768px) {
   .header {
     padding-top: calc(var(--spacing-md) / 2);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .header__container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
   }
 
   /* Remove the soften edge effect on mobile to prevent covering the dropdown menu */
@@ -648,7 +656,7 @@
     padding: 10px 24px;
     font-size: 14px;
     color: #3D4F5C;
-    text-align: center;
+    text-align: left;
   }
 
   .header__nav-dropdown-link:hover,
@@ -770,6 +778,11 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
   .header__logo-image {
     height: 53px;
   }
@@ -780,8 +793,8 @@
   }
 
   .header__enquire-btn {
-    font-size: 15px !important;
-    padding: 0 24px !important;
+    font-size: 14px !important;
+    padding: 0 16px !important;
     height: 50px !important;
   }
 
@@ -791,7 +804,7 @@
   }
 
   .header__nav-wrapper {
-    padding: 90px 18px 18px 18px;
+    padding: 90px 12px 12px 12px;
   }
 }
 
