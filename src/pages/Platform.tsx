@@ -273,7 +273,7 @@ export const Platform: React.FC = () => {
 
       appVideo.addEventListener('canplay', handleCanPlay);
       appVideo.addEventListener('error', handleError);
-      
+
       // Try to play immediately
       appVideo.play().catch(err => {
         console.error('App video play error:', err);
@@ -500,11 +500,13 @@ export const Platform: React.FC = () => {
                 </div>
               </AnimateOnScroll>
               <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-                <h2 className="home__app-title" style={{ whiteSpace: 'pre-line' }}>{homeT.app.title}</h2>
+                <h2 className="home__app-title" style={{ whiteSpace: 'pre-line' }}>
+                  {isMobile && language === 'pt' ? 'FAÇA DOWNLOAD\nDA APP SOTKIS' : homeT.app.title}
+                </h2>
               </AnimateOnScroll>
               <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-                <p className="home__app-description">
-                  {homeT.app.description}
+                <p className="home__app-description" style={{ whiteSpace: 'pre-line' }}>
+                  {isMobile && language === 'pt' ? 'Ligue-se facilmente\naos serviços de\ngestão de resíduos\ndo seu município!' : homeT.app.description}
                 </p>
               </AnimateOnScroll>
             </div>

@@ -324,98 +324,70 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Level Section */}
-      <section className="home__section home__section--level">
+      {/* Cards Grid Section - Level, Access, DRS */}
+      <section className="home__cards-section">
         <div className="container">
-          <div className="home__section-grid home__section-grid--reverse">
-            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="home__section-image">
-              <div className="home__section-image-placeholder home__section-image-placeholder--contain">
-                <img
-                  src={levelSmImage}
-                  alt="Level monitoring sensors"
-                />
-              </div>
-            </AnimateOnScroll>
-            <div className="home__section-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                <h2 className="home__section-heading">{t.level.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-                <p className="home__section-text">
-                  {t.level.description}
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-                <Button href="/level" variant="primary" size="sm">
-                  {t.level.button}
-                </Button>
-              </AnimateOnScroll>
-            </div>
-          </div>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__cards-section-title">Hardware</h2>
+          </AnimateOnScroll>
         </div>
-      </section>
-
-      {/* Access Section */}
-      <section className="home__section home__section--access">
-        <div className="container">
-          <div className="home__section-grid">
-            <div className="home__section-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                <h2 className="home__section-heading">{t.access.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-                <div className="home__section-text-wrapper">
-                  <p className="home__section-text">
-                    {t.access.description}
-                  </p>
+        <div className="home__cards-grid">
+          {/* Level Card */}
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="home__card">
+            <a href="/level" className="home__card-link">
+              <div className="home__card-image">
+                <img src={levelSmImage} alt="Level monitoring sensors" />
+                <div className="home__card-overlay"></div>
+                <h3 className="home__card-title">{t.level.title}</h3>
+              </div>
+              <div className="home__card-content">
+                <p className="home__card-description">{t.level.description}</p>
+                <div className="home__card-button-wrapper">
+                  <Button href="/level" variant="primary" size="sm">
+                    {t.level.button}
+                  </Button>
                 </div>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-                <Button href="/access" variant="primary" size="sm">
-                  {t.access.button}
-                </Button>
-              </AnimateOnScroll>
-            </div>
-            <AnimateOnScroll animation="fadeSlideRight" delay={0} duration={0.9} className="home__section-image">
-              <div className="home__section-image-placeholder">
-                <img
-                  src={accessSmImage}
-                  alt="Access control system"
-                />
               </div>
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
+            </a>
+          </AnimateOnScroll>
 
-      {/* DRS Section */}
-      <section className="home__section home__section--drs">
-        <div className="container">
-          <div className="home__section-grid home__section-grid--reverse">
-            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="home__section-image">
-              <div className="home__section-image-placeholder">
-                <img
-                  src={drsSmImage}
-                  alt="Deposit return system"
-                />
+          {/* Access Card */}
+          <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="home__card">
+            <a href="/access" className="home__card-link">
+              <div className="home__card-image">
+                <img src={accessSmImage} alt="Access control system" />
+                <div className="home__card-overlay"></div>
+                <h3 className="home__card-title">{t.access.title}</h3>
               </div>
-            </AnimateOnScroll>
-            <div className="home__section-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                <h2 className="home__section-heading">{t.drs.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-                <p className="home__section-text">
-                  {t.drs.description}
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-                <Button href="/drs" variant="primary" size="sm">
-                  {t.drs.button}
-                </Button>
-              </AnimateOnScroll>
-            </div>
-          </div>
+              <div className="home__card-content">
+                <p className="home__card-description">{t.access.description}</p>
+                <div className="home__card-button-wrapper">
+                  <Button href="/access" variant="primary" size="sm">
+                    {t.access.button}
+                  </Button>
+                </div>
+              </div>
+            </a>
+          </AnimateOnScroll>
+
+          {/* DRS Card */}
+          <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="home__card">
+            <a href="/drs" className="home__card-link">
+              <div className="home__card-image">
+                <img src={drsSmImage} alt="Deposit return system" />
+                <div className="home__card-overlay"></div>
+                <h3 className="home__card-title">{t.drs.title}</h3>
+              </div>
+              <div className="home__card-content">
+                <p className="home__card-description">{t.drs.description}</p>
+                <div className="home__card-button-wrapper">
+                  <Button href="/drs" variant="primary" size="sm">
+                    {t.drs.button}
+                  </Button>
+                </div>
+              </div>
+            </a>
+          </AnimateOnScroll>
         </div>
       </section>
 
