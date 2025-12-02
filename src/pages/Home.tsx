@@ -339,6 +339,11 @@ export const Home: React.FC = () => {
                 <img src={levelSmImage} alt="Level monitoring sensors" />
                 <div className="home__card-overlay"></div>
                 <h3 className="home__card-title">{t.level.title}</h3>
+                <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                  <Button href="/level" variant="primary" size="sm">
+                    {t.level.button}
+                  </Button>
+                </div>
               </div>
               <div className="home__card-content">
                 <p className="home__card-description">{t.level.description}</p>
@@ -358,6 +363,11 @@ export const Home: React.FC = () => {
                 <img src={accessSmImage} alt="Access control system" />
                 <div className="home__card-overlay"></div>
                 <h3 className="home__card-title">{t.access.title}</h3>
+                <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                  <Button href="/access" variant="primary" size="sm">
+                    {t.access.button}
+                  </Button>
+                </div>
               </div>
               <div className="home__card-content">
                 <p className="home__card-description">{t.access.description}</p>
@@ -377,6 +387,11 @@ export const Home: React.FC = () => {
                 <img src={drsSmImage} alt="Deposit return system" />
                 <div className="home__card-overlay"></div>
                 <h3 className="home__card-title">{t.drs.title}</h3>
+                <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                  <Button href="/drs" variant="primary" size="sm">
+                    {t.drs.button}
+                  </Button>
+                </div>
               </div>
               <div className="home__card-content">
                 <p className="home__card-description">{t.drs.description}</p>
@@ -423,34 +438,32 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Paylt Section */}
-      <section className="home__section home__section--paylt">
-        <div className="container">
-          <div className="home__section-grid home__section-grid--stacked">
-            <AnimateOnScroll animation="scaleUp" delay={0} duration={0.9} className="home__section-image">
-              <div className="home__section-image-placeholder home__section-image-placeholder--full">
-                <img
-                  src={playtSmImage}
-                  alt="Paylt solution"
-                />
+      <section className="home__paylt-container">
+        <div className="home__section-grid home__section-grid--stacked">
+          <AnimateOnScroll animation="scaleUp" delay={0} duration={0.9} className="home__section-image">
+            <div className="home__section-image-placeholder home__section-image-placeholder--full">
+              <img
+                src={playtSmImage}
+                alt="Paylt solution"
+              />
+            </div>
+          </AnimateOnScroll>
+          <div className="home__section-content">
+            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+              <h2 className="home__section-heading">{t.paylt.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
+              <div className="home__section-text-wrapper">
+                <p className="home__section-text">
+                  {t.paylt.description}
+                </p>
               </div>
             </AnimateOnScroll>
-            <div className="home__section-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                <h2 className="home__section-heading">{t.paylt.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-                <div className="home__section-text-wrapper">
-                  <p className="home__section-text">
-                    {t.paylt.description}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-                <Button href="/paylt" variant="primary" size="sm">
-                  {t.paylt.button}
-                </Button>
-              </AnimateOnScroll>
-            </div>
+            <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
+              <Button href="/paylt" variant="primary" size="sm">
+                {t.paylt.button}
+              </Button>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
