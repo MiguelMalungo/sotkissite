@@ -4,7 +4,6 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
-import levelHeroImage from '../assets/levelhero.webp';
 import level2Image from '../assets/level2.webp';
 import levelPhotoImage from '../assets/levelphoto.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
