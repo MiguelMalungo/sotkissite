@@ -58,6 +58,7 @@
   align-items: flex-start;
   color: white;
   text-align: left;
+  transform: translateY(-50px);
 }
 
 .level__hero-title {

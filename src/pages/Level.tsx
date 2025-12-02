@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import levelHeroImage from '../assets/levelhero.webp';
+import level2Image from '../assets/level2.webp';
 import levelPhotoImage from '../assets/levelphoto.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import sensorImage from '../assets/sensor.webp';
@@ -56,7 +57,7 @@ export const Level: React.FC = () => {
     <div className="level">
       <section className="level__hero">
         <img
-          src={levelHeroImage}
+          src={level2Image}
           alt="SOTKIS Level"
           className="level__hero-image"
         />

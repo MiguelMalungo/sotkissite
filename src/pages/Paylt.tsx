@@ -105,15 +105,13 @@ export const Paylt: React.FC = () => {
       <Carousel items={carouselItems} />
 
       <section className="paylt__image-section section">
-        <div className="container">
-          <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
-            <img
-              src={playtnewImage}
-              alt="Paylt System"
-              className="paylt__image-full"
-            />
-          </AnimateOnScroll>
-        </div>
+        <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
+          <img
+            src={playtnewImage}
+            alt="Paylt System"
+            className="paylt__image-full"
+          />
+        </AnimateOnScroll>
       </section>
 
       {/* Video Modal */}
