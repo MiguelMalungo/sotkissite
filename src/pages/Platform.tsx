@@ -3,6 +3,7 @@ import { Button } from '../components/common/Button';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
+import { homeTranslations } from '../translations/home';
 import image1 from '../assets/1.webp';
 import image2 from '../assets/2Informacoes.webp';
 import image3 from '../assets/3Planeamento.webp';
@@ -21,11 +22,16 @@ import image7M from '../assets/7GestaoM.webp';
 import image8M from '../assets/8ComunicacaoM.webp';
 import platformHeroImage from '../assets/platformhero.webp';
 const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
+import appleImage from '../assets/apple.webp';
+import googleImage from '../assets/google.webp';
+const videoApp = new URL('../assets/app_video.mp4', import.meta.url).href;
 import './Platform.css';
+import './Home.css';
 
 export const Platform: React.FC = () => {
   const { language } = useLanguage();
   const t = platformTranslations[language];
+  const homeT = homeTranslations[language];
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const [displayedImageIndex, setDisplayedImageIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -37,6 +43,7 @@ export const Platform: React.FC = () => {
   const [mobileSelectedIndex, setMobileSelectedIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const appVideoRef = React.useRef<HTMLVideoElement>(null);
   const animationTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const transitionTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -250,6 +257,35 @@ export const Platform: React.FC = () => {
     }
   };
 
+  // Ensure app background video plays
+  useEffect(() => {
+    const appVideo = appVideoRef.current;
+    if (appVideo) {
+      const handleCanPlay = () => {
+        appVideo.play().catch(err => {
+          console.error('App video play error:', err);
+        });
+      };
+
+      const handleError = (e: Event) => {
+        console.error('App video error:', e);
+      };
+
+      appVideo.addEventListener('canplay', handleCanPlay);
+      appVideo.addEventListener('error', handleError);
+      
+      // Try to play immediately
+      appVideo.play().catch(err => {
+        console.error('App video play error:', err);
+      });
+
+      return () => {
+        appVideo.removeEventListener('canplay', handleCanPlay);
+        appVideo.removeEventListener('error', handleError);
+      };
+    }
+  }, []);
+
 
   return (
     <div className="platform">
@@ -433,6 +469,48 @@ export const Platform: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* App Download Section */}
+      <section className="home__app-section platform__app-section-fullwidth">
+        <div className="home__app-hero">
+          <div className="home__app-video-container">
+            <video
+              ref={appVideoRef}
+              className="home__app-background-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+            >
+              <source src={videoApp} type="video/mp4" />
+            </video>
+          </div>
+          <div className="home__app-overlay"></div>
+          <div className="home__app-container">
+            <div className="home__app-content">
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <div className="home__app-badges">
+                  <a href="#" className="home__app-badge">
+                    <img src={appleImage} alt="Download on App Store" />
+                  </a>
+                  <a href="#" className="home__app-badge">
+                    <img src={googleImage} alt="Get it on Google Play" />
+                  </a>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                <h2 className="home__app-title" style={{ whiteSpace: 'pre-line' }}>{homeT.app.title}</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                <p className="home__app-description">
+                  {homeT.app.description}
+                </p>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

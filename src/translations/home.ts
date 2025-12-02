@@ -5,9 +5,9 @@ export const homeTranslations = {
       description: "Ecossistema composto por um conjunto de funcionalidades avançadas, direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final.<br />A solução integra dispositivos IoT e uma plataforma digital que centraliza todas as informações.<br />Estamos preparados para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes.<br />Está pronto para conduzir o seu município para um futuro mais sustentável?"
     },
     riseAbove: {
-      title: "Plataforma digital",
+      title: "Software",
       text: "A plataforma SOTKIS (Sotkon Intelligent Systems) consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. O portal e a app foram desenhados para otimizar a eficiência dos recursos alocados à gestão de resíduos, aumentando a rentabilidade desta operação.",
-      button: "Explorar a Plataforma"
+      button: "Explorar o Software"
     },
     access: {
       title: "Access",
@@ -30,12 +30,12 @@ export const homeTranslations = {
       button: "Explorar o P(L)ayt"
     },
     t4g: {
-      title: "APP DE CIDADÃO T4G",
+      title: "APP DE CIDADÃO",
       description: "A App T4G recompensa boas práticas. Aproxima cidadãos e serviços municipais, incentivando a reciclagem através de benefícios locais que promovem dinamização económica.",
       button: "Explorar o T4G"
     },
     app: {
-      title: "FAÇA DOWNLOAD DA APP SOTKIS",
+      title: "FAÇA DOWNLOAD DA\nAPP SOTKIS",
       description: "Ligue-se facilmente aos serviços de gestão de resíduos do seu município!"
     }
   },
@@ -70,7 +70,7 @@ export const homeTranslations = {
       button: "Explore P(L)ayt"
     },
     t4g: {
-      title: "T4G CITIZEN APP",
+      title: "CITIZEN APP",
       description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
       button: "Explore T4G"
     },
@@ -110,7 +110,7 @@ export const homeTranslations = {
       button: "Explore P(L)ayt"
     },
     t4g: {
-      title: "T4G CITIZEN APP",
+      title: "CITIZEN APP",
       description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
       button: "Explore T4G"
     },
@@ -150,7 +150,7 @@ export const homeTranslations = {
       button: "Explore P(L)ayt"
     },
     t4g: {
-      title: "T4G CITIZEN APP",
+      title: "CITIZEN APP",
       description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
       button: "Explore T4G"
     },

@@ -391,6 +391,11 @@
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
+.trash4goods__cta-button {
+    align-self: flex-end;
+    margin-top: -40px;
+}
+
 @media (max-width: 768px) {
     .trash4goods__app-section {
         margin-top: 0;

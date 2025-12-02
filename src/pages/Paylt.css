@@ -496,32 +496,13 @@
   margin-bottom: var(--spacing-lg);
 }
 
-/* Compatibility Section */
-.paylt__compatibility {
+/* Image Section */
+.paylt__image-section {
   background-color: white;
   padding: var(--spacing-4xl) 0;
 }
 
-.paylt__compatibility-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.paylt__compatibility-title {
-  font-size: var(--font-size-4xl);
-  color: var(--color-primary-dark);
-  margin-bottom: var(--spacing-xl);
-  font-weight: var(--font-weight-bold);
-}
-
-.paylt__compatibility-text {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-lg);
-}
-
-.paylt__systems-image {
+.paylt__image-full {
   width: 100%;
   height: auto;
   display: block;

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { Carousel } from '../components/ui/Carousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
-import accessHeroImage from '../assets/ACCESS.webp';
+import accessHeroImage from '../assets/newAccess.webp';
 import access1Image from '../assets/access1.webp';
-import screenImage from '../assets/screen.webp';
+import dataImage from '../assets/data.webp';
+import transferImage from '../assets/transfer.webp';
 import systemsImage from '../assets/systems.webp';
-import payltTecnoImage from '../assets/paylt_tecno.webp';
 import './Access.css';
 
 export const Access: React.FC = () => {
@@ -24,9 +23,9 @@ export const Access: React.FC = () => {
     setIsVideoModalOpen(false);
   };
 
-  const images = [access1Image, screenImage, payltTecnoImage];
+  const images = [access1Image, dataImage, transferImage];
 
-  const carouselItems = t.carousel.map((item, index) => ({
+  const cardItems = t.carousel.map((item, index) => ({
     id: String(index + 1),
     title: item.title,
     description: item.description,
@@ -84,7 +83,27 @@ export const Access: React.FC = () => {
         </div>
       </section>
 
-      <Carousel items={carouselItems} />
+      <section className="access__cards section">
+        <div className="access__cards-grid">
+          {cardItems.map((item, index) => (
+            <AnimateOnScroll
+              key={item.id}
+              animation="fadeSlideUp"
+              delay={index * 150}
+              duration={0.8}
+              className="access__card"
+            >
+              <div className="access__card-image">
+                <img src={item.image} alt={item.title} />
+              </div>
+              <div className="access__card-content">
+                <h3 className="access__card-title">{item.title}</h3>
+                <p className="access__card-description">{item.description}</p>
+              </div>
+            </AnimateOnScroll>
+          ))}
+        </div>
+      </section>
 
       <section className="access__content section">
         <div className="container">

@@ -1,7 +1,7 @@
 export const trash4goodsTranslations = {
     pt: {
         hero: {
-            title: "Trash4Goods\nValorize os seus resíduos",
+            title: "App Cidadão\nValorize os seus resíduos",
             subtitle: "",
             button: "Ver Vídeo"
         },

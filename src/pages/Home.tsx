@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
-import { NetworkVisualization } from '../components/ui/NetworkVisualization';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
@@ -11,15 +10,11 @@ import heroImage1 from '../assets/11.webp';
 import heroImage2 from '../assets/2.webp';
 import heroImage3 from '../assets/3.webp';
 import heroImage4 from '../assets/4.webp';
-import accessSmImage from '../assets/SotkisACCESS_Digi.webp';
+import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import playtSmImage from '../assets/Reciclar.jpg';
 import trash4goodsImage from '../assets/trash4goods.webp';
-import featurephoneImage from '../assets/Featurephone.webp';
-import mobile2Image from '../assets/mobile2.webp';
-import appleImage from '../assets/apple.webp';
-import googleImage from '../assets/google.webp';
 import './Home.css';
 
 export const Home: React.FC = () => {
@@ -32,14 +27,32 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     const topEdgeElement = topEdgeRef.current;
-    if (!topEdgeElement || !videoplatRef.current) return;
+    const videoElement = videoplatRef.current;
+    if (!topEdgeElement || !videoElement) return;
+
+    // Ensure video is ready
+    const handleCanPlay = () => {
+      if (videoElement) {
+        videoElement.play().catch(err => {
+          console.error('Video play error:', err);
+        });
+      }
+    };
+
+    videoElement.addEventListener('canplay', handleCanPlay);
+    videoElement.load();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && videoplatRef.current) {
-            videoplatRef.current.currentTime = 0; // Reset to start
-            videoplatRef.current.play();
+          if (entry.isIntersecting && videoElement) {
+            videoElement.currentTime = 0; // Reset to start
+            videoElement.play().catch(err => {
+              console.error('Video play error:', err);
+            });
+          } else if (!entry.isIntersecting && videoElement) {
+            // Optionally pause when out of view
+            // videoElement.pause();
           }
         });
       },
@@ -53,6 +66,7 @@ export const Home: React.FC = () => {
 
     return () => {
       observer.disconnect();
+      videoElement.removeEventListener('canplay', handleCanPlay);
     };
   }, []);
 
@@ -279,6 +293,8 @@ export const Home: React.FC = () => {
             className="home__rise-video-overlay"
             muted
             playsInline
+            loop
+            preload="auto"
           >
             <source src={videoplatVideo} type="video/mp4" />
           </video>
@@ -403,6 +419,37 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* T4G App Section */}
+      <section className="home__section home__section--t4g">
+        <div className="home__section--t4g-wrapper">
+          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1} className="home__section--t4g-image">
+            <img
+              src={trash4goodsImage}
+              alt="Trash4Goods App"
+            />
+          </AnimateOnScroll>
+          <div className="container">
+            <div className="home__section-grid home__section-grid--reverse">
+              <div className="home__section-content">
+                <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+                  <h2 className="home__section-heading">{t.t4g.title}</h2>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8}>
+                  <p className="home__section-text">
+                    {t.t4g.description}
+                  </p>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
+                  <Button href="#contact" variant="primary" size="sm">
+                    {t.t4g.button}
+                  </Button>
+                </AnimateOnScroll>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Paylt Section */}
       <section className="home__section home__section--paylt">
         <div className="container">
@@ -436,77 +483,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* T4G App Section */}
-      <section className="home__section home__section--t4g">
-        <div className="home__section--t4g-wrapper">
-          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1} className="home__section--t4g-image">
-            <img
-              src={trash4goodsImage}
-              alt="Trash4Goods App"
-            />
-          </AnimateOnScroll>
-          <div className="container">
-            <div className="home__section-grid home__section-grid--reverse">
-              <div className="home__section-content">
-                <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
-                  <h2 className="home__section-heading">{t.t4g.title}</h2>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8}>
-                  <p className="home__section-text">
-                    {t.t4g.description}
-                  </p>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
-                  <Button href="#contact" variant="primary" size="sm">
-                    {t.t4g.button}
-                  </Button>
-                </AnimateOnScroll>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Network Visualization Section */}
-      <NetworkVisualization />
-
-      {/* App Download Section */}
-      <section className="home__app-section">
-        <div className="home__app-hero">
-          <img
-            src={featurephoneImage}
-            alt="SOTKIS mobile app interface"
-            className="home__app-background home__app-background-desktop"
-          />
-          <img
-            src={mobile2Image}
-            alt="SOTKIS mobile app interface"
-            className="home__app-background home__app-background-mobile"
-          />
-          <div className="home__app-overlay">
-            <div className="home__app-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-                <div className="home__app-badges">
-                  <a href="#" className="home__app-badge">
-                    <img src={appleImage} alt="Download on App Store" />
-                  </a>
-                  <a href="#" className="home__app-badge">
-                    <img src={googleImage} alt="Get it on Google Play" />
-                  </a>
-                </div>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-                <h2 className="home__app-title">{t.app.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-                <p className="home__app-description">
-                  {t.app.description}
-                </p>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

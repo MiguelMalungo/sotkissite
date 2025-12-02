@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
+import { Button } from '../components/common/Button';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trash4goodsTranslations } from '../translations/trash4goods';
 import trash4goodsHeroImage from '../assets/trash4goods.webp';
@@ -94,6 +95,16 @@ export const Trash4Goods: React.FC = () => {
                                 <p className="trash4goods__app-description">
                                     Recicle, ganhe pontos e troque-os pelos seu premios favoritos
                                 </p>
+                            </AnimateOnScroll>
+                            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+                                <Button 
+                                    href="https://www.trash4goods.com/" 
+                                    variant="primary" 
+                                    size="sm"
+                                    className="trash4goods__cta-button"
+                                >
+                                    Conhecer a Trash4Goods
+                                </Button>
                             </AnimateOnScroll>
                         </div>
                     </div>

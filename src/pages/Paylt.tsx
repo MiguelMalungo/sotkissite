@@ -5,13 +5,12 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/Beyond Recycling.jpg';
-import screenImage from '../assets/screen.webp';
-import payltSystemsImage from '../assets/payltsystems.webp';
 import contPayltImage from '../assets/cont_paylt.webp';
 import cardImage from '../assets/card.webp';
 import keyImage from '../assets/key.webp';
-import payltTecnoImage from '../assets/paylt_tecno.webp';
+import screenImage from '../assets/screen.webp';
 import playtInfoImage from '../assets/playtinfo.webp';
+import playtnewImage from '../assets/playtnew.webp';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -26,7 +25,7 @@ export const Paylt: React.FC = () => {
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
   };
-  const images = [contPayltImage, cardImage, keyImage, payltTecnoImage];
+  const images = [contPayltImage, cardImage, keyImage, screenImage];
 
   const carouselItems = t.carousel.map((item, index) => ({
     id: String(index + 1),
@@ -105,49 +104,15 @@ export const Paylt: React.FC = () => {
 
       <Carousel items={carouselItems} />
 
-      <section className="paylt__content section">
+      <section className="paylt__image-section section">
         <div className="container">
-          <div className="paylt__content-grid">
-            <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="paylt__content-image">
-              <img
-                src={screenImage}
-                alt="Dados obtidos"
-                className="paylt__data-image"
-              />
-            </AnimateOnScroll>
-            <div className="paylt__text-content">
-              <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                <h2>{t.data.title}</h2>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-                <p>
-                  {t.data.description}
-                </p>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="paylt__compatibility section">
-        <div className="container">
-          <div className="paylt__compatibility-content">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="paylt__compatibility-title">{t.compatibility.title}</h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p className="paylt__compatibility-text">
-                {t.compatibility.text}
-              </p>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="scaleUp" delay={300} duration={0.9}>
-              <img
-                src={payltSystemsImage}
-                alt="Sistemas compatíveis"
-                className="paylt__systems-image"
-              />
-            </AnimateOnScroll>
-          </div>
+          <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
+            <img
+              src={playtnewImage}
+              alt="Paylt System"
+              className="paylt__image-full"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 

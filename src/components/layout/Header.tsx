@@ -29,27 +29,16 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    {
-      label: 'Software',
-      dropdown: [
-        { path: '/platform', label: 'Plataforma Digital' },
-        { path: '/mobile-app', label: 'Aplicação Mobile' },
-      ],
-    },
+    { path: '/platform', label: 'Software' },
     {
       label: 'Hardware',
       dropdown: [
-        { path: '/access', label: 'Access' },
         { path: '/level', label: 'Level' },
+        { path: '/access', label: 'Access' },
         { path: '/drs', label: 'DRS' },
       ],
     },
-    {
-      label: 'App Cidadão',
-      dropdown: [
-        { path: '/trash4goods', label: 'Trash4Goods' },
-      ],
-    },
+    { path: '/trash4goods', label: 'App Cidadão' },
     { path: '/paylt', label: 'P(L)ayt' },
   ];
 
