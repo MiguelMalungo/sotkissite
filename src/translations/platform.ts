@@ -44,6 +44,51 @@ export const platformTranslations = {
       ],
       button: "Aceda à plataforma"
     },
+    tabs: {
+      title: "Módulos da Plataforma",
+      items: [
+        {
+          title: "Gestão",
+          value: "management",
+          description: ""
+        },
+        {
+          title: "Planeamento",
+          value: "planning",
+          description: ""
+        },
+        {
+          title: "Análise",
+          value: "analytics",
+          description: ""
+        },
+        {
+          title: "Comunicação",
+          value: "communication",
+          description: ""
+        },
+        {
+          title: "Recompensas",
+          value: "rewards",
+          description: ""
+        },
+        {
+          title: "Monitorização",
+          value: "monitoring",
+          description: ""
+        },
+        {
+          title: "Relatórios",
+          value: "reports",
+          description: ""
+        },
+        {
+          title: "Manutenção",
+          value: "maintenance",
+          description: ""
+        }
+      ]
+    },
     access: {
       text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço",
       buttonText: "Play Video"
@@ -93,6 +138,51 @@ export const platformTranslations = {
         }
       ],
       button: "Access the platform"
+    },
+    tabs: {
+      title: "Platform Modules",
+      items: [
+        {
+          title: "Management",
+          value: "management",
+          description: ""
+        },
+        {
+          title: "Planning",
+          value: "planning",
+          description: ""
+        },
+        {
+          title: "Analytics",
+          value: "analytics",
+          description: ""
+        },
+        {
+          title: "Communication",
+          value: "communication",
+          description: ""
+        },
+        {
+          title: "Rewards",
+          value: "rewards",
+          description: ""
+        },
+        {
+          title: "Monitoring",
+          value: "monitoring",
+          description: ""
+        },
+        {
+          title: "Reports",
+          value: "reports",
+          description: ""
+        },
+        {
+          title: "Maintenance",
+          value: "maintenance",
+          description: ""
+        }
+      ]
     },
     access: {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
@@ -144,6 +234,51 @@ export const platformTranslations = {
       ],
       button: "Access the platform"
     },
+    tabs: {
+      title: "Platform Modules",
+      items: [
+        {
+          title: "Management",
+          value: "management",
+          description: ""
+        },
+        {
+          title: "Planning",
+          value: "planning",
+          description: ""
+        },
+        {
+          title: "Analytics",
+          value: "analytics",
+          description: ""
+        },
+        {
+          title: "Communication",
+          value: "communication",
+          description: ""
+        },
+        {
+          title: "Rewards",
+          value: "rewards",
+          description: ""
+        },
+        {
+          title: "Monitoring",
+          value: "monitoring",
+          description: ""
+        },
+        {
+          title: "Reports",
+          value: "reports",
+          description: ""
+        },
+        {
+          title: "Maintenance",
+          value: "maintenance",
+          description: ""
+        }
+      ]
+    },
     access: {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
       buttonText: "Play Video"
@@ -193,6 +328,51 @@ export const platformTranslations = {
         }
       ],
       button: "Access the platform"
+    },
+    tabs: {
+      title: "Platform Modules",
+      items: [
+        {
+          title: "Management",
+          value: "management",
+          description: ""
+        },
+        {
+          title: "Planning",
+          value: "planning",
+          description: ""
+        },
+        {
+          title: "Analytics",
+          value: "analytics",
+          description: ""
+        },
+        {
+          title: "Communication",
+          value: "communication",
+          description: ""
+        },
+        {
+          title: "Rewards",
+          value: "rewards",
+          description: ""
+        },
+        {
+          title: "Monitoring",
+          value: "monitoring",
+          description: ""
+        },
+        {
+          title: "Reports",
+          value: "reports",
+          description: ""
+        },
+        {
+          title: "Maintenance",
+          value: "maintenance",
+          description: ""
+        }
+      ]
     },
     access: {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",

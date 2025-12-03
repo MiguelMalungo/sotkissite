@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { Tabs } from '../components/ui/Tabs';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
@@ -25,6 +26,14 @@ const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
 import appleImage from '../assets/apple.webp';
 import googleImage from '../assets/google.webp';
 const videoApp = new URL('../assets/app_video.mp4', import.meta.url).href;
+import screenshot1 from '../assets/Screenshot1.png';
+import screenshot2 from '../assets/Screenshot2.png';
+import screenshot3 from '../assets/Screenshot3.jpeg';
+import screenshot4 from '../assets/Screenshot4.jpeg';
+import screenshot5 from '../assets/Screenshot5.jpeg';
+import screenshot6 from '../assets/Screenshot6.jpeg';
+import screenshot7 from '../assets/Screenshot7.jpeg';
+import screenshot8 from '../assets/Screenshot8.jpeg';
 import './Platform.css';
 import './Home.css';
 
@@ -335,6 +344,92 @@ export const Platform: React.FC = () => {
                 {t.intro.text3}
               </p>
             </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Tabs Section */}
+      <section className="platform__tabs section">
+        <div className="container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="platform__tabs-title">{t.tabs.title}</h2>
+          </AnimateOnScroll>
+          <div className="platform__tabs-wrapper">
+            <Tabs
+              tabs={t.tabs.items.map((item, index) => ({
+                title: item.title,
+                value: item.value,
+                content: (
+                  <div className="platform__tab-content">
+                    {index === 0 && (
+                      <img
+                        src={screenshot1}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 1 && (
+                      <img
+                        src={screenshot2}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 2 && (
+                      <img
+                        src={screenshot3}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '8px' }}
+                      />
+                    )}
+                    {index === 3 && (
+                      <img
+                        src={screenshot4}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 4 && (
+                      <img
+                        src={screenshot5}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 5 && (
+                      <img
+                        src={screenshot6}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 6 && (
+                      <img
+                        src={screenshot7}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {index === 7 && (
+                      <img
+                        src={screenshot8}
+                        alt="Platform screenshot"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                      />
+                    )}
+                    {item.description && <p className="platform__tab-content-text">{item.description}</p>}
+                  </div>
+                )
+              }))}
+            />
           </div>
         </div>
       </section>
