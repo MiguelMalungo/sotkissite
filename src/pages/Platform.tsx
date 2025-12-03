@@ -359,6 +359,7 @@ export const Platform: React.FC = () => {
               tabs={t.tabs.items.map((item, index) => ({
                 title: item.title,
                 value: item.value,
+                description: item.description,
                 content: (
                   <div className="platform__tab-content">
                     {index === 0 && (
@@ -366,7 +367,7 @@ export const Platform: React.FC = () => {
                         src={screenshot1}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 1 && (
@@ -374,7 +375,7 @@ export const Platform: React.FC = () => {
                         src={screenshot2}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 2 && (
@@ -382,7 +383,7 @@ export const Platform: React.FC = () => {
                         src={screenshot3}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 3 && (
@@ -390,7 +391,7 @@ export const Platform: React.FC = () => {
                         src={screenshot4}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 4 && (
@@ -398,7 +399,7 @@ export const Platform: React.FC = () => {
                         src={screenshot5}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 5 && (
@@ -406,7 +407,7 @@ export const Platform: React.FC = () => {
                         src={screenshot6}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 6 && (
@@ -414,7 +415,7 @@ export const Platform: React.FC = () => {
                         src={screenshot7}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
                     {index === 7 && (
@@ -422,10 +423,9 @@ export const Platform: React.FC = () => {
                         src={screenshot8}
                         alt="Platform screenshot"
                         className="platform__tab-content-image"
-                        style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }}
+                        style={{ width: '100%', borderRadius: '8px' }}
                       />
                     )}
-                    {item.description && <p className="platform__tab-content-text">{item.description}</p>}
                   </div>
                 )
               }))}

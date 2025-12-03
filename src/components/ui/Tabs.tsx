@@ -8,6 +8,7 @@ type Tab = {
   title: string;
   value: string;
   content?: string | React.ReactNode;
+  description?: string;
 };
 
 export const Tabs = ({
@@ -75,6 +76,22 @@ export const Tabs = ({
         hovering={hovering}
         className={contentClassName}
       />
+      <div className="tabs__mobile-navigation">
+        <div className="tabs__dots">
+          {propTabs.map((tab, idx) => (
+            <button
+              key={tab.value}
+              onClick={() => moveSelectedTabToTop(idx)}
+              className={`tabs__dot ${active.value === tab.value ? "tabs__dot--active" : ""}`}
+              aria-label={`Go to ${tab.title}`}
+            />
+          ))}
+        </div>
+        <h3 className="tabs__mobile-title">{active.title}</h3>
+        {active.description && (
+          <p className="tabs__mobile-description">{active.description}</p>
+        )}
+      </div>
     </>
   );
 };

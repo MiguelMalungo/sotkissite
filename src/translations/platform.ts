@@ -50,42 +50,42 @@ export const platformTranslations = {
         {
           title: "Gestão",
           value: "management",
-          description: ""
+          description: "Gestão Inteligente de Resíduos"
         },
         {
           title: "Planeamento",
           value: "planning",
-          description: ""
+          description: "Planeamento de Rotas Eficientes"
         },
         {
           title: "Análise",
           value: "analytics",
-          description: ""
+          description: "Análise de Dados em Tempo Real"
         },
         {
           title: "Comunicação",
           value: "communication",
-          description: ""
+          description: "Comunicação Integrada"
         },
         {
           title: "Recompensas",
           value: "rewards",
-          description: ""
+          description: "Sistema de Recompensas PAYT"
         },
         {
           title: "Monitorização",
           value: "monitoring",
-          description: ""
+          description: "Monitorização de Contentores"
         },
         {
           title: "Relatórios",
           value: "reports",
-          description: ""
+          description: "Relatórios Personalizados"
         },
         {
           title: "Manutenção",
           value: "maintenance",
-          description: ""
+          description: "Gestão de Manutenção"
         }
       ]
     },
@@ -145,42 +145,42 @@ export const platformTranslations = {
         {
           title: "Management",
           value: "management",
-          description: ""
+          description: "Intelligent Waste Management"
         },
         {
           title: "Planning",
           value: "planning",
-          description: ""
+          description: "Efficient Route Planning"
         },
         {
           title: "Analytics",
           value: "analytics",
-          description: ""
+          description: "Real-Time Data Analytics"
         },
         {
           title: "Communication",
           value: "communication",
-          description: ""
+          description: "Integrated Communication"
         },
         {
           title: "Rewards",
           value: "rewards",
-          description: ""
+          description: "PAYT Rewards System"
         },
         {
           title: "Monitoring",
           value: "monitoring",
-          description: ""
+          description: "Container Monitoring"
         },
         {
           title: "Reports",
           value: "reports",
-          description: ""
+          description: "Custom Reports"
         },
         {
           title: "Maintenance",
           value: "maintenance",
-          description: ""
+          description: "Maintenance Management"
         }
       ]
     },
@@ -240,42 +240,42 @@ export const platformTranslations = {
         {
           title: "Management",
           value: "management",
-          description: ""
+          description: "Intelligent Waste Management"
         },
         {
           title: "Planning",
           value: "planning",
-          description: ""
+          description: "Efficient Route Planning"
         },
         {
           title: "Analytics",
           value: "analytics",
-          description: ""
+          description: "Real-Time Data Analytics"
         },
         {
           title: "Communication",
           value: "communication",
-          description: ""
+          description: "Integrated Communication"
         },
         {
           title: "Rewards",
           value: "rewards",
-          description: ""
+          description: "PAYT Rewards System"
         },
         {
           title: "Monitoring",
           value: "monitoring",
-          description: ""
+          description: "Container Monitoring"
         },
         {
           title: "Reports",
           value: "reports",
-          description: ""
+          description: "Custom Reports"
         },
         {
           title: "Maintenance",
           value: "maintenance",
-          description: ""
+          description: "Maintenance Management"
         }
       ]
     },
@@ -335,42 +335,42 @@ export const platformTranslations = {
         {
           title: "Management",
           value: "management",
-          description: ""
+          description: "Intelligent Waste Management"
         },
         {
           title: "Planning",
           value: "planning",
-          description: ""
+          description: "Efficient Route Planning"
         },
         {
           title: "Analytics",
           value: "analytics",
-          description: ""
+          description: "Real-Time Data Analytics"
         },
         {
           title: "Communication",
           value: "communication",
-          description: ""
+          description: "Integrated Communication"
         },
         {
           title: "Rewards",
           value: "rewards",
-          description: ""
+          description: "PAYT Rewards System"
         },
         {
           title: "Monitoring",
           value: "monitoring",
-          description: ""
+          description: "Container Monitoring"
         },
         {
           title: "Reports",
           value: "reports",
-          description: ""
+          description: "Custom Reports"
         },
         {
           title: "Maintenance",
           value: "maintenance",
-          description: ""
+          description: "Maintenance Management"
         }
       ]
     },
