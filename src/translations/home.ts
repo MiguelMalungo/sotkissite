@@ -32,7 +32,7 @@ export const homeTranslations = {
     t4g: {
       title: "APP DE CIDADÃO",
       description: "A App T4G recompensa boas práticas. Aproxima cidadãos e serviços municipais, incentivando a reciclagem através de benefícios locais que promovem dinamização económica.",
-      button: "Explorar o T4G"
+      button: "Explorar a App Cidadão"
     },
     app: {
       title: "FAÇA DOWNLOAD DA\nAPP SOTKIS",
