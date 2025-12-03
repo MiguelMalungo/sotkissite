@@ -34,6 +34,12 @@ import screenshot5 from '../assets/Screenshot5.jpeg';
 import screenshot6 from '../assets/Screenshot6.jpeg';
 import screenshot7 from '../assets/Screenshot7.jpeg';
 import screenshot8 from '../assets/Screenshot8.jpeg';
+import moduloLevel from '../assets/ModuloSotkisLevel.webp';
+import moduloAccess from '../assets/ModuloSotkisAccess.webp';
+import moduloDRS from '../assets/ModuloSotkisDRS.webp';
+import moduloSotcare from '../assets/ModuloSotcare.webp';
+import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
+import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
 import './Platform.css';
 import './Home.css';
 
@@ -43,6 +49,7 @@ export const Platform: React.FC = () => {
   const homeT = homeTranslations[language];
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const [activeTabDescription, setActiveTabDescription] = useState<string>(t.tabs.items[0].description);
+  const [activeModuleDescription, setActiveModuleDescription] = useState<string>(language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution");
   const [displayedImageIndex, setDisplayedImageIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -441,83 +448,113 @@ export const Platform: React.FC = () => {
         </div>
       </section>
 
-      <section className="platform__screenshot section">
+      {/* Modules Section */}
+      <section className="platform__tabs section platform__modules-section">
         <div className="container">
-          <div className="platform__screenshot-container">
-            <div className="platform__screenshot-wrapper">
-              <div className="platform__screenshot-images">
-                <img
-                  src={getCurrentImage()}
-                  alt="SOTKIS platform dashboard"
-                  className={`platform__screenshot-image platform__screenshot-image--current ${isTransitioning ? 'platform__screenshot-image--fade-out' : 'platform__screenshot-image--visible'}`}
-                />
-                <img
-                  src={getNextImage()}
-                  alt="SOTKIS platform dashboard"
-                  className={`platform__screenshot-image platform__screenshot-image--next ${isTransitioning ? 'platform__screenshot-image--fade-in' : 'platform__screenshot-image--hidden'}`}
-                />
-              </div>
-              <div className="platform__intro-container">
-                <p className="platform__screenshot-intro-text">
-                  {t.features.intro}
-                </p>
-                <div className="platform__intro-cta">
-                  <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay">
-                    {t.features.button}
-                  </Button>
-                </div>
-              </div>
-              <div className="platform__screenshot-overlay">
-                {/* Mobile carousel navigation */}
-                <div className="platform__features-mobile-nav">
-                  {features.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`platform__features-mobile-nav-dot ${mobileSelectedIndex === index ? 'platform__features-mobile-nav-dot--active' : ''}`}
-                      onClick={() => setMobileSelectedIndex(index)}
-                      aria-label={`View feature ${index + 1}`}
-                    />
-                  ))}
-                </div>
-                {/* Mobile content - single feature displayed inline */}
-                <div className="platform__features-mobile-content">
-                  <p className="platform__features-mobile-text">
-                    <strong>{features[mobileSelectedIndex].title}</strong> {features[mobileSelectedIndex].description}
-                  </p>
-                </div>
-                <div className="platform__features-list">
-                  {features.map((feature, index) => {
-                    const isActive = activeFeature === index;
-                    const isAnimating = autoAnimating && animatingIndex === index;
-                    const shouldExpand = isActive || isAnimating;
-
-                    return (
-                      <div
-                        key={index}
-                        className={`platform__feature-item ${isAnimating ? 'platform__feature-item--animating' : ''}`}
-                      >
-                        <div className="platform__feature-row">
-                          <button
-                            className={`platform__feature-dot ${shouldExpand ? 'platform__feature-dot--active' : ''} ${isAnimating ? 'platform__feature-dot--animating' : ''}`}
-                            onClick={() => toggleFeature(index)}
-                            aria-label={`Toggle feature ${index + 1}`}
-                          />
-                          <div className="platform__feature-content">
-                            <h4 className="platform__feature-title">
-                              {feature.title}
-                            </h4>
-                            <p className="platform__feature-description">
-                              {feature.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-              </div>
-            </div>
+          <div className="platform__tabs-header">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="platform__tabs-title">Módulos da Plataforma</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+              <p className="platform__tabs-subtitle">{activeModuleDescription}</p>
+            </AnimateOnScroll>
+          </div>
+          <div className="platform__tabs-wrapper">
+            <Tabs
+              onTabChange={(tab) => setActiveModuleDescription(tab.description || '')}
+              tabs={[
+                {
+                  title: "Level",
+                  value: "level",
+                  description: language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloLevel}
+                        alt="Level Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  title: "Access",
+                  value: "access",
+                  description: language === 'pt' ? "Sistema Inteligente de Controlo de Acesso" : "Smart Access Control System",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloAccess}
+                        alt="Access Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  title: "DRS",
+                  value: "drs",
+                  description: language === 'pt' ? "Solução de Sistema de Depósito e Retorno" : "Deposit Return System Solution",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloDRS}
+                        alt="DRS Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  title: "Sotcare",
+                  value: "sotcare",
+                  description: language === 'pt' ? "Gestão Completa de Manutenção" : "Comprehensive Maintenance Management",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloSotcare}
+                        alt="Sotcare Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  title: "P(L)ayt",
+                  value: "playt",
+                  description: language === 'pt' ? "Sistema de Gestão Pay-As-You-Throw" : "Pay-As-You-Throw Management System",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloPlayt}
+                        alt="Playt Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  title: "Routes",
+                  value: "routes",
+                  description: language === 'pt' ? "Sistema Otimizado de Planeamento de Rotas" : "Optimized Route Planning System",
+                  content: (
+                    <div className="platform__tab-content">
+                      <img
+                        src={moduloRoutes}
+                        alt="Routes Module"
+                        className="platform__tab-content-image"
+                        style={{ width: '100%', borderRadius: '8px' }}
+                      />
+                    </div>
+                  )
+                }
+              ]}
+            />
           </div>
         </div>
       </section>

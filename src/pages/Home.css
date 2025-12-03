@@ -328,6 +328,7 @@
   color: #000000 !important;
   text-align: center !important;
   margin: 0 !important;
+  padding: var(--spacing-3xl) 0 !important;
   text-shadow: none;
   font-size: calc(var(--font-size-4xl) + 1px) !important;
 }

@@ -168,6 +168,16 @@
   font-weight: var(--font-weight-normal);
 }
 
+.header__nav-link--dropdown.header__nav-link--active {
+  background-color: white;
+  color: #000000;
+}
+
+.header__nav-link--dropdown.header__nav-link--active:hover {
+  background-color: white;
+  color: #000000;
+}
+
 /* Language Toggle Styles */
 .header__lang-link {
   background: transparent;

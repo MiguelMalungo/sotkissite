@@ -1,0 +1,85 @@
+OLD PLATFORM FEATURES SECTION - SAVED FROM Platform.tsx
+
+This section was removed but saved for potential future use.
+
+JSX CODE:
+      <section className="platform__screenshot section">
+        <div className="container">
+          <div className="platform__screenshot-container">
+            <div className="platform__screenshot-wrapper">
+              <div className="platform__screenshot-images">
+                <img
+                  src={getCurrentImage()}
+                  alt="SOTKIS platform dashboard"
+                  className={`platform__screenshot-image platform__screenshot-image--current ${isTransitioning ? 'platform__screenshot-image--fade-out' : 'platform__screenshot-image--visible'}`}
+                />
+                <img
+                  src={getNextImage()}
+                  alt="SOTKIS platform dashboard"
+                  className={`platform__screenshot-image platform__screenshot-image--next ${isTransitioning ? 'platform__screenshot-image--fade-in' : 'platform__screenshot-image--hidden'}`}
+                />
+              </div>
+              <div className="platform__intro-container">
+                <p className="platform__screenshot-intro-text">
+                  {t.features.intro}
+                </p>
+                <div className="platform__intro-cta">
+                  <Button href="https://miguelmalungo.github.io/sotkis/" size="sm" className="platform__screenshot-cta-overlay">
+                    {t.features.button}
+                  </Button>
+                </div>
+              </div>
+              <div className="platform__screenshot-overlay">
+                {/* Mobile carousel navigation */}
+                <div className="platform__features-mobile-nav">
+                  {features.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`platform__features-mobile-nav-dot ${mobileSelectedIndex === index ? 'platform__features-mobile-nav-dot--active' : ''}`}
+                      onClick={() => setMobileSelectedIndex(index)}
+                      aria-label={`View feature ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                {/* Mobile content - single feature displayed inline */}
+                <div className="platform__features-mobile-content">
+                  <p className="platform__features-mobile-text">
+                    <strong>{features[mobileSelectedIndex].title}</strong> {features[mobileSelectedIndex].description}
+                  </p>
+                </div>
+                <div className="platform__features-list">
+                  {features.map((feature, index) => {
+                    const isActive = activeFeature === index;
+                    const isAnimating = autoAnimating && animatingIndex === index;
+                    const shouldExpand = isActive || isAnimating;
+
+                    return (
+                      <div
+                        key={index}
+                        className={`platform__feature-item ${isAnimating ? 'platform__feature-item--animating' : ''}`}
+                      >
+                        <div className="platform__feature-row">
+                          <button
+                            className={`platform__feature-dot ${shouldExpand ? 'platform__feature-dot--active' : ''} ${isAnimating ? 'platform__feature-dot--animating' : ''}`}
+                            onClick={() => toggleFeature(index)}
+                            aria-label={`Toggle feature ${index + 1}`}
+                          />
+                          <div className="platform__feature-content">
+                            <h4 className="platform__feature-title">
+                              {feature.title}
+                            </h4>
+                            <p className="platform__feature-description">
+                              {feature.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

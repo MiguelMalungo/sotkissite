@@ -278,7 +278,7 @@
 /* Tabs Section */
 .platform__tabs {
   background-color: #ffffff;
-  padding: var(--spacing-5xl) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .platform__tabs-title {
@@ -301,7 +301,7 @@
     font-weight: 400;
     color: #4a4a4a;
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
     line-height: 1.5;
   }
 }
@@ -325,13 +325,17 @@
   position: relative;
   height: 100%;
   border-radius: 16px;
-  padding: 40px 16px;
+  padding: 32px 16px;
   font-size: 1.25rem;
   font-weight: 700;
   color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.platform__modules-section .platform__tab-content {
+  padding: 16px;
 }
 
 .platform__tab-content-text {
@@ -377,6 +381,17 @@
   .platform__tab-content {
     padding: 24px;
     font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .platform__tabs .container {
+    padding-left: calc(var(--spacing-md) / 2);
+    padding-right: calc(var(--spacing-md) / 2);
+  }
+
+  .platform__tabs-title {
+    margin-bottom: calc(var(--spacing-xl) / 2);
   }
 }
 
@@ -1203,7 +1218,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: var(--spacing-5xl);
+  margin-top: var(--spacing-xl);
   padding: 0;
 }
 
