@@ -45,7 +45,7 @@ export const platformTranslations = {
       button: "Aceda à plataforma"
     },
     tabs: {
-      title: "Módulos da Plataforma",
+      title: "Funcionalidades da Plataforma",
       items: [
         {
           title: "Gestão",

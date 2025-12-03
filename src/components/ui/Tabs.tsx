@@ -17,12 +17,14 @@ export const Tabs = ({
   activeTabClassName,
   tabClassName,
   contentClassName,
+  onTabChange,
 }: {
   tabs: Tab[];
   containerClassName?: string;
   activeTabClassName?: string;
   tabClassName?: string;
   contentClassName?: string;
+  onTabChange?: (tab: Tab) => void;
 }) => {
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
@@ -33,6 +35,9 @@ export const Tabs = ({
     newTabs.unshift(selectedTab[0]);
     setTabs(newTabs);
     setActive(newTabs[0]);
+    if (onTabChange) {
+      onTabChange(newTabs[0]);
+    }
   };
 
   const [hovering, setHovering] = useState(false);

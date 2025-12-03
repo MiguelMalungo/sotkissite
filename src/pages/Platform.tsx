@@ -42,6 +42,7 @@ export const Platform: React.FC = () => {
   const t = platformTranslations[language];
   const homeT = homeTranslations[language];
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  const [activeTabDescription, setActiveTabDescription] = useState<string>(t.tabs.items[0].description);
   const [displayedImageIndex, setDisplayedImageIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -351,11 +352,17 @@ export const Platform: React.FC = () => {
       {/* Tabs Section */}
       <section className="platform__tabs section">
         <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="platform__tabs-title">{t.tabs.title}</h2>
-          </AnimateOnScroll>
+          <div className="platform__tabs-header">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="platform__tabs-title">{t.tabs.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+              <p className="platform__tabs-subtitle">{activeTabDescription}</p>
+            </AnimateOnScroll>
+          </div>
           <div className="platform__tabs-wrapper">
             <Tabs
+              onTabChange={(tab) => setActiveTabDescription(tab.description || '')}
               tabs={t.tabs.items.map((item, index) => ({
                 title: item.title,
                 value: item.value,
