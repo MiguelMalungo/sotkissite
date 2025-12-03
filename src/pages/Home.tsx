@@ -440,19 +440,19 @@ export const Home: React.FC = () => {
       {/* Paylt Section */}
       <section className="home__paylt-container">
         <div className="home__section-grid home__section-grid--stacked">
-          <AnimateOnScroll animation="scaleUp" delay={0} duration={0.9} className="home__section-image home__paylt-image-wrapper">
-            <div className="home__section-image-placeholder home__section-image-placeholder--full">
-              <img
-                src={playtSmImage}
-                alt="Paylt solution"
-              />
-              <div className="home__paylt-title-overlay">
-                <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-                  <h2 className="home__section-heading home__paylt-title">{t.paylt.title}</h2>
-                </AnimateOnScroll>
+          <div className="home__paylt-image-wrapper">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="home__section-heading home__paylt-title">{t.paylt.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="scaleUp" delay={100} duration={0.9} className="home__section-image">
+              <div className="home__section-image-placeholder home__section-image-placeholder--full">
+                <img
+                  src={playtSmImage}
+                  alt="Paylt solution"
+                />
               </div>
-            </div>
-          </AnimateOnScroll>
+            </AnimateOnScroll>
+          </div>
           <div className="home__section-content">
             <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
               <div className="home__section-text-wrapper">
