@@ -307,7 +307,7 @@
 }
 
 .platform__tabs-wrapper {
-  height: 20rem;
+  height: 23rem;
   perspective: 1000px;
   position: relative;
   display: flex;
@@ -381,6 +381,10 @@
   .platform__tab-content {
     padding: 24px;
     font-size: 1.125rem;
+  }
+
+  .platform__modules-section .platform__tabs-wrapper {
+    height: 23rem;
   }
 }
 
