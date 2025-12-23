@@ -18,7 +18,7 @@
   font-size: 12px;
   font-weight: 400;
   color: #000000;
-  background: transparent;
+  background: #ffffff;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -33,6 +33,7 @@
 
 .tabs__tab--active {
   color: #ffffff;
+  background: transparent;
 }
 
 .tabs__tab--active:hover {
@@ -72,7 +73,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
-  background: #000000;
+  background: rgba(0, 0, 0, 0.65);
   overflow: hidden;
 }
 

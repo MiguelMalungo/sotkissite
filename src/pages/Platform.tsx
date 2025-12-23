@@ -1,26 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../components/common/Button';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { Tabs } from '../components/ui/Tabs';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
-import image1 from '../assets/1.webp';
-import image2 from '../assets/2Informacoes.webp';
-import image3 from '../assets/3Planeamento.webp';
-import image4 from '../assets/4Acesso.webp';
-import image5 from '../assets/5Verificacao.webp';
-import image6 from '../assets/6Implementacao.webp';
-import image7 from '../assets/7Gestao.webp';
-import image8 from '../assets/8Comunicacao.webp';
-import image1M from '../assets/1M.webp';
-import image2M from '../assets/2InformacoesM.webp';
-import image3M from '../assets/3PlaneamentoM.webp';
-import image4M from '../assets/4AcessoM.webp';
-import image5M from '../assets/5VerificacaoM.webp';
-import image6M from '../assets/6ImplementacaoM.webp';
-import image7M from '../assets/7GestaoM.webp';
-import image8M from '../assets/8ComunicacaoM.webp';
 import platformHeroImage from '../assets/platformhero.webp';
 const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
 import appleImage from '../assets/apple.webp';
@@ -40,6 +23,8 @@ import moduloDRS from '../assets/ModuloSotkisDRS.webp';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
+import summerImage from '../assets/summer.png';
+import fieldImage from '../assets/field.png';
 import './Platform.css';
 import './Home.css';
 
@@ -47,200 +32,50 @@ export const Platform: React.FC = () => {
   const { language } = useLanguage();
   const t = platformTranslations[language];
   const homeT = homeTranslations[language];
-  const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const [activeTabDescription, setActiveTabDescription] = useState<string>(t.tabs.items[0].description);
   const [activeModuleDescription, setActiveModuleDescription] = useState<string>(language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution");
-  const [displayedImageIndex, setDisplayedImageIndex] = useState<number>(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
-  const [autoAnimating, setAutoAnimating] = useState(true);
-  const [animatingIndex, setAnimatingIndex] = useState<number>(0);
-  const [mobileSelectedIndex, setMobileSelectedIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const appVideoRef = React.useRef<HTMLVideoElement>(null);
-  const animationTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const transitionTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const features = t.features.items;
-
-  const imageMapDesktop = [
-    image1,  // index 0 - Aplicação
-    image2,  // index 1 - Informações
-    image3,  // index 2 - Planeamento
-    image4,  // index 3 - Acesso
-    image5,  // index 4 - Verificação
-    image6,  // index 5 - Implementação
-    image7,  // index 6 - Gestão
-    image8   // index 7 - Comunicação
-  ];
-
-  const imageMapMobile = [
-    image1M,  // index 0 - Aplicação
-    image2M,  // index 1 - Informações
-    image3M,  // index 2 - Planeamento
-    image4M,  // index 3 - Acesso
-    image5M,  // index 4 - Verificação
-    image6M,  // index 5 - Implementação
-    image7M,  // index 6 - Gestão
-    image8M   // index 7 - Comunicação
-  ];
-
-  // Get the appropriate image map based on screen size
-  const imageMap = isMobile ? imageMapMobile : imageMapDesktop;
-
-  // Detect mobile screen size and sync mobile index
+  // Detect mobile screen size
   useEffect(() => {
     const checkMobile = () => {
-      const mobile = window.innerWidth <= 768;
-      setIsMobile(mobile);
-
-      // Sync mobile selected index with displayed image index when switching to mobile
-      if (mobile) {
-        setMobileSelectedIndex(displayedImageIndex);
-      }
+      setIsMobile(window.innerWidth <= 768);
     };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
     return () => window.removeEventListener('resize', checkMobile);
-  }, [displayedImageIndex]);
-
-  // Preload all images
-  useEffect(() => {
-    [...imageMapDesktop, ...imageMapMobile].forEach((img) => {
-      const image = new Image();
-      image.src = img;
-    });
   }, []);
 
-  // Auto-animation effect (desktop only)
+  // Parallax effect for background images
   useEffect(() => {
-    if (!autoAnimating || isMobile) return;
+    const handleScroll = () => {
+      const bgImages = document.querySelectorAll('.platform__tabs-bg-image');
 
-    const cycleAnimation = () => {
-      setAnimatingIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % features.length;
-        return nextIndex;
+      bgImages.forEach((img) => {
+        const section = img.closest('.platform__tabs--with-bg');
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const scrollProgress = -rect.top / (rect.height + window.innerHeight);
+          const yOffset = scrollProgress * 100;
+          (img as HTMLElement).style.transform = `translateY(${yOffset}px)`;
+        }
       });
     };
 
-    // Each item expands for 2 seconds then collapses for 2 seconds (4 seconds total per item)
-    animationTimeoutRef.current = setTimeout(cycleAnimation, 4000);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
 
-    return () => {
-      if (animationTimeoutRef.current) {
-        clearTimeout(animationTimeoutRef.current);
-      }
-    };
-  }, [animatingIndex, autoAnimating, features.length, isMobile]);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  // Update image when animatingIndex changes during auto-animation (desktop only)
-  useEffect(() => {
-    if (!autoAnimating || isMobile) return;
-    if (animatingIndex === displayedImageIndex) return;
 
-    // Clear any pending transition
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-    }
-
-    setIsTransitioning(true);
-
-    // Update displayed image after transition starts
-    transitionTimeoutRef.current = setTimeout(() => {
-      setDisplayedImageIndex(animatingIndex);
-      requestAnimationFrame(() => {
-        setIsTransitioning(false);
-      });
-    }, 1500); // Match CSS transition duration
-
-    return () => {
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-      }
-    };
-  }, [animatingIndex, autoAnimating, isMobile, displayedImageIndex]);
-
-  // Handle mobile navigation dot clicks - trigger image transition
-  useEffect(() => {
-    if (!isMobile) return;
-    if (mobileSelectedIndex === displayedImageIndex) return;
-
-    // Clear any pending transition
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-    }
-
-    setIsTransitioning(true);
-
-    // Update displayed image after transition completes
-    transitionTimeoutRef.current = setTimeout(() => {
-      setDisplayedImageIndex(mobileSelectedIndex);
-      requestAnimationFrame(() => {
-        setIsTransitioning(false);
-      });
-    }, 1500); // Match CSS transition duration
-
-    return () => {
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-      }
-    };
-  }, [mobileSelectedIndex, isMobile, displayedImageIndex]);
-
-  const toggleFeature = (index: number) => {
-    // Stop auto-animation when user clicks
-    setAutoAnimating(false);
-
-    const targetIndex = activeFeature === index ? 0 : index;
-    const newActiveFeature = activeFeature === index ? null : index;
-
-    // Sync animating index with user selection
-    setAnimatingIndex(targetIndex);
-
-    if (targetIndex !== displayedImageIndex) {
-      // Start transition - update activeFeature first so getNextImage() returns the target
-      setActiveFeature(newActiveFeature);
-      setIsTransitioning(true);
-
-      // Update displayed image after transition completes
-      setTimeout(() => {
-        // Update the displayed index first
-        setDisplayedImageIndex(targetIndex);
-        // Use requestAnimationFrame to ensure DOM updates before ending transition
-        requestAnimationFrame(() => {
-          setIsTransitioning(false);
-        });
-      }, 1500); // Match CSS transition duration
-    } else {
-      setActiveFeature(newActiveFeature);
-    }
-  };
-
-  const getCurrentImage = () => {
-    return imageMap[displayedImageIndex] || (isMobile ? image1M : image1);
-  };
-
-  const getNextImage = () => {
-    if (isTransitioning) {
-      // During transition, show the target image
-      let targetIndex;
-      if (isMobile) {
-        targetIndex = mobileSelectedIndex;
-      } else {
-        // For desktop: use animatingIndex during auto-animation, otherwise use activeFeature
-        targetIndex = autoAnimating ? animatingIndex : (activeFeature === null ? 0 : activeFeature);
-      }
-      return imageMap[targetIndex] || (isMobile ? image1M : image1);
-    } else {
-      // When not transitioning, keep next image in sync with current
-      return imageMap[displayedImageIndex] || (isMobile ? image1M : image1);
-    }
-  };
 
   const openVideoModal = () => {
     setIsVideoModalOpen(true);
@@ -357,7 +192,10 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="platform__tabs section">
+      <section className="platform__tabs section platform__tabs--with-bg">
+        <div className="platform__tabs-bg-wrapper">
+          <img src={summerImage} alt="" className="platform__tabs-bg-image" />
+        </div>
         <div className="container">
           <div className="platform__tabs-header">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
@@ -449,7 +287,10 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Modules Section */}
-      <section className="platform__tabs section platform__modules-section">
+      <section className="platform__tabs section platform__modules-section platform__tabs--with-bg">
+        <div className="platform__tabs-bg-wrapper">
+          <img src={fieldImage} alt="" className="platform__tabs-bg-image" />
+        </div>
         <div className="container">
           <div className="platform__tabs-header">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>

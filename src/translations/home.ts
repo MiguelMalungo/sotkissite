@@ -1,8 +1,8 @@
 export const homeTranslations = {
   pt: {
     hero: {
-      title: "Conheça os nossos sistemas\ninteligentes para\ngestão de resíduos",
-      description: "Ecossistema composto por um conjunto de funcionalidades avançadas, direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final.<br />A solução integra dispositivos IoT e uma plataforma digital que centraliza todas as informações.<br />Estamos preparados para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes.<br />Está pronto para conduzir o seu município para um futuro mais sustentável?"
+      title: "Conheça os nossos\nsistemas inteligentes\npara gestão\nde resíduos",
+      description: "Ecossistema composto por um conjunto de funcionalidades avançadas, direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final.<br />A solução integra dispositivos IoT e uma plataforma digital que centraliza todas as informações.<br />Estamos preparados para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes.<br /><span style='font-weight: 800;'>Está pronto para conduzir o seu município para um futuro mais sustentável?</span>"
     },
     riseAbove: {
       title: "Software",
