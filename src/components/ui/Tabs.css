@@ -129,7 +129,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #6b6b6b;
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -137,12 +137,12 @@
 }
 
 .tabs__dot:hover {
-  background-color: #4a4a4a;
+  background-color: rgba(255, 255, 255, 0.8);
   transform: scale(1.2);
 }
 
 .tabs__dot--active {
-  background-color: #000000;
+  background-color: #FDE363;
   width: 12px;
   height: 12px;
 }
@@ -185,6 +185,6 @@
   }
 
   .tabs__mobile-navigation {
-    margin-top: 40px;
+    margin-top: 65px;
   }
 }
