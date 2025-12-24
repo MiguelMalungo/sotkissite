@@ -20,7 +20,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center calc(50% - 5px);
   z-index: 1;
 }
 
@@ -429,6 +428,10 @@
 
   .platform__modules-section .platform__tabs-wrapper {
     height: 23rem;
+  }
+
+  .platform__tabs-bg-image {
+    object-position: center calc(50% - 5px);
   }
 }
 
