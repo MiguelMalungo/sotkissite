@@ -192,7 +192,7 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="platform__tabs section platform__tabs--with-bg">
+      <section className="platform__tabs section platform__tabs--with-bg platform__tabs--summer">
         <div className="platform__tabs-bg-wrapper">
           <img src={summerImage} alt="" className="platform__tabs-bg-image" />
         </div>
@@ -287,7 +287,7 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Modules Section */}
-      <section className="platform__tabs section platform__modules-section platform__tabs--with-bg">
+      <section className="platform__tabs section platform__modules-section platform__tabs--with-bg platform__tabs--field">
         <div className="platform__tabs-bg-wrapper">
           <img src={fieldImage} alt="" className="platform__tabs-bg-image" />
         </div>

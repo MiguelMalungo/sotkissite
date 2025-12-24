@@ -430,16 +430,20 @@
     height: 23rem;
   }
 
-  .platform__tabs-bg-image {
+  .platform__tabs--summer .platform__tabs-bg-image {
     object-position: center calc(50% - 5px);
   }
 
-  .platform__tabs-bg-wrapper {
+  .platform__tabs--summer .platform__tabs-bg-wrapper {
     height: calc(100% - 125px - 115px);
   }
 
-  .platform__tabs-title {
+  .platform__tabs--summer .platform__tabs-title {
     color: #ffffff;
+  }
+
+  .platform__tabs--field .platform__tabs-bg-wrapper {
+    height: calc(100% - 125px - 115px);
   }
 }
 
