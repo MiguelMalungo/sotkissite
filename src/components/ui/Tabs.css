@@ -18,7 +18,7 @@
   font-size: 12px;
   font-weight: 400;
   color: #000000;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.8);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -29,6 +29,7 @@
 .tabs__tab:hover {
   color: #ffffff;
   background-color: rgba(158, 192, 67, 0.8);
+  font-weight: 700;
 }
 
 .tabs__tab--active {
@@ -184,6 +185,6 @@
   }
 
   .tabs__mobile-navigation {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
