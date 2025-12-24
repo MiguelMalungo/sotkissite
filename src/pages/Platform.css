@@ -445,6 +445,10 @@
   .platform__tabs--field .platform__tabs-bg-wrapper {
     height: calc(100% - 125px - 115px);
   }
+
+  .platform__tabs--field .tabs__mobile-navigation {
+    margin-top: 75px;
+  }
 }
 
 @media (max-width: 767px) {
