@@ -286,21 +286,21 @@ export const Platform: React.FC = () => {
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section className="platform__tabs section platform__modules-section platform__tabs--with-bg platform__tabs--field">
-        <div className="platform__tabs-bg-wrapper">
-          <img src={fieldImage} alt="" className="platform__tabs-bg-image" />
+      {/* Platform Modules Section */}
+      <section className="platform__modules section platform__modules--with-bg platform__modules--field">
+        <div className="platform__modules-bg-wrapper">
+          <img src={fieldImage} alt="" className="platform__modules-bg-image" />
         </div>
         <div className="container">
-          <div className="platform__tabs-header">
+          <div className="platform__modules-header">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="platform__tabs-title">Módulos da Plataforma</h2>
+              <h2 className="platform__modules-title">Módulos da Plataforma</h2>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-              <p className="platform__tabs-subtitle">{activeModuleDescription}</p>
+              <p className="platform__modules-subtitle">{activeModuleDescription}</p>
             </AnimateOnScroll>
           </div>
-          <div className="platform__tabs-wrapper">
+          <div className="platform__modules-wrapper">
             <Tabs
               onTabChange={(tab) => setActiveModuleDescription(tab.description || '')}
               tabs={[
@@ -309,11 +309,11 @@ export const Platform: React.FC = () => {
                   value: "level",
                   description: language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloLevel}
                         alt="Level Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
@@ -324,11 +324,11 @@ export const Platform: React.FC = () => {
                   value: "access",
                   description: language === 'pt' ? "Sistema Inteligente de Controlo de Acesso" : "Smart Access Control System",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloAccess}
                         alt="Access Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
@@ -339,11 +339,11 @@ export const Platform: React.FC = () => {
                   value: "drs",
                   description: language === 'pt' ? "Solução de Sistema de Depósito e Retorno" : "Deposit Return System Solution",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloDRS}
                         alt="DRS Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
@@ -354,11 +354,11 @@ export const Platform: React.FC = () => {
                   value: "sotcare",
                   description: language === 'pt' ? "Gestão Completa de Manutenção" : "Comprehensive Maintenance Management",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloSotcare}
                         alt="Sotcare Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
@@ -369,11 +369,11 @@ export const Platform: React.FC = () => {
                   value: "playt",
                   description: language === 'pt' ? "Sistema de Gestão Pay-As-You-Throw" : "Pay-As-You-Throw Management System",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloPlayt}
                         alt="Playt Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
@@ -384,11 +384,11 @@ export const Platform: React.FC = () => {
                   value: "routes",
                   description: language === 'pt' ? "Sistema Otimizado de Planeamento de Rotas" : "Optimized Route Planning System",
                   content: (
-                    <div className="platform__tab-content">
+                    <div className="platform__module-content">
                       <img
                         src={moduloRoutes}
                         alt="Routes Module"
-                        className="platform__tab-content-image"
+                        className="platform__module-image"
                         style={{ width: '100%', borderRadius: '8px' }}
                       />
                     </div>
