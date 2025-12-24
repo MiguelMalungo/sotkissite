@@ -435,11 +435,11 @@
   }
 
   .platform__tabs--summer .platform__tabs-bg-wrapper {
-    height: calc(100% - 125px - 115px);
+    height: calc(100% - 125px - 110px);
   }
 
-  .platform__tabs--summer .platform__tabs-title {
-    color: #ffffff;
+  .platform__tabs--field .platform__tabs-bg-image {
+    object-position: center calc(50% + 10px);
   }
 
   .platform__tabs--field .platform__tabs-bg-wrapper {
