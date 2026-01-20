@@ -55,17 +55,23 @@ export const Trash4Goods: React.FC = () => {
                             <h2>{t.intro.title}</h2>
                         </AnimateOnScroll>
                         <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-                            <p>{t.intro.text1}</p>
+                            <p>{'text1' in t.intro ? t.intro.text1 : t.intro.text}</p>
                         </AnimateOnScroll>
-                        <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-                            <p>{t.intro.text2}</p>
-                        </AnimateOnScroll>
-                        <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
-                            <p>{t.intro.text3}</p>
-                        </AnimateOnScroll>
-                        <AnimateOnScroll animation="fadeSlideUp" delay={600} duration={0.8}>
-                            <p>{t.intro.text4}</p>
-                        </AnimateOnScroll>
+                        {'text2' in t.intro && (
+                          <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                              <p>{t.intro.text2}</p>
+                          </AnimateOnScroll>
+                        )}
+                        {'text3' in t.intro && (
+                          <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+                              <p>{t.intro.text3}</p>
+                          </AnimateOnScroll>
+                        )}
+                        {'text4' in t.intro && (
+                          <AnimateOnScroll animation="fadeSlideUp" delay={600} duration={0.8}>
+                              <p>{t.intro.text4}</p>
+                          </AnimateOnScroll>
+                        )}
                         <AnimateOnScroll animation="scaleUp" delay={750} duration={1}>
                             <img
                                 src={trash4goodsGrafImage}

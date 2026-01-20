@@ -4,8 +4,6 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { drsTranslations } from '../translations/drs';
 import drsHeroImage from '../assets/DRS.webp';
-import drs2Image from '../assets/drs2.webp';
-import infograficDRS from '../assets/infograficDRS.webp';
 import infograficDRS2 from '../assets/infograficDRS2.webp';
 import './DRS.css';
 

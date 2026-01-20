@@ -5,7 +5,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import level2Image from '../assets/level2.webp';
-import levelHeroImage from '../assets/levelhero.webp';
 import levelPhotoImage from '../assets/levelphoto.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import sensorImage from '../assets/sensor.webp';

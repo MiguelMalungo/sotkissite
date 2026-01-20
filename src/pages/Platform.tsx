@@ -159,11 +159,16 @@ export const Platform: React.FC = () => {
                 {t.intro.text2}
               </p>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
-              <p className="platform__intro-text">
-                {t.intro.text3}
-              </p>
-            </AnimateOnScroll>
+            {(() => {
+              const intro = t.intro as { title: string; text1: string; text2: string; text3?: string };
+              return intro.text3 ? (
+                <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+                  <p className="platform__intro-text">
+                    {intro.text3}
+                  </p>
+                </AnimateOnScroll>
+              ) : null;
+            })()}
           </div>
         </div>
       </section>
