@@ -42,6 +42,27 @@ export const Home: React.FC = () => {
   const heroVideo1Ref = useRef<HTMLVideoElement>(null);
   const heroVideo2Ref = useRef<HTMLVideoElement>(null);
   const [scrollY, setScrollY] = React.useState(0);
+  const [flippedCards, setFlippedCards] = React.useState<{[key: string]: boolean}>({
+    level: false,
+    access: false,
+    drs: false
+  });
+
+  const handleCardClick = (cardName: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Check if click was on button or its children
+    const target = e.target as HTMLElement;
+    const isButton = target.closest('.button') !== null;
+
+    // If not clicking the button and on mobile, toggle flip state
+    if (!isButton && window.innerWidth <= 768) {
+      e.preventDefault();
+      setFlippedCards(prev => ({
+        ...prev,
+        [cardName]: !prev[cardName]
+      }));
+    }
+    // If clicking the button, allow navigation
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -408,7 +429,11 @@ export const Home: React.FC = () => {
           <MobileCarousel className="home__cards-carousel-inner">
             {/* Level Card */}
             <div className="home__card">
-              <a href="/level" className="home__card-link">
+              <a
+                href="/level"
+                className={`home__card-link ${flippedCards.level ? 'home__card-link--flipped' : ''}`}
+                onClick={(e) => handleCardClick('level', e)}
+              >
                 <div className="home__card-image">
                   <img src={levelSmImage} alt="Level monitoring sensors" />
                   <div className="home__card-overlay"></div>
@@ -432,7 +457,11 @@ export const Home: React.FC = () => {
 
             {/* Access Card */}
             <div className="home__card">
-              <a href="/access" className="home__card-link">
+              <a
+                href="/access"
+                className={`home__card-link ${flippedCards.access ? 'home__card-link--flipped' : ''}`}
+                onClick={(e) => handleCardClick('access', e)}
+              >
                 <div className="home__card-image">
                   <img src={accessSmImage} alt="Access control system" />
                   <div className="home__card-overlay"></div>
@@ -456,7 +485,11 @@ export const Home: React.FC = () => {
 
             {/* DRS Card */}
             <div className="home__card">
-              <a href="/drs" className="home__card-link">
+              <a
+                href="/drs"
+                className={`home__card-link ${flippedCards.drs ? 'home__card-link--flipped' : ''}`}
+                onClick={(e) => handleCardClick('drs', e)}
+              >
                 <div className="home__card-image">
                   <img src={drsSmImage} alt="Deposit return system" />
                   <div className="home__card-overlay"></div>
