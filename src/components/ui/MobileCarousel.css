@@ -35,9 +35,10 @@
 /* Navigation container */
 .mobile-carousel__navigation {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: 16px;
   padding: var(--spacing-sm) 0;
 }
 
@@ -115,4 +116,43 @@
 .mobile-carousel__play-button svg {
   width: 16px;
   height: 16px;
+}
+
+/* Arrow buttons */
+.mobile-carousel__arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobile-carousel__arrow-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.08);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #000000;
+  padding: 0;
+}
+
+.mobile-carousel__arrow-button:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  transform: scale(1.08);
+}
+
+.mobile-carousel__arrow-button:active {
+  transform: scale(0.92);
+}
+
+/* Hide arrows on desktop */
+@media (min-width: 768px) {
+  .mobile-carousel__arrows {
+    display: none;
+  }
 }
