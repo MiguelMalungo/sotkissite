@@ -1,6 +1,7 @@
 .mobile-app {
   min-height: 100vh;
   padding-top: 100px;
+  background-color: #F1FFF7;
 }
 
 .mobile-app__hero {

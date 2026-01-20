@@ -1,17 +1,17 @@
 .paylt {
-  background-color: white;
+  background-color: #F1FFF7;
 }
 
 /* Hero Section */
 .paylt__hero {
   position: relative;
-  min-height: 822px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 0 0 3rem 3rem;
-  background-color: white !important;
+  background-color: #F1FFF7 !important;
   padding: var(--spacing-5xl) 0;
   padding-top: calc(var(--spacing-5xl) + 90px);
   padding-bottom: var(--spacing-3xl);
@@ -24,6 +24,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 1;
 }
 
@@ -33,7 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 2;
   border-radius: 0 0 3rem 3rem;
 }
@@ -159,7 +160,7 @@
   padding-top: calc(var(--spacing-xl) * 2);
   padding-bottom: 0;
   margin-bottom: calc(var(--spacing-xl) * -2.5);
-  background-color: white;
+  background-color: #F1FFF7;
   text-align: center;
 }
 
@@ -178,7 +179,7 @@
 
 @media (max-width: 768px) {
   .paylt__hero {
-    min-height: 600px;
+    min-height: 100vh;
     padding: var(--spacing-3xl) 0;
     padding-top: calc(var(--spacing-4xl) + 60px);
     border-radius: 0 0 2rem 2rem;
@@ -307,7 +308,7 @@
 
 @media (max-width: 480px) {
   .paylt__hero {
-    min-height: 500px;
+    min-height: 100vh;
     padding: var(--spacing-2xl) 0;
     padding-top: calc(var(--spacing-3xl) + 50px);
     border-radius: 0 0 1.5rem 1.5rem;
@@ -405,15 +406,16 @@
 
 /* Intro Section */
 .paylt__intro {
-  background-color: white;
+  background-color: #F1FFF7;
   padding-top: calc(var(--spacing-4xl) * 0.3);
-  padding-bottom: var(--spacing-4xl);
+  padding-bottom: 0;
   margin-top: 0;
 }
 
 .paylt__intro-content {
   width: 100%;
   margin: 0;
+  margin-bottom: calc(var(--spacing-3xl) / 2);
 }
 
 .paylt__intro-content h2 {
@@ -431,21 +433,9 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.paylt__intro-content p:last-child {
-  margin-bottom: 0;
-}
-
-.paylt__intro-image {
-  width: 85%;
-  height: auto;
-  display: block;
-  margin: var(--spacing-2xl) auto 0;
-  border-radius: 1.5rem;
-}
-
 /* Content Section */
 .paylt__content {
-  background-color: white;
+  background-color: #F1FFF7;
 }
 
 .paylt__content-grid {
@@ -480,6 +470,7 @@
   color: var(--color-primary-dark);
   margin-bottom: var(--spacing-xl);
   font-weight: var(--font-weight-bold);
+  text-align: left;
 }
 
 .paylt__text-content h3 {
@@ -487,6 +478,7 @@
   color: var(--color-primary-dark);
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-xl);
+  text-align: left;
 }
 
 .paylt__text-content p {
@@ -494,11 +486,12 @@
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-lg);
+  text-align: left;
 }
 
 /* Image Section */
 .paylt__image-section {
-  background-color: white;
+  background-color: #F1FFF7;
   padding: var(--spacing-4xl) 0;
 }
 
@@ -512,7 +505,7 @@
 
 /* Video Section */
 .paylt__video {
-  background-color: #ffffff;
+  background-color: #F1FFF7;
   padding: var(--spacing-4xl) 0;
 }
 
@@ -643,11 +636,191 @@
   border: none;
 }
 
-/* Carousel adjustments for Paylt page */
+/* How It Works Section */
+.paylt__how-it-works {
+  background-color: #F1FFF7;
+  padding-top: 0;
+  padding-bottom: var(--spacing-2xl);
+}
 
+.paylt__how-it-works-content {
+  width: 100%;
+  margin: 0;
+}
 
-.paylt .carousel__slide:first-child .carousel__slide-image img {
-  width: 85%;
+.paylt__how-it-works-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.paylt__how-it-works-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Image Section adjustments */
+.paylt__image-section {
+  padding-top: calc(var(--spacing-4xl) * 0.15);
+  padding-bottom: calc(var(--spacing-4xl) / 2);
+  background-color: #F1FFF7;
+}
+
+.paylt__image-section .container {
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  object-fit: contain !important;
+}
+
+.paylt__image {
+  width: 83%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: var(--radius-2xl);
+}
+
+/* Final Image Section */
+.paylt__final-image-section {
+  background-color: #F1FFF7;
+  padding: 0;
+  margin: 0;
+}
+
+.paylt__final-image-section .paylt__image-full {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* Section Titles */
+.paylt__section-title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-md) 0;
+  text-align: left;
+}
+
+.paylt__tecnologia-title-outside {
+  font-size: var(--font-size-4xl);
+  color: #000000;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  text-align: left;
+}
+
+.paylt__section-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Componentes da Solução Section */
+.paylt__componentes-section {
+  padding-top: var(--spacing-4xl);
+}
+
+.paylt__componentes-section .container {
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Tecnologia Section */
+.paylt__tecnologia-section {
+  padding-top: var(--spacing-4xl);
+  background-color: #F1FFF7;
+}
+
+.paylt__tecnologia-section .container {
+  padding-bottom: var(--spacing-lg);
+}
+
+.paylt__tecnologia-section .feature-carousel {
+  padding-top: var(--spacing-xl);
+}
+
+/* Benefícios Section */
+.paylt__beneficios-section {
+  padding-top: var(--spacing-4xl);
+}
+
+.paylt__beneficios-section .container {
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Mobile responsive for section titles */
+@media (max-width: 768px) {
+  .paylt__section-title {
+    font-size: var(--font-size-3xl);
+    padding: 0 var(--spacing-md);
+    text-align: left;
+  }
+
+  .paylt__section-subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-md);
+    text-align: left;
+  }
+
+  .paylt__componentes-section,
+  .paylt__tecnologia-section,
+  .paylt__beneficios-section {
+    padding-top: var(--spacing-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .paylt__section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .paylt__section-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .paylt__componentes-section,
+  .paylt__tecnologia-section,
+  .paylt__beneficios-section {
+    padding-top: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .paylt__image-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .paylt__image {
+    width: 90%;
+    border-radius: 1.5rem;
+  }
+
+  .paylt__how-it-works-content h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .paylt__how-it-works-content p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .paylt__image {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .paylt__how-it-works-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .paylt__how-it-works-content p {
+    font-size: var(--font-size-sm);
+  }
 }

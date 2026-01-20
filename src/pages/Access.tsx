@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
+import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
 import accessHeroImage from '../assets/newAccess.webp';
@@ -84,7 +85,8 @@ export const Access: React.FC = () => {
       </section>
 
       <section className="access__cards section">
-        <div className="access__cards-grid">
+        {/* Desktop Grid */}
+        <div className="access__cards-grid access__cards-grid--desktop">
           {cardItems.map((item, index) => (
             <AnimateOnScroll
               key={item.id}
@@ -102,6 +104,23 @@ export const Access: React.FC = () => {
               </div>
             </AnimateOnScroll>
           ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="access__cards-carousel">
+          <MobileCarousel>
+            {cardItems.map((item) => (
+              <div key={item.id} className="access__card">
+                <div className="access__card-image">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <div className="access__card-content">
+                  <h3 className="access__card-title">{item.title}</h3>
+                  <p className="access__card-description">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </MobileCarousel>
         </div>
       </section>
 

@@ -8,8 +8,8 @@ export const drsTranslations = {
     content: {
       title: "Digital Return System",
       text1: "O DRS oferece um instrumento importante para o aumento das taxas de reciclagem e uma melhoria significativa na qualidade dos resíduos seletivos. E este sistema é de fácil instalação, integração e utilização.",
-      text2: "Para se conectarem aos equipamentos DRS, os cidadãos apenas necessitam de um dispositivo móvel para ligação via Bluetooth ou de um cartão RFID. Após esta ligação, o utilizador deposita as suas garrafas de vidro, embalagens de plástico e latas de metal. O DRS reconhece todos os tipos de material de embalagem em tempo real, graças a tecnologias acústicas combinadas com algoritmos de Inteligência Artificial.",
-      text3: "Depois deste processo, o utilizador recebe o incentivo que a sua cidade quer atribuir! Os incentivos a atribuir são decididos por cada município e podem ser “pontos” recebidos após cada depósito. Esses pontos podem depois ser convertidos em vários benefícios para cada cidadão - descontos nas tarifas de resíduos, transportes públicos, utilização de equipamentos municipais ou incentivos à participação em eventos da cidade."
+      text2: "Para se conectarem aos equipamentos DRS, os cidadãos apenas necessitam de um dispositivo móvel para ligação via Bluetooth ou de um cartão RFID. Após esta ligação, o utilizador deposita as suas garrafas de vidro, embalagens de plástico e latas de metal - o DRS reconhece todos os tipos de material de embalagem em tempo real, graças a tecnologias acústicas combinadas com algoritmos de Inteligência Artificial.",
+      text3: "Após a deposição, o utilizador recebe o incentivo que a sua cidade quer atribuir! Os incentivos a atribuir são decididos por cada município e podem ser \"pontos\" recebidos após cada depósito. Esses pontos podem depois ser convertidos em vários benefícios para cada cidadão - descontos nas tarifas de resíduos, transportes públicos, utilização de equipamentos municipais ou incentivos à participação em eventos da cidade."
     },
     carousel: [
       {

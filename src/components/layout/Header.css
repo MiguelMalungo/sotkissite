@@ -30,6 +30,11 @@
   justify-content: space-between;
   gap: var(--spacing-2xl);
   position: relative;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.5rem, 5vw, 6rem);
+  padding-right: clamp(1.5rem, 5vw, 6rem);
 }
 
 .header__cta-desktop {
@@ -46,7 +51,7 @@
 /* Add glow/shadow to the colored logo (SotKis.webp) */
 .header:not(.header--video-hero) .header__logo-image,
 .header--scrolled .header__logo-image {
-  filter: drop-shadow(0 0 8px rgba(253, 227, 99, 0.4));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
 }
 
 .header__actions {
@@ -214,16 +219,17 @@
 }
 
 .header--scrolled .header__lang-link--desktop {
-  color: #808080;
-  border-color: rgba(128, 128, 128, 0.3);
-  box-shadow: 0 0 10px rgba(253, 227, 99, 0.4);
+  color: #ffffff;
+  background-color: #4a4a4a;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
   /* Glow effect when scrolled */
 }
 
 .header--scrolled .header__lang-link--desktop:hover {
-  background-color: rgba(128, 128, 128, 0.1);
-  border-color: rgba(128, 128, 128, 0.5);
-  color: #808080;
+  background-color: #5a5a5a;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
 }
 
 .header__lang-wrapper {
@@ -244,7 +250,7 @@
   top: 100%;
   right: 0;
   margin-top: 8px;
-  background: white;
+  background: rgba(211, 211, 211, 0.95);
   border-radius: 12px;
   padding: 8px;
   min-width: 80px;
@@ -272,22 +278,23 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: #000;
+  color: #000000;
   transition: all 0.2s ease;
   text-align: center;
 }
 
 .header__lang-option:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .header__lang-option--active {
-  background-color: #FDE363;
+  background-color: #ffffff;
   font-weight: 700;
+  color: #000000;
 }
 
 .header__lang-option--active:hover {
-  background-color: #FDE363;
+  background-color: #ffffff;
 }
 
 /* Navigation Dropdown Styles */

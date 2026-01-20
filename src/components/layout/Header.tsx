@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/platform', label: 'Software' },
     {
       label: 'Hardware',
       dropdown: [
@@ -38,6 +37,7 @@ export const Header: React.FC = () => {
         { path: '/drs', label: 'DRS' },
       ],
     },
+    { path: '/platform', label: 'Software' },
     { path: '/trash4goods', label: 'App Cidadão' },
     { path: '/paylt', label: 'P(L)ayt' },
   ];
@@ -108,7 +108,7 @@ export const Header: React.FC = () => {
         {/* Mobile actions container */}
         <div className={`header__actions ${isMobileMenuOpen ? 'header__actions--expanded' : ''}`}>
           <Link to="/contact" className="header__enquire-btn">
-            {language === 'pt' ? 'Fale conosco' : 'Enquire now'}
+            {language === 'pt' ? 'Fale connosco' : 'Enquire now'}
           </Link>
 
           <button
@@ -131,46 +131,6 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="header__nav-wrapper" onClick={closeMobileMenu}>
-          {/* Desktop CTA Button - 30px gap from nav */}
-          <div className="header__nav-desktop-cta">
-            {/* Desktop language toggle - beside CTA button */}
-            <div className="header__lang-wrapper">
-              <button
-                onClick={toggleLanguageDropdown}
-                className={`header__lang-link header__lang-link--desktop ${isLangDropdownOpen ? 'header__lang-link--active' : ''}`}
-                aria-label="Select language"
-                aria-expanded={isLangDropdownOpen}
-              >
-                {language.toUpperCase()}
-                <svg
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`header__lang-arrow ${isLangDropdownOpen ? 'header__lang-arrow--open' : ''}`}
-                >
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              <div className={`header__lang-dropdown ${isLangDropdownOpen ? 'header__lang-dropdown--open' : ''}`}>
-                {['pt', 'en', 'es', 'fr'].map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={() => handleLanguageChange(lang as any)}
-                    className={`header__lang-option ${language === lang ? 'header__lang-option--active' : ''}`}
-                  >
-                    {lang.toUpperCase()}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <Link to="/contact" className="header__enquire-btn">
-              {language === 'pt' ? 'Fale conosco' : 'Enquire now'}
-            </Link>
-          </div>
-
           <nav className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`} onClick={(e) => e.stopPropagation()}>
             <ul className="header__nav-list">
               {navItems.map((item, index) => {
@@ -253,6 +213,46 @@ export const Header: React.FC = () => {
               </li>
             </ul>
           </nav>
+
+          {/* Desktop CTA Button and Language - After nav */}
+          <div className="header__nav-desktop-cta">
+            {/* Desktop language toggle - beside CTA button */}
+            <div className="header__lang-wrapper">
+              <button
+                onClick={toggleLanguageDropdown}
+                className={`header__lang-link header__lang-link--desktop ${isLangDropdownOpen ? 'header__lang-link--active' : ''}`}
+                aria-label="Select language"
+                aria-expanded={isLangDropdownOpen}
+              >
+                {language.toUpperCase()}
+                <svg
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`header__lang-arrow ${isLangDropdownOpen ? 'header__lang-arrow--open' : ''}`}
+                >
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <div className={`header__lang-dropdown ${isLangDropdownOpen ? 'header__lang-dropdown--open' : ''}`}>
+                {['pt', 'en', 'es', 'fr'].map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => handleLanguageChange(lang as any)}
+                    className={`header__lang-option ${language === lang ? 'header__lang-option--active' : ''}`}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <Link to="/contact" className="header__enquire-btn">
+              {language === 'pt' ? 'Fale connosco' : 'Enquire now'}
+            </Link>
+          </div>
         </div>
       </div>
     </header>

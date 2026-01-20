@@ -23,8 +23,6 @@ import moduloDRS from '../assets/ModuloSotkisDRS.webp';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
-import summerImage from '../assets/summer.png';
-import fieldImage from '../assets/field.png';
 import './Platform.css';
 import './Home.css';
 
@@ -53,27 +51,6 @@ export const Platform: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Parallax effect for background images
-  useEffect(() => {
-    const handleScroll = () => {
-      const bgImages = document.querySelectorAll('.platform__tabs-bg-image');
-
-      bgImages.forEach((img) => {
-        const section = img.closest('.platform__tabs--with-bg');
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const scrollProgress = -rect.top / (rect.height + window.innerHeight);
-          const yOffset = scrollProgress * 100;
-          (img as HTMLElement).style.transform = `translateY(${yOffset}px)`;
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
 
 
@@ -192,10 +169,7 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="platform__tabs section platform__tabs--with-bg platform__tabs--summer">
-        <div className="platform__tabs-bg-wrapper">
-          <img src={summerImage} alt="" className="platform__tabs-bg-image" />
-        </div>
+      <section className="platform__tabs section">
         <div className="container">
           <div className="platform__tabs-header">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
@@ -287,10 +261,7 @@ export const Platform: React.FC = () => {
       </section>
 
       {/* Platform Modules Section */}
-      <section className="platform__modules section platform__modules--with-bg platform__modules--field">
-        <div className="platform__modules-bg-wrapper">
-          <img src={fieldImage} alt="" className="platform__modules-bg-image" />
-        </div>
+      <section className="platform__modules section">
         <div className="container">
           <div className="platform__modules-header">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>

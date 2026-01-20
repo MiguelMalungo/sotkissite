@@ -1,8 +1,8 @@
 export const homeTranslations = {
   pt: {
     hero: {
-      title: "Conheça os nossos\nsistemas inteligentes\npara gestão\nde resíduos",
-      description: "Ecossistema composto por um conjunto de funcionalidades avançadas, direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final.<br />A solução integra dispositivos IoT e uma plataforma digital que centraliza todas as informações.<br />Estamos preparados para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes.<br /><span style='font-weight: 800;'>Está pronto para conduzir o seu município para um futuro mais sustentável?</span>"
+      title: "Sistemas Inteligentes para<br />Gestão de Resíduos",
+      description: "Estamos preparados para criar cidades inteligentes e investir na economia circular!<br /><span style='font-weight: 700;'>Está pronto para conduzir o seu município para um futuro mais sustentável?</span><br /><br />O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital que centraliza todas as informações, e é direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final."
     },
     riseAbove: {
       title: "Software",
@@ -11,17 +11,17 @@ export const homeTranslations = {
     },
     access: {
       title: "Access",
-      description: "O módulo SOTKIS ACCESS possui leitor RFID e fechos que restringem o acesso ao contentor. Pode ser instalado facilmente num sistema já existente e é a solução perfeita para cidades que desejem introduzir um sistema de tarifação de resíduos PAYT.",
+      description: "Controlos de acesso que restringem o acesso ao contentor de resíduos e são a solução perfeita para cidades que desejem introduzir um sistema de tarifação de resíduos PAYT.",
       button: "Explorar o Access"
     },
     level: {
       title: "Level",
-      description: "Módulo inteligente que monitoriza o nível de enchimento de resíduos nos contentores. Obtenha informações precisas, atualizadas e facilmente acessíveis sobre a quantidade de resíduos em cada contentor, otimizando assim a eficiência das suas operações.",
+      description: "Módulo que monitoriza o nível de enchimento dos contentores. Obtenha informações precisas, atualizadas e facilmente acessíveis sobre a quantidade de resíduos em cada contentor, otimizando assim a eficiência das suas operações.",
       button: "Explorar o Level"
     },
     drs: {
       title: "DRS",
-      description: "O \"Digital Return System\" é uma tecnologia inovadora que identifica individualmente cada embalagem de deposição seletiva e permite a atribuição de incentivos aos utilizadores. É um instrumento impulsionador do aumento das taxas de reciclagem.",
+      description: "Tecnologia inovadora que identifica individualmente cada embalagem de deposição seletiva e permite a atribuição de incentivos aos utilizadores.",
       button: "Explorar o DRS"
     },
     paylt: {

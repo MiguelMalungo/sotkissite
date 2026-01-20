@@ -4,17 +4,17 @@ export const footerTranslations = {
     products: {
       title: "OS NOSSOS PRODUTOS",
       links: [
-        { label: "Platform", path: "/platform" },
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
+        { label: "Platform", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
         { label: "Trash4Goods", path: "/trash4goods" }
       ]
     },
     newsletter: {
       title: "Subscreva a nossa Newsletter",
-      placeholder: "O seu e-mail / O seu número de identificação",
+      placeholder: "O seu e-mail",
       button: "Enviar",
       note: "A privacidade é importante para nós, por isso tem a opção de desativar certos tipos de armazenamento que podem não ser necessários para o funcionamento básico do website. Bloquear categorias pode impactar a sua experiência no website."
     },
@@ -29,10 +29,10 @@ export const footerTranslations = {
     products: {
       title: "OUR PRODUCTS",
       links: [
-        { label: "Platform", path: "/platform" },
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
+        { label: "Platform", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
         { label: "Trash4Goods", path: "/trash4goods" }
       ]
@@ -54,10 +54,10 @@ export const footerTranslations = {
     products: {
       title: "OUR PRODUCTS",
       links: [
-        { label: "Platform", path: "/platform" },
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
+        { label: "Platform", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
         { label: "Trash4Goods", path: "/trash4goods" }
       ]
@@ -79,10 +79,10 @@ export const footerTranslations = {
     products: {
       title: "OUR PRODUCTS",
       links: [
-        { label: "Platform", path: "/platform" },
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
+        { label: "Platform", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
         { label: "Trash4Goods", path: "/trash4goods" }
       ]

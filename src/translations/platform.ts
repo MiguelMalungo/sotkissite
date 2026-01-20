@@ -2,9 +2,8 @@ export const platformTranslations = {
   pt: {
     intro: {
       title: "Plataforma Digital Sotkis",
-      text1: "O SOTKIS (Sotkon Intelligent Systems) consiste numa ferramenta digital que a Sotkon disponibiliza de forma gratuita, tratando-se de um sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
-      text2: "Esta plataforma permite gerir online o parque de contentores, onde através dos vários módulos de gestão de resíduos é possível otimizar a eficiência dos recursos alocados, aumentar a rentabilidade da operação, potenciar o aumento das taxas de reciclagem e melhorar a qualidade dos resíduos.",
-      text3: "A plataforma SOTKIS permite uma gestão integrada e inteligente de todos os processos relacionados com a deposição e recolha de resíduos, proporcionando às entidades responsáveis ferramentas avançadas para otimizar operações e melhorar a sustentabilidade ambiental."
+      text1: "O Sotkis é uma plataforma digital desenvolvida pela Sotkon. Trata-se de um sistema integrado de gestão que recolhe, analisa e centraliza informação sobre os processos associados à deposição e recolha de resíduos, oferecendo às entidades responsáveis ferramentas avançadas para otimizar operações e reforçar a sustentabilidade ambiental.",
+      text2: "Através dos seus módulos especializados, o Sotkis permite gerir online todo o parque de contentores, garantindo uma visão completa e em tempo real da operação. Desta forma, torna-se possível melhorar a eficiência na afetação de recursos, aumentar a rentabilidade, elevar as taxas de reciclagem e assegurar uma melhor qualidade dos resíduos recolhidos."
     },
     features: {
       intro: "Através dos módulos existentes na plataforma SOTKIS a entidade responsável pela operação pode aceder de forma simples a várias funcionalidades:",
@@ -90,7 +89,7 @@ export const platformTranslations = {
       ]
     },
     access: {
-      text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço",
+      text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço www.sotkis.com ou através da app Sotkis.",
       buttonText: "Play Video"
     }
   },

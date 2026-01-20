@@ -14,7 +14,6 @@ export const Contact: React.FC = () => {
     company: '',
     service: '',
     message: '',
-    file: null as File | null,
     privacyPolicy: false,
     newsletter: false,
   });
@@ -34,15 +33,6 @@ export const Contact: React.FC = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({
-        ...prev,
-        file: e.target.files![0],
-      }));
-    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -69,17 +59,33 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="contact">
+      {/* Signal emission ripple animations */}
+      <div className="contact__ripples">
+        <div className="contact__ripple-source-1">
+          <div className="contact__ripple-1"></div>
+          <div className="contact__ripple-2"></div>
+          <div className="contact__ripple-3"></div>
+        </div>
+        <div className="contact__ripple-source-2">
+          <div className="contact__ripple-4"></div>
+          <div className="contact__ripple-5"></div>
+        </div>
+        <div className="contact__ripple-source-3">
+          <div className="contact__ripple-6"></div>
+          <div className="contact__ripple-7"></div>
+        </div>
+        <div className="contact__ripple-source-4">
+          <div className="contact__ripple-8"></div>
+          <div className="contact__ripple-9"></div>
+        </div>
+      </div>
       <div className="contact__container container">
         <div className="contact__content">
           {/* Contact Information */}
           <div className="contact__info">
             <div className="contact__header">
-              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-                <h1 className="contact__title">{t.title}</h1>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-                <p className="contact__subtitle">{t.subtitle}</p>
-              </AnimateOnScroll>
+              <p className="contact__subtitle">{t.subtitle}</p>
+              <h1 className="contact__title">{t.title}</h1>
             </div>
           </div>
 
@@ -182,49 +188,12 @@ export const Contact: React.FC = () => {
                   id="message"
                   name="message"
                   className="contact__form-textarea"
-                  rows={6}
+                  rows={3}
                   value={formData.message}
                   onChange={handleChange}
                   required
                   placeholder={t.form.message.placeholder}
                 />
-              </div>
-
-              <div className="contact__form-group contact__form-group--full">
-                <label htmlFor="file" className="contact__form-label">
-                  {t.form.file.label}
-                </label>
-                <div className="contact__form-file">
-                  <input
-                    type="file"
-                    id="file"
-                    name="file"
-                    className="contact__form-file-input"
-                    onChange={handleFileChange}
-                  />
-                  <label htmlFor="file" className="contact__form-file-label">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span>
-                      {formData.file
-                        ? formData.file.name
-                        : t.form.file.button}
-                    </span>
-                  </label>
-                </div>
               </div>
 
               <div className="contact__privacy-section">

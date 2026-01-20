@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
-import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
 const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
@@ -13,9 +13,26 @@ import heroImage4 from '../assets/4.webp';
 import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
-import playtSmImage from '../assets/Reciclar.jpg';
 import trash4goodsImage from '../assets/trash4goods.webp';
 import './Home.css';
+
+const ArrowIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{ marginLeft: '10px', verticalAlign: 'middle', transition: 'transform 0.3s ease' }}
+    className="button-arrow-icon"
+  >
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+);
 
 export const Home: React.FC = () => {
   const { language } = useLanguage();
@@ -24,6 +41,15 @@ export const Home: React.FC = () => {
   const topEdgeRef = useRef<HTMLDivElement>(null);
   const heroVideo1Ref = useRef<HTMLVideoElement>(null);
   const heroVideo2Ref = useRef<HTMLVideoElement>(null);
+  const [scrollY, setScrollY] = React.useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const topEdgeElement = topEdgeRef.current;
@@ -271,18 +297,194 @@ export const Home: React.FC = () => {
         </video>
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
-          <AnimatedHeroTitle
-            text={t.hero.title}
-            className="home__hero-heading"
-            delay={100}
-            as="h1"
-            animateAllLines={true}
-          />
+          <h1 className="home__hero-heading" dangerouslySetInnerHTML={{ __html: t.hero.title }} />
           <div className="home__hero-description">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
         </div>
       </section>
+
+      {/* Cards Grid Section - Level, Access, DRS */}
+      <section className="home__cards-section">
+        <div className="container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__cards-section-title">Hardware</h2>
+          </AnimateOnScroll>
+          <div className="home__cards-grid home__cards-grid--desktop">
+            {/* Level Card */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="home__card">
+              <a href="/level" className="home__card-link">
+                <div className="home__card-image">
+                  <img
+                    src={levelSmImage}
+                    alt="Level monitoring sensors"
+                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
+                  />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.level.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/level" variant="primary" size="sm">
+                      {t.level.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.level.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/level" variant="primary" size="sm">
+                      {t.level.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </AnimateOnScroll>
+
+            {/* Access Card */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="home__card">
+              <a href="/access" className="home__card-link">
+                <div className="home__card-image">
+                  <img
+                    src={accessSmImage}
+                    alt="Access control system"
+                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
+                  />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.access.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/access" variant="primary" size="sm">
+                      {t.access.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.access.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/access" variant="primary" size="sm">
+                      {t.access.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </AnimateOnScroll>
+
+            {/* DRS Card */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="home__card">
+              <a href="/drs" className="home__card-link">
+                <div className="home__card-image">
+                  <img
+                    src={drsSmImage}
+                    alt="Deposit return system"
+                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
+                  />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.drs.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/drs" variant="primary" size="sm">
+                      {t.drs.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.drs.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/drs" variant="primary" size="sm">
+                      {t.drs.button}
+                      <ArrowIcon />
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </AnimateOnScroll>
+          </div>
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="home__cards-carousel">
+          <MobileCarousel className="home__cards-carousel-inner">
+            {/* Level Card */}
+            <div className="home__card">
+              <a href="/level" className="home__card-link">
+                <div className="home__card-image">
+                  <img src={levelSmImage} alt="Level monitoring sensors" />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.level.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/level" variant="primary" size="sm">
+                      {t.level.button}
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.level.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/level" variant="primary" size="sm">
+                      {t.level.button}
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* Access Card */}
+            <div className="home__card">
+              <a href="/access" className="home__card-link">
+                <div className="home__card-image">
+                  <img src={accessSmImage} alt="Access control system" />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.access.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/access" variant="primary" size="sm">
+                      {t.access.button}
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.access.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/access" variant="primary" size="sm">
+                      {t.access.button}
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* DRS Card */}
+            <div className="home__card">
+              <a href="/drs" className="home__card-link">
+                <div className="home__card-image">
+                  <img src={drsSmImage} alt="Deposit return system" />
+                  <div className="home__card-overlay"></div>
+                  <h3 className="home__card-title">{t.drs.title}</h3>
+                  <div className="home__card-button-wrapper home__card-button-wrapper--front">
+                    <Button href="/drs" variant="primary" size="sm">
+                      {t.drs.button}
+                    </Button>
+                  </div>
+                </div>
+                <div className="home__card-content">
+                  <p className="home__card-description">{t.drs.description}</p>
+                  <div className="home__card-button-wrapper">
+                    <Button href="/drs" variant="primary" size="sm">
+                      {t.drs.button}
+                    </Button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </MobileCarousel>
+        </div>
+      </section>
+
+      {/* Software Title */}
+      <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+        <h2 className="home__software-section-title">Software</h2>
+      </AnimateOnScroll>
 
       {/* Rise Above Section */}
       <section className="home__rise-above-container">
@@ -319,95 +521,16 @@ export const Home: React.FC = () => {
           <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
             <Button href="/platform" variant="primary" size="sm">
               {t.riseAbove.button}
+              <ArrowIcon />
             </Button>
           </AnimateOnScroll>
         </div>
       </section>
 
-      {/* Cards Grid Section - Level, Access, DRS */}
-      <section className="home__cards-section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="home__cards-section-title">Hardware</h2>
-          </AnimateOnScroll>
-        </div>
-        <div className="home__cards-grid">
-          {/* Level Card */}
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="home__card">
-            <a href="/level" className="home__card-link">
-              <div className="home__card-image">
-                <img src={levelSmImage} alt="Level monitoring sensors" />
-                <div className="home__card-overlay"></div>
-                <h3 className="home__card-title">{t.level.title}</h3>
-                <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                  <Button href="/level" variant="primary" size="sm">
-                    {t.level.button}
-                  </Button>
-                </div>
-              </div>
-              <div className="home__card-content">
-                <p className="home__card-description">{t.level.description}</p>
-                <div className="home__card-button-wrapper">
-                  <Button href="/level" variant="primary" size="sm">
-                    {t.level.button}
-                  </Button>
-                </div>
-              </div>
-            </a>
-          </AnimateOnScroll>
-
-          {/* Access Card */}
-          <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="home__card">
-            <a href="/access" className="home__card-link">
-              <div className="home__card-image">
-                <img src={accessSmImage} alt="Access control system" />
-                <div className="home__card-overlay"></div>
-                <h3 className="home__card-title">{t.access.title}</h3>
-                <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                  <Button href="/access" variant="primary" size="sm">
-                    {t.access.button}
-                  </Button>
-                </div>
-              </div>
-              <div className="home__card-content">
-                <p className="home__card-description">{t.access.description}</p>
-                <div className="home__card-button-wrapper">
-                  <Button href="/access" variant="primary" size="sm">
-                    {t.access.button}
-                  </Button>
-                </div>
-              </div>
-            </a>
-          </AnimateOnScroll>
-
-          {/* DRS Card */}
-          <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="home__card">
-            <a href="/drs" className="home__card-link">
-              <div className="home__card-image">
-                <img src={drsSmImage} alt="Deposit return system" />
-                <div className="home__card-overlay"></div>
-                <h3 className="home__card-title">{t.drs.title}</h3>
-                <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                  <Button href="/drs" variant="primary" size="sm">
-                    {t.drs.button}
-                  </Button>
-                </div>
-              </div>
-              <div className="home__card-content">
-                <p className="home__card-description">{t.drs.description}</p>
-                <div className="home__card-button-wrapper">
-                  <Button href="/drs" variant="primary" size="sm">
-                    {t.drs.button}
-                  </Button>
-                </div>
-              </div>
-            </a>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
       {/* T4G App Section */}
-      <section className="home__section home__section--t4g">
+      <section className="home__section home__section--t4g home__section--parallax">
+        <div className="home__section-parallax-bg" style={{ backgroundImage: `url(${heroImage4})` }}></div>
+        <div className="home__section-parallax-overlay"></div>
         <div className="home__section--t4g-wrapper">
           <AnimateOnScroll animation="fadeBlur" delay={0} duration={1} className="home__section--t4g-image">
             <img
@@ -427,45 +550,13 @@ export const Home: React.FC = () => {
                   </p>
                 </AnimateOnScroll>
                 <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
-                  <Button href="#contact" variant="primary" size="sm">
+                  <Button href="/trash4goods" variant="primary" size="sm">
                     {t.t4g.button}
+                    <ArrowIcon />
                   </Button>
                 </AnimateOnScroll>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Paylt Section */}
-      <section className="home__paylt-container">
-        <div className="home__section-grid home__section-grid--stacked">
-          <div className="home__paylt-image-wrapper">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="home__section-heading home__paylt-title">{t.paylt.title}</h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="scaleUp" delay={100} duration={0.9} className="home__section-image">
-              <div className="home__section-image-placeholder home__section-image-placeholder--full">
-                <img
-                  src={playtSmImage}
-                  alt="Paylt solution"
-                />
-              </div>
-            </AnimateOnScroll>
-          </div>
-          <div className="home__section-content">
-            <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8}>
-              <div className="home__section-text-wrapper">
-                <p className="home__section-text">
-                  {t.paylt.description}
-                </p>
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-              <Button href="/paylt" variant="primary" size="sm">
-                {t.paylt.button}
-              </Button>
-            </AnimateOnScroll>
           </div>
         </div>
       </section>

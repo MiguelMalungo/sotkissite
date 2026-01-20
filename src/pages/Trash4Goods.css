@@ -1,17 +1,17 @@
 .trash4goods {
-    background-color: white;
+    background-color: #F1FFF7;
 }
 
 /* Hero Section */
 .trash4goods__hero {
     position: relative;
-    min-height: 822px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 0 0 3rem 3rem;
-    background-color: white !important;
+    background-color: #F1FFF7 !important;
     padding: var(--spacing-5xl) 0;
     padding-top: calc(var(--spacing-5xl) + 90px);
     padding-bottom: 0;
@@ -24,6 +24,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 1;
 }
 
@@ -126,8 +127,8 @@
 
 /* Intro Section */
 .trash4goods__intro {
-    background-color: white;
-    padding-top: calc(var(--spacing-4xl) * 0.15);
+    background-color: #F1FFF7;
+    padding-top: calc(var(--spacing-4xl) * 0.03);
     padding-bottom: 0;
 }
 
@@ -234,7 +235,7 @@
 
 @media (max-width: 768px) {
     .trash4goods__hero {
-        min-height: 600px;
+        min-height: 100vh;
         padding: var(--spacing-3xl) 0;
         padding-top: calc(var(--spacing-4xl) + 60px);
         border-radius: 0 0 2rem 2rem;
@@ -283,7 +284,7 @@
 
 @media (max-width: 480px) {
     .trash4goods__hero {
-        min-height: 500px;
+        min-height: 100vh;
         padding: var(--spacing-2xl) 0;
         padding-top: calc(var(--spacing-3xl) + 50px);
         border-radius: 0 0 1.5rem 1.5rem;
@@ -312,13 +313,13 @@
     padding: 0;
     margin-top: -30px;
     z-index: 10;
-    background-color: white !important;
+    background-color: #F1FFF7 !important;
 }
 
 .trash4goods__app-hero {
     position: relative;
     width: 100%;
-    background-color: white !important;
+    background-color: #F1FFF7 !important;
 }
 
 .trash4goods__app-background {
@@ -328,7 +329,7 @@
     position: relative;
     z-index: 1;
     object-fit: cover;
-    background-color: white !important;
+    background-color: #F1FFF7 !important;
 }
 
 .trash4goods__app-content {

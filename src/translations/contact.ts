@@ -1,7 +1,7 @@
 export const contactTranslations = {
   pt: {
-    title: "Fale connosco",
-    subtitle: "Se precisa de informações sobre os nossos produtos e serviços.",
+    title: "Fale connosco!",
+    subtitle: "Se precisa de informações sobre os nossos produtos e serviços",
     privacy: {
       policy: "Ao introduzir os meus dados eu aceito a [Política de Privacidade e Cookies da Sotkon](https://sotkon.com/pt/privacy-policy/)",
       newsletter: "Ao introduzir os meus dados, autorizo a receção da newsletter da Sotkon"

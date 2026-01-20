@@ -57,18 +57,7 @@ export const DRS: React.FC = () => {
                 {t.content.text1}
               </p>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-              <p>
-                {t.content.text2}
-              </p>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
-              <p>
-                {t.content.text3}
-              </p>
-            </AnimateOnScroll>
           </div>
-
         </div>
       </section>
 
@@ -84,27 +73,20 @@ export const DRS: React.FC = () => {
         </div>
       </section>
 
-      <section className="drs__image-section" style={{ backgroundColor: '#F4FBFC' }}>
+      <section className="drs__content section">
         <div className="container">
-          <AnimateOnScroll animation="scaleUp" delay={0} duration={1}>
-            <img
-              src={infograficDRS}
-              alt="Infographic DRS"
-              className="drs__image"
-            />
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      <section className="drs__image-section drs__image-section--bottom">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.9}>
-            <img
-              src={drs2Image}
-              alt="DRS system"
-              className="drs__image"
-            />
-          </AnimateOnScroll>
+          <div className="drs__text-content">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <p>
+                {t.content.text2}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                {t.content.text3}
+              </p>
+            </AnimateOnScroll>
+          </div>
         </div>
       </section>
 

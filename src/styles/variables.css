@@ -1,3 +1,13 @@
+/* VAG Rounded Font */
+@font-face {
+  font-family: 'VAG Rounded';
+  src: url('../assets/fonts/VAGRounded-Regular.woff2') format('woff2'),
+    url('../assets/fonts/VAGRounded-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors - SOTKIS brand colors */
   --color-primary: #1a4d2e;
@@ -19,8 +29,8 @@
   --color-text-secondary: #6b7280;
   --color-text-light: #9ca3af;
 
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9fafb;
+  --color-bg-primary: #F1FFF7;
+  --color-bg-secondary: #F1FFF7;
   --color-bg-dark: #111827;
 
   --color-border: #e5e7eb;

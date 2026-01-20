@@ -1,16 +1,20 @@
 export const payltTranslations = {
   pt: {
     hero: {
-      title: "Sotkon Waste Systems",
-      subtitle: "Soluções para sistema de pagamento de resíduos PAYT!"
+      title: "P(L)AYT",
+      subtitle: "Uma solução inteligente para transformar a forma como gerimos resíduos"
     },
     intro: {
-      title: "P(L)ayt",
-      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva que utiliza tecnologia para promover mudanças de comportamento nos cidadãos e reforçar a colaboração entre utilizadores, municípios e empresas.",
-      text2: "Integrando os princípios PAYT (Pay As You Throw), RAYT (Reward As You Throw) e SAYT (Save As You Throw), a plataforma incentiva práticas sustentáveis através de gamificação, sistemas de recompensa e inteligência artificial, contribuindo para a redução de resíduos em aterro e para o aumento das taxas de reciclagem.",
-      text3: "A plataforma agrega software e hardware num ecossistema universal, aplicável a qualquer tipo de contentor e fabricante.",
-      text4: "No software, destaca-se uma infraestrutura tecnológica dinâmica com dashboards interativos, aplicação móvel com acesso Bluetooth e NFC, marketplace integrado e funcionalidades de gamificação. No hardware, integra dispositivos inteligentes instalados em qualquer tipo de contentores para deposição de resíduos, sensores IoT para deteção de diferentes materiais, RFID para recolha porta-a-porta, câmaras com IA para prevenir contaminação e sistemas de controlo de acessos para utilizadores individuais.",
-      text5: "Ao permitir a recolha e análise de dados em tempo real, suportada por algoritmos de inteligência artificial, o Sotkis P(L)AYT aumenta a capacidade de monitorização das autarquias. Esta visibilidade sobre os hábitos dos cidadãos possibilita ajustar estratégias de gestão e desenvolver políticas públicas mais eficazes, alinhadas com as metas ambientais e as necessidades reais da população."
+      title: "P(L)AYT",
+      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva que utiliza tecnologia avançada para promover mudanças reais nos comportamentos dos cidadãos e fortalecer a colaboração entre utilizadores, municípios e empresas. Baseado nos princípios PAYT (Pay As You Throw), RAYT (Reward As You Throw) e SAYT (Save As You Throw), o sistema combina software e hardware e incentiva práticas sustentáveis através de gamificação, recompensas e inteligência artificial, contribuindo para reduzir a quantidade de resíduos enviados para aterro e para aumentar significativamente as taxas de reciclagem.",
+      text2: "Um Ecossistema Universal, Pronto para o Futuro",
+      text3: "O Sotkis P(L)AYT foi desenvolvido para ser totalmente universal e modular, adaptando-se a diferentes realidades municipais, fabricantes de contentores e contextos de implementação. É uma solução preparada para apoiar a transição ambiental, a digitalização dos serviços públicos e a evolução dos modelos de gestão de resíduos.",
+      text4: "",
+      text5: ""
+    },
+    howItWorks: {
+      title: "Como funciona?",
+      description: "O Sotkis P(L)AYT combina software e hardware num ecossistema universal, compatível com qualquer tipo de contentor e fabricante. A plataforma acompanha todas as etapas do processo de deposição e recolha, permitindo monitorizar hábitos. Em consequência, é possível criar incentivos positivos e ajustar políticas públicas de forma eficiente."
     },
     carousel: [
       {
@@ -23,11 +27,15 @@ export const payltTranslations = {
       },
       {
         title: "Chaves de Acesso e Limitador Volumétrico",
-        description: "Cada chave de acesso é programada com um ID de utilizador, que contém um código de 8 bytes exclusivo. Os dados do utilizador são registados na memória do sistema sempre que um cartão de acesso ou uma chave inteligente interage com o marco de deposição. Uma vez desbloqueado o acesso do utilizador ao marco de deposição, um limitador volumétrico restringe a quantidade de resíduos que pode ser depositado no marco após a tampa ter sido aberta e até a mesma ser novamente fechada. Nesse momento os resíduos descem até ao contentor e o acesso ao marco de deposição volta a estar bloqueado."
+        description: "Cada chave de acesso é programada com um ID único. Os dados são registados sempre que interage com o marco de deposição. Um limitador volumétrico restringe a quantidade de resíduos depositados entre cada abertura e fecho da tampa."
       },
       {
-        title: "Processamento de Dados e Faturação",
-        description: "Numa data e hora pré-configurada, os dados armazenados na memória do módulo de acesso SOTKIS são transferidos através de GSM/GPRS/Bluetooth para o portal web de gestão de acessos. Neste portal, a entidade responsável pode verificar todos os acessos, bem como gerir os dados obtidos. Estes dados de acesso dos utilizadores podem ser transferidos para um software de faturação certificado (não incluído no SOTKIS). Após a definição da tarifa aplicável, a empresa de gestão de resíduos sólidos urbanos está pronta para faturar a cada utilizador o valor mensal das suas deposições."
+        title: "Processamento de Dados",
+        description: "Os dados armazenados no módulo de acesso são transferidos via GSM/GPRS/Bluetooth para o portal web de gestão. A entidade responsável pode verificar todos os acessos e gerir os dados obtidos em tempo real."
+      },
+      {
+        title: "Faturação",
+        description: "Os dados de acesso podem ser transferidos para software de faturação certificado. Após definição da tarifa aplicável, é possível faturar a cada utilizador o valor mensal das suas deposições de forma automatizada."
       }
     ],
     data: {
@@ -56,6 +64,10 @@ export const payltTranslations = {
       text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
       text5: ""
     },
+    howItWorks: {
+      title: "How it works?",
+      description: "Sotkis P(L)AYT combines software and hardware in a universal ecosystem, compatible with any type of container and manufacturer. The platform tracks all stages of the deposition and collection process, allowing for habit monitoring. Consequently, it is possible to create positive incentives and adjust public policies efficiently."
+    },
     carousel: [
       {
         title: "Underground and Semi-Underground Systems",
@@ -68,6 +80,10 @@ export const payltTranslations = {
       {
         title: "Access Keys and Volumetric Limiter",
         description: "Each access key is programmed with a user ID, which contains an exclusive 8-byte code. User data is recorded in the system memory whenever an access card or smart key interacts with the deposition marker. Once the user's access to the deposition marker is unlocked, a volumetric limiter restricts the amount of waste that can be deposited in the marker after the lid has been opened and until it is closed again. At that moment the waste descends to the container and access to the deposition marker is blocked again."
+      },
+      {
+        title: "Data Processing and Billing",
+        description: "At a pre-configured date and time, the data stored in the memory of the SOTKIS access module is transferred via GSM/GPRS/Bluetooth to the access management web portal. In this portal, the responsible entity can check all accesses, as well as manage the data obtained. This user access data can be transferred to certified billing software (not included in SOTKIS). After defining the applicable tariff, the urban solid waste management company is ready to bill each user the monthly value of their deposits."
       },
       {
         title: "Data Processing and Billing",
@@ -100,6 +116,10 @@ export const payltTranslations = {
       text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
       text5: ""
     },
+    howItWorks: {
+      title: "How it works?",
+      description: "Sotkis P(L)AYT combines software and hardware in a universal ecosystem, compatible with any type of container and manufacturer. The platform tracks all stages of the deposition and collection process, allowing for habit monitoring. Consequently, it is possible to create positive incentives and adjust public policies efficiently."
+    },
     carousel: [
       {
         title: "Underground and Semi-Underground Systems",
@@ -112,6 +132,10 @@ export const payltTranslations = {
       {
         title: "Access Keys and Volumetric Limiter",
         description: "Each access key is programmed with a user ID, which contains an exclusive 8-byte code. User data is recorded in the system memory whenever an access card or smart key interacts with the deposition marker. Once the user's access to the deposition marker is unlocked, a volumetric limiter restricts the amount of waste that can be deposited in the marker after the lid has been opened and until it is closed again. At that moment the waste descends to the container and access to the deposition marker is blocked again."
+      },
+      {
+        title: "Data Processing and Billing",
+        description: "At a pre-configured date and time, the data stored in the memory of the SOTKIS access module is transferred via GSM/GPRS/Bluetooth to the access management web portal. In this portal, the responsible entity can check all accesses, as well as manage the data obtained. This user access data can be transferred to certified billing software (not included in SOTKIS). After defining the applicable tariff, the urban solid waste management company is ready to bill each user the monthly value of their deposits."
       },
       {
         title: "Data Processing and Billing",
@@ -144,6 +168,10 @@ export const payltTranslations = {
       text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
       text5: ""
     },
+    howItWorks: {
+      title: "How it works?",
+      description: "Sotkis P(L)AYT combines software and hardware in a universal ecosystem, compatible with any type of container and manufacturer. The platform tracks all stages of the deposition and collection process, allowing for habit monitoring. Consequently, it is possible to create positive incentives and adjust public policies efficiently."
+    },
     carousel: [
       {
         title: "Underground and Semi-Underground Systems",
@@ -156,6 +184,10 @@ export const payltTranslations = {
       {
         title: "Access Keys and Volumetric Limiter",
         description: "Each access key is programmed with a user ID, which contains an exclusive 8-byte code. User data is recorded in the system memory whenever an access card or smart key interacts with the deposition marker. Once the user's access to the deposition marker is unlocked, a volumetric limiter restricts the amount of waste that can be deposited in the marker after the lid has been opened and until it is closed again. At that moment the waste descends to the container and access to the deposition marker is blocked again."
+      },
+      {
+        title: "Data Processing and Billing",
+        description: "At a pre-configured date and time, the data stored in the memory of the SOTKIS access module is transferred via GSM/GPRS/Bluetooth to the access management web portal. In this portal, the responsible entity can check all accesses, as well as manage the data obtained. This user access data can be transferred to certified billing software (not included in SOTKIS). After defining the applicable tariff, the urban solid waste management company is ready to bill each user the monthly value of their deposits."
       },
       {
         title: "Data Processing and Billing",
