@@ -241,16 +241,20 @@
 @media (max-width: 768px) {
   .feature-carousel {
     padding: 3rem 0;
+    overflow-x: hidden;
   }
 
   .feature-carousel__container {
     padding: 0 var(--spacing-lg);
+    max-width: 100%;
   }
 
   .feature-carousel__content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Always show features list first, then image below on mobile */
@@ -327,7 +331,16 @@
   .feature-carousel__image-wrapper {
     max-width: 100%;
     width: 100%;
+    aspect-ratio: auto;
+    height: auto;
+    overflow: hidden;
     border-radius: 24px;
+  }
+
+  .feature-carousel__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 
@@ -362,7 +375,16 @@
   .feature-carousel__image-wrapper {
     max-width: 100%;
     width: 100%;
+    aspect-ratio: auto;
+    height: auto;
+    overflow: hidden;
     border-radius: 20px;
+  }
+
+  .feature-carousel__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 
