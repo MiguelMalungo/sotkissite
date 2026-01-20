@@ -430,8 +430,13 @@
 
     .trash4goods__app-background {
         height: 100%;
-        min-height: 500px;
-        object-position: center;
+        min-height: 100vh;
+        object-position: top center;
+        object-fit: cover;
+    }
+
+    .trash4goods__app-hero {
+        min-height: 100vh;
     }
 
     .trash4goods__app-overlay {
