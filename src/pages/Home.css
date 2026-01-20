@@ -974,11 +974,13 @@
   background-color: #FDE363;
   transition: opacity 0.4s ease;
   z-index: 3;
+  pointer-events: none;
 }
 
 .home__card-link:hover .home__card-content,
 .home__card-link:active .home__card-content {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .home__card-link:hover .home__card-image img,
@@ -1865,6 +1867,7 @@
 
   .home__card-link--flipped .home__card-content {
     opacity: 1;
+    pointer-events: auto;
   }
 
   .home__card-link--flipped .home__card-image img {
