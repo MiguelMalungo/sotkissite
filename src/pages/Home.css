@@ -1366,6 +1366,11 @@
 }
 
 @media (max-width: 768px) {
+  /* Disable parallax on mobile - iOS Safari doesn't support background-attachment: fixed */
+  .home__section-parallax-bg {
+    background-attachment: scroll !important;
+  }
+
   .home__hero {
     min-height: 600px;
     padding: var(--spacing-3xl) 0;
