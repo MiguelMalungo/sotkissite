@@ -437,4 +437,11 @@
     .trash4goods__app-overlay {
         background: transparent !important;
     }
+
+    .trash4goods__cta-button {
+        align-self: flex-start;
+        margin-top: 0;
+        display: block !important;
+        visibility: visible !important;
+    }
 }
