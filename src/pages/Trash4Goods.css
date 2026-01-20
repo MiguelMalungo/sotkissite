@@ -430,20 +430,12 @@
 
     .trash4goods__app-background {
         height: 100%;
-        min-height: 100vh;
-        object-position: top center;
-        object-fit: cover;
-    }
-
-    .trash4goods__app-hero {
-        min-height: 100vh;
+        min-height: 500px;
+        object-position: center;
     }
 
     .trash4goods__app-overlay {
         background: transparent !important;
-        position: relative;
-        inset: auto;
-        padding: 0;
     }
 
     .trash4goods__cta-button {
@@ -451,7 +443,5 @@
         margin-top: 0;
         display: block !important;
         visibility: visible !important;
-        position: relative !important;
-        z-index: 100 !important;
     }
 }
