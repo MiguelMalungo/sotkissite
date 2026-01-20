@@ -1985,6 +1985,20 @@
 
   .home__app-content {
     padding: var(--spacing-2xl) var(--spacing-md);
+    transform: translate(0, 0) !important;
+  }
+
+  .home__app-badges {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .home__app-badge {
+    display: block !important;
+    visibility: visible !important;
   }
 
   .home__app-badge img {
