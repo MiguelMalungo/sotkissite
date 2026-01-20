@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './FeatureCarousel.css';
 
 export interface FeatureItem {
@@ -6,6 +6,7 @@ export interface FeatureItem {
   label: string;
   description: string;
   image: string;
+  isVideo?: boolean;
 }
 
 export interface FeatureCarouselProps {
@@ -26,6 +27,8 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
   variant = 'default'
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFeatureClick = (index: number) => {
     setActiveIndex(index);
@@ -33,8 +36,38 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
 
   const isFullBackground = variant === 'full-background';
 
+  // Parallax effect for video
+  useEffect(() => {
+    if (!isFullBackground || !videoRef.current || !features[activeIndex]?.isVideo) return;
+
+    const handleScroll = () => {
+      const video = videoRef.current;
+      const container = containerRef.current;
+      if (!video || !container) return;
+
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate scroll progress: 0 when section enters viewport, 1 when it leaves
+      const scrollProgress = Math.max(0, Math.min(1,
+        (windowHeight - rect.top) / (windowHeight + rect.height)
+      ));
+
+      // Move between -50px and 50px for more visible parallax
+      const translateY = (scrollProgress - 0.5) * 100;
+
+      video.style.transform = `translate(-50%, calc(-50% + ${translateY}px)) scale(1.15)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isFullBackground, activeIndex, features]);
+
   return (
     <section
+      ref={containerRef}
       className={`feature-carousel feature-carousel--${imagePosition} ${isFullBackground ? 'feature-carousel--full-background' : ''}`}
       style={!isFullBackground ? { backgroundColor } : undefined}
     >
@@ -42,11 +75,24 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
         <>
           <div className="feature-carousel__background-image-container">
             {features.map((feature, index) => (
-              <div
-                key={feature.id}
-                className={`feature-carousel__background-image ${index === activeIndex ? 'feature-carousel__background-image--active' : ''}`}
-                style={{ backgroundImage: `url(${feature.image})` }}
-              />
+              feature.isVideo ? (
+                <video
+                  key={feature.id}
+                  ref={index === activeIndex ? videoRef : null}
+                  src={feature.image}
+                  className={`feature-carousel__background-image ${index === activeIndex ? 'feature-carousel__background-image--active' : ''}`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <div
+                  key={feature.id}
+                  className={`feature-carousel__background-image ${index === activeIndex ? 'feature-carousel__background-image--active' : ''}`}
+                  style={{ backgroundImage: `url(${feature.image})` }}
+                />
+              )
             ))}
           </div>
           <div className="feature-carousel__overlay"></div>
@@ -87,11 +133,22 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
           {!isFullBackground ? (
             <div className="feature-carousel__image-side">
               <div className="feature-carousel__image-wrapper">
-                <img
-                  src={features[activeIndex]?.image}
-                  alt={features[activeIndex]?.label}
-                  className="feature-carousel__image"
-                />
+                {features[activeIndex]?.isVideo ? (
+                  <video
+                    src={features[activeIndex]?.image}
+                    className="feature-carousel__image"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={features[activeIndex]?.image}
+                    alt={features[activeIndex]?.label}
+                    className="feature-carousel__image"
+                  />
+                )}
               </div>
               {/* Description below the image */}
               <div className="feature-carousel__description">

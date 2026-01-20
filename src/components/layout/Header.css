@@ -16,12 +16,30 @@
   -webkit-backdrop-filter: blur(12px);
   background: linear-gradient(to bottom,
       rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.12) 30%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0.04) 70%,
-      rgba(255, 255, 255, 0.01) 85%,
+      rgba(255, 255, 255, 0.12) 20%,
+      rgba(255, 255, 255, 0.08) 40%,
+      rgba(255, 255, 255, 0.04) 60%,
+      rgba(255, 255, 255, 0.01) 75%,
       rgba(255, 255, 255, 0) 100%);
-  /* Removed mask-image to prevent dropdown clipping */
+  -webkit-mask-image: linear-gradient(to bottom,
+      black 0%,
+      black 60%,
+      rgba(0, 0, 0, 0.8) 75%,
+      rgba(0, 0, 0, 0.5) 85%,
+      rgba(0, 0, 0, 0.2) 92%,
+      transparent 100%);
+  mask-image: linear-gradient(to bottom,
+      black 0%,
+      black 60%,
+      rgba(0, 0, 0, 0.8) 75%,
+      rgba(0, 0, 0, 0.5) 85%,
+      rgba(0, 0, 0, 0.2) 92%,
+      transparent 100%);
+}
+
+.header--scrolled.header--dropdown-open {
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .header__container {
@@ -340,7 +358,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  z-index: 1000;
+  z-index: 1050;
 }
 
 .header__nav-dropdown--open {

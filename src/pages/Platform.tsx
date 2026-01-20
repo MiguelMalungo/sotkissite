@@ -30,8 +30,6 @@ export const Platform: React.FC = () => {
   const { language } = useLanguage();
   const t = platformTranslations[language];
   const homeT = homeTranslations[language];
-  const [activeTabDescription, setActiveTabDescription] = useState<string>(t.tabs.items[0].description);
-  const [activeModuleDescription, setActiveModuleDescription] = useState<string>(language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution");
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
@@ -176,17 +174,11 @@ export const Platform: React.FC = () => {
       {/* Tabs Section */}
       <section className="platform__tabs section">
         <div className="container">
-          <div className="platform__tabs-header">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="platform__tabs-title">{t.tabs.title}</h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-              <p className="platform__tabs-subtitle">{activeTabDescription}</p>
-            </AnimateOnScroll>
-          </div>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="platform__tabs-title">{t.tabs.title}</h2>
+          </AnimateOnScroll>
           <div className="platform__tabs-wrapper">
             <Tabs
-              onTabChange={(tab) => setActiveTabDescription(tab.description || '')}
               tabs={t.tabs.items.map((item, index) => ({
                 title: item.title,
                 value: item.value,
@@ -268,17 +260,11 @@ export const Platform: React.FC = () => {
       {/* Platform Modules Section */}
       <section className="platform__modules section">
         <div className="container">
-          <div className="platform__modules-header">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="platform__modules-title">Módulos da Plataforma</h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
-              <p className="platform__modules-subtitle">{activeModuleDescription}</p>
-            </AnimateOnScroll>
-          </div>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="platform__modules-title">{language === 'pt' ? 'Módulos da Plataforma' : 'Platform Modules'}</h2>
+          </AnimateOnScroll>
           <div className="platform__modules-wrapper">
             <Tabs
-              onTabChange={(tab) => setActiveModuleDescription(tab.description || '')}
               tabs={[
                 {
                   title: "Level",

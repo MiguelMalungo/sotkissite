@@ -16,11 +16,11 @@ import hardRfidImg from '../assets/transfer.webp';
 import hardAiImg from '../assets/newAccess.webp';
 import fieldImg from '../assets/field.png';
 import hardAccessImg from '../assets/paylt_hardware_access.png';
-import techRoutesImg from '../assets/paylt_tech_routes.png';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
 import techImprovImg from '../assets/levelsm.webp';
 import techResImg from '../assets/levelhero.webp';
 import techSustImg from '../assets/data.webp';
+const animationVideo = new URL('../assets/Image_Animation.mp4', import.meta.url).href;
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -94,7 +94,8 @@ export const Paylt: React.FC = () => {
       id: '1',
       label: 'Ajustar estratégias e rotas',
       description: 'Ajustar estratégias e rotas operacionais com base em dados em tempo real.',
-      image: techRoutesImg
+      image: animationVideo,
+      isVideo: true
     },
     {
       id: '2',

@@ -280,6 +280,7 @@
 .platform__tabs {
   background-color: #F1FFF7;
   padding: var(--spacing-xl) 0;
+  padding-bottom: var(--spacing-3xl);
 }
 
 .platform__tabs--with-bg {
@@ -320,7 +321,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-primary-dark, #1a1a1a);
   line-height: 1.3;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   text-align: center;
 }
 
@@ -361,6 +362,13 @@
   width: 100%;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+  .platform__tabs-wrapper {
+    height: auto;
+    min-height: auto;
+  }
 }
 
 .platform__tab-content {
@@ -411,13 +419,14 @@
 }
 
 @media (max-width: 768px) {
-  .platform__tabs {
-    padding: var(--spacing-4xl) 0;
+  .platform__tabs.section {
+    padding: var(--spacing-xl) 0 !important;
+    padding-bottom: var(--spacing-2xl) !important;
   }
 
   .platform__tabs-title {
     font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 10px;
   }
 
   .platform__tab-content {
@@ -448,22 +457,24 @@
 
 @media (max-width: 767px) {
   .platform__tabs .container {
-    padding-left: calc(var(--spacing-md) / 2);
-    padding-right: calc(var(--spacing-md) / 2);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 
   .platform__tabs-title {
-    margin-bottom: calc(var(--spacing-xl) / 2);
+    margin-bottom: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .platform__tabs {
-    padding: var(--spacing-3xl) 0;
+  .platform__tabs.section {
+    padding: var(--spacing-lg) 0 !important;
+    padding-bottom: var(--spacing-xl) !important;
   }
 
   .platform__tabs-title {
     font-size: var(--font-size-xl);
+    margin-bottom: 8px;
   }
 
   .platform__tab-content {
@@ -476,6 +487,7 @@
 .platform__modules {
   background-color: #F1FFF7;
   padding: var(--spacing-xl) 0;
+  padding-bottom: var(--spacing-3xl);
 }
 
 .platform__modules--with-bg {
@@ -516,7 +528,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-primary-dark, #1a1a1a);
   line-height: 1.3;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   text-align: center;
 }
 
@@ -559,6 +571,13 @@
   justify-content: flex-start;
 }
 
+@media (max-width: 767px) {
+  .platform__modules-wrapper {
+    height: auto;
+    min-height: auto;
+  }
+}
+
 .platform__module-content {
   width: 100%;
   overflow: hidden;
@@ -578,6 +597,11 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 8px;
+}
+
+.platform__tab-content-image {
+  border-radius: 8px;
 }
 
 @media (min-width: 768px) {
@@ -593,13 +617,14 @@
 }
 
 @media (max-width: 768px) {
-  .platform__modules {
-    padding: var(--spacing-4xl) 0;
+  .platform__modules.section {
+    padding: var(--spacing-xl) 0 !important;
+    padding-bottom: var(--spacing-2xl) !important;
   }
 
   .platform__modules-title {
     font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 10px;
   }
 
   .platform__module-content {
@@ -614,22 +639,24 @@
 
 @media (max-width: 767px) {
   .platform__modules .container {
-    padding-left: calc(var(--spacing-md) / 2);
-    padding-right: calc(var(--spacing-md) / 2);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 
   .platform__modules-title {
-    margin-bottom: calc(var(--spacing-xl) / 2);
+    margin-bottom: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .platform__modules {
-    padding: var(--spacing-3xl) 0;
+  .platform__modules.section {
+    padding: var(--spacing-lg) 0 !important;
+    padding-bottom: var(--spacing-xl) !important;
   }
 
   .platform__modules-title {
     font-size: var(--font-size-xl);
+    margin-bottom: 8px;
   }
 
   .platform__module-content {
@@ -1338,7 +1365,7 @@
 
 /* App Section Layout - Video Background with Content on Right */
 .home__app-section {
-  background: transparent !important;
+  background: #F1FFF7 !important;
   position: relative;
   overflow: hidden;
   min-height: 600px;
@@ -1354,7 +1381,7 @@
   height: 600px;
   display: flex;
   align-items: center;
-  background: #fff !important;
+  background: #F1FFF7 !important;
   overflow: hidden;
 }
 
@@ -1449,7 +1476,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: var(--spacing-xl);
+  margin-top: 0;
   padding: 0;
 }
 

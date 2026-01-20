@@ -7,9 +7,9 @@ export const footerTranslations = {
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
-        { label: "Platform", path: "/platform" },
+        { label: "Software", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
-        { label: "Trash4Goods", path: "/trash4goods" }
+        { label: "APP Cidadão", path: "/trash4goods" }
       ]
     },
     newsletter: {
@@ -32,9 +32,9 @@ export const footerTranslations = {
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
-        { label: "Platform", path: "/platform" },
+        { label: "Software", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
-        { label: "Trash4Goods", path: "/trash4goods" }
+        { label: "APP Cidadão", path: "/trash4goods" }
       ]
     },
     newsletter: {
@@ -57,9 +57,9 @@ export const footerTranslations = {
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
-        { label: "Platform", path: "/platform" },
+        { label: "Software", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
-        { label: "Trash4Goods", path: "/trash4goods" }
+        { label: "APP Cidadão", path: "/trash4goods" }
       ]
     },
     newsletter: {
@@ -82,9 +82,9 @@ export const footerTranslations = {
         { label: "Level", path: "/level" },
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
-        { label: "Platform", path: "/platform" },
+        { label: "Software", path: "/platform" },
         { label: "P(L)ayt", path: "/paylt" },
-        { label: "Trash4Goods", path: "/trash4goods" }
+        { label: "APP Cidadão", path: "/trash4goods" }
       ]
     },
     newsletter: {

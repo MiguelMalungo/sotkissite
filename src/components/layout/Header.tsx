@@ -90,12 +90,15 @@ export const Header: React.FC = () => {
     location.pathname === '/trash4goods' ||
     location.pathname === '/contact';
 
+  const isContactPage = location.pathname === '/contact';
+
   // Use white logo initially on pages with hero backgrounds, otherwise use colored logo
+  // Always use white logo on Contact page (even when scrolled)
   const logoSrc =
-    !isScrolled && isVideoHeroPage ? whiteLogo : coloredLogo;
+    (!isScrolled && isVideoHeroPage) || isContactPage ? whiteLogo : coloredLogo;
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''}`}>
+    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''} ${openDropdown ? 'header--dropdown-open' : ''}`}>
       <div className="header__container container">
         <Link to="/" className="header__logo">
           <img
