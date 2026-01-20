@@ -14,6 +14,9 @@ import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods.webp';
+import appCidadaoImage from '../assets/appcidadao.webp';
+import appleBadge from '../assets/apple.webp';
+import googleBadge from '../assets/google.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -556,6 +559,39 @@ export const Home: React.FC = () => {
                   </Button>
                 </AnimateOnScroll>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* App Cidadao Section */}
+      <section className="home__app-section">
+        <div className="home__app-hero">
+          <div className="home__app-background home__app-background-desktop">
+            <img
+              src={appCidadaoImage}
+              alt="SOTKIS App"
+              className="home__app-background-image"
+            />
+          </div>
+          <div className="home__app-overlay">
+            <div className="home__app-content">
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <h2 className="home__app-title" dangerouslySetInnerHTML={{ __html: t.app.title }} />
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                <p className="home__app-description">{t.app.description}</p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                <div className="home__app-badges">
+                  <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="home__app-badge">
+                    <img src={appleBadge} alt="Download on App Store" />
+                  </a>
+                  <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="home__app-badge">
+                    <img src={googleBadge} alt="Get it on Google Play" />
+                  </a>
+                </div>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
