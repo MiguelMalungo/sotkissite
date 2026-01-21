@@ -320,7 +320,7 @@
   }
 
   .feature-carousel__description p {
-    font-size: var(--font-size-sm);
+    font-size: calc(var(--font-size-sm) + 5px);
   }
 
   .feature-carousel__image-side {
