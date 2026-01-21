@@ -187,7 +187,7 @@
 }
 
 .feature-carousel__description p {
-  font-size: calc(var(--font-size-base) + 3px);
+  font-size: calc(var(--font-size-base) + 5px);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin: 0;
@@ -537,8 +537,8 @@
   color: #ffffff;
   font-weight: 700;
   /* Bold */
-  font-size: calc(var(--font-size-base) + 9px);
-  /* Description increased by another 5px for desktop (total +9px) */
+  font-size: calc(var(--font-size-base) + 11px);
+  /* Description increased by another 6px for desktop (total +11px) */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.5;
 }
