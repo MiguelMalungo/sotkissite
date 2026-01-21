@@ -436,11 +436,10 @@
   pointer-events: none;
 }
 
-/* Base larger text for full background */
-.feature-carousel--full-background .feature-carousel__description p,
-.feature-carousel--full-background .feature-carousel__active-description p {
-  font-size: calc(var(--font-size-base) + 6px);
-  /* Description increased by an additional 2px for desktop (total +6px) */
+/* Base larger text for full background - description below images (non-full-background variant) */
+.feature-carousel--full-background .feature-carousel__description p {
+  font-size: calc(var(--font-size-base) + 9px);
+  /* Description increased by 3px (total +9px) */
 }
 
 /* Adjust content for full background */
@@ -533,12 +532,12 @@
   align-items: center;
 }
 
-.feature-carousel__active-description p {
+.feature-carousel--full-background .feature-carousel__active-description p {
   color: #ffffff;
   font-weight: 700;
   /* Bold */
-  font-size: calc(var(--font-size-base) + 11px);
-  /* Description increased by another 6px for desktop (total +11px) */
+  font-size: calc(var(--font-size-base) + 14px);
+  /* Description increased by 3px (total +14px) */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.5;
 }
@@ -662,8 +661,8 @@
   }
 
   .feature-carousel--full-background .feature-carousel__active-description p {
-    font-size: calc(var(--font-size-base) + 3px);
-    /* Increased by 3px for mobile */
+    font-size: calc(var(--font-size-base) + 6px);
+    /* Increased by 3px (total +6px) for mobile */
   }
 
   /* Reset orders on mobile to ensure header -> features -> description */
