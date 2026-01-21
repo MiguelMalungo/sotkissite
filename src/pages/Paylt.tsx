@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
@@ -27,6 +27,15 @@ export const Paylt: React.FC = () => {
   const { language } = useLanguage();
   const t = payltTranslations[language];
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
@@ -233,13 +242,14 @@ export const Paylt: React.FC = () => {
 
       <section className="paylt__image-section">
         <div className="container">
-          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1}>
-            <img
-              src={playtnewImage}
-              alt="Paylt System"
-              className="paylt__image"
-            />
-          </AnimateOnScroll>
+          <img
+            src={playtnewImage}
+            alt="Paylt System"
+            className="paylt__image"
+            style={{
+              transform: `translateY(${scrollY * 0.3}px)`
+            }}
+          />
         </div>
       </section>
 
