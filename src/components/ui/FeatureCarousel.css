@@ -187,7 +187,7 @@
 }
 
 .feature-carousel__description p {
-  font-size: calc(var(--font-size-base) + 8px);
+  font-size: 1.5rem;
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin: 0;
@@ -320,7 +320,7 @@
   }
 
   .feature-carousel__description p {
-    font-size: calc(var(--font-size-sm) + 8px);
+    font-size: 1.5rem;
   }
 
   .feature-carousel__image-side {
