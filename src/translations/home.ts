@@ -26,7 +26,7 @@ export const homeTranslations = {
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Solução digital que transforma a gestão de resíduos viabilizando modelos de tarifação inteligente e mecanismos de incentivo à reciclagem. Aproxima, envolve e responsabiliza os cidadãos na construção de cidades mais circulares e ambientalmente conscientes.",
+      description: "Integrando todas as soluções SOTKIS num único ecossistema.",
       button: "Explorar o P(L)ayt"
     },
     t4g: {

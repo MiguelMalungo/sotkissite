@@ -1384,6 +1384,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* Disable parallax on mobile - iOS Safari doesn't support background-attachment: fixed */
   .home__section-parallax-bg {
     background-attachment: scroll !important;
@@ -2167,5 +2168,71 @@
     margin-left: auto !important;
     margin-top: 10px !important;
     width: fit-content !important;
+  }
+}
+
+/* Paylt Info Section with Magnifier */
+.home__section--paylt-info {
+  background-color: transparent;
+  padding-bottom: calc(var(--spacing-xl) * 4);
+  padding-top: calc(var(--spacing-xl) * 3);
+  width: 100%;
+}
+
+.home__section--paylt-info .home__section-text {
+  font-size: calc(var(--font-size-base) + 3px);
+  color: black;
+}
+
+.home__section-content--center {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+.home__section-content--center .home__section-heading {
+  align-self: center;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.home__section-content--center .home__section-text {
+  align-self: center;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__magnifier-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__magnifier {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.home__magnifier-hint {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: #888;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .home__magnifier-hint {
+    display: none;
   }
 }

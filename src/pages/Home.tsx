@@ -14,6 +14,7 @@ import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods.webp';
+import payltInfoImage from '../assets/payltinfo.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -42,7 +43,7 @@ export const Home: React.FC = () => {
   const heroVideo1Ref = useRef<HTMLVideoElement>(null);
   const heroVideo2Ref = useRef<HTMLVideoElement>(null);
   const [scrollY, setScrollY] = React.useState(0);
-  const [flippedCards, setFlippedCards] = React.useState<{[key: string]: boolean}>({
+  const [flippedCards, setFlippedCards] = React.useState<{ [key: string]: boolean }>({
     level: false,
     access: false,
     drs: false
@@ -592,6 +593,29 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Paylt Info Section */}
+      <section className="home__section home__section--paylt-info">
+        <div className="container">
+          <div className="home__section-content home__section-content--center">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="home__section-heading home__section-heading--center">{t.paylt.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+              <p className="home__section-text home__section-text--center">
+                {t.paylt.description}
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </div>
+        <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__magnifier-wrapper">
+          <img
+            src={payltInfoImage}
+            alt="Paylt Info Breakdown"
+            className="home__magnifier"
+          />
+        </AnimateOnScroll>
       </section>
 
     </div>
