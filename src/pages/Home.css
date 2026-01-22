@@ -2251,10 +2251,10 @@
 
 .home__section--paylt-info .home__button-container {
   display: flex !important;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   margin-top: var(--spacing-lg);
-  padding-right: var(--spacing-2xl);
+  padding-right: 0;
 }
 
 /* Scroll Indicator - Desktop Hidden */
