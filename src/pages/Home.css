@@ -2161,6 +2161,12 @@
     margin-top: 10px !important;
     width: 100% !important;
   }
+
+  .home__rise-above-content .button {
+    align-self: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2172,6 +2178,12 @@
     margin-right: auto !important;
     margin-top: 10px !important;
     width: 100% !important;
+  }
+
+  .home__rise-above-content .button {
+    align-self: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
