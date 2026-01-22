@@ -616,6 +616,12 @@ export const Home: React.FC = () => {
             className="home__magnifier"
           />
         </AnimateOnScroll>
+        <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
+          <Button href="/paylt" variant="primary" size="sm">
+            {t.paylt.button}
+            <ArrowIcon />
+          </Button>
+        </AnimateOnScroll>
       </section>
 
     </div>

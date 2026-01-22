@@ -2205,6 +2205,8 @@
   margin-right: auto;
 }
 
+
+
 .home__magnifier-wrapper {
   width: 100%;
   max-width: 100%;
@@ -2231,7 +2233,58 @@
   opacity: 0.8;
 }
 
+.home__section--paylt-info .home__button-container {
+  display: flex !important;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  padding-right: var(--spacing-2xl);
+}
+
 @media (max-width: 768px) {
+  .home__magnifier-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .home__magnifier {
+    width: 300%;
+    max-width: none;
+    flex-shrink: 0;
+  }
+
+  .home__section--paylt-info .home__section-heading {
+    text-align: center !important;
+    align-self: center !important;
+    font-size: calc(var(--font-size-3xl) + 3px) !important;
+    width: 100%;
+  }
+
+  .home__section--paylt-info .home__button-container {
+    justify-content: center !important;
+    padding-right: 0 !important;
+  }
+
+  /* Custom Scrollbar to serve as the "cursor" indicator */
+  .home__magnifier-wrapper::-webkit-scrollbar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .home__magnifier-wrapper::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin: 0 var(--spacing-md);
+  }
+
+  .home__magnifier-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+  }
+
   .home__magnifier-hint {
     display: none;
   }
