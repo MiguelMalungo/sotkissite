@@ -8,6 +8,7 @@ import accessHeroImage from '../assets/newAccess.webp';
 import access1Image from '../assets/access1.webp';
 import dataImage from '../assets/data.webp';
 import transferImage from '../assets/transfer.webp';
+import accessNewImage from '../assets/accessnew.webp';
 
 import './Access.css';
 
@@ -134,7 +135,7 @@ export const Access: React.FC = () => {
               <h2>{t.compatibility.title}</h2>
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
-              <img src={accessHeroImage} alt="Sistemas de resíduos compatíveis" />
+              <img src={accessNewImage} alt="Sistemas de resíduos compatíveis" />
             </AnimateOnScroll>
           </div>
         </div>
