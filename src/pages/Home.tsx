@@ -48,6 +48,7 @@ export const Home: React.FC = () => {
     access: false,
     drs: false
   });
+  const [scrollProgress, setScrollProgress] = React.useState(0);
 
   const handleCardClick = (cardName: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     // Check if click was on button or its children
@@ -609,13 +610,30 @@ export const Home: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </div>
-        <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__magnifier-wrapper">
+        <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__magnifier-wrapper" onScroll={(e) => {
+          const target = e.target as HTMLDivElement;
+          const { scrollLeft, scrollWidth, clientWidth } = target;
+          const maxScroll = scrollWidth - clientWidth;
+          if (maxScroll > 0) {
+            setScrollProgress((scrollLeft / maxScroll) * 100);
+          }
+        }}>
           <img
             src={payltInfoImage}
             alt="Paylt Info Breakdown"
             className="home__magnifier"
           />
         </AnimateOnScroll>
+        {/* Custom Mobile Scroll Cursor */}
+        <div className="home__scroll-indicator-container">
+          <div className="home__scroll-track">
+            <div
+              className="home__scroll-thumb"
+              style={{ left: `${scrollProgress}%` }}
+            ></div>
+          </div>
+          <div className="home__scroll-hint">Deslize para explorar a imagem</div>
+        </div>
         <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
           <Button href="/paylt" variant="primary" size="sm">
             {t.paylt.button}

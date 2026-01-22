@@ -4,7 +4,7 @@ import './AnimateOnScroll.css';
 
 export type AnimationType = 'fade' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'blur' | 'fadeSlideUp' | 'fadeSlideDown' | 'fadeSlideLeft' | 'fadeSlideRight' | 'fadeBlur' | 'scaleUp';
 
-export interface AnimateOnScrollProps {
+export interface AnimateOnScrollProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   animation?: AnimationType;
   delay?: number;
@@ -26,6 +26,7 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   triggerOnce = true,
   className = '',
   as: Component = 'div',
+  ...props
 }) => {
   const { elementRef, isVisible } = useScrollAnimation({
     threshold,
@@ -42,6 +43,7 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         '--animation-delay': `${delay}ms`,
         '--animation-duration': `${duration}s`,
       } as React.CSSProperties,
+      ...props
     },
     children
   );

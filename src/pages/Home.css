@@ -2257,6 +2257,41 @@
   padding-right: var(--spacing-2xl);
 }
 
+/* Scroll Indicator - Desktop Hidden */
+.home__scroll-indicator-container {
+  display: none;
+}
+
+.home__scroll-track {
+  width: 200px;
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.home__scroll-thumb {
+  width: 30%;
+  /* size of the 'cursor' */
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 0.1s linear;
+}
+
+.home__scroll-hint {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: #888;
+  margin-top: 8px;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .home__magnifier-wrapper {
     width: 100%;
@@ -2284,24 +2319,30 @@
     padding-right: 0 !important;
   }
 
-  /* Custom Scrollbar to serve as the "cursor" indicator */
+  /* Custom Scrollbar - Hidden in favor of DOM indicator */
+  /* Hide Native Scrollbar */
   .home__magnifier-wrapper::-webkit-scrollbar {
-    height: 4px;
-    width: 100%;
+    display: none;
+    height: 0;
+    width: 0;
   }
 
-  .home__magnifier-wrapper::-webkit-scrollbar-track {
-    background: #e0e0e0;
-    border-radius: 4px;
-    margin: 0 var(--spacing-md);
-  }
-
-  .home__magnifier-wrapper::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 4px;
+  .home__magnifier-wrapper {
+    scrollbar-width: none;
+    /* Firefox */
   }
 
   .home__magnifier-hint {
     display: none;
+  }
+
+  /* Show Custom Scroll Indicator */
+  .home__scroll-indicator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
   }
 }
