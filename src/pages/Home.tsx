@@ -14,7 +14,7 @@ import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods.webp';
-import payltInfoImage from '../assets/payltinfo.webp';
+import payltInfoImage from '../assets/playt_circles.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
