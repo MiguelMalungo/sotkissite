@@ -642,6 +642,8 @@ export const Home: React.FC = () => {
         </AnimateOnScroll>
       </section>
 
+
+
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { NetworkVisualization } from '../components/ui/NetworkVisualization';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { payltTranslations } from '../translations/paylt';
@@ -227,21 +228,16 @@ export const Paylt: React.FC = () => {
                 {t.intro.text3}
               </p>
             </AnimateOnScroll>
+
+            {/* Network Visualization moved here */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+              <NetworkVisualization />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
-      <section className="paylt__image-section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1}>
-            <img
-              src={playtnewImage}
-              alt="Paylt System"
-              className="paylt__image"
-            />
-          </AnimateOnScroll>
-        </div>
-      </section>
+
 
       <section className="paylt__how-it-works section">
         <div className="container">
@@ -254,9 +250,18 @@ export const Paylt: React.FC = () => {
                 {t.howItWorks.description}
               </p>
             </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
+              <img
+                src={playtnewImage}
+                alt="Paylt System"
+                className="paylt__image"
+              />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
+
+
 
       {/* Componentes da Solução Section - Blue background */}
       <section className="paylt__componentes-section">

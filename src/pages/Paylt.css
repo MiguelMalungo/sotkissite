@@ -642,7 +642,7 @@
 .paylt__how-it-works {
   background-color: #F1FFF7;
   padding-top: 0;
-  padding-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-5xl);
 }
 
 .paylt__how-it-works-content {
@@ -664,19 +664,15 @@
   margin: 0;
 }
 
-/* Image Section adjustments */
-.paylt__image-section .container {
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-}
+
 
 .paylt__image {
-  width: 100vw;
+  width: 65%;
+  max-width: 650px;
   height: auto;
   display: block;
-  margin: 0;
-  border-radius: 0;
+  margin: var(--spacing-xl) auto 0;
+  border-radius: 2rem;
 }
 
 /* Final Image Section */
@@ -721,7 +717,7 @@
 
 /* Componentes da Solução Section */
 .paylt__componentes-section {
-  padding-top: var(--spacing-4xl);
+  padding-top: 0;
 }
 
 .paylt__componentes-section .container {
@@ -765,7 +761,10 @@
     text-align: left;
   }
 
-  .paylt__componentes-section,
+  .paylt__componentes-section {
+    padding-top: 0;
+  }
+
   .paylt__tecnologia-section,
   .paylt__beneficios-section {
     padding-top: var(--spacing-3xl);
@@ -805,11 +804,16 @@
   .paylt__how-it-works-content p {
     font-size: var(--font-size-base);
   }
+
+  .paylt__how-it-works {
+    padding-bottom: var(--spacing-3xl);
+  }
 }
 
 @media (max-width: 480px) {
   .paylt__image {
     width: 100%;
+    max-width: none;
     border-radius: 1rem;
   }
 

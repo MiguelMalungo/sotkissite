@@ -116,21 +116,23 @@ export const Platform: React.FC = () => {
 
   return (
     <div className="platform">
-      <section className="platform__hero">
-        <img
-          src={platformHeroImage}
-          alt="SOTKIS Platform"
-          className="platform__hero-image"
-        />
-        <div className="platform__hero-overlay"></div>
-        <div className="platform__hero-content container">
-          <div className="platform__hero-text-content">
-            <p className="platform__hero-text">
-              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform__hero-link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
+      <div id="platform-page-hero" className="platform-hero-root">
+        <div className="platform-hero-root__bg-container">
+          <img
+            src={platformHeroImage}
+            alt="SOTKIS Platform"
+            className="platform-hero-root__image"
+          />
+          <div className="platform-hero-root__overlay"></div>
+        </div>
+        <div className="platform-hero-root__content container">
+          <div className="platform-hero-root__text-content">
+            <p className="platform-hero-root__subtitle">
+              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform-hero-root__link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
             </p>
-            <button className="platform__hero-button" onClick={openVideoModal}>
+            <button className="platform-hero-root__cta" onClick={openVideoModal}>
               <span>{t.access.buttonText}</span>
-              <div className="platform__hero-button-icon">
+              <div className="platform-hero-root__cta-icon">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -138,7 +140,7 @@ export const Platform: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Intro Section */}
       <section className="platform__intro section">

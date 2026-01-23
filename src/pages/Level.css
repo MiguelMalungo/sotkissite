@@ -353,11 +353,11 @@
 }
 
 .level__compatible-image {
-  width: 85%;
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  border-radius: 2.5rem;
+  margin: var(--spacing-2xl) 0 0 0;
+  border-radius: 0;
 }
 
 @media (max-width: 1024px) {
@@ -520,7 +520,7 @@
   .level__compatible-image {
     max-width: 100%;
     width: 100%;
-    border-radius: 1.5rem;
+    border-radius: 0;
   }
 }
 
@@ -644,7 +644,7 @@
   .level__compatible-image {
     max-width: 100%;
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 0;
   }
 }
 

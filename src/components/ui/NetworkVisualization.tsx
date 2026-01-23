@@ -11,162 +11,126 @@ export const NetworkVisualization: React.FC = () => {
     // Initialize chart
     const myChart = echarts.init(chartRef.current);
 
-    // 1. Define Categories
+    // 1. Define Categories (Branches)
     const categories = [
-      { name: 'Root' },
-      { name: 'Core Value' },
-      { name: 'Modules (Access/DRS/Level)' },
-      { name: 'Digital Platform' },
-      { name: 'Mobile Apps' },
-      { name: 'Integration' },
-      { name: 'Ecosystem' }
+      { name: 'Raiz', itemStyle: { color: '#2c3e50' } },
+      { name: 'Software', itemStyle: { color: '#3498db' } }, // Blue
+      { name: 'Hardware', itemStyle: { color: '#e74c3c' } }, // Red
+      { name: 'Benefícios Municipais', itemStyle: { color: '#2ecc71' } }, // Green
+      { name: 'Benefícios Cidadão', itemStyle: { color: '#f39c12' } }  // Orange
     ];
 
     // 2. Define Nodes
     const containerWidth = chartRef.current.offsetWidth || 800;
     const containerHeight = chartRef.current.offsetHeight || 600;
-    
+
+    // Nodes based on Paylt.tsx features
     const nodes = [
       // Root
       {
         id: '0',
-        name: 'SOTKIS\nSYSTEMS',
-        symbolSize: 70,
+        name: 'Ecossistema\nP(L)AYT',
+        symbolSize: 80,
         category: 0,
         fixed: true,
         x: containerWidth / 2,
-        y: containerHeight / 2
+        y: containerHeight / 2,
+        description: 'O ecossistema completo SOTKIS Pay-As-You-Throw que conecta tecnologia, gestão de resíduos e cidadãos.'
       },
 
-      // Branch 1: Core Function
-      { id: '1', name: 'Core Function\n& Value', symbolSize: 40, category: 1 },
-      { id: '1-1', name: 'Integrated Mgmt', symbolSize: 15, category: 1 },
-      { id: '1-2', name: 'Resource Efficiency', symbolSize: 15, category: 1 },
-      { id: '1-3', name: 'Profitability', symbolSize: 15, category: 1 },
-      { id: '1-4', name: 'Recycling Rates', symbolSize: 15, category: 1 },
-      { id: '1-5', name: 'Target Market', symbolSize: 25, category: 1 },
-      { id: '1-5-1', name: 'Smart Cities', symbolSize: 10, category: 1 },
-      { id: '1-5-2', name: 'Sustainable Communities', symbolSize: 10, category: 1 },
+      // Branch 1: Software
+      { id: '1', name: 'Software\nInteligente', symbolSize: 50, category: 1, description: 'Infraestrutura dinâmica e escalável.' },
+      { id: '1-1', name: 'Dashboards', symbolSize: 20, category: 1, description: 'Dashboards interativos para análise e tomada de decisão em tempo real.' },
+      { id: '1-2', name: 'App Móvel', symbolSize: 20, category: 1, description: 'Aplicação móvel com acesso por Bluetooth e NFC para maior conveniência.' },
+      { id: '1-3', name: 'Marketplace', symbolSize: 20, category: 1, description: 'Marketplace integrado com benefícios, recompensas e funcionalidades digitais.' },
+      { id: '1-4', name: 'Gamificação', symbolSize: 20, category: 1, description: 'Ferramentas de gamificação para incentivar comportamentos sustentáveis.' },
 
-      // Branch 2: Modules
-      { id: '2', name: 'MODULES', symbolSize: 50, category: 2 },
-      
-      // ACCESS
-      { id: '2A', name: 'ACCESS\n(PAYT)', symbolSize: 35, category: 2 },
-      { id: '2A1', name: 'Goal: Fairer Payment', symbolSize: 15, category: 2 },
-      { id: '2A2', name: 'Technology', symbolSize: 20, category: 2 },
-      { id: '2A2a', name: 'RFID/NFC', symbolSize: 10, category: 2 },
-      { id: '2A2b', name: 'Bluetooth', symbolSize: 10, category: 2 },
-      
-      // DRS
-      { id: '2B', name: 'DRS\n(Return System)', symbolSize: 35, category: 2 },
-      { id: '2B1', name: 'Goal: Incentives', symbolSize: 15, category: 2 },
-      { id: '2B2', name: 'AI Identification', symbolSize: 20, category: 2 },
-      { id: '2B3', name: 'Packaging Types', symbolSize: 15, category: 2 },
-      
-      // LEVEL
-      { id: '2C', name: 'LEVEL\n(Fill Management)', symbolSize: 35, category: 2 },
-      { id: '2C1', name: 'Goal: Optimization', symbolSize: 15, category: 2 },
-      { id: '2C2', name: 'Ultrasonic/Laser', symbolSize: 15, category: 2 },
-      { id: '2C3', name: 'Route Planning', symbolSize: 20, category: 2 },
+      // Branch 2: Hardware
+      { id: '2', name: 'Hardware\nAvançado', symbolSize: 50, category: 2, description: 'Dispositivos inteligentes para qualquer contentor.' },
+      { id: '2-1', name: 'Sensores IoT', symbolSize: 20, category: 2, description: 'Sensores IoT para deteção de diferentes materiais em qualquer tipo de contentor.' },
+      { id: '2-2', name: 'RFID', symbolSize: 20, category: 2, description: 'RFID para recolha porta-a-porta com identificação precisa.' },
+      { id: '2-3', name: 'Câmaras IA', symbolSize: 20, category: 2, description: 'Câmaras com IA para deteção e prevenção de contaminação.' },
+      { id: '2-4', name: 'Acessos', symbolSize: 20, category: 2, description: 'Sistemas de controlo de acessos para utilizadores individuais.' },
 
-      // Branch 3: Digital
-      { id: '3', name: 'Digital Platform', symbolSize: 45, category: 3 },
-      { id: '3A', name: 'Data Portal', symbolSize: 25, category: 3 },
-      { id: '3A1', name: 'Billing & Invoices', symbolSize: 15, category: 3 },
-      { id: '3A2', name: 'Efficiency Analysis', symbolSize: 15, category: 3 },
-      { id: '3B', name: 'Back Office', symbolSize: 25, category: 3 },
-      { id: '3C', name: 'Front Office', symbolSize: 25, category: 3 },
+      // Branch 3: Municipal Benefits
+      { id: '3', name: 'Para\nMunicípios', symbolSize: 50, category: 3, description: 'Benefícios para a gestão municipal.' },
+      { id: '3-1', name: 'Eficiência', symbolSize: 20, category: 3, description: 'Aumento da eficiência operacional através de processos automatizados e otimizados.' },
+      { id: '3-2', name: 'Redução Custos', symbolSize: 20, category: 3, description: 'Redução de custos de recolha e tratamento de resíduos.' },
+      { id: '3-3', name: 'Modelos PAYT', symbolSize: 20, category: 3, description: 'Implementação transparente de modelos PAYT/RAYT/SAYT.' },
+      { id: '3-4', name: 'Contaminação', symbolSize: 20, category: 3, description: 'Maior controlo sobre contaminação e qualidade dos resíduos.' },
+      { id: '3-5', name: 'Dados Fiáveis', symbolSize: 20, category: 3, description: 'Dados fiáveis para planeamento e tomada de decisão estratégica.' },
 
-      // Branch 4: Apps
-      { id: '4', name: 'Mobile Apps', symbolSize: 45, category: 4 },
-      { id: '4A', name: 'Sotkis App', symbolSize: 25, category: 4 },
-      { id: '4B', name: 'Citizen App', symbolSize: 25, category: 4 },
-      { id: '4B1', name: 'Gamification', symbolSize: 15, category: 4 },
-      { id: '4B2', name: 'Rewards/Points', symbolSize: 15, category: 4 },
-
-      // Branch 5: Compatibility
-      { id: '5', name: 'Integration', symbolSize: 40, category: 5 },
-      { id: '5A', name: 'Container Types', symbolSize: 20, category: 5 },
-      { id: '5A1', name: 'Underground', symbolSize: 10, category: 5 },
-      { id: '5A2', name: 'Surface', symbolSize: 10, category: 5 },
-      { id: '5B', name: 'Loading Types', symbolSize: 20, category: 5 },
-
-      // Branch 6: Ecosystem
-      { id: '6', name: 'P(L)AYT\nEcosystem', symbolSize: 40, category: 6 },
-      { id: '6A', name: 'Incentivize', symbolSize: 15, category: 6 },
-      { id: '6B', name: 'Hardware + AI', symbolSize: 15, category: 6 }
+      // Branch 4: Citizen Benefits
+      { id: '4', name: 'Para\nCidadãos', symbolSize: 50, category: 4, description: 'Benefícios para a comunidade.' },
+      { id: '4-1', name: 'Participação', symbolSize: 20, category: 4, description: 'Participação ativa e fácil no processo de reciclagem.' },
+      { id: '4-2', name: 'Recompensas', symbolSize: 20, category: 4, description: 'Sistema de recompensas e gamificação que motiva a mudança de comportamento.' },
+      { id: '4-3', name: 'Feedback', symbolSize: 20, category: 4, description: 'Feedback imediato sobre hábitos individuais de reciclagem.' },
+      { id: '4-4', name: 'Acesso App', symbolSize: 20, category: 4, description: 'Acesso em tempo real via app com Bluetooth e NFC.' },
+      { id: '4-5', name: 'Sustentabilidade', symbolSize: 20, category: 4, description: 'Contribuição direta para um ambiente mais sustentável.' }
     ];
 
     // 3. Define Links
     const links = [
+      // Software Branch
       { source: '0', target: '1' },
       { source: '1', target: '1-1' },
       { source: '1', target: '1-2' },
       { source: '1', target: '1-3' },
       { source: '1', target: '1-4' },
-      { source: '1', target: '1-5' },
-      { source: '1-5', target: '1-5-1' },
-      { source: '1-5', target: '1-5-2' },
-      
+
+      // Hardware Branch
       { source: '0', target: '2' },
-      { source: '2', target: '2A' },
-      { source: '2A', target: '2A1' },
-      { source: '2A', target: '2A2' },
-      { source: '2A2', target: '2A2a' },
-      { source: '2A2', target: '2A2b' },
-      { source: '2', target: '2B' },
-      { source: '2B', target: '2B1' },
-      { source: '2B', target: '2B2' },
-      { source: '2B', target: '2B3' },
-      { source: '2', target: '2C' },
-      { source: '2C', target: '2C1' },
-      { source: '2C', target: '2C2' },
-      { source: '2C', target: '2C3' },
+      { source: '2', target: '2-1' },
+      { source: '2', target: '2-2' },
+      { source: '2', target: '2-3' },
+      { source: '2', target: '2-4' },
 
+      // Municipal Branch
       { source: '0', target: '3' },
-      { source: '3', target: '3A' },
-      { source: '3A', target: '3A1' },
-      { source: '3A', target: '3A2' },
-      { source: '3', target: '3B' },
-      { source: '3', target: '3C' },
+      { source: '3', target: '3-1' },
+      { source: '3', target: '3-2' },
+      { source: '3', target: '3-3' },
+      { source: '3', target: '3-4' },
+      { source: '3', target: '3-5' },
 
+      // Citizen Branch
       { source: '0', target: '4' },
-      { source: '4', target: '4A' },
-      { source: '4', target: '4B' },
-      { source: '4B', target: '4B1' },
-      { source: '4B', target: '4B2' },
-
-      { source: '0', target: '5' },
-      { source: '5', target: '5A' },
-      { source: '5A', target: '5A1' },
-      { source: '5A', target: '5A2' },
-      { source: '5', target: '5B' },
-
-      { source: '0', target: '6' },
-      { source: '6', target: '6A' },
-      { source: '6', target: '6B' }
+      { source: '4', target: '4-1' },
+      { source: '4', target: '4-2' },
+      { source: '4', target: '4-3' },
+      { source: '4', target: '4-4' },
+      { source: '4', target: '4-5' }
     ];
 
     // 4. Chart Configuration
     const option = {
-      backgroundColor: '#ffffff',
-      
+      backgroundColor: 'transparent', // Ensure transparency for full integration
+
       tooltip: {
         trigger: 'item',
-        formatter: '{b}',
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        borderColor: '#ccc',
-        textStyle: { color: '#333' }
+        formatter: (params: any) => {
+          if (params.dataType === 'node') {
+            return `<div style="max-width: 250px; white-space: normal; font-family: sans-serif;">
+              <strong style="color: ${params.color}">${params.name.replace(/\n/g, ' ')}</strong><br/>
+              <span style="font-size: 13px; color: #555; display: block; margin-top: 6px; line-height: 1.4;">${params.data.description || ''}</span>
+            </div>`;
+          }
+          return params.name; // For links
+        },
+        backgroundColor: 'rgba(255, 255, 255, 0.98)',
+        borderColor: '#eee',
+        borderWidth: 1,
+        textStyle: { color: '#333' },
+        extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 12px;'
       },
-      
+
       legend: [{
         data: categories.map(function (a) { return a.name; }),
         textStyle: { color: '#333', fontWeight: 'bold' },
-        bottom: 20,
+        bottom: 0,
         selectedMode: 'multiple'
       }],
-      
+
       series: [{
         type: 'graph',
         layout: 'force',
@@ -174,30 +138,32 @@ export const NetworkVisualization: React.FC = () => {
         links: links,
         categories: categories,
         draggable: true,
-        roam: true,
-        
+        roam: false,
+
         label: {
           show: true,
           position: 'right',
           formatter: '{b}',
           color: '#333',
-          fontSize: 11,
-          fontWeight: 500
+          fontSize: 12,
+          fontWeight: 600
         },
         force: {
-          repulsion: 400,
-          gravity: 0.1,
-          edgeLength: 60,
+          repulsion: 450,
+          gravity: 0.08,
+          edgeLength: [60, 140],
           layoutAnimation: true
         },
         lineStyle: {
           color: 'source',
-          curveness: 0.2,
-          width: 1.5,
+          curveness: 0.15,
+          width: 2,
           opacity: 0.6
         },
         emphasis: {
           focus: 'adjacency',
+          scale: true,
+          label: { show: true },
           lineStyle: { width: 4, opacity: 1 }
         }
       }]
@@ -221,15 +187,12 @@ export const NetworkVisualization: React.FC = () => {
   return (
     <div className="network-visualization">
       <div className="network-visualization__container">
-        <h2 className="network-visualization__title">SOTKIS intelligent systems network</h2>
         <div className="network-visualization__hint">
-          <span>• <b>Drag</b> nodes to rearrange</span>
-          <span>• <b>Scroll</b> to zoom in/out</span>
-          <span>• <b>Click</b> blank space to pan</span>
+          <span>• <b>Arraste</b> para reorganizar</span>
+          <span>• <b>Passe o rato</b> para ver detalhes</span>
         </div>
         <div ref={chartRef} className="network-visualization__chart" />
       </div>
     </div>
   );
 };
-

@@ -154,14 +154,14 @@ export const Level: React.FC = () => {
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="level__compatible-title">{t.compatibility.title}</h2>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
-            <img
-              src={levelCompativelImage}
-              alt="Sistemas de resíduos compatíveis"
-              className="level__compatible-image"
-            />
-          </AnimateOnScroll>
         </div>
+        <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
+          <img
+            src={levelCompativelImage}
+            alt="Sistemas de resíduos compatíveis"
+            className="level__compatible-image"
+          />
+        </AnimateOnScroll>
       </section>
 
       {/* Video Modal */}
