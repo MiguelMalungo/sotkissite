@@ -2296,16 +2296,18 @@
 @media (max-width: 768px) {
   .home__magnifier-wrapper {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--spacing-md);
-    align-items: flex-start;
+    overflow-x: hidden;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+    align-items: center;
   }
 
   .home__magnifier {
-    width: 150%;
-    max-width: none;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     flex-shrink: 0;
+    margin: 0 auto;
   }
 
   .home__section--paylt-info .home__section-heading {
@@ -2337,13 +2339,8 @@
     display: none;
   }
 
-  /* Show Custom Scroll Indicator */
+  /* Hide Custom Scroll Indicator as content now fits */
   .home__scroll-indicator-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+    display: none !important;
   }
 }
