@@ -93,6 +93,31 @@
   transition: all 0.4s ease;
 }
 
+/* Expanding black background from arrow button */
+.landing__card-expand {
+  position: absolute;
+  top: calc(1rem + 22px);
+  right: calc(1rem + 22px);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  transform: translate(50%, -50%) scale(0);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* When hovering the arrow button, expand to fill the card */
+.landing__card:has(.landing__card-arrow:hover) .landing__card-expand {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transform: translate(0, 0) scale(1);
+}
+
 .landing__card-border {
   position: absolute;
   inset: 0;
@@ -174,11 +199,11 @@
   z-index: 5;
 }
 
-/* DEFAULT: Gold arrow for all cards */
+/* DEFAULT: White arrow for all cards */
 .landing__card-arrow svg {
   width: 22px;
   height: 22px;
-  stroke: #fde363 !important;
+  stroke: #fff !important;
   stroke-width: 2.5;
   fill: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -217,22 +242,43 @@
   stroke: #fff !important;
 }
 
-/* Platform card - gold arrow by default */
-.landing__card--platform .landing__card-arrow svg {
-  stroke: #fde363 !important;
+/* Arrow hover effect: show white border on card */
+.landing__card:has(.landing__card-arrow:hover) .landing__card-border {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
 }
 
-/* Platform card hover: gold border, white arrow */
+.landing__card:has(.landing__card-arrow:hover) .landing__card-arrow {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Arrow rotates to point right when hovering arrow button */
+.landing__card:has(.landing__card-arrow:hover) .landing__card-arrow svg {
+  stroke: #fff !important;
+  transform: rotate(45deg);
+}
+
+/* Platform card - same white arrow */
+.landing__card--platform .landing__card-arrow svg {
+  stroke: #fff !important;
+}
+
+/* Platform card hover: white border */
 .landing__card--platform:hover .landing__card-border {
   background: linear-gradient(
     135deg,
-    rgba(253, 227, 99, 0.5) 0%,
-    rgba(212, 175, 55, 0.2) 100%
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 100%
   );
 }
 
 .landing__card--platform:hover .landing__card-arrow {
-  border: 1px solid rgba(253, 227, 99, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .landing__card--platform:hover .landing__card-arrow svg {
@@ -416,8 +462,14 @@
 
   .landing__card-bg,
   .landing__card-border,
-  .landing__card-shine {
+  .landing__card-shine,
+  .landing__card-expand {
     border-radius: 14px;
+  }
+
+  /* Disable expand effect on mobile */
+  .landing__card-expand {
+    display: none;
   }
 
   .landing__card-text {

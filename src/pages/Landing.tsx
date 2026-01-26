@@ -46,6 +46,7 @@ export const Landing: React.FC = () => {
           style={{ '--card-delay': '0.2s' } as React.CSSProperties}
         >
           <div className="landing__card-bg" />
+          <div className="landing__card-expand" />
           <div className="landing__card-border" />
           <div className="landing__card-content">
             <div className="landing__card-text">
@@ -70,6 +71,7 @@ export const Landing: React.FC = () => {
           style={{ '--card-delay': '0.4s' } as React.CSSProperties}
         >
           <div className="landing__card-bg" />
+          <div className="landing__card-expand" />
           <div className="landing__card-border" />
           <div className="landing__card-content">
             <div className="landing__card-text">
