@@ -1,5 +1,7 @@
 .level {
   background-color: #F1FFF7;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Hero Section */

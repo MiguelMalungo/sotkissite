@@ -1356,9 +1356,10 @@
   }
 
   .home__hero {
-    min-height: 600px;
-    padding: var(--spacing-3xl) 0;
-    padding-top: calc(var(--spacing-4xl) + 60px);
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    padding-top: 80px;
     border-radius: 0 0 1rem 1rem;
     overflow-x: hidden;
   }
@@ -1379,17 +1380,6 @@
     box-sizing: border-box;
   }
 
-  .home__hero {
-    padding-top: 80px;
-    min-height: 100vh;
-  }
-
-  .home__hero-content {
-    height: calc(100vh - 80px);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
-  }
-
   .home__hero-heading {
     font-size: clamp(4.76rem, 15.232vw, 7.616rem);
     line-height: 1.2;
@@ -1403,7 +1393,7 @@
     font-size: clamp(1rem, 3vw, 1.25rem);
     width: auto;
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
     left: var(--spacing-md);
     right: var(--spacing-md);
     max-width: 100%;

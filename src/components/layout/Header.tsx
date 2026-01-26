@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
   }, [location]);
 
   const navItems = [
-    { path: '/', label: 'Home' },
+    { path: '/home', label: 'Home' },
     {
       label: 'Hardware',
       dropdown: [
@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
   }, []);
 
   const isVideoHeroPage =
-    location.pathname === '/' ||
+    location.pathname === '/home' ||
     location.pathname === '/platform' ||
     location.pathname === '/paylt' ||
     location.pathname === '/level' ||
@@ -100,7 +100,7 @@ export const Header: React.FC = () => {
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''} ${openDropdown ? 'header--dropdown-open' : ''}`}>
       <div className="header__container container">
-        <Link to="/" className="header__logo">
+        <Link to="/home" className="header__logo">
           <img
             src={logoSrc}
             alt="SOTKIS - Intelligent Systems"
