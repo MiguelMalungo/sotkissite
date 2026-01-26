@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { WaveCanvas } from '../components/ui/WaveCanvas';
-import sotkisLogo from '../assets/sotkisbranco.webp';
+import sotkisLogo from '../assets/Logo.png';
 import googleBadge from '../assets/google.webp';
 import appleBadge from '../assets/apple.webp';
 import './Landing.css';
