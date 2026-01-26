@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
+import { WaveCanvas } from '../components/ui/WaveCanvas';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
-const animationVideo = new URL('../assets/Animation.mp4', import.meta.url).href;
 const videoplatVideo = new URL('../assets/videoplat2.mp4', import.meta.url).href;
 import heroImage1 from '../assets/11.webp';
 import heroImage2 from '../assets/2.webp';
@@ -40,8 +40,6 @@ export const Home: React.FC = () => {
   const t = homeTranslations[language];
   const videoplatRef = useRef<HTMLVideoElement>(null);
   const topEdgeRef = useRef<HTMLDivElement>(null);
-  const heroVideo1Ref = useRef<HTMLVideoElement>(null);
-  const heroVideo2Ref = useRef<HTMLVideoElement>(null);
   const [scrollY, setScrollY] = React.useState(0);
   const [flippedCards, setFlippedCards] = React.useState<{ [key: string]: boolean }>({
     level: false,
@@ -119,153 +117,6 @@ export const Home: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const video1 = heroVideo1Ref.current;
-    const video2 = heroVideo2Ref.current;
-    if (!video1 || !video2) return;
-
-    let isVideo1Active = true;
-    let isTransitioning = false;
-    const transitionDuration = 2.5;
-    let checkInterval: number | null = null;
-    let animationFrameId: number | null = null;
-
-    // Preload both videos
-    video1.preload = 'auto';
-    video2.preload = 'auto';
-    video1.load();
-    video2.load();
-
-    const startTransition = () => {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      const activeVideo = isVideo1Active ? video1 : video2;
-      const inactiveVideo = isVideo1Active ? video2 : video1;
-
-      // Reset and prepare inactive video
-      inactiveVideo.currentTime = 0;
-
-      // Wait for inactive video to be ready before starting transition
-      const beginFade = () => {
-        activeVideo.style.opacity = '1';
-        inactiveVideo.style.opacity = '0';
-
-        // Start playing inactive video
-        inactiveVideo.play().catch(err => {
-          console.error('Failed to play inactive video:', err);
-          isTransitioning = false;
-        });
-
-        let startTime = Date.now();
-
-        const fadeStep = () => {
-          if (!isTransitioning) return;
-
-          const elapsed = (Date.now() - startTime) / 1000;
-          const progress = Math.min(elapsed / transitionDuration, 1);
-
-          activeVideo.style.opacity = String(1 - progress);
-          inactiveVideo.style.opacity = String(progress);
-
-          if (progress < 1) {
-            animationFrameId = requestAnimationFrame(fadeStep);
-          } else {
-            // Transition complete
-            activeVideo.pause();
-            activeVideo.currentTime = 0;
-            isVideo1Active = !isVideo1Active;
-            isTransitioning = false;
-          }
-        };
-
-        animationFrameId = requestAnimationFrame(fadeStep);
-      };
-
-      // Ensure inactive video is ready
-      if (inactiveVideo.readyState >= 3) { // HAVE_FUTURE_DATA or better
-        beginFade();
-      } else {
-        const onCanPlay = () => {
-          inactiveVideo.removeEventListener('canplay', onCanPlay);
-          beginFade();
-        };
-        inactiveVideo.addEventListener('canplay', onCanPlay);
-        inactiveVideo.load();
-
-        // Timeout fallback
-        setTimeout(() => {
-          if (isTransitioning) {
-            inactiveVideo.removeEventListener('canplay', onCanPlay);
-            isTransitioning = false;
-            console.warn('Video load timeout');
-          }
-        }, 5000);
-      }
-    };
-
-    const monitorPlayback = () => {
-      if (isTransitioning) return;
-
-      const activeVideo = isVideo1Active ? video1 : video2;
-
-      // Check if video has valid duration
-      if (!activeVideo.duration || activeVideo.duration === 0) return;
-
-      const timeRemaining = activeVideo.duration - activeVideo.currentTime;
-
-      // Start transition before video ends
-      if (timeRemaining <= transitionDuration && timeRemaining > 0.1) {
-        startTransition();
-        return;
-      }
-
-      // Ensure active video is playing
-      if (activeVideo.paused && !activeVideo.ended && activeVideo.readyState >= 2) {
-        activeVideo.play().catch(err => {
-          console.error('Failed to resume active video:', err);
-        });
-      }
-    };
-
-    const setupVideos = () => {
-      const bothReady = video1.readyState >= 3 && video2.readyState >= 3;
-
-      if (bothReady) {
-        // Start monitoring
-        checkInterval = window.setInterval(monitorPlayback, 200);
-
-        // Start first video
-        video1.play().catch(err => {
-          console.error('Failed to start video1:', err);
-          // Try with muted if autoplay fails
-          video1.muted = true;
-          video1.play().catch(() => { });
-        });
-      } else {
-        const checkReady = () => {
-          if (video1.readyState >= 3 && video2.readyState >= 3) {
-            setupVideos();
-          }
-        };
-
-        video1.addEventListener('canplaythrough', checkReady, { once: true });
-        video2.addEventListener('canplaythrough', checkReady, { once: true });
-      }
-    };
-
-    setupVideos();
-
-    return () => {
-      if (checkInterval !== null) {
-        clearInterval(checkInterval);
-      }
-      if (animationFrameId !== null) {
-        cancelAnimationFrame(animationFrameId);
-      }
-      isTransitioning = false;
-    };
-  }, []);
 
   return (
     <div className="home">
@@ -293,31 +144,7 @@ export const Home: React.FC = () => {
             className="home__hero-slide home__hero-slide--4"
           />
         </div>
-        <video
-          ref={heroVideo1Ref}
-          className="home__hero-video home__hero-video--1"
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          onLoadedMetadata={(e) => {
-            e.currentTarget.playbackRate = 1.0;
-          }}
-        >
-          <source src={animationVideo} type="video/mp4" />
-        </video>
-        <video
-          ref={heroVideo2Ref}
-          className="home__hero-video home__hero-video--2"
-          muted
-          playsInline
-          preload="auto"
-          onLoadedMetadata={(e) => {
-            e.currentTarget.playbackRate = 1.0;
-          }}
-        >
-          <source src={animationVideo} type="video/mp4" />
-        </video>
+        <WaveCanvas />
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
           <h1 className="home__hero-heading" dangerouslySetInnerHTML={{ __html: t.hero.title }} />
