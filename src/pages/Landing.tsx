@@ -64,7 +64,7 @@ export const Landing: React.FC = () => {
 
         {/* Card 2: Platform Login */}
         <a
-          href="https://sotkis.sotkon.com"
+          href="https://miguelmalungo.github.io/sotkis/"
           target="_blank"
           rel="noopener noreferrer"
           className="landing__card landing__card--platform"
