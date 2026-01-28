@@ -2224,34 +2224,6 @@
 
 
 
-.home__magnifier-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home__magnifier {
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: none;
-  background-color: transparent;
-  width: 50%;
-  max-width: 800px;
-}
-
-.home__magnifier-hint {
-  margin-top: var(--spacing-md);
-  font-size: var(--font-size-sm);
-  color: #888;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-
 /* Playt Layered Cards Design - Nested Structure */
 .playt-layers-container {
   display: flex;
@@ -2277,17 +2249,6 @@
 .playt-layers__phone-image img {
   width: 70%;
   height: auto;
-}
-
-/* Backdrop overlay for enlarged images */
-.playt-layers__backdrop {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  .playt-layers__backdrop {
-    display: none;
-  }
 }
 
 .playt-layers {
@@ -2439,8 +2400,28 @@
 @media (max-width: 768px) {
   .playt-layers-container {
     flex-direction: column;
-    width: 95%;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1px;
     gap: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Make sure phone image container is full width and image is large */
+  .playt-layers__phone-image {
+    width: 100%;
+    margin-top: 10px;
+    padding: 1px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+  }
+
+  .playt-layers__phone-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .playt-layers {
@@ -2508,16 +2489,30 @@
 @media (max-width: 480px) {
   .playt-layers-container {
     width: 100%;
-    padding: 0 var(--spacing-sm);
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 2px;
   }
 
+  /* Reset layers card */
   .playt-layers {
     padding: 0.875rem;
     border-radius: 0.75rem;
+    width: 90%;
+    /* Keep the card somewhat contained */
+    margin: 0 auto;
+    /* Center it */
   }
 
   .playt-layers__title {
     font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .playt-layers__header {
+    text-align: center;
+    width: 100%;
   }
 
   .playt-layers__card--app {
@@ -2528,157 +2523,79 @@
 
   .playt-layers__card-title {
     font-size: 1rem;
+    text-align: center;
   }
 
   .playt-layers__card--software {
-    padding: 0.75rem 0.875rem;
+    padding: 0.75rem;
     border-radius: 0.375rem;
   }
 
-  .playt-layers__card-heading {
-    font-size: 0.9rem;
-  }
-
-  .playt-layers__columns {
-    gap: 1.5rem;
-  }
-
-  .playt-layers__column span,
-  .playt-layers__faded span {
-    font-size: 0.85rem;
-  }
-
-  /* Clickable circle image on mobile */
   .playt-layers__circle-image {
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Hide phone image by default on mobile */
-  .playt-layers__phone-image {
-    display: none;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Enlarged circle image - scale up */
-  .playt-layers__circle-image--enlarged {
-    position: fixed;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(3.28);
-    z-index: 1000;
     padding: 0;
-    background: transparent;
-    border-radius: 0;
-  }
-
-  .playt-layers__circle-image--enlarged img {
-    max-width: none;
-  }
-
-  /* Phone image visible when circles is enlarged - appears below */
-  .playt-layers__phone-image--visible {
+    /* Break out of container to full viewport width */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+    z-index: 20;
+    /* Ensure high z-index as requested */
     display: flex;
-    position: fixed;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(3.28);
-    z-index: 1000;
-    margin-top: 0;
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
+    justify-content: center;
   }
 
-  .playt-layers__phone-image--visible img {
+  .playt-layers__circle-image img {
     width: 100%;
-  }
-}
-
-/* Scroll Indicator - Desktop Hidden */
-.home__scroll-indicator-container {
-  display: none;
-}
-
-.home__scroll-track {
-  width: 200px;
-  height: 4px;
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.home__scroll-thumb {
-  width: 30%;
-  /* size of the 'cursor' */
-  height: 100%;
-  background-color: var(--color-primary);
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: left 0.1s linear;
-}
-
-.home__scroll-hint {
-  text-align: center;
-  font-size: var(--font-size-xs);
-  color: #888;
-  margin-top: 8px;
-  font-style: italic;
-}
-
-@media (max-width: 768px) {
-  .home__magnifier-wrapper {
-    width: 100%;
-    overflow-x: hidden;
-    padding: 0 var(--spacing-sm);
-    box-sizing: border-box;
-    align-items: center;
-  }
-
-  .home__magnifier {
-    width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
-    flex-shrink: 0;
-    margin: 0 auto;
+    object-fit: contain;
   }
 
+  /* Phone image - Cidadão Município */
+  /* Resetting completely to ensure simple flow */
+  .playt-layers__phone-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    /* Force full viewport width */
+    margin-left: calc(-50vw + 50%);
+    /* Break out of any container */
+    margin-right: calc(-50vw + 50%);
+    padding: 0 1px;
+    /* 1px horizontal padding as requested */
+    margin-top: 2px;
+    /* Reduced even more */
+    margin-bottom: 1.5rem;
+    /* Increased gap before CTA button */
+    background: transparent;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+  }
+
+  .playt-layers__phone-image img {
+    width: 100%;
+    /* Fill the container */
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Ensure section title matches alignment */
   .home__section--paylt-info .home__section-heading {
     text-align: center !important;
     align-self: center !important;
-    font-size: calc(var(--font-size-3xl) + 3px) !important;
     width: 100%;
   }
+}
 
-  .home__section--paylt-info .home__button-container {
-    justify-content: center !important;
-    padding-right: 0 !important;
-  }
-
-  /* Custom Scrollbar - Hidden in favor of DOM indicator */
-  /* Hide Native Scrollbar */
-  .home__magnifier-wrapper::-webkit-scrollbar {
-    display: none;
-    height: 0;
-    width: 0;
-  }
-
-  .home__magnifier-wrapper {
-    scrollbar-width: none;
-    /* Firefox */
-  }
-
-  .home__magnifier-hint {
-    display: none;
-  }
-
-  /* Hide Custom Scroll Indicator as content now fits */
-  .home__scroll-indicator-container {
-    display: none !important;
-  }
+/* Remove old scroll logic completely */
+.home__scroll-indicator-container {
+  display: none;
 }

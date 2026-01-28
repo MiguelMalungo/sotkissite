@@ -49,13 +49,7 @@ export const Home: React.FC = () => {
     access: false,
     drs: false
   });
-  const [circlesEnlarged, setCirclesEnlarged] = React.useState(false);
 
-  const handleCirclesImageClick = () => {
-    if (window.innerWidth <= 768) {
-      setCirclesEnlarged(prev => !prev);
-    }
-  };
 
   const handleCardClick = (cardName: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     // Check if click was on button or its children
@@ -184,19 +178,19 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.level.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/level" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.level.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.level.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/level" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.level.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -214,19 +208,19 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.access.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/access" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.access.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.access.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/access" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.access.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -244,19 +238,19 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.drs.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/drs" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.drs.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.drs.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/drs" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.drs.button}
                       <ArrowIcon />
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -279,17 +273,17 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.level.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/level" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.level.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.level.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/level" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.level.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -307,17 +301,17 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.access.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/access" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.access.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.access.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/access" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.access.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -335,17 +329,17 @@ export const Home: React.FC = () => {
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.drs.title}</h3>
                   <div className="home__card-button-wrapper home__card-button-wrapper--front">
-                    <Button href="/drs" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.drs.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="home__card-content">
                   <p className="home__card-description">{t.drs.description}</p>
                   <div className="home__card-button-wrapper">
-                    <Button href="/drs" variant="primary" size="sm">
+                    <div className="button button--primary button--sm">
                       {t.drs.button}
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -467,10 +461,7 @@ export const Home: React.FC = () => {
                 {/* Inner card - Contains the circle image */}
                 <AnimateOnScroll animation="fadeIn" delay={600} duration={0.6}>
                   <div className="playt-layers__card playt-layers__card--software">
-                    <div
-                      className={`playt-layers__circle-image ${circlesEnlarged ? 'playt-layers__circle-image--enlarged' : ''}`}
-                      onClick={handleCirclesImageClick}
-                    >
+                    <div className="playt-layers__circle-image">
                       <img src={payltInfoImage} alt="Playt ecosystem" />
                     </div>
                   </div>
@@ -478,11 +469,8 @@ export const Home: React.FC = () => {
               </div>
             </AnimateOnScroll>
           </div>
-          {/* Phone image - hidden on mobile, shows when circles is enlarged */}
-          <div
-            className={`playt-layers__phone-image ${circlesEnlarged ? 'playt-layers__phone-image--visible' : ''}`}
-            onClick={handleCirclesImageClick}
-          >
+          {/* Phone image - always visible on mobile now */}
+          <div className="playt-layers__phone-image">
             <img src={cidadaoMunicipioImage} alt="Cidadão Município App" />
           </div>
           <AnimateOnScroll animation="fadeIn" delay={900} duration={0.6}>
