@@ -2,7 +2,7 @@ import React from 'react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './AnimateOnScroll.css';
 
-export type AnimationType = 'fade' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'blur' | 'fadeSlideUp' | 'fadeSlideDown' | 'fadeSlideLeft' | 'fadeSlideRight' | 'fadeBlur' | 'scaleUp';
+export type AnimationType = 'fade' | 'fadeIn' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'blur' | 'fadeSlideUp' | 'fadeSlideDown' | 'fadeSlideLeft' | 'fadeSlideRight' | 'fadeBlur' | 'scaleUp';
 
 export interface AnimateOnScrollProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;

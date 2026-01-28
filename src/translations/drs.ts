@@ -90,6 +90,52 @@ export const drsTranslations = {
         description: "The identification of each deposit thus allows rewarding users, contributing to the increase of recycling rates and the reduction of the amount of inadequate waste in selective fractions."
       }
     ]
+  },
+  gr: {
+    hero: {
+      title: "SOTKIS DRS\nDigital Return System",
+      description: "",
+      button: "Play Video"
+    },
+    content: {
+      title: "Deposit Return System",
+      text1: "To connect to DRS equipment, citizens only need a mobile device for Bluetooth connection or an RFID card. After this connection, the user deposits their glass bottles, plastic packaging and metal cans. The DRS system recognizes all types of packaging materials.",
+      text2: "After this process, the user receives the incentive that their city wants to assign!",
+      text3: "The incentives to be assigned are decided by each municipality and can be \"points\" received after each deposit. These points can then be converted into various benefits for each citizen - discounts on waste fees, public transportation, use of municipal facilities or incentives to participate in city events."
+    },
+    carousel: [
+      {
+        title: "Innovative Technology",
+        description: "The \"Digital Return System\" is equipped with innovative technology that individually identifies each selective deposition container (glass, plastic and metal), allowing the assignment of incentives to each user, thus motivating the entire population to recycle in a more organized and frequent manner."
+      },
+      {
+        title: "Rewards and Incentives",
+        description: "The identification of each deposit thus allows rewarding users, contributing to the increase of recycling rates and the reduction of the amount of inadequate waste in selective fractions."
+      }
+    ]
+  },
+  cr: {
+    hero: {
+      title: "SOTKIS DRS\nDigital Return System",
+      description: "",
+      button: "Play Video"
+    },
+    content: {
+      title: "Deposit Return System",
+      text1: "To connect to DRS equipment, citizens only need a mobile device for Bluetooth connection or an RFID card. After this connection, the user deposits their glass bottles, plastic packaging and metal cans. The DRS system recognizes all types of packaging materials.",
+      text2: "After this process, the user receives the incentive that their city wants to assign!",
+      text3: "The incentives to be assigned are decided by each municipality and can be \"points\" received after each deposit. These points can then be converted into various benefits for each citizen - discounts on waste fees, public transportation, use of municipal facilities or incentives to participate in city events."
+    },
+    carousel: [
+      {
+        title: "Innovative Technology",
+        description: "The \"Digital Return System\" is equipped with innovative technology that individually identifies each selective deposition container (glass, plastic and metal), allowing the assignment of incentives to each user, thus motivating the entire population to recycle in a more organized and frequent manner."
+      },
+      {
+        title: "Rewards and Incentives",
+        description: "The identification of each deposit thus allows rewarding users, contributing to the increase of recycling rates and the reduction of the amount of inadequate waste in selective fractions."
+      }
+    ]
   }
 };
 

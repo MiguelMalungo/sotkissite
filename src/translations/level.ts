@@ -78,6 +78,46 @@ export const levelTranslations = {
     compatibility: {
       title: "Compatibilité :"
     }
+  },
+  gr: {
+    hero: {
+      title: "SOTKIS LEVEL\nFill level monitoring",
+      button: "Play Video"
+    },
+    intro: {
+      title: "SOTKIS LEVEL",
+      description: "SOTKIS LEVEL is an efficient and cost-effective solution, allowing resource reallocation and programming essential routes in a strategic, economical and environmentally sustainable way! At its core, this intelligent module aims to monitor the waste fill level in each underground container. This way, unnecessary trips are avoided and it contributes to optimizing routes, saving fuel and reducing costs with teams and equipment."
+    },
+    sensor: {
+      title: "Ultrasonic Sensor",
+      description: "SOTKIS Level uses an ultrasonic sensor, making the collected information available on the online portal and app. At a predefined time, the system sends the fill level information to the web platform using GSM communication."
+    },
+    stages: {
+      title: "Main Features"
+    },
+    compatibility: {
+      title: "Compatibility:"
+    }
+  },
+  cr: {
+    hero: {
+      title: "SOTKIS LEVEL\nFill level monitoring",
+      button: "Play Video"
+    },
+    intro: {
+      title: "SOTKIS LEVEL",
+      description: "SOTKIS LEVEL is an efficient and cost-effective solution, allowing resource reallocation and programming essential routes in a strategic, economical and environmentally sustainable way! At its core, this intelligent module aims to monitor the waste fill level in each underground container. This way, unnecessary trips are avoided and it contributes to optimizing routes, saving fuel and reducing costs with teams and equipment."
+    },
+    sensor: {
+      title: "Ultrasonic Sensor",
+      description: "SOTKIS Level uses an ultrasonic sensor, making the collected information available on the online portal and app. At a predefined time, the system sends the fill level information to the web platform using GSM communication."
+    },
+    stages: {
+      title: "Main Features"
+    },
+    compatibility: {
+      title: "Compatibility:"
+    }
   }
 };
 

@@ -22,6 +22,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  mix-blend-mode: normal;
 }
 
 /* Logo - Centered above cards */
@@ -31,7 +32,10 @@
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .landing__logo-container--visible {
@@ -46,6 +50,51 @@
   filter: drop-shadow(0 0 30px rgba(124, 179, 66, 0.3));
 }
 
+/* Language flags - positioned in upper right corner */
+.landing__flags {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Top flags visible by default, bottom hidden */
+.landing__flags--top {
+  display: flex;
+}
+
+.landing__flags--bottom {
+  display: none;
+}
+
+.landing__flag {
+  background: transparent;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.landing__flag img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.landing__flag--selected img {
+  border: 2px solid #FDE363;
+}
+
+.landing__flag:hover:not(.landing__flag--selected) img {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
 /* Cards Section - Centered */
 .landing__cards {
   position: relative;
@@ -54,7 +103,7 @@
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-  max-width: 580px;
+  max-width: 667px;
   padding: 0 1.5rem;
 }
 
@@ -183,6 +232,7 @@
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
+  max-width: 280px;
 }
 
 /* Arrow Button - Upper Right Corner */
@@ -196,17 +246,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #000;
-  border: 1px solid transparent;
+  background: #FDE363;
+  border: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 5;
 }
 
-/* DEFAULT: White arrow for all cards */
+/* DEFAULT: Black arrow for all cards */
 .landing__card-arrow svg {
   width: 22px;
   height: 22px;
-  stroke: #fff !important;
+  stroke: #000 !important;
   stroke-width: 2.5;
   fill: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -235,14 +285,13 @@
   );
 }
 
-/* HOVER: White arrow with white border */
+/* HOVER: Yellow arrow button */
 .landing__card:hover .landing__card-arrow {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transform: scale(1.1);
+  border: none;
 }
 
 .landing__card:hover .landing__card-arrow svg {
-  stroke: #fff !important;
+  stroke: #000 !important;
 }
 
 /* Arrow hover effect: show white border on card */
@@ -262,13 +311,46 @@
 
 /* Arrow rotates to point right when hovering arrow button */
 .landing__card:has(.landing__card-arrow:hover) .landing__card-arrow svg {
-  stroke: #fff !important;
+  stroke: #000 !important;
   transform: rotate(45deg);
 }
 
-/* Platform card - same white arrow */
+/* Arrow Label - inside the arrow button, appears on hover */
+.landing__card-arrow-label {
+  position: absolute;
+  right: 100%;
+  white-space: nowrap;
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding-right: 0.75rem;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Arrow expands to capsule on hover */
+.landing__card:hover .landing__card-arrow {
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 0.75rem;
+  border-radius: 22px;
+  gap: 0.5rem;
+  background: #FDE363 !important;
+  opacity: 1 !important;
+}
+
+.landing__card:hover .landing__card-arrow-label {
+  position: relative;
+  right: auto;
+  opacity: 1;
+  transform: translateX(0);
+  color: #000;
+}
+
+/* Platform card - same black arrow on yellow */
 .landing__card--platform .landing__card-arrow svg {
-  stroke: #fff !important;
+  stroke: #000 !important;
 }
 
 /* Platform card hover: white border */
@@ -281,11 +363,11 @@
 }
 
 .landing__card--platform:hover .landing__card-arrow {
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: none;
 }
 
 .landing__card--platform:hover .landing__card-arrow svg {
-  stroke: #fff !important;
+  stroke: #000 !important;
 }
 
 /* App Card - Inline layout for title and badges */
@@ -315,6 +397,7 @@
 .landing__badge {
   display: block;
   transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
 .landing__badge img {
@@ -322,6 +405,8 @@
   width: auto;
   filter: brightness(0.95);
   transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 2px solid transparent;
 }
 
 .landing__badge:hover {
@@ -330,6 +415,7 @@
 
 .landing__badge:hover img {
   filter: brightness(1.1);
+  border: 2px solid #FDE363;
 }
 
 /* Responsive Design */
@@ -340,11 +426,11 @@
   }
 
   .landing__logo-container {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .landing__cards {
-    max-width: 640px;
+    max-width: 736px;
     gap: 1.25rem;
   }
 
@@ -391,7 +477,7 @@
   }
 
   .landing__cards {
-    max-width: 680px;
+    max-width: 782px;
   }
 }
 
@@ -401,8 +487,13 @@
     width: 272px;
   }
 
+  .landing__flag img {
+    width: 24px;
+    height: 24px;
+  }
+
   .landing__logo-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .landing__cards {
@@ -440,13 +531,13 @@
 @media (max-width: 480px) {
   .landing {
     justify-content: flex-start;
-    padding-top: 3rem;
+    padding-top: 0;
     height: 100vh;
   }
 
   /* Logo at top of page */
   .landing__logo-container {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   /* 30% larger: 220px * 1.3 = 286px */
@@ -454,9 +545,33 @@
     width: 286px;
   }
 
+  /* Hide top flags, show bottom flags on mobile */
+  .landing__flags--top {
+    display: none;
+  }
+
+  .landing__flags--bottom {
+    display: flex;
+    position: static;
+    margin-top: 0.5rem;
+    transform: none;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .landing__flag img {
+    width: 36px;
+    height: auto;
+  }
+
   .landing__cards {
-    gap: 1.5rem;
+    gap: 0.5rem;
     padding: 0 1rem;
+  }
+
+  .landing__card-description {
+    white-space: normal;
+    max-width: none;
   }
 
   .landing__card {
@@ -471,9 +586,51 @@
     border-radius: 14px;
   }
 
+  /* Apply hover state as default on mobile */
+  .landing__card-bg {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+
+  .landing__card-border {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+  }
+
+  .landing__card-arrow {
+    background: #FDE363;
+    border: none;
+  }
+
+  .landing__card-arrow svg {
+    stroke: #000 !important;
+  }
+
   /* Disable expand effect on mobile */
   .landing__card-expand {
     display: none;
+  }
+
+  /* Hide arrow labels on mobile - no capsule expansion */
+  .landing__card-arrow-label {
+    display: none;
+  }
+
+  /* Keep arrow as circle on mobile */
+  .landing__card:hover .landing__card-arrow {
+    width: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 50%;
+    background: #FDE363 !important;
   }
 
   .landing__card-text {
@@ -496,22 +653,26 @@
     height: 40px;
   }
 
-  /* On mobile, arrows always white */
+  /* On mobile, arrows always black on yellow */
   .landing__card-arrow svg {
     width: 20px;
     height: 20px;
-    stroke: #fff !important;
+    stroke: #000 !important;
   }
 
   .landing__card--platform .landing__card-arrow svg {
-    stroke: #fff !important;
+    stroke: #000 !important;
   }
 
   /* App card stack on mobile */
   .landing__card--app .landing__card-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
+  }
+
+  .landing__card--app .landing__card-text {
+    text-align: center;
   }
 
   .landing__card-badges {
@@ -519,7 +680,7 @@
   }
 
   .landing__badge img {
-    height: 36px;
+    height: 40px;
   }
 }
 
@@ -529,8 +690,13 @@
     width: 204px;
   }
 
+  .landing__flag img {
+    width: 20px;
+    height: 20px;
+  }
+
   .landing__logo-container {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .landing__cards {

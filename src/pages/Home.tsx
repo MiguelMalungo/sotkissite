@@ -15,6 +15,9 @@ import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods.webp';
 import payltInfoImage from '../assets/playt_circles.webp';
+import cidadaoMunicipioImage from '../assets/cidadao_municipio.webp';
+import heroBgImage from '../assets/DSC09612.jpeg';
+import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -46,7 +49,13 @@ export const Home: React.FC = () => {
     access: false,
     drs: false
   });
-  const [scrollProgress, setScrollProgress] = React.useState(0);
+  const [circlesEnlarged, setCirclesEnlarged] = React.useState(false);
+
+  const handleCirclesImageClick = () => {
+    if (window.innerWidth <= 768) {
+      setCirclesEnlarged(prev => !prev);
+    }
+  };
 
   const handleCardClick = (cardName: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     // Check if click was on button or its children
@@ -144,6 +153,8 @@ export const Home: React.FC = () => {
             className="home__hero-slide home__hero-slide--4"
           />
         </div>
+        <img src={heroBgImage} alt="" className="home__hero-bg-image home__hero-bg-image--desktop" />
+        <img src={heroBgImageMobile} alt="" className="home__hero-bg-image home__hero-bg-image--mobile" />
         <WaveCanvas />
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
@@ -437,36 +448,50 @@ export const Home: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </div>
-        <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__magnifier-wrapper" onScroll={(e) => {
-          const target = e.target as HTMLDivElement;
-          const { scrollLeft, scrollWidth, clientWidth } = target;
-          const maxScroll = scrollWidth - clientWidth;
-          if (maxScroll > 0) {
-            setScrollProgress((scrollLeft / maxScroll) * 100);
-          }
-        }}>
-          <img
-            src={payltInfoImage}
-            alt="Paylt Info Breakdown"
-            className="home__magnifier"
-          />
-        </AnimateOnScroll>
-        {/* Custom Mobile Scroll Cursor */}
-        <div className="home__scroll-indicator-container">
-          <div className="home__scroll-track">
-            <div
-              className="home__scroll-thumb"
-              style={{ left: `${scrollProgress}%` }}
-            ></div>
+
+        {/* Layered Card Design - Nested Structure with Image */}
+        <div className="playt-layers-container playt-layers-container--wide">
+          <div className="playt-layers playt-layers--wide">
+            {/* PLAYT - Outermost container */}
+            <AnimateOnScroll animation="fadeIn" delay={0} duration={0.6}>
+              <div className="playt-layers__header">
+                <h3 className="playt-layers__title">P(L)AYT</h3>
+              </div>
+            </AnimateOnScroll>
+
+            {/* APP CIDADÃO - Contains the inner card */}
+            <AnimateOnScroll animation="fadeIn" delay={300} duration={0.6}>
+              <div className="playt-layers__card playt-layers__card--app">
+                <span className="playt-layers__card-title">APP CIDADÃO</span>
+
+                {/* Inner card - Contains the circle image */}
+                <AnimateOnScroll animation="fadeIn" delay={600} duration={0.6}>
+                  <div className="playt-layers__card playt-layers__card--software">
+                    <div
+                      className={`playt-layers__circle-image ${circlesEnlarged ? 'playt-layers__circle-image--enlarged' : ''}`}
+                      onClick={handleCirclesImageClick}
+                    >
+                      <img src={payltInfoImage} alt="Playt ecosystem" />
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              </div>
+            </AnimateOnScroll>
           </div>
-          <div className="home__scroll-hint">Deslize para explorar a imagem</div>
+          {/* Phone image - hidden on mobile, shows when circles is enlarged */}
+          <div
+            className={`playt-layers__phone-image ${circlesEnlarged ? 'playt-layers__phone-image--visible' : ''}`}
+            onClick={handleCirclesImageClick}
+          >
+            <img src={cidadaoMunicipioImage} alt="Cidadão Município App" />
+          </div>
+          <AnimateOnScroll animation="fadeIn" delay={900} duration={0.6}>
+            <Button href="/paylt" variant="primary" size="sm">
+              {t.paylt.button}
+              <ArrowIcon />
+            </Button>
+          </AnimateOnScroll>
         </div>
-        <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
-          <Button href="/paylt" variant="primary" size="sm">
-            {t.paylt.button}
-            <ArrowIcon />
-          </Button>
-        </AnimateOnScroll>
       </section>
 
 

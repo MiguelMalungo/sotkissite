@@ -1,6 +1,10 @@
 export const translations = {
   pt: {},
-  en: {}
+  en: {},
+  es: {},
+  fr: {},
+  gr: {},
+  cr: {}
 };
 
 export type TranslationKey = keyof typeof translations.pt;

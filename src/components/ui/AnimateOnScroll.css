@@ -20,6 +20,16 @@
   opacity: 1;
 }
 
+/* Fade In animation (simple opacity only) */
+.animate-on-scroll--fadeIn {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.animate-on-scroll--fadeIn.animate-on-scroll--visible {
+  opacity: 1;
+}
+
 /* Slide Up animation */
 .animate-on-scroll--slideUp {
   opacity: 0;

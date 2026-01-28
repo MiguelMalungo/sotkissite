@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
-type Language = 'pt' | 'en' | 'es' | 'fr';
+type Language = 'pt' | 'en' | 'es' | 'fr' | 'gr' | 'cr';
 
 interface LanguageContextType {
   language: Language;

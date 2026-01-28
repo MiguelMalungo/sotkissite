@@ -198,6 +198,106 @@ export const contactTranslations = {
       },
       submit: "Send Message"
     }
+  },
+  gr: {
+    title: "Talk to us",
+    subtitle: "If you need information about our products and services.",
+    privacy: {
+      policy: "By entering my data I accept Sotkon's [Privacy and Cookie Policy](https://sotkon.com/en/privacy-cookie-policy/)",
+      newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
+    },
+    form: {
+      name: {
+        label: "Name *",
+        placeholder: "Your name"
+      },
+      email: {
+        label: "Email *",
+        placeholder: "example@email.com"
+      },
+      phone: {
+        label: "Phone",
+        placeholder: "+351 900 000 000"
+      },
+      company: {
+        label: "Company",
+        placeholder: "Company name"
+      },
+      service: {
+        label: "Service of Interest *",
+        placeholder: "Select a service",
+        options: [
+          { value: "", label: "Select a service" },
+          { value: "complete_solution", label: "Sotkis Complete Solution" },
+          { value: "level", label: "Sotkis Level - Fill Sensors" },
+          { value: "access", label: "Sotkis Access - Access Controls" },
+          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
+          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
+          { value: "payt", label: "Sotkis PLAYT Solution" },
+          { value: "t4g", label: "Trash4Goods Citizen App" },
+          { value: "integration", label: "Integrations with external platforms" }
+        ]
+      },
+      message: {
+        label: "Message *",
+        placeholder: "Tell us about your project..."
+      },
+      file: {
+        label: "Attach File",
+        button: "Choose File"
+      },
+      submit: "Send Message"
+    }
+  },
+  cr: {
+    title: "Talk to us",
+    subtitle: "If you need information about our products and services.",
+    privacy: {
+      policy: "By entering my data I accept Sotkon's [Privacy and Cookie Policy](https://sotkon.com/en/privacy-cookie-policy/)",
+      newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
+    },
+    form: {
+      name: {
+        label: "Name *",
+        placeholder: "Your name"
+      },
+      email: {
+        label: "Email *",
+        placeholder: "example@email.com"
+      },
+      phone: {
+        label: "Phone",
+        placeholder: "+351 900 000 000"
+      },
+      company: {
+        label: "Company",
+        placeholder: "Company name"
+      },
+      service: {
+        label: "Service of Interest *",
+        placeholder: "Select a service",
+        options: [
+          { value: "", label: "Select a service" },
+          { value: "complete_solution", label: "Sotkis Complete Solution" },
+          { value: "level", label: "Sotkis Level - Fill Sensors" },
+          { value: "access", label: "Sotkis Access - Access Controls" },
+          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
+          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
+          { value: "payt", label: "Sotkis PLAYT Solution" },
+          { value: "t4g", label: "Trash4Goods Citizen App" },
+          { value: "integration", label: "Integrations with external platforms" }
+        ]
+      },
+      message: {
+        label: "Message *",
+        placeholder: "Tell us about your project..."
+      },
+      file: {
+        label: "Attach File",
+        button: "Choose File"
+      },
+      submit: "Send Message"
+    }
   }
 };
 
