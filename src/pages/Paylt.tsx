@@ -15,7 +15,6 @@ import softGamiImg from '../assets/paylt_software_gamification.png';
 import hardIotImg from '../assets/newAccess.webp';
 import hardRfidImg from '../assets/transfer.webp';
 import hardAiImg from '../assets/newAccess.webp';
-import fieldImg from '../assets/field.png';
 import hardAccessImg from '../assets/paylt_hardware_access.png';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
 import techImprovImg from '../assets/levelsm.webp';
