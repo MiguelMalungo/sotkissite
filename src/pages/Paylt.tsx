@@ -22,6 +22,7 @@ import techImprovImg from '../assets/levelsm.webp';
 import techResImg from '../assets/levelhero.webp';
 import techSustImg from '../assets/data.webp';
 const animationVideo = new URL('../assets/Image_Animation.mp4', import.meta.url).href;
+const truckVideo = new URL('../assets/truck_video.webm', import.meta.url).href;
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -130,7 +131,8 @@ export const Paylt: React.FC = () => {
       id: '1',
       label: 'Eficiência operacional',
       description: 'Aumento da eficiência operacional através de processos automatizados e otimizados.',
-      image: fieldImg
+      image: truckVideo,
+      isVideo: true
     },
     {
       id: '2',

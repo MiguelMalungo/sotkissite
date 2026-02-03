@@ -56,7 +56,7 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
       // Move between -50px and 50px for more visible parallax
       const translateY = (scrollProgress - 0.5) * 100;
 
-      video.style.transform = `translate(-50%, calc(-50% + ${translateY}px)) scale(1.15)`;
+      video.style.transform = `translateX(-50%) translateY(${translateY}px)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
