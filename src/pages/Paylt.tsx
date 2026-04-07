@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
-import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/SFS06471-copy.webp';
