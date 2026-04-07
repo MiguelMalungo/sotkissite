@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
-import { NetworkVisualization } from '../components/ui/NetworkVisualization';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { payltTranslations } from '../translations/paylt';
-import payltHeroImage from '../assets/Beyond Recycling.jpg';
+import payltHeroImage from '../assets/SFS06471-copy.webp';
 
-import playtnewImage from '../assets/playtnew.webp';
+import logoPlayt from '../assets/logo-playtW.png';
+import playtContentores from '../assets/playt-contentores.webp';
+import playtRainbow from '../assets/playt-rainbow.webp';
+
 import softDashImg from '../assets/data.webp';
 import softAppImg from '../assets/paylt_software_mobile_app.png';
 import softMarketImg from '../assets/paylt_software_marketplace.png';
-import softGamiImg from '../assets/paylt_software_gamification.png';
 import hardIotImg from '../assets/newAccess.webp';
-import hardRfidImg from '../assets/transfer.webp';
-import hardAiImg from '../assets/newAccess.webp';
 import hardAccessImg from '../assets/paylt_hardware_access.png';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
-import techImprovImg from '../assets/levelsm.webp';
-import techResImg from '../assets/levelhero.webp';
-import techSustImg from '../assets/data.webp';
-const animationVideo = new URL('../assets/Image_Animation.mp4', import.meta.url).href;
-const truckVideo = new URL('../assets/truck_video.webm', import.meta.url).href;
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -38,26 +32,26 @@ export const Paylt: React.FC = () => {
     {
       id: '1',
       label: 'Dashboards interativos',
-      description: 'Dashboards interativos para análise e tomada de decisão em tempo real.',
-      image: techPolicyImg
+      description: 'Dashboards e informação para otimização de recursos e redução de custos',
+      image: softDashImg
     },
     {
       id: '2',
-      label: 'Aplicação móvel',
-      description: 'Aplicação móvel com acesso por Bluetooth e NFC para maior conveniência.',
+      label: 'Aplicação de cidadão',
+      description: 'Aplicação móvel integrada com o hardware e ferramentas de gamificação',
       image: softAppImg
     },
     {
       id: '3',
-      label: 'Marketplace integrado',
-      description: 'Marketplace integrado com benefícios, recompensas e funcionalidades digitais.',
+      label: 'Marketplace',
+      description: 'Marketplace integrado com benefícios, recompensas e funcionalidades digitais',
       image: softMarketImg
     },
     {
       id: '4',
-      label: 'Gamificação',
-      description: 'Ferramentas de gamificação para incentivar comportamentos sustentáveis.',
-      image: softGamiImg
+      label: 'PAYT',
+      description: 'Soluções para implementação transparente de modelos PAYT/RAYT/SAYT',
+      image: techPolicyImg
     }
   ];
 
@@ -65,131 +59,43 @@ export const Paylt: React.FC = () => {
   const hardwareFeatures = [
     {
       id: '1',
-      label: 'Sensores IoT',
-      description: 'Sensores IoT para deteção de diferentes materiais em qualquer tipo de contentor.',
+      label: 'Sensores de nível',
+      description: 'Sensores para deteção do nível de enchimento dos contentores',
       image: hardIotImg
     },
     {
       id: '2',
-      label: 'RFID',
-      description: 'RFID para recolha porta-a-porta com identificação precisa.',
-      image: hardRfidImg
+      label: 'Controlo de acessos',
+      description: 'Dispositivos para controlo do acesso aos contentores',
+      image: hardAccessImg
     },
     {
       id: '3',
-      label: 'Câmaras com IA',
-      description: 'Câmaras com IA para deteção e prevenção de contaminação.',
-      image: hardAiImg
+      label: 'Restritores de volume',
+      description: 'Restritores volumétricos que viabilizam a implementação do princípio PAYT.',
+      image: hardIotImg
     },
     {
       id: '4',
-      label: 'Controlo de acessos',
-      description: 'Sistemas de controlo de acessos para utilizadores individuais.',
+      label: 'Sensores de deteção',
+      description: 'Sensores DRS que registam cada deposição de embalagens',
       image: hardAccessImg
     }
   ];
 
-  // Technology Impact Features
-  const techFeatures = [
+  // Benefits Features
+  const benefitsFeatures = [
     {
       id: '1',
-      label: 'Ajustar estratégias e rotas',
-      description: 'Ajustar estratégias e rotas operacionais com base em dados em tempo real.',
-      image: animationVideo,
-      isVideo: true
-    },
-    {
-      id: '2',
-      label: 'Políticas públicas',
-      description: 'Definir políticas públicas mais eficazes baseadas em evidências concretas.',
-      image: techPolicyImg
-    },
-    {
-      id: '3',
-      label: 'Oportunidades de melhoria',
-      description: 'Identificar oportunidades de melhoria contínua nos processos.',
-      image: techImprovImg
-    },
-    {
-      id: '4',
-      label: 'Otimizar recursos',
-      description: 'Otimizar recursos e reduzir custos operacionais significativamente.',
-      image: techResImg
-    },
-    {
-      id: '5',
-      label: 'Objetivos de sustentabilidade',
-      description: 'Reforçar os objetivos de sustentabilidade local e nacional.',
-      image: techSustImg
-    }
-  ];
-
-  // Municipality Benefits Features
-  const municipioFeatures = [
-    {
-      id: '1',
-      label: 'Eficiência operacional',
-      description: 'Aumento da eficiência operacional através de processos automatizados e otimizados.',
-      image: truckVideo,
-      isVideo: true
-    },
-    {
-      id: '2',
-      label: 'Redução de custos',
-      description: 'Redução de custos de recolha e tratamento de resíduos.',
-      image: techResImg
-    },
-    {
-      id: '3',
-      label: 'Modelos PAYT/RAYT/SAYT',
-      description: 'Implementação transparente de modelos PAYT/RAYT/SAYT.',
-      image: softMarketImg
-    },
-    {
-      id: '4',
-      label: 'Controlo de contaminação',
-      description: 'Maior controlo sobre contaminação e qualidade dos resíduos.',
-      image: hardAiImg
-    },
-    {
-      id: '5',
-      label: 'Dados fiáveis',
-      description: 'Dados fiáveis para planeamento e tomada de decisão estratégica.',
-      image: softDashImg
-    }
-  ];
-
-  // Citizen Benefits Features
-  const cidadaoFeatures = [
-    {
-      id: '1',
-      label: 'Participação ativa',
-      description: 'Participação ativa e fácil no processo de reciclagem.',
-      image: softAppImg
-    },
-    {
-      id: '2',
-      label: 'Recompensas e gamificação',
-      description: 'Sistema de recompensas e gamificação que motiva a mudança de comportamento.',
-      image: softGamiImg
-    },
-    {
-      id: '3',
-      label: 'Feedback imediato',
-      description: 'Feedback imediato sobre hábitos individuais de reciclagem.',
+      label: 'MUNICÍPIO',
+      description: 'REDUZ as taxas de aterro ao aumentar a separação',
       image: softDashImg
     },
     {
-      id: '4',
-      label: 'Acesso via app',
-      description: 'Acesso em tempo real via app com Bluetooth e NFC.',
+      id: '2',
+      label: 'CIDADÃO',
+      description: 'POUPA nas faturas ou recebe benefícios pela reciclagem',
       image: softAppImg
-    },
-    {
-      id: '5',
-      label: 'Ambiente sustentável',
-      description: 'Contribuição direta para um ambiente mais sustentável.',
-      image: techSustImg
     }
   ];
 
@@ -204,7 +110,7 @@ export const Paylt: React.FC = () => {
         <div className="paylt__hero-overlay"></div>
         <div className="paylt__hero-content container">
           <div className="paylt__hero-text-content">
-            <AnimatedHeroTitle text={t.hero.title} className="paylt__hero-title" delay={0} />
+            <img src={logoPlayt} alt="P(L)AYT Logo" className="paylt__hero-logo" />
             <p className="paylt__hero-subtitle">{t.hero.subtitle}</p>
           </div>
         </div>
@@ -221,50 +127,92 @@ export const Paylt: React.FC = () => {
                 {t.intro.text1}
               </p>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-              <h2>{t.intro.text2}</h2>
-            </AnimateOnScroll>
+            {t.intro.text2 && (
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                <h2>{t.intro.text2}</h2>
+              </AnimateOnScroll>
+            )}
             <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
               <p>
                 {t.intro.text3}
               </p>
             </AnimateOnScroll>
-
-            {/* Network Visualization moved here */}
-            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
-              <NetworkVisualization />
-            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
-
-
-      <section className="paylt__how-it-works section">
+      {/* PAYT Scheme Section - Contentores */}
+      <section className="paylt__contentores-section section">
         <div className="container">
-          <div className="paylt__how-it-works-content">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>{t.howItWorks.title}</h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p>
-                {t.howItWorks.description}
-              </p>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
-              <img
-                src={playtnewImage}
-                alt="Paylt System"
-                className="paylt__image"
-              />
-            </AnimateOnScroll>
-          </div>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="paylt__section-title">Uma solução para todo o tipo de contentores!</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
+            <img
+              src={playtContentores}
+              alt="Contentores PAYT"
+              className="paylt__contentores-image"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
+      {/* Billing / Points Scheme Section */}
+      <section className="paylt__scheme-section section">
+        <div className="container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <div className="paylt__scheme-grid">
+              {/* Column 1 - Billing */}
+              <div className="paylt__scheme-card paylt__scheme-card--billing">
+                <div className="paylt__scheme-card-header">
+                  <h3>Faturação por deposição de resíduos indiferenciados</h3>
+                </div>
+                <div className="paylt__scheme-card-highlight">
+                  <span>1 ABERTURA = REGISTO</span>
+                </div>
+                <div className="paylt__scheme-card-detail">
+                  <p>Restrição de volume (30 a 100 Litros)</p>
+                </div>
+              </div>
 
+              {/* Column 2 - Points (Packaging) */}
+              <div className="paylt__scheme-card paylt__scheme-card--points">
+                <div className="paylt__scheme-card-header">
+                  <h3>Trocar pontos em compras marketplace</h3>
+                </div>
+                <div className="paylt__scheme-card-highlight">
+                  <span>1 EMBALAGEM = 1 PONTO</span>
+                </div>
+                <div className="paylt__scheme-card-detail">
+                  <p>Pontos por deposição individual de embalagens de vidro</p>
+                  <p>Pontos por deposição individual de embalagens de plástico e metal</p>
+                </div>
+              </div>
 
-      {/* Componentes da Solução Section - Blue background */}
+              {/* Column 3 - Points (Opening) */}
+              <div className="paylt__scheme-card paylt__scheme-card--points-open">
+                <div className="paylt__scheme-card-highlight">
+                  <span>1 ABERTURA = 1 PONTO</span>
+                </div>
+                <div className="paylt__scheme-card-detail">
+                  <p>Pontos por abertura para depósito de papel e cartão</p>
+                  <p>Pontos por abertura para depósito de resíduos orgânicos</p>
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll animation="fadeBlur" delay={300} duration={1}>
+            <img
+              src={playtRainbow}
+              alt="PAYT Scheme"
+              className="paylt__rainbow-image"
+            />
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Componentes da Solução Section */}
       <section className="paylt__componentes-section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
@@ -274,7 +222,7 @@ export const Paylt: React.FC = () => {
 
         {/* Software Carousel */}
         <FeatureCarousel
-          title="Software Inteligente"
+          title="Software Inteligente que gera impacto"
           subtitle="Uma infraestrutura dinâmica e escalável que integra:"
           features={softwareFeatures}
           imagePosition="right"
@@ -284,54 +232,19 @@ export const Paylt: React.FC = () => {
 
         {/* Hardware Carousel */}
         <FeatureCarousel
-          title="Hardware Avançado"
+          title="Hardware Avançado simples de integrar"
           subtitle="Dispositivos inteligentes instalados em qualquer tipo de contentor, incluindo:"
           features={hardwareFeatures}
           imagePosition="left"
           backgroundColor="#F4FBFC"
           variant="full-background"
         />
-      </section>
 
-      {/* Tecnologia que gera impacto Section - White background */}
-      <section className="paylt__tecnologia-section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__tecnologia-title-outside">Tecnologia que gera impacto</h2>
-          </AnimateOnScroll>
-        </div>
+        {/* Benefits Carousel */}
         <FeatureCarousel
-          title=""
-          subtitle="Através da recolha e análise de dados em tempo real, suportada por algoritmos de IA, o Sotkis P(L)AYT aumenta a capacidade de monitorização dos municípios."
-          features={techFeatures}
+          title="Benefícios para Municípios e Cidadãos"
+          features={benefitsFeatures}
           imagePosition="right"
-          backgroundColor="#ffffff"
-          variant="full-background"
-        />
-      </section>
-
-      {/* Benefícios para Municípios e Cidadãos Section - Blue background */}
-      <section className="paylt__beneficios-section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__section-title">Benefícios para Municípios e Cidadãos</h2>
-          </AnimateOnScroll>
-        </div>
-
-        {/* Para Municípios Carousel */}
-        <FeatureCarousel
-          title="Para Municípios"
-          features={municipioFeatures}
-          imagePosition="right"
-          backgroundColor="#F4FBFC"
-          variant="full-background"
-        />
-
-        {/* Para Cidadãos Carousel */}
-        <FeatureCarousel
-          title="Para Cidadãos"
-          features={cidadaoFeatures}
-          imagePosition="left"
           backgroundColor="#F4FBFC"
           variant="full-background"
         />

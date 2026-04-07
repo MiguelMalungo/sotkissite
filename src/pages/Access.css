@@ -117,12 +117,8 @@
 .access__card-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.access__card:first-child .access__card-image img {
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .access__card:hover .access__card-image img {
@@ -483,6 +479,132 @@
 }
 
 
+/* Technical Section */
+.access__technical {
+  background-color: #F1FFF7;
+  padding-top: var(--spacing-4xl);
+  padding-bottom: var(--spacing-4xl);
+}
+
+.access__technical-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.access__technical-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__technical-content > div > p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.access__technical-layout {
+  display: grid;
+  grid-template-columns: 1fr 50% 1fr;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
+}
+
+.access__technical-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.access__technical-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.access__technical-item {
+  display: flex;
+  align-items: center;
+}
+
+.access__technical-item h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__technical-item p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Restrictor Section */
+.access__restrictor {
+  background-color: #F1FFF7;
+  padding-top: var(--spacing-4xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.access__restrictor-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.access__restrictor-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__restrictor-content > div > p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.access__restrictor-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--spacing-2xl);
+  border-radius: 2rem;
+}
+
+/* How It Works Section */
+.access__how-it-works {
+  background-color: #F1FFF7;
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-4xl);
+}
+
+.access__how-it-works-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.access__how-it-works-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.access__how-it-works-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
 @media (max-width: 768px) {
 
   .access__intro {
@@ -541,6 +663,45 @@
 
   .access .full-page-hero__cta {
     justify-content: center;
+  }
+
+  .access__technical-content h2,
+  .access__restrictor-content h2,
+  .access__how-it-works-content h2 {
+    font-size: var(--font-size-3xl);
+    text-align: left;
+  }
+
+  .access__technical-content > div > p,
+  .access__restrictor-content > div > p,
+  .access__how-it-works-content p {
+    font-size: var(--font-size-base);
+  }
+
+  .access__technical-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .access__technical-image-wrapper {
+    order: -1;
+  }
+
+  .access__technical-image {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .access__technical-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .access__technical,
+  .access__restrictor,
+  .access__how-it-works {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
   }
 }
 
@@ -635,5 +796,30 @@
     font-size: var(--font-size-sm);
   }
 
+  .access__technical-content h2,
+  .access__restrictor-content h2,
+  .access__how-it-works-content h2 {
+    font-size: var(--font-size-2xl);
+  }
 
+  .access__technical-content > div > p,
+  .access__restrictor-content > div > p,
+  .access__how-it-works-content p {
+    font-size: var(--font-size-sm);
+  }
+
+  .access__technical-item h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .access__technical-item p {
+    font-size: var(--font-size-sm);
+  }
+
+  .access__technical,
+  .access__restrictor,
+  .access__how-it-works {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
 }

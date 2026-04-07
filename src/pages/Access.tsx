@@ -4,11 +4,12 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
-import accessHeroImage from '../assets/newAccess.webp';
+import accessHeroImage from '../assets/0058-frame.webp';
 import access1Image from '../assets/access1.webp';
-import dataImage from '../assets/data.webp';
-import transferImage from '../assets/transfer.webp';
-import accessNewImage from '../assets/accessnew.webp';
+import accessSuperficieImage from '../assets/AccessSuperficie.webp';
+import accessAppT4GImage from '../assets/AccessAppT4G.webp';
+import marcoExplodImage from '../assets/marco-ikon-flex-EXPLOD.172.webp';
+import restrictor0042Image from '../assets/0042-frame.webp';
 
 import './Access.css';
 
@@ -25,7 +26,7 @@ export const Access: React.FC = () => {
     setIsVideoModalOpen(false);
   };
 
-  const images = [access1Image, dataImage, transferImage];
+  const images = [access1Image, accessSuperficieImage, accessAppT4GImage];
 
   const cardItems = t.carousel.map((item, index) => ({
     id: String(index + 1),
@@ -128,14 +129,66 @@ export const Access: React.FC = () => {
         </div>
       </section>
 
-      <section className="access__content section">
+      <section className="access__technical section">
         <div className="container">
-          <div className="access__text-content">
+          <div className="access__technical-content">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>{t.compatibility.title}</h2>
+              <h2>Características técnicas</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                O SOTKIS Access integra uma fechadura eletromecânica e um módulo eletrónico que inclui as antenas e baterias. Num horário predefinido, o sistema envia as informações das sessões de depósito para a plataforma web usando uma comunicação GSM.
+              </p>
+            </AnimateOnScroll>
+            <div className="access__technical-layout">
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__technical-item">
+                <div>
+                  <h3>Fechadura eletromecânica</h3>
+                  <p>Bloqueia a tampa do marco de deposição e, assim, restringe o acesso ao contentor de resíduos.</p>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9} className="access__technical-image-wrapper">
+                <img src={marcoExplodImage} alt="Marco explodido" className="access__technical-image" />
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="access__technical-item">
+                <div>
+                  <h3>Caixa eletrónica</h3>
+                  <p>É composta pelo quadro eletrónico principal e inclui o leitor RFID, as baterias, os módulos GSM e as antenas.</p>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="access__restrictor section">
+        <div className="container">
+          <div className="access__restrictor-content">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>SOTKIS ACCESS COM RESTRITOR DE VOLUME</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                O SOTKIS Access, por meio da instalação de um restritor volumétrico no marco de deposição, viabiliza a implementação do princípio PAYT. O "pay-as-you-throw" é um sistema em que os residentes pagam pelos resíduos de acordo com a quantidade que produzem, sendo considerado um sistema de pagamento mais justo. Dependendo do marco de deposição ou do contentor existem diferentes restritores de volume disponíveis.
+              </p>
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
-              <img src={accessNewImage} alt="Sistemas de resíduos compatíveis" />
+              <img src={restrictor0042Image} alt="Restritor de volume" className="access__restrictor-image" />
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      <section className="access__how-it-works section">
+        <div className="container">
+          <div className="access__how-it-works-content">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2>Como Funciona</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+              <p>
+                Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.
+              </p>
             </AnimateOnScroll>
           </div>
         </div>

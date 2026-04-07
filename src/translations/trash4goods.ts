@@ -1,16 +1,14 @@
 export const trash4goodsTranslations = {
     pt: {
         hero: {
-            title: "App Cidadão\nValorize os seus resíduos",
+            title: "APP CIDADÃO\nTrash4Goods\nRecicle com propósito!",
             subtitle: "",
             button: "Ver Vídeo"
         },
         intro: {
-            title: "O que é o Trash4Goods?",
-            text1: "O Trash4Goods é uma solução inovadora que incentiva a reciclagem através de um sistema de recompensas.",
-            text2: "Para complementar a gestão municipal de resíduos, a nossa plataforma integra-se com a Trash4Goods, uma aplicação móvel desenvolvida especificamente para os cidadãos. Esta app permite que cada munícipe participe ativamente no processo de deposição seletiva, aceda a informação relevante sobre os pontos de recolha, receba notificações e acompanhe o seu desempenho ambiental de forma simples e intuitiva.",
-            text3: "Esta integração garante aos municípios uma ferramenta moderna e eficaz para envolver os cidadãos, promovendo comportamentos mais sustentáveis e contribuindo para o aumento das taxas de reciclagem.",
-            text4: "Graças a esta ligação direta entre município e cidadão, é possível melhorar a qualidade da deposição, otimizar operações de recolha e reforçar a participação da comunidade nos objetivos ambientais locais."
+            title: "App Trash4Goods",
+            text1: "Para complementar a gestão municipal de resíduos, o Sotkis integra-se com a Trash4Goods (T4G), uma aplicação móvel desenvolvida especificamente para os cidadãos. A Trash4Goods é uma solução digital que utiliza recompensas e gamificação para incentivar a reciclagem.",
+            text2: "A app permite que qualquer munícipe participe ativamente no processo de deposição seletiva, aceda a informação sobre os pontos de recolha e acompanhe o seu desempenho ambiental."
         }
     },
     en: {

@@ -1,12 +1,12 @@
 export const homeTranslations = {
   pt: {
     hero: {
-      title: "Sistemas Inteligentes para<br />Gestão de Resíduos",
-      description: "Estamos preparados para criar cidades inteligentes e investir na economia circular!<br /><span style='font-weight: 700;'>Está pronto para conduzir o seu município para um futuro mais sustentável?</span><br /><br />O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital que centraliza todas as informações, e é direcionado para a otimização da eficiência operacional, suporte à tomada de decisão municipal e valorização da experiência do utilizador final."
+      title: "O futuro da<br />reciclagem",
+      description: "Prepare-se para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência do utilizador final."
     },
     riseAbove: {
       title: "Software",
-      text: "A plataforma SOTKIS (Sotkon Intelligent Systems) consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. O portal e a app foram desenhados para otimizar a eficiência dos recursos alocados à gestão de resíduos, aumentando a rentabilidade desta operação.",
+      text: "A plataforma SOTKIS, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
       button: "Explorar o Software"
     },
     access: {
@@ -26,12 +26,12 @@ export const homeTranslations = {
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Integrando todas as soluções SOTKIS num único ecossistema.",
+      description: "Todas as soluções SOTKIS num único ecossistema.",
       button: "Explorar o P(L)ayt"
     },
     t4g: {
       title: "APP DE CIDADÃO",
-      description: "A App T4G recompensa boas práticas. Aproxima cidadãos e serviços municipais, incentivando a reciclagem através de benefícios locais que promovem dinamização económica.",
+      description: "A Trash4Goods é uma aplicação móvel que transforma a reciclagem numa experiência envolvente e gratificante. Através da app, os utilizadores registam as suas ações de reciclagem e acumulam recompensas pela correta separação dos resíduos.",
       button: "Explorar a App Cidadão"
     },
     app: {

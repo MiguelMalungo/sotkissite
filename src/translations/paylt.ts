@@ -2,19 +2,19 @@ export const payltTranslations = {
   pt: {
     hero: {
       title: "P(L)AYT",
-      subtitle: "Uma solução inteligente para transformar a forma como gerimos resíduos"
+      subtitle: "Todas as soluções SOTKIS num único ecossistema."
     },
     intro: {
       title: "P(L)AYT",
-      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva que utiliza tecnologia avançada para promover mudanças reais nos comportamentos dos cidadãos e fortalecer a colaboração entre utilizadores, municípios e empresas. Baseado nos princípios PAYT (Pay As You Throw), RAYT (Reward As You Throw) e SAYT (Save As You Throw), o sistema combina software e hardware e incentiva práticas sustentáveis através de gamificação, recompensas e inteligência artificial, contribuindo para reduzir a quantidade de resíduos enviados para aterro e para aumentar significativamente as taxas de reciclagem.",
-      text2: "Um Ecossistema Universal, Pronto para o Futuro",
-      text3: "O Sotkis P(L)AYT foi desenvolvido para ser totalmente universal e modular, adaptando-se a diferentes realidades municipais, fabricantes de contentores e contextos de implementação. É uma solução preparada para apoiar a transição ambiental, a digitalização dos serviços públicos e a evolução dos modelos de gestão de resíduos.",
+      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva, desenvolvida para ser universal e modular, adaptando-se a diferentes realidades municipais, fabricantes de contentores e contextos de implementação. Esta solução combina software e hardware num ecossistema universal, monitorizando cada etapa do processo de deposição e recolha, possibilitando a análise dos hábitos envolvidos.",
+      text2: "",
+      text3: "É possível criar incentivos positivos através de gamificação e recompensas, promovendo mudanças reais nos comportamentos dos cidadãos, otimizar políticas públicas e fortalecer a colaboração entre utilizadores, municípios e empresas.",
       text4: "",
       text5: ""
     },
     howItWorks: {
       title: "Como funciona?",
-      description: "O Sotkis P(L)AYT combina software e hardware num ecossistema universal, compatível com qualquer tipo de contentor e fabricante. A plataforma acompanha todas as etapas do processo de deposição e recolha, permitindo monitorizar hábitos. Em consequência, é possível criar incentivos positivos e ajustar políticas públicas de forma eficiente."
+      description: ""
     },
     carousel: [
       {

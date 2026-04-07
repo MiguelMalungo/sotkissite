@@ -1,9 +1,9 @@
 export const platformTranslations = {
   pt: {
     intro: {
-      title: "Plataforma Digital Sotkis",
-      text1: "O Sotkis é uma plataforma digital desenvolvida pela Sotkon. Trata-se de um sistema integrado de gestão que recolhe, analisa e centraliza informação sobre os processos associados à deposição e recolha de resíduos, oferecendo às entidades responsáveis ferramentas avançadas para otimizar operações e reforçar a sustentabilidade ambiental.",
-      text2: "Através dos seus módulos especializados, o Sotkis permite gerir online todo o parque de contentores, garantindo uma visão completa e em tempo real da operação. Desta forma, torna-se possível melhorar a eficiência na afetação de recursos, aumentar a rentabilidade, elevar as taxas de reciclagem e assegurar uma melhor qualidade dos resíduos recolhidos."
+      title: "Plataforma Digital SOTKIS",
+      text1: "A plataforma SOTKIS, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
+      text2: ""
     },
     features: {
       intro: "Através dos módulos existentes na plataforma SOTKIS a entidade responsável pela operação pode aceder de forma simples a várias funcionalidades:",
@@ -89,8 +89,29 @@ export const platformTranslations = {
       ]
     },
     access: {
-      text: "O acesso a esta plataforma digital para gestão dos seus contentores de resíduos é efetuado de forma bastante simples. Pode aceder à sua conta através do endereço www.sotkis.com ou através da app Sotkis.",
+      text: "SOTKIS Software\nAcesso através de https://sotkis.com/login ou através da app Sotkis.",
       buttonText: "Play Video"
+    },
+    funcionalidades: {
+      title: "Funcionalidades da plataforma",
+      items: [
+        {
+          title: "Dashboards para controlo da operação",
+          description: "A interface disponibiliza dashboards em tempo real de indicadores-chave, como taxas de reciclagem, poupanças acumuladas e metas ambientais. O sistema analisa a utilização dos equipamentos, com identificação de utilizadores, horários e frequência de deposição, incorporando também alertas e recomendações automáticas."
+        },
+        {
+          title: "Gestão de rotas e níveis de enchimento",
+          description: "Estas funcionalidades permitem acompanhar o nível de enchimento dos contentores e planear a recolha com base em dados reais. A plataforma oferece mapas, alertas, históricos e cria rotas adaptativas, otimizando operações, reduzindo custos e evitando recolhas desnecessárias."
+        },
+        {
+          title: "Gestão de manutenções SOTCARE",
+          description: "O módulo Sotcare permite uma gestão eficiente de todo o parque de contentores, integrando alertas de dispositivos IOT e algoritmos para previsão de falhas, com base no histórico associado. É possível consultar o histórico de manutenções, solicitar intervenções e antecipar necessidades, reduzindo o tempo de inatividade dos equipamentos e melhorando a qualidade do serviço prestado aos cidadãos."
+        },
+        {
+          title: "Gamificação da Reciclagem",
+          description: "O software Sotkis, que centraliza a inteligência do sistema P(L)AYT, acompanha o desempenho da recolha seletiva através de métricas de participação dos cidadãos, qualidade dos resíduos depositados e adesão a programas de incentivo. Esta informação estruturada apoia campanhas de sensibilização e metas ambientais."
+        }
+      ]
     }
   },
   en: {

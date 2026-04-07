@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
+import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { Tabs } from '../components/ui/Tabs';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
-import platformHeroImage from '../assets/platformhero.webp';
+import platformHeroImage from '../assets/Mockup-Desktop+Mobile-Sotkis-PT.webp';
+import seloImage from '../assets/selo.webp';
+import dashboardsImage from '../assets/PLATAFORMA-Dashboards.webp';
+import niveisImage from '../assets/PLATAFORMA-Niveis-Enchimento-.webp';
+import sotcareImage from '../assets/PLATAFORMA-Manutenções-Sotcare.webp';
+import gamificacaoImage from '../assets/PLATAFORMA-Gamificação.webp';
 const videoplatVideo = new URL('../assets/videoplat.mp4', import.meta.url).href;
 import appleImage from '../assets/apple.webp';
 import googleImage from '../assets/google.webp';
 const videoApp = new URL('../assets/app_video.mp4', import.meta.url).href;
-import screenshot1 from '../assets/Screenshot1.png';
-import screenshot2 from '../assets/Screenshot2.png';
-import screenshot3 from '../assets/Screenshot3.jpeg';
-import screenshot4 from '../assets/Screenshot4.jpeg';
-import screenshot5 from '../assets/Screenshot5.jpeg';
-import screenshot6 from '../assets/Screenshot6.jpeg';
-import screenshot7 from '../assets/Screenshot7.jpeg';
-import screenshot8 from '../assets/Screenshot8.jpeg';
+import screenshot1 from '../assets/Screenshot1.webp';
+import screenshot2 from '../assets/Screenshot2.webp';
+import screenshot3 from '../assets/Screenshot3.webp';
+import screenshot4 from '../assets/Screenshot4.webp';
+import screenshot5 from '../assets/Screenshot5.webp';
+import screenshot6 from '../assets/Screenshot6.webp';
+import screenshot7 from '../assets/Screenshot7.webp';
+import screenshot8 from '../assets/Screenshot8.webp';
 import moduloLevel from '../assets/ModuloSotkisLevel.webp';
 import moduloAccess from '../assets/ModuloSotkisAccess.webp';
 import moduloDRS from '../assets/ModuloSotkisDRS.webp';
@@ -127,8 +133,20 @@ export const Platform: React.FC = () => {
         </div>
         <div className="platform-hero-root__content container">
           <div className="platform-hero-root__text-content">
+            <AnimatedHeroTitle text="SOTKIS Software" className="platform-hero-root__title" delay={0} />
             <p className="platform-hero-root__subtitle">
-              {t.access.text} <a href="https://miguelmalungo.github.io/sotkis/" target="_blank" rel="noopener noreferrer" className="platform-hero-root__link">www.sotkis.com</a> {language === 'pt' ? 'ou através da app Sotkis.' : 'or through the Sotkis app.'}
+              {language === 'pt' ? (
+                <>
+                  {'Acesso através de '}
+                  <a href="https://sotkis.com/login" className="platform-hero-root__link" target="_blank" rel="noopener noreferrer">
+                    https://sotkis.com/login
+                  </a>
+                  {' ou através da app Sotkis.'}
+                </>
+              ) : t.access.text}
+            </p>
+            <p className="platform-hero-root__tagline">
+              {language === 'pt' ? 'Uma solução para todo o tipo de contentores' : 'A solution for all types of containers'}
             </p>
             <button className="platform-hero-root__cta" onClick={openVideoModal}>
               <span>{t.access.buttonText}</span>
@@ -140,6 +158,7 @@ export const Platform: React.FC = () => {
             </button>
           </div>
         </div>
+        <img src={seloImage} alt="Selo SOTKIS" className="platform-hero-root__selo" />
       </div>
 
       {/* Intro Section */}
@@ -173,91 +192,40 @@ export const Platform: React.FC = () => {
         </div>
       </section>
 
-      {/* Tabs Section */}
-      <section className="platform__tabs section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="platform__tabs-title">{t.tabs.title}</h2>
-          </AnimateOnScroll>
-          <div className="platform__tabs-wrapper">
-            <Tabs
-              tabs={t.tabs.items.map((item, index) => ({
-                title: item.title,
-                value: item.value,
-                description: item.description,
-                content: (
-                  <div className="platform__tab-content">
-                    {index === 0 && (
-                      <img
-                        src={screenshot1}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 1 && (
-                      <img
-                        src={screenshot2}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 2 && (
-                      <img
-                        src={screenshot3}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 3 && (
-                      <img
-                        src={screenshot4}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 4 && (
-                      <img
-                        src={screenshot5}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 5 && (
-                      <img
-                        src={screenshot6}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 6 && (
-                      <img
-                        src={screenshot7}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                    {index === 7 && (
-                      <img
-                        src={screenshot8}
-                        alt="Platform screenshot"
-                        className="platform__tab-content-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    )}
-                  </div>
-                )
-              }))}
-            />
-          </div>
-        </div>
-      </section>
+      {/* Funcionalidades Section */}
+      {(() => {
+        const funcData = (t as any).funcionalidades;
+        if (!funcData) return null;
+        const funcImages = [dashboardsImage, niveisImage, sotcareImage, gamificacaoImage];
+        return (
+          <section className="platform__funcionalidades section">
+            <div className="container">
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <h2 className="platform__funcionalidades-title">{funcData.title}</h2>
+              </AnimateOnScroll>
+              <div className="platform__funcionalidades-grid">
+                {funcData.items.map((item: { title: string; description: string }, index: number) => (
+                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 150} duration={0.8}>
+                    <div className="platform__funcionalidades-card">
+                      <div className="platform__funcionalidades-card-image-wrapper">
+                        <img
+                          src={funcImages[index]}
+                          alt={item.title}
+                          className="platform__funcionalidades-card-image"
+                        />
+                      </div>
+                      <div className="platform__funcionalidades-card-body">
+                        <h3 className="platform__funcionalidades-card-title">{item.title}</h3>
+                        <p className="platform__funcionalidades-card-description">{item.description}</p>
+                      </div>
+                    </div>
+                  </AnimateOnScroll>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Platform Modules Section */}
       <section className="platform__modules section">

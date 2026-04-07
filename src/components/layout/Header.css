@@ -227,11 +227,11 @@
 .header__lang-link--desktop {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: transparent;
+  background-color: #4a4a4a;
 }
 
 .header__lang-link--desktop:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #5a5a5a;
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
 }
@@ -240,8 +240,6 @@
   color: #ffffff;
   background-color: #4a4a4a;
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-  /* Glow effect when scrolled */
 }
 
 .header--scrolled .header__lang-link--desktop:hover {

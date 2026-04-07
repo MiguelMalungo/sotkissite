@@ -1,0 +1,465 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background radial gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0f1a12"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#080c0a"/>
+    </radialGradient>
+
+    <!-- Vignette overlay -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="90%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.4)"/>
+    </radialGradient>
+
+    <!-- Blob gradients matching WaveCanvas colors -->
+    <!-- Blob 1: green1 rgba(124,179,66,0.5) at 20%,30% r=300 -->
+    <radialGradient id="blob1Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(204,239,106,0.4)"/>
+      <stop offset="30%" stop-color="rgba(124,179,66,0.5)"/>
+      <stop offset="70%" stop-color="rgba(86,125,46,0.3)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 2: green2 rgba(85,139,47,0.45) at 80%,25% r=375 -->
+    <radialGradient id="blob2Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(165,199,87,0.36)"/>
+      <stop offset="30%" stop-color="rgba(85,139,47,0.45)"/>
+      <stop offset="70%" stop-color="rgba(59,97,32,0.27)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 3: green3 rgba(51,105,30,0.4) at 50%,70% r=420 -->
+    <radialGradient id="blob3Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(131,165,70,0.32)"/>
+      <stop offset="30%" stop-color="rgba(51,105,30,0.4)"/>
+      <stop offset="70%" stop-color="rgba(35,73,21,0.24)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 4: accent rgba(156,204,101,0.35) at 15%,80% r=270 -->
+    <radialGradient id="blob4Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(236,255,141,0.28)"/>
+      <stop offset="30%" stop-color="rgba(156,204,101,0.35)"/>
+      <stop offset="70%" stop-color="rgba(109,142,70,0.21)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 5: green4 rgba(124,179,66,0.25) at 85%,65% r=330 -->
+    <radialGradient id="blob5Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(204,239,106,0.2)"/>
+      <stop offset="30%" stop-color="rgba(124,179,66,0.25)"/>
+      <stop offset="70%" stop-color="rgba(86,125,46,0.15)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 6: highlight rgba(180,220,120,0.3) at 60%,15% r=240 -->
+    <radialGradient id="blob6Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,160,0.24)"/>
+      <stop offset="30%" stop-color="rgba(180,220,120,0.3)"/>
+      <stop offset="70%" stop-color="rgba(126,154,84,0.18)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Blob 7: green1 rgba(124,179,66,0.5) at 35%,55% r=285 -->
+    <radialGradient id="blob7Grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(204,239,106,0.4)"/>
+      <stop offset="30%" stop-color="rgba(124,179,66,0.5)"/>
+      <stop offset="70%" stop-color="rgba(86,125,46,0.3)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Wave gradients (vertical, top to bottom) -->
+    <!-- Wave 1: shadow rgba(20,50,10,0.6) -->
+    <linearGradient id="wave1Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(60,80,50,0.72)"/>
+      <stop offset="30%" stop-color="rgba(20,50,10,0.6)"/>
+      <stop offset="70%" stop-color="rgba(12,30,6,0.42)"/>
+      <stop offset="100%" stop-color="rgba(6,15,3,0.18)"/>
+    </linearGradient>
+
+    <!-- Wave 2: green3 rgba(51,105,30,0.4) -->
+    <linearGradient id="wave2Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(91,135,50,0.48)"/>
+      <stop offset="30%" stop-color="rgba(51,105,30,0.4)"/>
+      <stop offset="70%" stop-color="rgba(30,63,18,0.28)"/>
+      <stop offset="100%" stop-color="rgba(15,31,9,0.12)"/>
+    </linearGradient>
+
+    <!-- Wave 3: green2 rgba(85,139,47,0.45) -->
+    <linearGradient id="wave3Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(125,169,67,0.54)"/>
+      <stop offset="30%" stop-color="rgba(85,139,47,0.45)"/>
+      <stop offset="70%" stop-color="rgba(51,83,28,0.315)"/>
+      <stop offset="100%" stop-color="rgba(25,41,14,0.135)"/>
+    </linearGradient>
+
+    <!-- Wave 4: green1 rgba(124,179,66,0.5) -->
+    <linearGradient id="wave4Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(164,209,86,0.6)"/>
+      <stop offset="30%" stop-color="rgba(124,179,66,0.5)"/>
+      <stop offset="70%" stop-color="rgba(74,107,39,0.35)"/>
+      <stop offset="100%" stop-color="rgba(37,53,19,0.15)"/>
+    </linearGradient>
+
+    <!-- Wave 5: accent rgba(156,204,101,0.35) -->
+    <linearGradient id="wave5Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(196,234,121,0.42)"/>
+      <stop offset="30%" stop-color="rgba(156,204,101,0.35)"/>
+      <stop offset="70%" stop-color="rgba(93,122,60,0.245)"/>
+      <stop offset="100%" stop-color="rgba(46,61,30,0.105)"/>
+    </linearGradient>
+
+    <!-- Wave 6: highlight rgba(180,220,120,0.3) -->
+    <linearGradient id="wave6Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(220,250,140,0.36)"/>
+      <stop offset="30%" stop-color="rgba(180,220,120,0.3)"/>
+      <stop offset="70%" stop-color="rgba(108,132,72,0.21)"/>
+      <stop offset="100%" stop-color="rgba(54,66,36,0.09)"/>
+    </linearGradient>
+
+    <!-- Top wave 1: subtle green -->
+    <linearGradient id="waveTop1Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(164,219,86,0.18)"/>
+      <stop offset="50%" stop-color="rgba(124,179,66,0.15)"/>
+      <stop offset="100%" stop-color="rgba(62,89,33,0.05)"/>
+    </linearGradient>
+
+    <!-- Top wave 2: subtle green -->
+    <linearGradient id="waveTop2Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(125,169,67,0.144)"/>
+      <stop offset="50%" stop-color="rgba(85,139,47,0.12)"/>
+      <stop offset="100%" stop-color="rgba(42,69,23,0.04)"/>
+    </linearGradient>
+
+    <!-- Blur filter for glow effects -->
+    <filter id="blobBlur">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+
+    <filter id="waveGlow">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <filter id="particleGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <style>
+      /* ===== BLOB ANIMATIONS ===== */
+      /* Each blob drifts on sinusoidal paths and pulses in size */
+      /* Motion range: ~10% of width horizontally, ~8% of height vertically */
+
+      @keyframes blob1Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(140px, -65px) scale(1.15); }
+        50%  { transform: translate(0px, -86px) scale(1); }
+        75%  { transform: translate(-140px, -30px) scale(0.85); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob2Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(-120px, 70px) scale(0.88); }
+        50%  { transform: translate(-170px, 0px) scale(1.12); }
+        75%  { transform: translate(-50px, -70px) scale(1); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob3Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(100px, 50px) scale(1.1); }
+        50%  { transform: translate(150px, -40px) scale(0.9); }
+        75%  { transform: translate(30px, -70px) scale(1.05); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob4Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(160px, -55px) scale(0.85); }
+        50%  { transform: translate(80px, -80px) scale(1.15); }
+        75%  { transform: translate(-60px, -25px) scale(1); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob5Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(-90px, 80px) scale(1.12); }
+        50%  { transform: translate(-160px, 30px) scale(0.88); }
+        75%  { transform: translate(-70px, -50px) scale(1.05); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob6Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(130px, 60px) scale(0.9); }
+        50%  { transform: translate(50px, 75px) scale(1.1); }
+        75%  { transform: translate(-80px, 30px) scale(1); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      @keyframes blob7Move {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        25%  { transform: translate(110px, -60px) scale(1.08); }
+        50%  { transform: translate(-40px, -80px) scale(0.92); }
+        75%  { transform: translate(-120px, -20px) scale(1.05); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+
+      .blob1 { animation: blob1Move 28s ease-in-out infinite; }
+      .blob2 { animation: blob2Move 32s ease-in-out infinite; }
+      .blob3 { animation: blob3Move 35s ease-in-out infinite; }
+      .blob4 { animation: blob4Move 25s ease-in-out infinite; }
+      .blob5 { animation: blob5Move 38s ease-in-out infinite; }
+      .blob6 { animation: blob6Move 30s ease-in-out infinite; }
+      .blob7 { animation: blob7Move 33s ease-in-out infinite; }
+
+      /* ===== WAVE ANIMATIONS ===== */
+      /* Waves shift horizontally to simulate the scrolling sine motion */
+
+      @keyframes waveShift1 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(-120px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShift2 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(100px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShift3 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(-90px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShift4 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(80px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShift5 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(-70px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShift6 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(60px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShiftTop1 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(-150px); }
+        100% { transform: translateX(0px); }
+      }
+
+      @keyframes waveShiftTop2 {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(130px); }
+        100% { transform: translateX(0px); }
+      }
+
+      .wave1 { animation: waveShift1 18s ease-in-out infinite; }
+      .wave2 { animation: waveShift2 15s ease-in-out infinite; }
+      .wave3 { animation: waveShift3 13.5s ease-in-out infinite; }
+      .wave4 { animation: waveShift4 12s ease-in-out infinite; }
+      .wave5 { animation: waveShift5 10.8s ease-in-out infinite; }
+      .wave6 { animation: waveShift6 9.8s ease-in-out infinite; }
+      .waveTop1 { animation: waveShiftTop1 27s ease-in-out infinite; }
+      .waveTop2 { animation: waveShiftTop2 22s ease-in-out infinite; }
+
+      /* ===== PARTICLE ANIMATIONS ===== */
+      @keyframes particleDrift1 {
+        0%   { transform: translate(0px, 0px); opacity: 0.15; }
+        25%  { opacity: 0.35; }
+        50%  { transform: translate(40px, -30px); opacity: 0.1; }
+        75%  { opacity: 0.3; }
+        100% { transform: translate(0px, 0px); opacity: 0.15; }
+      }
+
+      @keyframes particleDrift2 {
+        0%   { transform: translate(0px, 0px); opacity: 0.2; }
+        25%  { opacity: 0.1; }
+        50%  { transform: translate(-35px, 25px); opacity: 0.35; }
+        75%  { opacity: 0.15; }
+        100% { transform: translate(0px, 0px); opacity: 0.2; }
+      }
+
+      @keyframes particleDrift3 {
+        0%   { transform: translate(0px, 0px); opacity: 0.25; }
+        25%  { opacity: 0.4; }
+        50%  { transform: translate(25px, 40px); opacity: 0.1; }
+        75%  { opacity: 0.3; }
+        100% { transform: translate(0px, 0px); opacity: 0.25; }
+      }
+
+      @keyframes particleDrift4 {
+        0%   { transform: translate(0px, 0px); opacity: 0.1; }
+        50%  { transform: translate(-30px, -35px); opacity: 0.3; }
+        100% { transform: translate(0px, 0px); opacity: 0.1; }
+      }
+
+      .particle-a { animation: particleDrift1 12s ease-in-out infinite; }
+      .particle-b { animation: particleDrift2 15s ease-in-out infinite; }
+      .particle-c { animation: particleDrift3 18s ease-in-out infinite; }
+      .particle-d { animation: particleDrift4 10s ease-in-out infinite; }
+
+      /* Screen blend mode for blobs */
+      .blob-layer { mix-blend-mode: screen; }
+      .wave-layer { mix-blend-mode: screen; }
+    </style>
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- ===== BLOBS (with screen blend mode) ===== -->
+  <g class="blob-layer" filter="url(#blobBlur)">
+    <!-- Blob 1: 20%, 30% — r=300 — green1 -->
+    <circle class="blob1" cx="384" cy="324" r="360" fill="url(#blob1Grad)"/>
+
+    <!-- Blob 2: 80%, 25% — r=375 — green2 -->
+    <circle class="blob2" cx="1536" cy="270" r="450" fill="url(#blob2Grad)"/>
+
+    <!-- Blob 3: 50%, 70% — r=420 — green3 -->
+    <circle class="blob3" cx="960" cy="756" r="504" fill="url(#blob3Grad)"/>
+
+    <!-- Blob 4: 15%, 80% — r=270 — accent -->
+    <circle class="blob4" cx="288" cy="864" r="324" fill="url(#blob4Grad)"/>
+
+    <!-- Blob 5: 85%, 65% — r=330 — green4 -->
+    <circle class="blob5" cx="1632" cy="702" r="396" fill="url(#blob5Grad)"/>
+
+    <!-- Blob 6: 60%, 15% — r=240 — highlight -->
+    <circle class="blob6" cx="1152" cy="162" r="288" fill="url(#blob6Grad)"/>
+
+    <!-- Blob 7: 35%, 55% — r=285 — green1 -->
+    <circle class="blob7" cx="672" cy="594" r="342" fill="url(#blob7Grad)"/>
+  </g>
+
+  <!-- ===== TOP SUBTLE WAVES ===== -->
+  <g class="wave-layer">
+    <!-- Top wave 1: y=12%, amp=25 -->
+    <g class="waveTop1">
+      <path d="M-40,130 C120,105 280,155 440,130 C600,105 760,80 920,130 C1080,180 1240,105 1400,130 C1560,155 1720,80 1960,130 L1960,1100 L-40,1100 Z"
+            fill="url(#waveTop1Grad)" opacity="0.5"/>
+    </g>
+
+    <!-- Top wave 2: y=18%, amp=20 -->
+    <g class="waveTop2">
+      <path d="M-40,194 C160,174 320,214 480,194 C640,174 800,154 960,194 C1120,234 1280,174 1440,194 C1600,214 1760,164 1960,194 L1960,1100 L-40,1100 Z"
+            fill="url(#waveTop2Grad)" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ===== MAIN WAVES (bottom half, layered back to front) ===== -->
+  <g class="wave-layer">
+    <!-- Wave 1: y=55%, amp=50 — shadow -->
+    <g class="wave1">
+      <path d="M-40,594 C140,544 300,644 480,594 C660,544 820,494 960,594 C1100,694 1280,544 1440,594 C1600,644 1760,524 1960,594 L1960,1100 L-40,1100 Z"
+            fill="url(#wave1Grad)"/>
+    </g>
+
+    <!-- Wave 2: y=60%, amp=45 — green3 -->
+    <g class="wave2">
+      <path d="M-40,648 C180,603 340,693 520,648 C700,603 860,558 1020,648 C1180,738 1340,603 1500,648 C1660,693 1800,573 1960,648 L1960,1100 L-40,1100 Z"
+            fill="url(#wave2Grad)"/>
+    </g>
+
+    <!-- Wave 3: y=65%, amp=40 — green2 -->
+    <g class="wave3">
+      <path d="M-40,702 C200,662 360,742 540,702 C720,662 880,622 1040,702 C1200,782 1360,662 1520,702 C1680,742 1820,642 1960,702 L1960,1100 L-40,1100 Z"
+            fill="url(#wave3Grad)"/>
+    </g>
+
+    <!-- Wave 4: y=70%, amp=35 — green1 -->
+    <g class="wave4">
+      <path d="M-40,756 C220,721 380,791 560,756 C740,721 900,686 1060,756 C1220,826 1380,721 1540,756 C1700,791 1840,706 1960,756 L1960,1100 L-40,1100 Z"
+            fill="url(#wave4Grad)"/>
+    </g>
+
+    <!-- Wave 5: y=75%, amp=30 — accent -->
+    <g class="wave5">
+      <path d="M-40,810 C240,780 400,840 580,810 C760,780 920,750 1080,810 C1240,870 1400,780 1560,810 C1720,840 1840,770 1960,810 L1960,1100 L-40,1100 Z"
+            fill="url(#wave5Grad)"/>
+    </g>
+
+    <!-- Wave 6: y=80%, amp=25 — highlight -->
+    <g class="wave6">
+      <path d="M-40,864 C260,839 420,889 600,864 C780,839 940,814 1100,864 C1260,914 1420,839 1580,864 C1740,889 1860,829 1960,864 L1960,1100 L-40,1100 Z"
+            fill="url(#wave6Grad)"/>
+    </g>
+  </g>
+
+  <!-- ===== WAVE GLOW EDGES ===== -->
+  <g class="wave-layer" filter="url(#waveGlow)" opacity="0.4">
+    <g class="wave3">
+      <path d="M-40,702 C200,662 360,742 540,702 C720,662 880,622 1040,702 C1200,782 1360,662 1520,702 C1680,742 1820,642 1960,702"
+            fill="none" stroke="rgba(125,169,107,0.5)" stroke-width="3"/>
+    </g>
+    <g class="wave4">
+      <path d="M-40,756 C220,721 380,791 560,756 C740,721 900,686 1060,756 C1220,826 1380,721 1540,756 C1700,791 1840,706 1960,756"
+            fill="none" stroke="rgba(164,219,106,0.5)" stroke-width="3"/>
+    </g>
+    <g class="wave5">
+      <path d="M-40,810 C240,780 400,840 580,810 C760,780 920,750 1080,810 C1240,870 1400,780 1560,810 C1720,840 1840,770 1960,810"
+            fill="none" stroke="rgba(196,244,141,0.4)" stroke-width="3"/>
+    </g>
+    <g class="wave6">
+      <path d="M-40,864 C260,839 420,889 600,864 C780,839 940,814 1100,864 C1260,914 1420,839 1580,864 C1740,889 1860,829 1960,864"
+            fill="none" stroke="rgba(220,255,160,0.35)" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- ===== PARTICLES ===== -->
+  <g filter="url(#particleGlow)">
+    <!-- Row 1 - scattered across canvas -->
+    <circle class="particle-a" cx="150" cy="200" r="3" fill="rgba(156,204,101,0.25)"/>
+    <circle class="particle-b" cx="380" cy="120" r="2" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-c" cx="620" cy="300" r="4" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-d" cx="850" cy="180" r="2.5" fill="rgba(156,204,101,0.3)"/>
+    <circle class="particle-a" cx="1100" cy="250" r="3.5" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-b" cx="1350" cy="150" r="2" fill="rgba(156,204,101,0.25)"/>
+    <circle class="particle-c" cx="1600" cy="280" r="3" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-d" cx="1800" cy="100" r="2.5" fill="rgba(156,204,101,0.2)"/>
+
+    <!-- Row 2 -->
+    <circle class="particle-c" cx="100" cy="450" r="2" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-d" cx="300" cy="380" r="3.5" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-a" cx="550" cy="500" r="2.5" fill="rgba(156,204,101,0.3)"/>
+    <circle class="particle-b" cx="780" cy="420" r="3" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-c" cx="1000" cy="480" r="2" fill="rgba(156,204,101,0.25)"/>
+    <circle class="particle-d" cx="1250" cy="400" r="4" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-a" cx="1500" cy="460" r="2.5" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-b" cx="1750" cy="350" r="3" fill="rgba(156,204,101,0.25)"/>
+
+    <!-- Row 3 -->
+    <circle class="particle-d" cx="200" cy="650" r="3" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-a" cx="450" cy="720" r="2.5" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-b" cx="700" cy="600" r="2" fill="rgba(156,204,101,0.3)"/>
+    <circle class="particle-c" cx="950" cy="680" r="3.5" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-d" cx="1200" cy="620" r="2" fill="rgba(156,204,101,0.25)"/>
+    <circle class="particle-a" cx="1450" cy="700" r="3" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-b" cx="1700" cy="580" r="2.5" fill="rgba(156,204,101,0.2)"/>
+
+    <!-- Row 4 -->
+    <circle class="particle-a" cx="120" cy="880" r="2" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-c" cx="350" cy="950" r="3" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-d" cx="600" cy="850" r="2.5" fill="rgba(156,204,101,0.25)"/>
+    <circle class="particle-b" cx="830" cy="920" r="3.5" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-a" cx="1080" cy="870" r="2" fill="rgba(156,204,101,0.3)"/>
+    <circle class="particle-c" cx="1300" cy="940" r="3" fill="rgba(156,204,101,0.2)"/>
+    <circle class="particle-d" cx="1550" cy="860" r="2.5" fill="rgba(156,204,101,0.15)"/>
+    <circle class="particle-b" cx="1820" cy="900" r="2" fill="rgba(156,204,101,0.25)"/>
+  </g>
+
+  <!-- ===== VIGNETTE OVERLAY ===== -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

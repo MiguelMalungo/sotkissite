@@ -210,6 +210,183 @@
   transition: color 0.3s ease;
 }
 
+/* Cards Section */
+.drs__cards {
+  background-color: #F1FFF7;
+  padding: 6.4rem 0 3.2rem 0;
+}
+
+.drs__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.drs__cards-carousel {
+  display: none;
+  padding: 0 var(--spacing-md);
+}
+
+.drs__cards-carousel .drs__card-image {
+  aspect-ratio: 1 / 1;
+}
+
+.drs__cards-carousel .drs__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drs__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.drs__card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.3;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background-color: #F1FFF7;
+}
+
+.drs__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.drs__card:hover .drs__card-image img {
+  transform: scale(1.05);
+}
+
+.drs__card-content {
+  padding: var(--spacing-xs) 0 0 0;
+  text-align: left;
+}
+
+.drs__card-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.drs__card-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Technical Specs Section */
+.drs__tech-specs {
+  background-color: #F1FFF7;
+  padding: var(--spacing-4xl) 0;
+}
+
+.drs__tech-specs-title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.drs__tech-specs-text {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-3xl);
+  max-width: 800px;
+}
+
+.drs__tech-specs-layout {
+  display: grid;
+  grid-template-columns: 1fr 50% 1fr;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
+}
+
+.drs__tech-specs-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.drs__tech-specs-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.drs__tech-specs-item {
+  display: flex;
+  align-items: center;
+}
+
+.drs__tech-specs-item h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.drs__tech-specs-item p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* How It Works Section */
+.drs__how-it-works {
+  background-color: #F1FFF7;
+  padding: var(--spacing-4xl) 0;
+}
+
+.drs__how-it-works-title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.drs__how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-2xl);
+}
+
+.drs__how-it-works-step {
+  text-align: left;
+}
+
+.drs__how-it-works-number {
+  display: inline-block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.3;
+}
+
+.drs__how-it-works-step-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.drs__how-it-works-step-description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
 /* Video Modal */
 .drs__video-modal {
   position: fixed;
@@ -284,7 +461,30 @@
   object-fit: contain;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .drs__how-it-works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .drs__tech-specs-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .drs__tech-specs-image {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .drs__tech-specs-item {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Responsive - Mobile */
 @media (max-width: 768px) {
   .drs__hero {
     min-height: 100vh;
@@ -333,16 +533,12 @@
   }
 
   .drs__text-content h2 {
+    font-size: var(--font-size-3xl);
     text-align: left;
   }
 
   .drs__image-section--bottom .drs__image {
     width: 90%;
-  }
-
-  .drs__text-content h2 {
-    font-size: var(--font-size-3xl);
-    text-align: left;
   }
 
   .drs__text-content p {
@@ -373,6 +569,65 @@
 
   .drs .carousel__slide-image {
     min-height: 280px;
+  }
+
+  /* Cards responsive */
+  .drs__cards {
+    padding: 3.2rem 0 1.6rem 0;
+  }
+
+  .drs__cards-grid--desktop {
+    display: none;
+  }
+
+  .drs__cards-carousel {
+    display: block;
+  }
+
+  .drs__card-title {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Tech specs responsive */
+  .drs__tech-specs {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .drs__tech-specs-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .drs__tech-specs-text {
+    font-size: var(--font-size-base);
+  }
+
+  .drs__tech-specs-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .drs__tech-specs-image {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .drs__tech-specs-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* How it works responsive */
+  .drs__how-it-works {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .drs__how-it-works-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .drs__how-it-works-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 }
 
@@ -425,5 +680,17 @@
 
   .drs .carousel__slide-image {
     min-height: 240px;
+  }
+
+  .drs__tech-specs-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .drs__tech-specs-item {
+    padding: var(--spacing-lg);
+  }
+
+  .drs__how-it-works-title {
+    font-size: var(--font-size-2xl);
   }
 }

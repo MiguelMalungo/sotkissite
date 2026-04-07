@@ -272,30 +272,44 @@
 }
 
 .level__stages-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  padding-left: 5px;
-  padding-right: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-.level__stage-image {
-  flex: 1;
-  max-width: calc(20% - 15px);
+.level__stage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.level__stage-item-image {
+  width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
+  border-radius: 1.5rem;
+  object-fit: contain;
+  box-shadow: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.level__stage-image:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  filter: contrast(1.2);
+.level__stage-item-image:hover {
+  transform: scale(1.12);
+  box-shadow: none;
+}
+
+.level__stage-item:hover .level__stage-item-text {
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
+}
+
+.level__stage-item-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  transition: font-weight 0.2s ease;
+  margin-top: var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
 }
 
 /* Image Section */
@@ -367,6 +381,11 @@
     max-width: 100%;
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
+  }
+
+  .level__stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
   }
 }
 
@@ -486,15 +505,8 @@
   }
 
   .level__stages-grid {
-    flex-direction: column;
-    gap: calc(var(--spacing-md) * 2);
-  }
-
-  .level__stage-image {
-    max-width: 100%;
-    width: 100%;
-    flex-shrink: 0;
-    border-radius: 6.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
   }
 
   .level__sensor-image {
@@ -608,11 +620,9 @@
     padding-right: var(--spacing-md);
   }
 
-  .level__stage-image {
-    max-width: 100%;
-    width: 100%;
-    flex-shrink: 0;
-    border-radius: 2rem;
+  .level__stages-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 
   .level__image-section .container {

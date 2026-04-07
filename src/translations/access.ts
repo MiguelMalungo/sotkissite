@@ -1,31 +1,31 @@
 export const accessTranslations = {
   pt: {
     hero: {
-      title: "SOTKIS Access\nControlos de Acesso para deposição de resíduos",
+      title: "SOTKIS ACCESS\nControlos de acesso para deposição de resíduos",
       description: "",
       button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",
-      text1: "O SOTKIS ACCESS recolhe informação sempre que uma chave de acesso é utilizada para abrir um contentor de deposição de resíduos, e converte esses dados em informações valiosas que conduzem a uma melhoria da qualidade dos resíduos, a um aumento de taxas de reciclagem e à redução do custo global de gestão de resíduos.",
-      text2: "Conheça aqui como a sua cidade pode beneficiar com o SOTKIS ACCESS."
+      text1: "O SOTKIS Access é um módulo inteligente de controlo de acesso concebido para equipar pontos de deposição de resíduos. O Access transforma aberturas do controlo de acesso em informação valiosa de gestão, permitindo segmentar comportamentos e extrair relatórios detalhados por zona, período e tipo de utilizador.",
+      text2: ""
     },
     carousel: [
       {
-        title: "Solução PAYT",
-        description: "O módulo de acesso Sotkis é instalado facilmente em qualquer sistema Sotkon e permite a recolha e transmissão de dados para a faturação em função do volume de lixo depositado, e de acordo com as exigências locais."
+        title: "Registo de todos os depósitos",
+        description: "O sistema regista cada utilização, recolhendo informação relevante com cada depósito. Estes registos são transmitidos de forma segura, utilizando a rede GSM, para a plataforma de gestão centralizada."
       },
       {
-        title: "Recolha de Dados",
-        description: "O Sotkis ACCESS recolhe informação sempre que um utilizador se identifica no sistema e converte esses dados em informações que são úteis para a definição de políticas municipais e para o aumento da eficiência global na gestão de resíduos. Os vários relatórios obtidos podem ser trabalhados para permitir que a cobrança e assim criar maior equidade na taxação dos resíduos."
+        title: "Compatibilidade com sistemas existentes",
+        description: "O módulo de acesso Sotkis adapta-se a diferentes tipos de contentores, garantindo a sua integração em diversos contextos de deposição de resíduos."
       },
       {
-        title: "Transferência de Dados",
-        description: "Após a utilização do controlo de acesso, os dados sobre o comportamento do utilizador são armazenados no módulo eletrónico. A transferência de dados é feita através de GPRS/GSM/Bluetooth e os dados armazenados são transmitidos para a plataforma Sotkis, permitindo uma comunicação bidirecional, via ligação GSM/SIM ou usando um OBC (computador de bordo) dentro do camião."
+        title: "Tecnologias de acesso",
+        description: "Os controlos de acesso podem ser ativados de forma eficiente por meio da aproximação do cartão ou tag ou por Bluetooth através da aplicação dedicada ao cidadão, garantindo praticidade e segurança na utilização."
       }
     ],
     compatibility: {
-      title: "O SOTKIS ACCESS é compatível com os seguintes sistemas de resíduos:"
+      title: ""
     }
   },
   en: {

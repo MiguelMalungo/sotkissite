@@ -5,11 +5,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import level2Image from '../assets/level2.webp';
-import levelPhotoImage from '../assets/levelphoto.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import sensorImage from '../assets/sensor.webp';
-import infographicImage from '../assets/infograficoplayt.webp';
-import levelCompativelImage from '../assets/levelcompativel.webp';
+import sotkisAppImage from '../assets/Sotkis-APP-DSC08537-new.webp';
+import sotkisLevel1 from '../assets/sotkis-level-1.webp';
+import sotkisLevel2 from '../assets/sotkis-level-2.webp';
+import sotkisLevel3 from '../assets/sotkis-level-3.webp';
+import sotkisLevel from '../assets/sotkis-level.webp';
 import './Level.css';
 
 export const Level: React.FC = () => {
@@ -91,8 +93,8 @@ export const Level: React.FC = () => {
           <div className="level__intro-images">
             <AnimateOnScroll animation="fadeSlideLeft" delay={0} duration={0.9} className="level__intro-wrapper--left">
               <img
-                src={levelPhotoImage}
-                alt="Level photo"
+                src={sotkisAppImage}
+                alt="Sotkis APP"
                 className="level__intro-image"
               />
             </AnimateOnScroll>
@@ -139,29 +141,25 @@ export const Level: React.FC = () => {
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="level__stages-title">{t.stages.title}</h2>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
-            <img
-              src={infographicImage}
-              alt="Infographic"
-              className="level__infographic-image"
-            />
-          </AnimateOnScroll>
+          <div className="level__stages-grid">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="level__stage-item">
+              <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-item-image" />
+              <p className="level__stage-item-text">Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.</p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__stage-item">
+              <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-item-image" />
+              <p className="level__stage-item-text">O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.</p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__stage-item">
+              <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-item-image" />
+              <p className="level__stage-item-text">O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.</p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8} className="level__stage-item">
+              <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-item-image" />
+              <p className="level__stage-item-text">O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.</p>
+            </AnimateOnScroll>
+          </div>
         </div>
-      </section>
-
-      <section className="level__content section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="level__compatible-title">{t.compatibility.title}</h2>
-          </AnimateOnScroll>
-        </div>
-        <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
-          <img
-            src={levelCompativelImage}
-            alt="Sistemas de resíduos compatíveis"
-            className="level__compatible-image"
-          />
-        </AnimateOnScroll>
       </section>
 
       {/* Video Modal */}

@@ -13,11 +13,12 @@ import heroImage4 from '../assets/4.webp';
 import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
-import trash4goodsImage from '../assets/trash4goods.webp';
-import payltInfoImage from '../assets/playt_circles.webp';
+import trash4goodsImage from '../assets/trash4goods-pic.webp';
+import payltInfoImage from '../assets/playt-rainbow.webp';
 import cidadaoMunicipioImage from '../assets/cidadao_municipio.webp';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
+import capaAssetImage from '../assets/capa-asset-1.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -152,8 +153,9 @@ export const Home: React.FC = () => {
         <WaveCanvas />
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
-          <h1 className="home__hero-heading" dangerouslySetInnerHTML={{ __html: t.hero.title }} />
-          <div className="home__hero-description">
+          <h1 className="home__hero-heading home__hero-animate home__hero-animate--1" dangerouslySetInnerHTML={{ __html: t.hero.title }} />
+          <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--2" />
+          <div className="home__hero-description home__hero-animate home__hero-animate--3">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
         </div>
@@ -363,7 +365,7 @@ export const Home: React.FC = () => {
             muted
             playsInline
             loop
-            preload="auto"
+            preload="metadata"
           >
             <source src={videoplatVideo} type="video/mp4" />
           </video>
@@ -376,7 +378,7 @@ export const Home: React.FC = () => {
             <p className="home__rise-above-text">
               {language === 'pt' ? (
                 <>
-                  <span className="home__rise-above-text--black">A plataforma SOTKIS (Sotkon Intelligent Systems)</span> consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos. <span className="home__rise-above-text--black">O portal e a app</span> foram desenhados para otimizar a eficiência dos recursos alocados à gestão de resíduos, aumentando a rentabilidade desta operação.
+                  <span className="home__rise-above-text--black">A plataforma SOTKIS</span>, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.
                 </>
               ) : (
                 <>
@@ -396,18 +398,12 @@ export const Home: React.FC = () => {
 
       {/* T4G App Section */}
       <section className="home__section home__section--t4g home__section--parallax">
-        <div className="home__section-parallax-bg" style={{ backgroundImage: `url(${heroImage4})` }}></div>
+        <div className="home__section-parallax-bg" style={{ backgroundImage: `url(${trash4goodsImage})` }}></div>
         <div className="home__section-parallax-overlay"></div>
         <div className="home__section--t4g-wrapper">
-          <AnimateOnScroll animation="fadeBlur" delay={0} duration={1} className="home__section--t4g-image">
-            <img
-              src={trash4goodsImage}
-              alt="Trash4Goods App"
-            />
-          </AnimateOnScroll>
           <div className="container">
-            <div className="home__section-grid home__section-grid--reverse">
-              <div className="home__section-content">
+            <div className="home__section-grid">
+              <div className="home__section-content home__section-content--left">
                 <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
                   <h2 className="home__section-heading">{t.t4g.title}</h2>
                 </AnimateOnScroll>
