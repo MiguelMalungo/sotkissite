@@ -189,27 +189,65 @@ export const Platform: React.FC = () => {
         const funcData = (t as any).funcionalidades;
         if (!funcData) return null;
         const funcImages = [dashboardsImage, niveisImage, sotcareImage, gamificacaoImage];
+        const funcIcons = [
+          // Bar chart icon - Dashboards
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="28" width="7" height="14" rx="1.5" fill="#6B8F3C"/>
+            <rect x="16" y="20" width="7" height="22" rx="1.5" fill="#6B8F3C"/>
+            <rect x="26" y="12" width="7" height="30" rx="1.5" fill="#6B8F3C"/>
+            <rect x="36" y="6" width="7" height="36" rx="1.5" fill="#6B8F3C"/>
+            <path d="M6 8L10 16L20 10L30 14L42 6" stroke="#6B8F3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>,
+          // Map/routes icon - Gestão de rotas
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4C17.4 4 12 9.4 12 16C12 26 24 40 24 40C24 40 36 26 36 16C36 9.4 30.6 4 24 4Z" stroke="#6B8F3C" strokeWidth="2.5" fill="none"/>
+            <circle cx="24" cy="16" r="5" fill="#6B8F3C"/>
+            <path d="M8 32L16 28L24 32L32 28L40 32V44L32 40L24 44L16 40L8 44V32Z" stroke="#6B8F3C" strokeWidth="2" fill="none"/>
+          </svg>,
+          // Wrench/gear icon - Manutenções
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="16" stroke="#6B8F3C" strokeWidth="2.5" fill="none"/>
+            <circle cx="24" cy="24" r="6" stroke="#6B8F3C" strokeWidth="2.5" fill="none"/>
+            <path d="M24 4V10M24 38V44M4 24H10M38 24H44M10 10L14.5 14.5M33.5 33.5L38 38M38 10L33.5 14.5M14.5 33.5L10 38" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round"/>
+          </svg>,
+          // Puzzle/gamification icon
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8C16 8 18 4 24 4C30 4 32 8 32 8" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round"/>
+            <path d="M12 16H8C6 16 4 18 4 20V36C4 38 6 40 8 40H16" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+            <path d="M36 16H40C42 16 44 18 44 20V36C44 38 42 40 40 40H32" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+            <path d="M16 40V44H32V40" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round"/>
+            <circle cx="24" cy="24" r="8" stroke="#6B8F3C" strokeWidth="2.5" fill="none"/>
+            <path d="M20 24L23 27L28 21" stroke="#6B8F3C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        ];
         return (
           <section className="platform__funcionalidades section">
             <div className="container">
               <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                 <h2 className="platform__funcionalidades-title">{funcData.title}</h2>
               </AnimateOnScroll>
-              <div className="platform__funcionalidades-grid">
+              <div className="platform__funcionalidades-text-row">
                 {funcData.items.map((item: { title: string; description: string }, index: number) => (
-                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 150} duration={0.8}>
-                    <div className="platform__funcionalidades-card">
-                      <div className="platform__funcionalidades-card-image-wrapper">
-                        <img
-                          src={funcImages[index]}
-                          alt={item.title}
-                          className="platform__funcionalidades-card-image"
-                        />
+                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100} duration={0.8}>
+                    <div className="platform__funcionalidades-text-col">
+                      <div className="platform__funcionalidades-icon">
+                        {funcIcons[index]}
                       </div>
-                      <div className="platform__funcionalidades-card-body">
-                        <h3 className="platform__funcionalidades-card-title">{item.title}</h3>
-                        <p className="platform__funcionalidades-card-description">{item.description}</p>
-                      </div>
+                      <h3 className="platform__funcionalidades-col-title">{item.title}</h3>
+                      <p className="platform__funcionalidades-col-description">{item.description}</p>
+                    </div>
+                  </AnimateOnScroll>
+                ))}
+              </div>
+              <div className="platform__funcionalidades-images-row">
+                {funcImages.map((img, index) => (
+                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100 + 200} duration={0.8}>
+                    <div className="platform__funcionalidades-image-card">
+                      <img
+                        src={img}
+                        alt={funcData.items[index]?.title || ''}
+                        className="platform__funcionalidades-image"
+                      />
                     </div>
                   </AnimateOnScroll>
                 ))}

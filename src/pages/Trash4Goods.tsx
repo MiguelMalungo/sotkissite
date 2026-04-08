@@ -67,13 +67,6 @@ export const Trash4Goods: React.FC = () => {
                               <p>{t.intro.text2}</p>
                           </AnimateOnScroll>
                         )}
-                        <AnimateOnScroll animation="scaleUp" delay={450} duration={1}>
-                            <img
-                                src={trash4goodsGrafImage}
-                                alt="Trash4Goods Info"
-                                className="trash4goods__intro-image"
-                            />
-                        </AnimateOnScroll>
                     </div>
                 </div>
             </section>
@@ -84,13 +77,31 @@ export const Trash4Goods: React.FC = () => {
                     <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                         <h2 className="trash4goods__how-it-works-title">Como funciona?</h2>
                     </AnimateOnScroll>
+                    {/* Numbered circles row */}
+                    <div className="trash4goods__step-numbers">
+                        {[1, 2, 3, 4, 5].map((num) => (
+                            <div key={num} className="trash4goods__step-number-wrapper">
+                                <div className="trash4goods__step-number">{num}</div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Step text row */}
+                    <div className="trash4goods__step-labels">
+                        <p className="trash4goods__step-label">Efetue o <strong>login na app</strong>, passando a ter acesso aos pontos de reciclagem perto de si</p>
+                        <p className="trash4goods__step-label">Verifique no mapa todos os contentores próximos</p>
+                        <p className="trash4goods__step-label">Selecione o ponto de reciclagem e conecte ao contentor por Bluetooth</p>
+                        <p className="trash4goods__step-label">Efetue a deposição e receba pontos</p>
+                        <p className="trash4goods__step-label">Troque os pontos acumulados no marketplace</p>
+                    </div>
+
+                    {/* Phone images row */}
                     <div className="trash4goods__how-it-works-steps">
                         <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
                             <div className="trash4goods__step">
                                 <div className="trash4goods__step-phone">
                                     <img src={t4gHomepage} alt="T4G Homepage" />
                                 </div>
-                                <p className="trash4goods__step-text">Efetue o login na app, passando a ter acesso aos pontos de reciclagem perto de si</p>
                             </div>
                         </AnimateOnScroll>
                         <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
@@ -98,7 +109,6 @@ export const Trash4Goods: React.FC = () => {
                                 <div className="trash4goods__step-phone">
                                     <img src={t4gMap} alt="T4G Map" />
                                 </div>
-                                <p className="trash4goods__step-text">Verifique no mapa todos os contentores próximos</p>
                             </div>
                         </AnimateOnScroll>
                         <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
@@ -106,7 +116,6 @@ export const Trash4Goods: React.FC = () => {
                                 <div className="trash4goods__step-phone">
                                     <img src={t4gRecycling} alt="T4G Recycling Location" />
                                 </div>
-                                <p className="trash4goods__step-text">Selecione o ponto de reciclagem e conecte ao contentor por Bluetooth</p>
                             </div>
                         </AnimateOnScroll>
                         <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8}>
@@ -114,7 +123,6 @@ export const Trash4Goods: React.FC = () => {
                                 <div className="trash4goods__step-phone">
                                     <img src={t4gDrs} alt="T4G DRS Recycle Success" />
                                 </div>
-                                <p className="trash4goods__step-text">Efetue a deposição e receba pontos</p>
                             </div>
                         </AnimateOnScroll>
                         <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8}>
@@ -122,7 +130,6 @@ export const Trash4Goods: React.FC = () => {
                                 <div className="trash4goods__step-phone">
                                     <img src={t4gMarketplace} alt="T4G Marketplace" />
                                 </div>
-                                <p className="trash4goods__step-text">Troque os pontos acumulados no marketplace</p>
                             </div>
                         </AnimateOnScroll>
                     </div>
