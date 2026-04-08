@@ -481,7 +481,7 @@
 
 /* Technical Section */
 .access__technical {
-  background-color: #F1FFF7;
+  background-color: #ffffff;
   padding-top: var(--spacing-4xl);
   padding-bottom: var(--spacing-4xl);
 }
@@ -544,6 +544,90 @@
   margin: 0;
 }
 
+/* Devices sub-section */
+.access__devices {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-2xl);
+}
+
+.access__devices-text p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.access__devices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  align-items: end;
+}
+
+.access__device-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.access__device-image-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.access__device-image {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto var(--spacing-md);
+}
+
+.access__device-item--bluetooth .access__device-image {
+  margin-bottom: 0;
+}
+
+.access__device-item--bluetooth .access__device-image-wrapper {
+  margin-bottom: var(--spacing-md);
+}
+
+.access__bluetooth-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 36px;
+  height: 36px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+}
+
+.access__bluetooth-badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.access__device-name {
+  font-size: var(--font-size-base);
+  color: var(--color-primary-dark);
+  margin: 0 0 2px 0;
+}
+
+.access__device-type {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
 /* Restrictor Section */
 .access__restrictor {
   background-color: #F1FFF7;
@@ -582,13 +666,12 @@
 /* How It Works Section */
 .access__how-it-works {
   background-color: #F1FFF7;
-  padding-top: var(--spacing-2xl);
+  padding-top: var(--spacing-4xl);
   padding-bottom: var(--spacing-4xl);
 }
 
 .access__how-it-works-content {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .access__how-it-works-content h2 {
@@ -596,13 +679,148 @@
   color: var(--color-primary-dark);
   margin-bottom: var(--spacing-xl);
   font-weight: var(--font-weight-bold);
+  text-align: center;
 }
 
 .access__how-it-works-content p {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
-  margin: 0;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.access__how-sequence {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  background-color: transparent;
+}
+
+
+.access__how-sequence-text p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.access__how-sequence-text p:last-child {
+  margin-bottom: 0;
+}
+
+.access__how-sequence-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2xl);
+  align-items: stretch;
+  overflow: visible;
+}
+
+.access__how-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: visible;
+}
+
+.access__how-step-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+  overflow: visible;
+  height: 38px;
+}
+
+.access__how-step-number {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background-color: #5cb85c;
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Arrow: thin line that bridges gap to next circle */
+.access__how-step:not(.access__how-step--last) .access__how-step-arrow {
+  flex: 1;
+  height: 2px;
+  background-color: #5cb85c;
+  margin-left: 6px;
+  margin-right: calc(-1 * var(--spacing-2xl) - 38px);
+  position: relative;
+  align-self: center;
+}
+
+.access__how-step:not(.access__how-step--last) .access__how-step-arrow::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #5cb85c;
+}
+
+.access__how-step-label {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.access__how-step-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* Step 1 image sits naturally below label */
+.access__how-step:nth-child(1) .access__how-step-image {
+  margin-top: var(--spacing-lg);
+}
+
+/* Steps 2 & 3 pushed to bottom then raised 30px */
+.access__how-step:nth-child(2) .access__how-step-image,
+.access__how-step:nth-child(3) .access__how-step-image {
+  margin-top: auto;
+  transform: translateY(-30px);
+}
+
+.access__how-step-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Two images side by side in step 3 */
+.access__how-step-image--double img {
+  width: 50%;
+  flex: 1;
+}
+
+/* Constrain step 2 image height */
+.access__how-step:nth-child(2) .access__how-step-image img {
+  max-height: 387px;
+  width: auto;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -702,6 +920,30 @@
   .access__how-it-works {
     padding-top: var(--spacing-3xl);
     padding-bottom: var(--spacing-3xl);
+  }
+
+  .access__how-sequence {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .access__how-sequence-steps {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .access__how-step-arrow {
+    display: none;
+  }
+
+  .access__devices {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .access__devices-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
   }
 }
 

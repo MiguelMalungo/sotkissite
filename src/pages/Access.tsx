@@ -10,6 +10,15 @@ import accessSuperficieImage from '../assets/AccessSuperficie.webp';
 import accessAppT4GImage from '../assets/AccessAppT4G.webp';
 import marcoExplodImage from '../assets/marco-ikon-flex-EXPLOD.172.webp';
 import restrictor0042Image from '../assets/0042-frame.webp';
+import smartTagImage from '../assets/smart-tag.webp';
+import smartCardImage from '../assets/smart-card.webp';
+import smartphoneImage from '../assets/smartphone.webp';
+import conectarImage from '../assets/conectar.webp';
+import tambor1Image from '../assets/access-com-restritor-volume-1.webp';
+import tambor2Image from '../assets/access-com-restritor-volume.webp';
+import alcapao1Image from '../assets/access-com-restritor-volume-2.webp';
+import alcapao2Image from '../assets/access-com-restritor-volume-3.webp';
+import alcapao3Image from '../assets/access-com-restritor-volume-4.webp';
 
 import './Access.css';
 
@@ -157,6 +166,37 @@ export const Access: React.FC = () => {
                 </div>
               </AnimateOnScroll>
             </div>
+
+            {/* Devices sub-section */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__devices">
+              <div className="access__devices-text">
+                <p>O sistema admite múltiplos formatos de identificação para garantir flexibilidade operacional.</p>
+              </div>
+              <div className="access__devices-grid">
+                <div className="access__device-item">
+                  <img src={smartTagImage} alt="Smart Tag" className="access__device-image" />
+                  <p className="access__device-name"><strong>Smart Tag</strong></p>
+                  <p className="access__device-type">(RFID)</p>
+                </div>
+                <div className="access__device-item">
+                  <img src={smartCardImage} alt="Smart Card" className="access__device-image" />
+                  <p className="access__device-name"><strong>Smart Card</strong></p>
+                  <p className="access__device-type">(RFID)</p>
+                </div>
+                <div className="access__device-item access__device-item--bluetooth">
+                  <div className="access__device-image-wrapper">
+                    <img src={smartphoneImage} alt="Smartphone" className="access__device-image" />
+                    <div className="access__bluetooth-badge">
+                      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p className="access__device-name"><strong>Smartphone</strong></p>
+                  <p className="access__device-type">(Bluetooth)</p>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -185,10 +225,83 @@ export const Access: React.FC = () => {
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
               <h2>Como Funciona</h2>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p>
-                Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.
-              </p>
+            {/* Sequence 1 - Tambor duplo */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__how-sequence">
+              <div className="access__how-sequence-text">
+                <p>Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.</p>
+              </div>
+              <div className="access__how-sequence-steps">
+                <div className="access__how-step">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">1</div>
+                    <div className="access__how-step-arrow"></div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Conectar</strong></p>
+                  <div className="access__how-step-image">
+                    <img src={conectarImage} alt="Conectar" />
+                  </div>
+                </div>
+                <div className="access__how-step">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">2</div>
+                    <div className="access__how-step-arrow"></div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Abrir, rodar o tambor</strong> e depositar sobre a superfície interior do tambor</p>
+                  <div className="access__how-step-image">
+                    <img src={tambor1Image} alt="Rodar o tambor" />
+                  </div>
+                </div>
+                <div className="access__how-step access__how-step--last">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">3</div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Rodar o tambor e fechar completamente</strong> o sistema, permitindo a entrada dos resíduos no contentor</p>
+                  <div className="access__how-step-image access__how-step-image--double">
+                    <img src={tambor1Image} alt="Tambor fechado" />
+                    <img src={tambor2Image} alt="Resíduos no contentor" />
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Sequence 2 - Alçapão */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__how-sequence">
+              <div className="access__how-sequence-text">
+                <p>Para sistemas enterrados, pode também ser implementado um alçapão interior no marco de deposição, com restritor de volume, equipado com o módulo de acesso SOTKIS.</p>
+                <p>Do mesmo modo, após a abertura do Sotkis Access, o alçapão de 35 litros, limita o volume das deposições e só autoriza um depósito por conexão.</p>
+              </div>
+              <div className="access__how-sequence-steps">
+                <div className="access__how-step">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">1</div>
+                    <div className="access__how-step-arrow"></div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Conectar</strong></p>
+                  <div className="access__how-step-image">
+                    <img src={conectarImage} alt="Conectar" />
+                  </div>
+                </div>
+                <div className="access__how-step">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">2</div>
+                    <div className="access__how-step-arrow"></div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Abrir a tampa</strong> superior e <strong>depositar</strong> sobre o alçapão interior</p>
+                  <div className="access__how-step-image">
+                    <img src={alcapao1Image} alt="Abrir e depositar" />
+                  </div>
+                </div>
+                <div className="access__how-step access__how-step--last">
+                  <div className="access__how-step-top">
+                    <div className="access__how-step-number">3</div>
+                  </div>
+                  <p className="access__how-step-label"><strong>Fechar completamente a tampa,</strong> permitindo a entrada dos resíduos no contentor</p>
+                  <div className="access__how-step-image access__how-step-image--double">
+                    <img src={alcapao2Image} alt="Tampa fechada" />
+                    <img src={alcapao3Image} alt="Resíduos no contentor" />
+                  </div>
+                </div>
+              </div>
             </AnimateOnScroll>
           </div>
         </div>

@@ -5,6 +5,15 @@ export const drsTranslations = {
       description: "",
       button: "Play Video"
     },
+    cycle: {
+      title: "Como se transforma:",
+      deposicao: "Deposição",
+      recolha: "Recolha",
+      transformacao: "Transformação Industrial",
+      consumidor: "Consumidor",
+      retornoLoja: "Retorno Loja",
+      reenchimento: "Reenchimento Produto"
+    },
     content: {
       title: "Digital Return System",
       text1: "O SOTKIS DRS é uma solução inteligente que permite aumentar as taxas de reciclagem e melhorar a qualidade dos resíduos seletivos. Equipado com tecnologia de identificação individual de embalagens (vidro, plástico e metal), o sistema regista cada deposição de forma automática e fiável.",
@@ -27,6 +36,15 @@ export const drsTranslations = {
       title: "SOTKIS DRS\nDigital Return System",
       description: "",
       button: "Play Video"
+    },
+    cycle: {
+      title: "How it transforms:",
+      deposicao: "Deposit",
+      recolha: "Collection",
+      transformacao: "Industrial Transformation",
+      consumidor: "Consumer",
+      retornoLoja: "Store Return",
+      reenchimento: "Product Refill"
     },
     content: {
       title: "Deposit Return System",
@@ -51,6 +69,15 @@ export const drsTranslations = {
       description: "",
       button: "Play Video"
     },
+    cycle: {
+      title: "¿Cómo se transforma?",
+      deposicao: "Depósito",
+      recolha: "Recogida",
+      transformacao: "Transformación Industrial",
+      consumidor: "Consumidor",
+      retornoLoja: "Retorno Tienda",
+      reenchimento: "Rellenado Producto"
+    },
     content: {
       title: "Deposit Return System",
       text1: "To connect to DRS equipment, citizens only need a mobile device for Bluetooth connection or an RFID card. After this connection, the user deposits their glass bottles, plastic packaging and metal cans. The DRS system recognizes all types of packaging materials.",
@@ -73,6 +100,15 @@ export const drsTranslations = {
       title: "SOTKIS DRS\nDigital Return System",
       description: "",
       button: "Play Video"
+    },
+    cycle: {
+      title: "Comment ça se transforme :",
+      deposicao: "Dépôt",
+      recolha: "Collecte",
+      transformacao: "Transformation Industrielle",
+      consumidor: "Consommateur",
+      retornoLoja: "Retour Magasin",
+      reenchimento: "Recharge Produit"
     },
     content: {
       title: "Deposit Return System",
@@ -97,6 +133,15 @@ export const drsTranslations = {
       description: "",
       button: "Play Video"
     },
+    cycle: {
+      title: "How it transforms:",
+      deposicao: "Deposit",
+      recolha: "Collection",
+      transformacao: "Industrial Transformation",
+      consumidor: "Consumer",
+      retornoLoja: "Store Return",
+      reenchimento: "Product Refill"
+    },
     content: {
       title: "Deposit Return System",
       text1: "To connect to DRS equipment, citizens only need a mobile device for Bluetooth connection or an RFID card. After this connection, the user deposits their glass bottles, plastic packaging and metal cans. The DRS system recognizes all types of packaging materials.",
@@ -119,6 +164,15 @@ export const drsTranslations = {
       title: "SOTKIS DRS\nDigital Return System",
       description: "",
       button: "Play Video"
+    },
+    cycle: {
+      title: "How it transforms:",
+      deposicao: "Deposit",
+      recolha: "Collection",
+      transformacao: "Industrial Transformation",
+      consumidor: "Consumer",
+      retornoLoja: "Store Return",
+      reenchimento: "Product Refill"
     },
     content: {
       title: "Deposit Return System",

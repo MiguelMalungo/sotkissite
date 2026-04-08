@@ -285,7 +285,7 @@
 
 /* Technical Specs Section */
 .drs__tech-specs {
-  background-color: #F1FFF7;
+  background-color: #ffffff;
   padding: var(--spacing-4xl) 0;
 }
 
@@ -300,7 +300,7 @@
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: calc(var(--spacing-3xl) / 2);
   max-width: 800px;
 }
 
@@ -318,9 +318,10 @@
 }
 
 .drs__tech-specs-image {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .drs__tech-specs-item {
@@ -363,6 +364,14 @@
 
 .drs__how-it-works-step {
   text-align: left;
+}
+
+.drs__how-it-works-inline-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  margin-top: var(--spacing-md);
 }
 
 .drs__how-it-works-number {
@@ -459,6 +468,224 @@
 
 .drs .carousel__slide-image img {
   object-fit: contain;
+}
+
+/* Cycle Scheme Section */
+.drs__cycle-scheme {
+  background-color: #ffffff;
+  padding: var(--spacing-4xl) 0;
+}
+
+.drs__cycle-scheme-title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.drs__cycle-scheme-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.drs__cycle-diagram {
+  border: 2px solid #c8e6c8;
+  border-radius: 2rem;
+  padding: var(--spacing-2xl) var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Rows */
+.drs__cycle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drs__cycle-row--bottom {
+  justify-content: space-between;
+}
+
+/* Node */
+.drs__cycle-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 210px;
+  flex-shrink: 0;
+}
+
+.drs__cycle-node span {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/*
+  Sprite: 2080×2048px
+  Top row (y=0..1024):    4 icons, each 520×1024px in sprite
+  Bottom row (y=1024..2048): 2 icons, each 1040×1024px in sprite
+
+  TOP ROW — scale so cell width = 210px:
+    scale = 210/520 → bg-size = 840×828px
+    cell height at scale = 1024*(210/520) = 414px
+    to anchor icon to bottom in 210px container: y-offset = -(414-210) = -204px
+
+  BOTTOM ROW — scale so cell width = 210px:
+    scale = 210/1040 → bg-size = 420×414px
+    top-row height at this scale = 1024*(210/1040) = 207px → y start of bottom row = -207px
+    bottom row cell height = 207px → fits in 210px, anchor bottom: y = -(207+207-210) = -204px
+*/
+
+.drs__cycle-icon {
+  width: 210px;
+  height: 210px;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* Top row, col 0 — Deposição (bottles) */
+.drs__cycle-icon--deposicao {
+  background-size: 840px 828px;
+  background-position: 0px -204px;
+}
+/* Top row, col 1 — Consumidor (pouring) */
+.drs__cycle-icon--consumidor {
+  background-size: 840px 828px;
+  background-position: -210px -204px;
+}
+/* Top row, col 2 — Retorno Loja (cart) */
+.drs__cycle-icon--retorno {
+  background-size: 840px 828px;
+  background-position: -420px -204px;
+}
+/* Top row, col 3 — Reenchimento (conveyor) */
+.drs__cycle-icon--reenchimento {
+  background-size: 840px 828px;
+  background-position: -630px -204px;
+}
+/* Bottom row, col 0 — Recolha (truck) */
+.drs__cycle-icon--recolha {
+  background-size: 420px 414px;
+  background-position: 0px -204px;
+}
+/* Bottom row, col 1 — Transformação Industrial (factory) */
+.drs__cycle-icon--transformacao {
+  background-size: 420px 414px;
+  background-position: -210px -204px;
+}
+
+/* Center DRS image */
+.drs__cycle-center {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #5cb85c;
+}
+
+.drs__cycle-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrows */
+.drs__cycle-arrow {
+  flex: 1;
+  height: 2px;
+  background-color: #5cb85c;
+  position: relative;
+  min-width: 16px;
+}
+
+.drs__cycle-arrow--right::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #5cb85c;
+}
+
+.drs__cycle-arrow--left::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 7px solid #5cb85c;
+}
+
+/* Vertical connectors */
+.drs__cycle-verticals {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 45px;
+}
+
+.drs__cycle-vert {
+  width: 2px;
+  height: 100%;
+  background-color: #5cb85c;
+  position: relative;
+}
+
+/* Up arrow on left vertical (pointing up = arrow at top) */
+.drs__cycle-vert--up::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid #5cb85c;
+}
+
+/* Down arrow on right vertical (pointing down = arrow at bottom) */
+.drs__cycle-vert--down::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #5cb85c;
+}
+
+@media (max-width: 768px) {
+  .drs__cycle-diagram {
+    padding: var(--spacing-xl);
+  }
+  .drs__cycle-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+  .drs__cycle-arrow,
+  .drs__cycle-verticals {
+    display: none;
+  }
+  .drs__cycle-center {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 /* Responsive - Tablet */

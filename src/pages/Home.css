@@ -261,7 +261,7 @@
   letter-spacing: -0.05em;
   color: #ffffff;
   margin: 0;
-  margin-top: 79px;
+  margin-top: 49px;
   max-width: 100%;
   width: 100%;
   align-self: flex-start;
@@ -278,8 +278,8 @@
 
 .home__hero-capa-image {
   position: absolute;
-  right: clamp(0.375rem, 1.25vw, 1.5rem);
-  bottom: 80px;
+  right: 14px;
+  bottom: 0;
   z-index: 10;
   height: auto;
   width: clamp(463px, 57.96vw, 911px);
@@ -289,7 +289,7 @@
 
 .home__hero-description {
   position: absolute;
-  bottom: 32px;
+  bottom: 35px;
   left: clamp(1.5rem, 5vw, 6rem);
   right: clamp(1.5rem, 5vw, 6rem);
   z-index: 11;
@@ -307,6 +307,7 @@
   white-space: normal;
   color: #ffffff !important;
   text-align: left;
+  line-height: 1.7;
 }
 
 .home__hero-cta {

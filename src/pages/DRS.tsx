@@ -9,6 +9,11 @@ import dsc5571Image from '../assets/-DSC5571.webp';
 import dsc6216Image from '../assets/-DSC6216.webp';
 import sfs06884Image from '../assets/SFS06884.webp';
 import drsExplodImage from '../assets/2101-100-020-m-EXPLOD.113.webp';
+import conectarDrsImage from '../assets/conectar.webp';
+import depositarIcon from '../assets/icon-2.webp';
+import pontuarIcon from '../assets/prize.webp';
+import trocarIcon from '../assets/DRS.webp';
+import drsSc from '../assets/drsSc.png';
 import './DRS.css';
 
 export const DRS: React.FC = () => {
@@ -51,24 +56,28 @@ export const DRS: React.FC = () => {
       number: '01',
       title: 'Conectar',
       description: 'Ligue-se ao DRS usando a App Móvel ou o Cartão.',
+      image: conectarDrsImage,
     },
     {
       id: '2',
       number: '02',
       title: 'Depositar',
       description: 'Insira as embalagens no anel uma a uma (leia o código de barras se o sistema permitir)',
+      image: depositarIcon,
     },
     {
       id: '3',
       number: '03',
       title: 'Pontuar',
       description: 'Receba pontos automaticamente por cada embalagem aceite.',
+      image: pontuarIcon,
     },
     {
       id: '4',
       number: '04',
       title: 'Trocar',
       description: 'Troque os seus pontos acumulados por recompensas no marketplace.',
+      image: trocarIcon,
     },
   ];
 
@@ -199,10 +208,24 @@ export const DRS: React.FC = () => {
                   <span className="drs__how-it-works-number">{step.number}</span>
                   <h3 className="drs__how-it-works-step-title">{step.title}</h3>
                   <p className="drs__how-it-works-step-description">{step.description}</p>
+                  {step.id === '3' && (
+                    <img src={step.image} alt={step.title} className="drs__how-it-works-inline-icon" />
+                  )}
                 </div>
               </AnimateOnScroll>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="drs__cycle-scheme section">
+        <div className="container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="drs__cycle-scheme-title">{t.cycle.title}</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="scaleUp" delay={150} duration={0.9}>
+            <img src={drsSc} alt={t.cycle.title} className="drs__cycle-scheme-image" />
+          </AnimateOnScroll>
         </div>
       </section>
 

@@ -6,7 +6,6 @@ import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import level2Image from '../assets/level2.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
-import sensorImage from '../assets/sensor.webp';
 import sotkisAppImage from '../assets/Sotkis-APP-DSC08537-new.webp';
 import sotkisLevel1 from '../assets/sotkis-level-1.webp';
 import sotkisLevel2 from '../assets/sotkis-level-2.webp';
@@ -111,28 +110,37 @@ export const Level: React.FC = () => {
 
       <section className="level__sensor-section section">
         <div className="container">
-          <div className="level__sensor-content">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>{t.sensor.title}</h2>
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="level__sensor-title">{t.sensor.title}</h2>
+          </AnimateOnScroll>
+          <div className="level__sensor-layout">
+            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__sensor-specs level__sensor-specs--left">
+              <div>
+                <h4>Tecnologia de sensor:</h4>
+                <p>Tecnologia ultrassónica ou laser</p>
+                <h4>Conectividade</h4>
+                <ul>
+                  <li>LTE Cat M1 (4G)</li>
+                  <li>GSM-fallback (2G)</li>
+                </ul>
+                <h4>Fonte de alimentação:</h4>
+                <p>Bateria de lítio de 3,6 V</p>
+              </div>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p>
-                {t.sensor.description}
-              </p>
+            <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9} className="level__sensor-image-wrapper">
+              <img src={levelSondaImage} alt="SOTKIS Level Sensor" className="level__sensor-image" />
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__sensor-specs level__sensor-specs--right">
+              <div>
+                <h4>Proteção:</h4>
+                <p>IP 69 1K10</p>
+                <h4>Material:</h4>
+                <p>Poliuretano</p>
+                <h4>Temperatura de Trabalho:</h4>
+                <p>-40 a +80°C</p>
+              </div>
             </AnimateOnScroll>
           </div>
-        </div>
-      </section>
-
-      <section className="level__image-section">
-        <div className="container">
-          <AnimateOnScroll animation="scaleUp" delay={0} duration={1}>
-            <img
-              src={sensorImage}
-              alt="Sensor"
-              className="level__sensor-image"
-            />
-          </AnimateOnScroll>
         </div>
       </section>
 
@@ -141,22 +149,37 @@ export const Level: React.FC = () => {
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="level__stages-title">{t.stages.title}</h2>
           </AnimateOnScroll>
+
+          {/* Timeline row */}
+          <div className="level__stages-timeline">
+            {[
+              { text: 'Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.' },
+              { text: 'O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.' },
+              { text: 'O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.' },
+              { text: 'O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.' },
+            ].map((step, i) => (
+              <AnimateOnScroll key={i} animation="fadeSlideUp" delay={i * 150} duration={0.8} className="level__timeline-step">
+                <div className="level__timeline-dot-row">
+                  <div className="level__timeline-dot"></div>
+                </div>
+                <p className="level__stage-item-text">{step.text}</p>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          {/* Images row */}
           <div className="level__stages-grid">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="level__stage-item">
               <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-item-image" />
-              <p className="level__stage-item-text">Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.</p>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__stage-item">
               <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-item-image" />
-              <p className="level__stage-item-text">O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.</p>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__stage-item">
               <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-item-image" />
-              <p className="level__stage-item-text">O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.</p>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8} className="level__stage-item">
               <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-item-image" />
-              <p className="level__stage-item-text">O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.</p>
             </AnimateOnScroll>
           </div>
         </div>
