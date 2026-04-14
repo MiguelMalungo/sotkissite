@@ -42,7 +42,7 @@ export const homeTranslations = {
   en: {
     hero: {
       title: "The future of<br />recycling",
-      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
+      description: "Get ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the end-user experience."
     },
     riseAbove: {
       title: "Digital Platform",
