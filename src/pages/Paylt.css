@@ -269,9 +269,18 @@
     font-size: var(--font-size-base);
   }
 
+  .paylt__contentores-section .container,
   .paylt__scheme-section .container {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-md) !important;
+    padding-right: var(--spacing-md) !important;
+  }
+
+  .paylt__contentores-image,
+  .paylt__rainbow-image {
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+    width: calc(100% + 2 * var(--spacing-md)) !important;
+    max-width: calc(100% + 2 * var(--spacing-md)) !important;
   }
 
   .paylt__contentores-image {
@@ -373,11 +382,6 @@
 
   .paylt__hero-text {
     font-size: var(--font-size-sm);
-  }
-
-  .paylt__scheme-section .container {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
   }
 
   .paylt__contentores-image {

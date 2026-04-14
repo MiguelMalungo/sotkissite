@@ -98,7 +98,7 @@ export const Header: React.FC = () => {
     (!isScrolled && isVideoHeroPage) || isContactPage ? whiteLogo : coloredLogo;
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''} ${openDropdown ? 'header--dropdown-open' : ''}`}>
+    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isVideoHeroPage ? 'header--video-hero' : ''} ${openDropdown || isLangDropdownOpen ? 'header--dropdown-open' : ''}`}>
       <div className="header__container container">
         <Link to="/home" className="header__logo">
           <img

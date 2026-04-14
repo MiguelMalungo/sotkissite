@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
 import platformHeroImage from '../assets/Mockup-Desktop+Mobile-Sotkis-PT.webp';
+import plat2Image from '../assets/plat2.png';
 import seloImage from '../assets/selo.webp';
 import dashboardsImage from '../assets/PLATAFORMA-Dashboards.webp';
 import niveisImage from '../assets/PLATAFORMA-Niveis-Enchimento-.webp';
@@ -119,7 +120,12 @@ export const Platform: React.FC = () => {
           <img
             src={platformHeroImage}
             alt="SOTKIS Platform"
-            className="platform-hero-root__image"
+            className="platform-hero-root__image platform-hero-root__image--desktop"
+          />
+          <img
+            src={plat2Image}
+            alt="SOTKIS Platform"
+            className="platform-hero-root__image platform-hero-root__image--mobile"
           />
           <div className="platform-hero-root__overlay"></div>
         </div>
@@ -133,7 +139,7 @@ export const Platform: React.FC = () => {
                   <a href="https://sotkis.com/login" className="platform-hero-root__link" target="_blank" rel="noopener noreferrer">
                     https://sotkis.com/login
                   </a>
-                  {' ou através da app Sotkis.'}
+                  <br />{'ou através da app Sotkis.'}
                 </>
               ) : t.access.text}
             </p>
@@ -226,28 +232,54 @@ export const Platform: React.FC = () => {
               <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                 <h2 className="platform__funcionalidades-title">{funcData.title}</h2>
               </AnimateOnScroll>
-              <div className="platform__funcionalidades-text-row">
+
+              {/* Desktop: text row + images row (two separate bands) */}
+              <div className="platform__func-desktop">
+                <div className="platform__funcionalidades-text-row">
+                  {funcData.items.map((item: { title: string; description: string }, index: number) => (
+                    <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100} duration={0.8}>
+                      <div className="platform__funcionalidades-text-col">
+                        <div className="platform__funcionalidades-icon">
+                          {funcIcons[index]}
+                        </div>
+                        <h3 className="platform__funcionalidades-col-title">{item.title}</h3>
+                        <p className="platform__funcionalidades-col-description">{item.description}</p>
+                      </div>
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+                <div className="platform__funcionalidades-images-row">
+                  {funcImages.map((img, index) => (
+                    <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100 + 200} duration={0.8}>
+                      <div className="platform__funcionalidades-image-card">
+                        <img
+                          src={img}
+                          alt={funcData.items[index]?.title || ''}
+                          className="platform__funcionalidades-image"
+                        />
+                      </div>
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile: each feature card with its own image below description */}
+              <div className="platform__func-mobile">
                 {funcData.items.map((item: { title: string; description: string }, index: number) => (
                   <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100} duration={0.8}>
-                    <div className="platform__funcionalidades-text-col">
+                    <div className="platform__func-mobile-card">
                       <div className="platform__funcionalidades-icon">
                         {funcIcons[index]}
                       </div>
                       <h3 className="platform__funcionalidades-col-title">{item.title}</h3>
                       <p className="platform__funcionalidades-col-description">{item.description}</p>
-                    </div>
-                  </AnimateOnScroll>
-                ))}
-              </div>
-              <div className="platform__funcionalidades-images-row">
-                {funcImages.map((img, index) => (
-                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100 + 200} duration={0.8}>
-                    <div className="platform__funcionalidades-image-card">
-                      <img
-                        src={img}
-                        alt={funcData.items[index]?.title || ''}
-                        className="platform__funcionalidades-image"
-                      />
+                      <div className="platform__funcionalidades-image-card">
+                        <img
+                          src={funcImages[index]}
+                          alt={item.title}
+                          className="platform__funcionalidades-image"
+                        />
+                      </div>
                     </div>
                   </AnimateOnScroll>
                 ))}

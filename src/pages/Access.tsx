@@ -225,8 +225,9 @@ export const Access: React.FC = () => {
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
               <h2>Como Funciona</h2>
             </AnimateOnScroll>
-            {/* Sequence 1 - Tambor duplo */}
-            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__how-sequence">
+
+            {/* Sequence 1 - Tambor duplo — Desktop */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__how-sequence access__how-desktop">
               <div className="access__how-sequence-text">
                 <p>Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.</p>
               </div>
@@ -264,8 +265,37 @@ export const Access: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            {/* Sequence 2 - Alçapão */}
-            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__how-sequence">
+            {/* Sequence 1 - Tambor duplo — Mobile */}
+            <div className="access__how-mobile">
+              <p className="access__how-mobile-desc">Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.</p>
+              <MobileCarousel>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">1</div>
+                  <p className="access__how-slide-label"><strong>Conectar</strong></p>
+                  <div className="access__how-slide-image">
+                    <img src={conectarImage} alt="Conectar" />
+                  </div>
+                </div>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">2</div>
+                  <p className="access__how-slide-label"><strong>Abrir, rodar o tambor</strong> e depositar sobre a superfície interior do tambor</p>
+                  <div className="access__how-slide-image">
+                    <img src={tambor1Image} alt="Rodar o tambor" />
+                  </div>
+                </div>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">3</div>
+                  <p className="access__how-slide-label"><strong>Rodar o tambor e fechar completamente</strong> o sistema, permitindo a entrada dos resíduos no contentor</p>
+                  <div className="access__how-slide-image access__how-slide-image--double">
+                    <img src={tambor1Image} alt="Tambor fechado" />
+                    <img src={tambor2Image} alt="Resíduos no contentor" />
+                  </div>
+                </div>
+              </MobileCarousel>
+            </div>
+
+            {/* Sequence 2 - Alçapão — Desktop */}
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__how-sequence access__how-desktop">
               <div className="access__how-sequence-text">
                 <p>Para sistemas enterrados, pode também ser implementado um alçapão interior no marco de deposição, com restritor de volume, equipado com o módulo de acesso SOTKIS.</p>
                 <p>Do mesmo modo, após a abertura do Sotkis Access, o alçapão de 35 litros, limita o volume das deposições e só autoriza um depósito por conexão.</p>
@@ -303,6 +333,35 @@ export const Access: React.FC = () => {
                 </div>
               </div>
             </AnimateOnScroll>
+
+            {/* Sequence 2 - Alçapão — Mobile */}
+            <div className="access__how-mobile">
+              <p className="access__how-mobile-desc">Para sistemas enterrados, pode também ser implementado um alçapão interior no marco de deposição, com restritor de volume, equipado com o módulo de acesso SOTKIS. Após a abertura do Sotkis Access, o alçapão de 35 litros limita o volume das deposições e só autoriza um depósito por conexão.</p>
+              <MobileCarousel>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">1</div>
+                  <p className="access__how-slide-label"><strong>Conectar</strong></p>
+                  <div className="access__how-slide-image">
+                    <img src={conectarImage} alt="Conectar" />
+                  </div>
+                </div>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">2</div>
+                  <p className="access__how-slide-label"><strong>Abrir a tampa</strong> superior e <strong>depositar</strong> sobre o alçapão interior</p>
+                  <div className="access__how-slide-image">
+                    <img src={alcapao1Image} alt="Abrir e depositar" />
+                  </div>
+                </div>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">3</div>
+                  <p className="access__how-slide-label"><strong>Fechar completamente a tampa,</strong> permitindo a entrada dos resíduos no contentor</p>
+                  <div className="access__how-slide-image access__how-slide-image--double">
+                    <img src={alcapao2Image} alt="Tampa fechada" />
+                    <img src={alcapao3Image} alt="Resíduos no contentor" />
+                  </div>
+                </div>
+              </MobileCarousel>
+            </div>
           </div>
         </div>
       </section>

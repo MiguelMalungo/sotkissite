@@ -306,6 +306,43 @@
   line-height: var(--line-height-relaxed);
 }
 
+/* Desktop layout visible, mobile carousel hidden */
+.level__stages-desktop {
+  display: block;
+}
+
+.level__stages-mobile {
+  display: none;
+}
+
+/* Mobile carousel slide */
+.level__stage-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: 0 var(--spacing-sm);
+}
+
+.level__stage-slide-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+.level__stage-slide-image {
+  width: auto !important;
+  max-width: 100%;
+  height: 240px !important;
+  display: block;
+  border-radius: 1rem;
+  object-fit: contain !important;
+  object-position: center;
+  margin: 0 auto;
+}
+
 /* Stages Section */
 .level__stages-section {
   padding-top: var(--spacing-4xl);
@@ -618,13 +655,12 @@
     padding-bottom: var(--spacing-2xl);
   }
 
-  .level__stages-timeline {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+  .level__stages-desktop {
+    display: none;
   }
 
-  .level__stages-timeline::before {
-    display: none;
+  .level__stages-mobile {
+    display: block;
   }
 
   .level__stages-section .container {
@@ -638,11 +674,6 @@
     padding-right: var(--spacing-xl);
     font-size: var(--font-size-3xl);
     margin-bottom: var(--spacing-xl);
-  }
-
-  .level__stages-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
   }
 
   .level__sensor-image {
@@ -743,22 +774,14 @@
 
   .level__stages-title {
     font-size: var(--font-size-2xl);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 
   .level__stages-section .container {
     max-width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
-  }
-
-  .level__stages-title {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
-  }
-
-  .level__stages-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
   }
 
   .level__image-section .container {

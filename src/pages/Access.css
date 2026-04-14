@@ -682,6 +682,78 @@
   text-align: center;
 }
 
+/* Desktop/mobile layout toggle for how-it-works sequences */
+.access__how-desktop {
+  display: grid;
+}
+
+.access__how-mobile {
+  display: none;
+}
+
+/* Mobile carousel slide styles */
+.access__how-mobile-desc {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.access__how-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.access__how-slide-number {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background-color: #5cb85c;
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.access__how-slide-label {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+.access__how-slide-image {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.access__how-slide-image img {
+  height: 220px !important;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain !important;
+  display: block;
+}
+
+.access__how-slide-image--double img {
+  height: 220px !important;
+  width: auto !important;
+  max-width: 48%;
+  object-fit: contain !important;
+}
+
 .access__how-it-works-content p {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
@@ -920,6 +992,23 @@
   .access__how-it-works {
     padding-top: var(--spacing-3xl);
     padding-bottom: var(--spacing-3xl);
+  }
+
+  .access__how-it-works-content h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .access__how-desktop {
+    display: none !important;
+  }
+
+  .access__how-mobile {
+    display: block;
+    margin-top: var(--spacing-sm);
+  }
+
+  .access__how-mobile + .access__how-mobile {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .access__how-sequence {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
+import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
 const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
@@ -150,37 +151,62 @@ export const Level: React.FC = () => {
             <h2 className="level__stages-title">{t.stages.title}</h2>
           </AnimateOnScroll>
 
-          {/* Timeline row */}
-          <div className="level__stages-timeline">
-            {[
-              { text: 'Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.' },
-              { text: 'O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.' },
-              { text: 'O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.' },
-              { text: 'O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.' },
-            ].map((step, i) => (
-              <AnimateOnScroll key={i} animation="fadeSlideUp" delay={i * 150} duration={0.8} className="level__timeline-step">
-                <div className="level__timeline-dot-row">
-                  <div className="level__timeline-dot"></div>
-                </div>
-                <p className="level__stage-item-text">{step.text}</p>
+          {/* Desktop layout: timeline text + images grid */}
+          <div className="level__stages-desktop">
+            {/* Timeline row */}
+            <div className="level__stages-timeline">
+              {[
+                { text: 'Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.' },
+                { text: 'O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.' },
+                { text: 'O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.' },
+                { text: 'O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.' },
+              ].map((step, i) => (
+                <AnimateOnScroll key={i} animation="fadeSlideUp" delay={i * 150} duration={0.8} className="level__timeline-step">
+                  <div className="level__timeline-dot-row">
+                    <div className="level__timeline-dot"></div>
+                  </div>
+                  <p className="level__stage-item-text">{step.text}</p>
+                </AnimateOnScroll>
+              ))}
+            </div>
+
+            {/* Images row */}
+            <div className="level__stages-grid">
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="level__stage-item">
+                <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-item-image" />
               </AnimateOnScroll>
-            ))}
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__stage-item">
+                <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-item-image" />
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__stage-item">
+                <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-item-image" />
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8} className="level__stage-item">
+                <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-item-image" />
+              </AnimateOnScroll>
+            </div>
           </div>
 
-          {/* Images row */}
-          <div className="level__stages-grid">
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8} className="level__stage-item">
-              <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-item-image" />
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__stage-item">
-              <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-item-image" />
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__stage-item">
-              <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-item-image" />
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8} className="level__stage-item">
-              <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-item-image" />
-            </AnimateOnScroll>
+          {/* Mobile carousel: each slide has text + image together */}
+          <div className="level__stages-mobile">
+            <MobileCarousel>
+              <div className="level__stage-slide">
+                <p className="level__stage-slide-text">Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.</p>
+                <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-slide-image" />
+              </div>
+              <div className="level__stage-slide">
+                <p className="level__stage-slide-text">O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.</p>
+                <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-slide-image" />
+              </div>
+              <div className="level__stage-slide">
+                <p className="level__stage-slide-text">O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.</p>
+                <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-slide-image" />
+              </div>
+              <div className="level__stage-slide">
+                <p className="level__stage-slide-text">O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.</p>
+                <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-slide-image" />
+              </div>
+            </MobileCarousel>
           </div>
         </div>
       </section>
