@@ -8,90 +8,44 @@ export const platformTranslations = {
     features: {
       intro: "Através dos módulos existentes na plataforma SOTKIS a entidade responsável pela operação pode aceder de forma simples a várias funcionalidades:",
       items: [
-        {
-          title: "Aplicação",
-          description: "de tarifários PAYT;"
-        },
-        {
-          title: "Informações",
-          description: "sobre o nível de enchimento dos contentores;"
-        },
-        {
-          title: "Planeamento",
-          description: "de rotas de recolha mais eficientes;"
-        },
-        {
-          title: "Acesso",
-          description: "a frequências de deposição e tipo de resíduos depositados;"
-        },
-        {
-          title: "Verificação",
-          description: "de localizações e histórico de instalação;"
-        },
-        {
-          title: "Implementação",
-          description: "de sistemas de recompensas pela correta deposição de resíduos;"
-        },
-        {
-          title: "Gestão",
-          description: "das informações sobre operações de manutenção preventiva e/ou corretiva;"
-        },
-        {
-          title: "Comunicação",
-          description: "em tempo real de eventuais irregularidades nos equipamentos."
-        }
+        { title: "Aplicação", description: "de tarifários PAYT;" },
+        { title: "Informações", description: "sobre o nível de enchimento dos contentores;" },
+        { title: "Planeamento", description: "de rotas de recolha mais eficientes;" },
+        { title: "Acesso", description: "a frequências de deposição e tipo de resíduos depositados;" },
+        { title: "Verificação", description: "de localizações e histórico de instalação;" },
+        { title: "Implementação", description: "de sistemas de recompensas pela correta deposição de resíduos;" },
+        { title: "Gestão", description: "das informações sobre operações de manutenção preventiva e/ou corretiva;" },
+        { title: "Comunicação", description: "em tempo real de eventuais irregularidades nos equipamentos." }
       ],
       button: "Aceda à plataforma"
     },
     tabs: {
       title: "Funcionalidades da Plataforma",
       items: [
-        {
-          title: "Gestão",
-          value: "management",
-          description: "Gestão Inteligente de Resíduos"
-        },
-        {
-          title: "Planeamento",
-          value: "planning",
-          description: "Planeamento de Rotas Eficientes"
-        },
-        {
-          title: "Análise",
-          value: "analytics",
-          description: "Análise de Dados em Tempo Real"
-        },
-        {
-          title: "Comunicação",
-          value: "communication",
-          description: "Comunicação Integrada"
-        },
-        {
-          title: "Recompensas",
-          value: "rewards",
-          description: "Sistema de Recompensas PAYT"
-        },
-        {
-          title: "Monitorização",
-          value: "monitoring",
-          description: "Monitorização de Contentores"
-        },
-        {
-          title: "Relatórios",
-          value: "reports",
-          description: "Relatórios Personalizados"
-        },
-        {
-          title: "Manutenção",
-          value: "maintenance",
-          description: "Gestão de Manutenção"
-        }
+        { title: "Gestão", value: "management", description: "Gestão Inteligente de Resíduos" },
+        { title: "Planeamento", value: "planning", description: "Planeamento de Rotas Eficientes" },
+        { title: "Análise", value: "analytics", description: "Análise de Dados em Tempo Real" },
+        { title: "Comunicação", value: "communication", description: "Comunicação Integrada" },
+        { title: "Recompensas", value: "rewards", description: "Sistema de Recompensas PAYT" },
+        { title: "Monitorização", value: "monitoring", description: "Monitorização de Contentores" },
+        { title: "Relatórios", value: "reports", description: "Relatórios Personalizados" },
+        { title: "Manutenção", value: "maintenance", description: "Gestão de Manutenção" }
       ]
     },
     access: {
       text: "SOTKIS Software\nAcesso através de https://sotkis.com/login ou através da app Sotkis.",
       buttonText: "Play Video"
     },
+    heroTagline: "Uma solução para todo o tipo de contentores",
+    modulesTitle: "Módulos da Plataforma",
+    modules: [
+      { title: "Level", description: "Solução Inteligente de Monitorização de Nível de Enchimento" },
+      { title: "Access", description: "Sistema Inteligente de Controlo de Acesso" },
+      { title: "DRS", description: "Solução de Sistema de Depósito e Retorno" },
+      { title: "Sotcare", description: "Gestão Completa de Manutenção" },
+      { title: "P(L)ayt", description: "Sistema de Gestão Pay-As-You-Throw" },
+      { title: "Rotas", description: "Sistema Otimizado de Planeamento de Rotas" }
+    ],
     funcionalidades: {
       title: "Funcionalidades da plataforma",
       items: [
@@ -124,470 +78,296 @@ export const platformTranslations = {
     features: {
       intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
       items: [
-        {
-          title: "Application",
-          description: "of PAYT tariffs;"
-        },
-        {
-          title: "Information",
-          description: "about container fill levels;"
-        },
-        {
-          title: "Planning",
-          description: "of more efficient collection routes;"
-        },
-        {
-          title: "Access",
-          description: "to deposition frequencies and types of waste deposited;"
-        },
-        {
-          title: "Verification",
-          description: "of locations and installation history;"
-        },
-        {
-          title: "Implementation",
-          description: "of reward systems for correct waste disposal;"
-        },
-        {
-          title: "Management",
-          description: "of information on preventive and/or corrective maintenance operations;"
-        },
-        {
-          title: "Communication",
-          description: "in real time of any irregularities in the equipment."
-        }
+        { title: "Application", description: "of PAYT tariffs;" },
+        { title: "Information", description: "about container fill levels;" },
+        { title: "Planning", description: "of more efficient collection routes;" },
+        { title: "Access", description: "to deposition frequencies and types of waste deposited;" },
+        { title: "Verification", description: "of locations and installation history;" },
+        { title: "Implementation", description: "of reward systems for correct waste disposal;" },
+        { title: "Management", description: "of information on preventive and/or corrective maintenance operations;" },
+        { title: "Communication", description: "in real time of any irregularities in the equipment." }
       ],
       button: "Access the platform"
     },
     tabs: {
       title: "Platform Modules",
       items: [
-        {
-          title: "Management",
-          value: "management",
-          description: "Intelligent Waste Management"
-        },
-        {
-          title: "Planning",
-          value: "planning",
-          description: "Efficient Route Planning"
-        },
-        {
-          title: "Analytics",
-          value: "analytics",
-          description: "Real-Time Data Analytics"
-        },
-        {
-          title: "Communication",
-          value: "communication",
-          description: "Integrated Communication"
-        },
-        {
-          title: "Rewards",
-          value: "rewards",
-          description: "PAYT Rewards System"
-        },
-        {
-          title: "Monitoring",
-          value: "monitoring",
-          description: "Container Monitoring"
-        },
-        {
-          title: "Reports",
-          value: "reports",
-          description: "Custom Reports"
-        },
-        {
-          title: "Maintenance",
-          value: "maintenance",
-          description: "Maintenance Management"
-        }
+        { title: "Management", value: "management", description: "Intelligent Waste Management" },
+        { title: "Planning", value: "planning", description: "Efficient Route Planning" },
+        { title: "Analytics", value: "analytics", description: "Real-Time Data Analytics" },
+        { title: "Communication", value: "communication", description: "Integrated Communication" },
+        { title: "Rewards", value: "rewards", description: "PAYT Rewards System" },
+        { title: "Monitoring", value: "monitoring", description: "Container Monitoring" },
+        { title: "Reports", value: "reports", description: "Custom Reports" },
+        { title: "Maintenance", value: "maintenance", description: "Maintenance Management" }
       ]
     },
     access: {
       text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
       buttonText: "Play Video"
+    },
+    heroTagline: "A solution for all types of containers",
+    modulesTitle: "Platform Modules",
+    modules: [
+      { title: "Level", description: "Intelligent Fill Level Monitoring Solution" },
+      { title: "Access", description: "Smart Access Control System" },
+      { title: "DRS", description: "Deposit Return System Solution" },
+      { title: "Sotcare", description: "Comprehensive Maintenance Management" },
+      { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
+      { title: "Routes", description: "Optimized Route Planning System" }
+    ],
+    funcionalidades: {
+      title: "Platform features",
+      items: [
+        {
+          title: "Operation control dashboards",
+          description: "The interface provides real-time dashboards of key indicators, such as recycling rates, accumulated savings and environmental goals. The system analyses equipment usage, with user identification, schedules and deposit frequency, also incorporating automatic alerts and recommendations."
+        },
+        {
+          title: "Route and fill level management",
+          description: "These features allow tracking container fill levels and planning collection based on real data. The platform offers maps, alerts, histories and creates adaptive routes, optimising operations, reducing costs and avoiding unnecessary collections."
+        },
+        {
+          title: "SOTCARE maintenance management",
+          description: "The Sotcare module enables efficient management of the entire container fleet, integrating IoT device alerts and failure prediction algorithms based on historical data. Maintenance history can be consulted, interventions requested and needs anticipated, reducing equipment downtime and improving service quality for citizens."
+        },
+        {
+          title: "Recycling Gamification",
+          description: "Sotkis software, which centralises the intelligence of the P(L)AYT system, tracks selective collection performance through metrics of citizen participation, quality of deposited waste and adherence to incentive programmes. This structured information supports awareness campaigns and environmental goals."
+        }
+      ]
     }
   },
   es: {
     intro: {
-      title: "Sotkis Digital Platform",
-      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
-      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+      title: "Plataforma Digital Sotkis",
+      text1: "SOTKIS (Sotkon Intelligent Systems) es una herramienta digital que Sotkon proporciona de forma gratuita, siendo un sistema de gestión integrado que recopila y procesa información sobre los diversos procesos implicados en el depósito y/o recogida de residuos.",
+      text2: "Esta plataforma le permite gestionar su flota de contenedores en línea, donde a través de los diversos módulos de gestión de residuos es posible optimizar la eficiencia de los recursos asignados, aumentar la rentabilidad operacional, impulsar las tasas de reciclaje y mejorar la calidad de los residuos.",
+      text3: "La plataforma SOTKIS permite la gestión integrada e inteligente de todos los procesos relacionados con el depósito y la recogida de residuos, proporcionando a las entidades responsables herramientas avanzadas para optimizar operaciones y mejorar la sostenibilidad ambiental."
     },
     features: {
-      intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
+      intro: "A través de los módulos existentes en la plataforma SOTKIS, la entidad responsable de la operación puede acceder de forma sencilla a diversas funcionalidades:",
       items: [
-        {
-          title: "Application",
-          description: "of PAYT tariffs;"
-        },
-        {
-          title: "Information",
-          description: "about container fill levels;"
-        },
-        {
-          title: "Planning",
-          description: "of more efficient collection routes;"
-        },
-        {
-          title: "Access",
-          description: "to deposition frequencies and types of waste deposited;"
-        },
-        {
-          title: "Verification",
-          description: "of locations and installation history;"
-        },
-        {
-          title: "Implementation",
-          description: "of reward systems for correct waste disposal;"
-        },
-        {
-          title: "Management",
-          description: "of information on preventive and/or corrective maintenance operations;"
-        },
-        {
-          title: "Communication",
-          description: "in real time of any irregularities in the equipment."
-        }
+        { title: "Aplicación", description: "de tarifas PAYT;" },
+        { title: "Información", description: "sobre los niveles de llenado de los contenedores;" },
+        { title: "Planificación", description: "de rutas de recogida más eficientes;" },
+        { title: "Acceso", description: "a frecuencias de depósito y tipos de residuos depositados;" },
+        { title: "Verificación", description: "de ubicaciones e historial de instalación;" },
+        { title: "Implementación", description: "de sistemas de recompensas por el correcto depósito de residuos;" },
+        { title: "Gestión", description: "de información sobre operaciones de mantenimiento preventivo y/o correctivo;" },
+        { title: "Comunicación", description: "en tiempo real de cualquier irregularidad en los equipos." }
       ],
-      button: "Access the platform"
+      button: "Acceder a la plataforma"
     },
     tabs: {
-      title: "Platform Modules",
+      title: "Módulos de la Plataforma",
       items: [
-        {
-          title: "Management",
-          value: "management",
-          description: "Intelligent Waste Management"
-        },
-        {
-          title: "Planning",
-          value: "planning",
-          description: "Efficient Route Planning"
-        },
-        {
-          title: "Analytics",
-          value: "analytics",
-          description: "Real-Time Data Analytics"
-        },
-        {
-          title: "Communication",
-          value: "communication",
-          description: "Integrated Communication"
-        },
-        {
-          title: "Rewards",
-          value: "rewards",
-          description: "PAYT Rewards System"
-        },
-        {
-          title: "Monitoring",
-          value: "monitoring",
-          description: "Container Monitoring"
-        },
-        {
-          title: "Reports",
-          value: "reports",
-          description: "Custom Reports"
-        },
-        {
-          title: "Maintenance",
-          value: "maintenance",
-          description: "Maintenance Management"
-        }
+        { title: "Gestión", value: "management", description: "Gestión Inteligente de Residuos" },
+        { title: "Planificación", value: "planning", description: "Planificación Eficiente de Rutas" },
+        { title: "Análisis", value: "analytics", description: "Análisis de Datos en Tiempo Real" },
+        { title: "Comunicación", value: "communication", description: "Comunicación Integrada" },
+        { title: "Recompensas", value: "rewards", description: "Sistema de Recompensas PAYT" },
+        { title: "Monitoreo", value: "monitoring", description: "Monitoreo de Contenedores" },
+        { title: "Informes", value: "reports", description: "Informes Personalizados" },
+        { title: "Mantenimiento", value: "maintenance", description: "Gestión de Mantenimiento" }
       ]
     },
     access: {
-      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
+      text: "El acceso a esta plataforma digital para gestionar sus contenedores de residuos es muy sencillo. Puede acceder a su cuenta a través de la dirección",
       buttonText: "Play Video"
+    },
+    heroTagline: "Una solución para todo tipo de contenedores",
+    modulesTitle: "Módulos de la Plataforma",
+    modules: [
+      { title: "Level", description: "Solución Inteligente de Monitoreo de Nivel de Llenado" },
+      { title: "Access", description: "Sistema Inteligente de Control de Acceso" },
+      { title: "DRS", description: "Solución de Sistema de Depósito y Retorno" },
+      { title: "Sotcare", description: "Gestión Integral de Mantenimiento" },
+      { title: "P(L)ayt", description: "Sistema de Gestión Pay-As-You-Throw" },
+      { title: "Rutas", description: "Sistema Optimizado de Planificación de Rutas" }
+    ],
+    funcionalidades: {
+      title: "Funcionalidades de la plataforma",
+      items: [
+        {
+          title: "Dashboards para control de la operación",
+          description: "La interfaz proporciona dashboards en tiempo real de indicadores clave, como tasas de reciclaje, ahorros acumulados y objetivos ambientales. El sistema analiza el uso de los equipos, con identificación de usuarios, horarios y frecuencia de depósito, incorporando también alertas y recomendaciones automáticas."
+        },
+        {
+          title: "Gestión de rutas y niveles de llenado",
+          description: "Estas funcionalidades permiten seguir el nivel de llenado de los contenedores y planificar la recogida basándose en datos reales. La plataforma ofrece mapas, alertas, históricos y crea rutas adaptativas, optimizando operaciones, reduciendo costes y evitando recogidas innecesarias."
+        },
+        {
+          title: "Gestión de mantenimientos SOTCARE",
+          description: "El módulo Sotcare permite una gestión eficiente de toda la flota de contenedores, integrando alertas de dispositivos IoT y algoritmos de predicción de fallos basados en el historial asociado. Es posible consultar el historial de mantenimientos, solicitar intervenciones y anticipar necesidades, reduciendo el tiempo de inactividad de los equipos y mejorando la calidad del servicio prestado a los ciudadanos."
+        },
+        {
+          title: "Gamificación del Reciclaje",
+          description: "El software Sotkis, que centraliza la inteligencia del sistema P(L)AYT, realiza un seguimiento del rendimiento de la recogida selectiva a través de métricas de participación ciudadana, calidad de los residuos depositados y adhesión a programas de incentivos. Esta información estructurada apoya campañas de concienciación y objetivos ambientales."
+        }
+      ]
     }
   },
   fr: {
     intro: {
-      title: "Sotkis Digital Platform",
-      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
-      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+      title: "Plateforme Digitale Sotkis",
+      text1: "SOTKIS (Sotkon Intelligent Systems) est un outil numérique que Sotkon fournit gratuitement, étant un système de gestion intégré qui collecte et traite les informations sur les divers processus impliqués dans le dépôt et/ou la collecte des déchets.",
+      text2: "Cette plateforme vous permet de gérer votre flotte de conteneurs en ligne, où à travers les différents modules de gestion des déchets, il est possible d'optimiser l'efficacité des ressources allouées, d'augmenter la rentabilité opérationnelle, de stimuler les taux de recyclage et d'améliorer la qualité des déchets.",
+      text3: "La plateforme SOTKIS permet une gestion intégrée et intelligente de tous les processus liés au dépôt et à la collecte des déchets, fournissant aux entités responsables des outils avancés pour optimiser les opérations et améliorer la durabilité environnementale."
     },
     features: {
-      intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
+      intro: "Grâce aux modules existants dans la plateforme SOTKIS, l'entité responsable de l'opération peut accéder simplement à diverses fonctionnalités :",
       items: [
-        {
-          title: "Application",
-          description: "of PAYT tariffs;"
-        },
-        {
-          title: "Information",
-          description: "about container fill levels;"
-        },
-        {
-          title: "Planning",
-          description: "of more efficient collection routes;"
-        },
-        {
-          title: "Access",
-          description: "to deposition frequencies and types of waste deposited;"
-        },
-        {
-          title: "Verification",
-          description: "of locations and installation history;"
-        },
-        {
-          title: "Implementation",
-          description: "of reward systems for correct waste disposal;"
-        },
-        {
-          title: "Management",
-          description: "of information on preventive and/or corrective maintenance operations;"
-        },
-        {
-          title: "Communication",
-          description: "in real time of any irregularities in the equipment."
-        }
+        { title: "Application", description: "des tarifs PAYT ;" },
+        { title: "Informations", description: "sur les niveaux de remplissage des conteneurs ;" },
+        { title: "Planification", description: "des itinéraires de collecte plus efficaces ;" },
+        { title: "Accès", description: "aux fréquences de dépôt et types de déchets déposés ;" },
+        { title: "Vérification", description: "des emplacements et historique d'installation ;" },
+        { title: "Mise en œuvre", description: "de systèmes de récompenses pour le dépôt correct des déchets ;" },
+        { title: "Gestion", description: "des informations sur les opérations de maintenance préventive et/ou corrective ;" },
+        { title: "Communication", description: "en temps réel de toute irrégularité dans les équipements." }
       ],
-      button: "Access the platform"
+      button: "Accéder à la plateforme"
     },
     tabs: {
-      title: "Platform Modules",
+      title: "Modules de la Plateforme",
       items: [
-        {
-          title: "Management",
-          value: "management",
-          description: "Intelligent Waste Management"
-        },
-        {
-          title: "Planning",
-          value: "planning",
-          description: "Efficient Route Planning"
-        },
-        {
-          title: "Analytics",
-          value: "analytics",
-          description: "Real-Time Data Analytics"
-        },
-        {
-          title: "Communication",
-          value: "communication",
-          description: "Integrated Communication"
-        },
-        {
-          title: "Rewards",
-          value: "rewards",
-          description: "PAYT Rewards System"
-        },
-        {
-          title: "Monitoring",
-          value: "monitoring",
-          description: "Container Monitoring"
-        },
-        {
-          title: "Reports",
-          value: "reports",
-          description: "Custom Reports"
-        },
-        {
-          title: "Maintenance",
-          value: "maintenance",
-          description: "Maintenance Management"
-        }
+        { title: "Gestion", value: "management", description: "Gestion Intelligente des Déchets" },
+        { title: "Planification", value: "planning", description: "Planification Efficace des Itinéraires" },
+        { title: "Analytique", value: "analytics", description: "Analyse de Données en Temps Réel" },
+        { title: "Communication", value: "communication", description: "Communication Intégrée" },
+        { title: "Récompenses", value: "rewards", description: "Système de Récompenses PAYT" },
+        { title: "Surveillance", value: "monitoring", description: "Surveillance des Conteneurs" },
+        { title: "Rapports", value: "reports", description: "Rapports Personnalisés" },
+        { title: "Maintenance", value: "maintenance", description: "Gestion de la Maintenance" }
       ]
     },
     access: {
-      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
+      text: "L'accès à cette plateforme numérique pour gérer vos conteneurs à déchets est très simple. Vous pouvez accéder à votre compte via l'adresse",
       buttonText: "Play Video"
+    },
+    heroTagline: "Une solution pour tous les types de conteneurs",
+    modulesTitle: "Modules de la Plateforme",
+    modules: [
+      { title: "Level", description: "Solution Intelligente de Surveillance du Niveau de Remplissage" },
+      { title: "Access", description: "Système Intelligent de Contrôle d'Accès" },
+      { title: "DRS", description: "Solution de Système de Retour de Dépôt" },
+      { title: "Sotcare", description: "Gestion Complète de la Maintenance" },
+      { title: "P(L)ayt", description: "Système de Gestion Pay-As-You-Throw" },
+      { title: "Itinéraires", description: "Système Optimisé de Planification des Itinéraires" }
+    ],
+    funcionalidades: {
+      title: "Fonctionnalités de la plateforme",
+      items: [
+        {
+          title: "Tableaux de bord pour le contrôle des opérations",
+          description: "L'interface fournit des tableaux de bord en temps réel d'indicateurs clés, tels que les taux de recyclage, les économies accumulées et les objectifs environnementaux. Le système analyse l'utilisation des équipements, avec identification des utilisateurs, horaires et fréquence de dépôt, incorporant également des alertes et des recommandations automatiques."
+        },
+        {
+          title: "Gestion des itinéraires et des niveaux de remplissage",
+          description: "Ces fonctionnalités permettent de suivre le niveau de remplissage des conteneurs et de planifier la collecte sur la base de données réelles. La plateforme propose des cartes, des alertes, des historiques et crée des itinéraires adaptatifs, optimisant les opérations, réduisant les coûts et évitant les collectes inutiles."
+        },
+        {
+          title: "Gestion des maintenances SOTCARE",
+          description: "Le module Sotcare permet une gestion efficace de l'ensemble du parc de conteneurs, intégrant des alertes d'appareils IoT et des algorithmes de prévision des pannes basés sur l'historique associé. Il est possible de consulter l'historique des maintenances, de demander des interventions et d'anticiper les besoins, réduisant le temps d'inactivité des équipements et améliorant la qualité du service rendu aux citoyens."
+        },
+        {
+          title: "Gamification du Recyclage",
+          description: "Le logiciel Sotkis, qui centralise l'intelligence du système P(L)AYT, suit les performances de la collecte sélective à travers des métriques de participation citoyenne, de qualité des déchets déposés et d'adhésion aux programmes d'incitation. Ces informations structurées soutiennent les campagnes de sensibilisation et les objectifs environnementaux."
+        }
+      ]
     }
   },
   gr: {
     intro: {
       title: "Sotkis Digital Platform",
-      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
-      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about waste deposition and/or collection.",
+      text2: "This platform allows you to manage your container fleet online.",
+      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection."
     },
     features: {
       intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
       items: [
-        {
-          title: "Application",
-          description: "of PAYT tariffs;"
-        },
-        {
-          title: "Information",
-          description: "about container fill levels;"
-        },
-        {
-          title: "Planning",
-          description: "of more efficient collection routes;"
-        },
-        {
-          title: "Access",
-          description: "to deposition frequencies and types of waste deposited;"
-        },
-        {
-          title: "Verification",
-          description: "of locations and installation history;"
-        },
-        {
-          title: "Implementation",
-          description: "of reward systems for correct waste disposal;"
-        },
-        {
-          title: "Management",
-          description: "of information on preventive and/or corrective maintenance operations;"
-        },
-        {
-          title: "Communication",
-          description: "in real time of any irregularities in the equipment."
-        }
+        { title: "Application", description: "of PAYT tariffs;" },
+        { title: "Information", description: "about container fill levels;" },
+        { title: "Planning", description: "of more efficient collection routes;" },
+        { title: "Access", description: "to deposition frequencies and types of waste deposited;" },
+        { title: "Verification", description: "of locations and installation history;" },
+        { title: "Implementation", description: "of reward systems for correct waste disposal;" },
+        { title: "Management", description: "of information on maintenance operations;" },
+        { title: "Communication", description: "in real time of any irregularities in the equipment." }
       ],
       button: "Access the platform"
     },
     tabs: {
       title: "Platform Modules",
       items: [
-        {
-          title: "Management",
-          value: "management",
-          description: "Intelligent Waste Management"
-        },
-        {
-          title: "Planning",
-          value: "planning",
-          description: "Efficient Route Planning"
-        },
-        {
-          title: "Analytics",
-          value: "analytics",
-          description: "Real-Time Data Analytics"
-        },
-        {
-          title: "Communication",
-          value: "communication",
-          description: "Integrated Communication"
-        },
-        {
-          title: "Rewards",
-          value: "rewards",
-          description: "PAYT Rewards System"
-        },
-        {
-          title: "Monitoring",
-          value: "monitoring",
-          description: "Container Monitoring"
-        },
-        {
-          title: "Reports",
-          value: "reports",
-          description: "Custom Reports"
-        },
-        {
-          title: "Maintenance",
-          value: "maintenance",
-          description: "Maintenance Management"
-        }
+        { title: "Management", value: "management", description: "Intelligent Waste Management" },
+        { title: "Planning", value: "planning", description: "Efficient Route Planning" },
+        { title: "Analytics", value: "analytics", description: "Real-Time Data Analytics" },
+        { title: "Communication", value: "communication", description: "Integrated Communication" },
+        { title: "Rewards", value: "rewards", description: "PAYT Rewards System" },
+        { title: "Monitoring", value: "monitoring", description: "Container Monitoring" },
+        { title: "Reports", value: "reports", description: "Custom Reports" },
+        { title: "Maintenance", value: "maintenance", description: "Maintenance Management" }
       ]
     },
-    access: {
-      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
-      buttonText: "Play Video"
-    }
+    access: { text: "Access your account through the address", buttonText: "Play Video" },
+    heroTagline: "A solution for all types of containers",
+    modulesTitle: "Platform Modules",
+    modules: [
+      { title: "Level", description: "Intelligent Fill Level Monitoring Solution" },
+      { title: "Access", description: "Smart Access Control System" },
+      { title: "DRS", description: "Deposit Return System Solution" },
+      { title: "Sotcare", description: "Comprehensive Maintenance Management" },
+      { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
+      { title: "Routes", description: "Optimized Route Planning System" }
+    ]
   },
   cr: {
     intro: {
       title: "Sotkis Digital Platform",
-      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
-      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge.",
+      text2: "This platform allows you to manage your container fleet online.",
+      text3: "The SOTKIS platform enables integrated and intelligent management of all waste-related processes."
     },
     features: {
-      intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
+      intro: "Through the existing modules in the SOTKIS platform, various functionalities are accessible:",
       items: [
-        {
-          title: "Application",
-          description: "of PAYT tariffs;"
-        },
-        {
-          title: "Information",
-          description: "about container fill levels;"
-        },
-        {
-          title: "Planning",
-          description: "of more efficient collection routes;"
-        },
-        {
-          title: "Access",
-          description: "to deposition frequencies and types of waste deposited;"
-        },
-        {
-          title: "Verification",
-          description: "of locations and installation history;"
-        },
-        {
-          title: "Implementation",
-          description: "of reward systems for correct waste disposal;"
-        },
-        {
-          title: "Management",
-          description: "of information on preventive and/or corrective maintenance operations;"
-        },
-        {
-          title: "Communication",
-          description: "in real time of any irregularities in the equipment."
-        }
+        { title: "Application", description: "of PAYT tariffs;" },
+        { title: "Information", description: "about container fill levels;" },
+        { title: "Planning", description: "of more efficient collection routes;" },
+        { title: "Access", description: "to deposition frequencies;" },
+        { title: "Verification", description: "of locations and installation history;" },
+        { title: "Implementation", description: "of reward systems;" },
+        { title: "Management", description: "of maintenance information;" },
+        { title: "Communication", description: "in real time of equipment irregularities." }
       ],
       button: "Access the platform"
     },
     tabs: {
       title: "Platform Modules",
       items: [
-        {
-          title: "Management",
-          value: "management",
-          description: "Intelligent Waste Management"
-        },
-        {
-          title: "Planning",
-          value: "planning",
-          description: "Efficient Route Planning"
-        },
-        {
-          title: "Analytics",
-          value: "analytics",
-          description: "Real-Time Data Analytics"
-        },
-        {
-          title: "Communication",
-          value: "communication",
-          description: "Integrated Communication"
-        },
-        {
-          title: "Rewards",
-          value: "rewards",
-          description: "PAYT Rewards System"
-        },
-        {
-          title: "Monitoring",
-          value: "monitoring",
-          description: "Container Monitoring"
-        },
-        {
-          title: "Reports",
-          value: "reports",
-          description: "Custom Reports"
-        },
-        {
-          title: "Maintenance",
-          value: "maintenance",
-          description: "Maintenance Management"
-        }
+        { title: "Management", value: "management", description: "Intelligent Waste Management" },
+        { title: "Planning", value: "planning", description: "Efficient Route Planning" },
+        { title: "Analytics", value: "analytics", description: "Real-Time Data Analytics" },
+        { title: "Communication", value: "communication", description: "Integrated Communication" },
+        { title: "Rewards", value: "rewards", description: "PAYT Rewards System" },
+        { title: "Monitoring", value: "monitoring", description: "Container Monitoring" },
+        { title: "Reports", value: "reports", description: "Custom Reports" },
+        { title: "Maintenance", value: "maintenance", description: "Maintenance Management" }
       ]
     },
-    access: {
-      text: "Access to this digital platform for managing your waste containers is quite simple. You can access your account through the address",
-      buttonText: "Play Video"
-    }
+    access: { text: "Access your account through the address", buttonText: "Play Video" },
+    heroTagline: "A solution for all types of containers",
+    modulesTitle: "Platform Modules",
+    modules: [
+      { title: "Level", description: "Intelligent Fill Level Monitoring Solution" },
+      { title: "Access", description: "Smart Access Control System" },
+      { title: "DRS", description: "Deposit Return System Solution" },
+      { title: "Sotcare", description: "Comprehensive Maintenance Management" },
+      { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
+      { title: "Routes", description: "Optimized Route Planning System" }
+    ]
   }
 };
-

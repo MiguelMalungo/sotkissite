@@ -29,57 +29,22 @@ export const DRS: React.FC = () => {
     setIsVideoModalOpen(false);
   };
 
-  const cardItems = [
-    {
-      id: '1',
-      image: dsc5571Image,
-      title: 'Facilidade de integração',
-      description: 'O dispositivo DRS adapta-se a diferentes tipos de contentores, garantindo a sua integração em diversos contextos de deposição de resíduos.',
-    },
-    {
-      id: '2',
-      image: dsc6216Image,
-      title: 'Tecnologias de leitura',
-      description: 'Os cidadãos podem-se conectar via Bluetooth ou de um cartão RFID. O dispositivo pode incluir um scanner para leitura do código de barras das embalagens.',
-    },
-    {
-      id: '3',
-      image: sfs06884Image,
-      title: 'Deteção sonora',
-      description: 'O DRS reconhece todos os tipos de material de embalagem em tempo real, graças a tecnologias acústicas combinadas com algoritmos de Inteligência Artificial.',
-    },
-  ];
+  const cardImages = [dsc5571Image, dsc6216Image, sfs06884Image];
+  const cardItems = t.cards.map((card, i) => ({
+    id: String(i + 1),
+    image: cardImages[i],
+    title: card.title,
+    description: card.description,
+  }));
 
-  const howItWorksSteps = [
-    {
-      id: '1',
-      number: '01',
-      title: 'Conectar',
-      description: 'Ligue-se ao DRS usando a App Móvel ou o Cartão.',
-      image: conectarDrsImage,
-    },
-    {
-      id: '2',
-      number: '02',
-      title: 'Depositar',
-      description: 'Insira as embalagens no anel uma a uma (leia o código de barras se o sistema permitir)',
-      image: depositarIcon,
-    },
-    {
-      id: '3',
-      number: '03',
-      title: 'Pontuar',
-      description: 'Receba pontos automaticamente por cada embalagem aceite.',
-      image: pontuarIcon,
-    },
-    {
-      id: '4',
-      number: '04',
-      title: 'Trocar',
-      description: 'Troque os seus pontos acumulados por recompensas no marketplace.',
-      image: trocarIcon,
-    },
-  ];
+  const stepImages = [conectarDrsImage, depositarIcon, pontuarIcon, trocarIcon];
+  const howItWorksSteps = t.steps.map((step, i) => ({
+    id: String(i + 1),
+    number: String(i + 1).padStart(2, '0'),
+    title: step.title,
+    description: step.description,
+    image: stepImages[i],
+  }));
 
   return (
     <div className="drs">
@@ -164,18 +129,16 @@ export const DRS: React.FC = () => {
       <section className="drs__tech-specs section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="drs__tech-specs-title">Características técnicas</h2>
+            <h2 className="drs__tech-specs-title">{t.technical.title}</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-            <p className="drs__tech-specs-text">
-              O SOTKIS DRS integra um anel com a tecnologia de deteção acústica e módulo eletrónico que inclui as antenas e baterias. Cada sessão de depósito é enviada para a plataforma web usando uma comunicação GSM do telemóvel do utilizador.
-            </p>
+            <p className="drs__tech-specs-text">{t.technical.text}</p>
           </AnimateOnScroll>
           <div className="drs__tech-specs-layout">
             <AnimateOnScroll animation="fadeSlideUp" delay={250} duration={0.8} className="drs__tech-specs-item">
               <div>
-                <h3>Caixa Eletrónica</h3>
-                <p>Contém a placa principal, leitor RFID, baterias e antenas, suportando integração com leitura de códigos de barras.</p>
+                <h3>{t.technical.box.title}</h3>
+                <p>{t.technical.box.description}</p>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9} className="drs__tech-specs-image-wrapper">
@@ -183,8 +146,8 @@ export const DRS: React.FC = () => {
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8} className="drs__tech-specs-item">
               <div>
-                <h3>Anel</h3>
-                <p>Tubo de deposição que inclui a tecnologia acústica de deteção da deposição.</p>
+                <h3>{t.technical.ring.title}</h3>
+                <p>{t.technical.ring.description}</p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -194,7 +157,7 @@ export const DRS: React.FC = () => {
       <section className="drs__how-it-works section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="drs__how-it-works-title">Como Funciona</h2>
+            <h2 className="drs__how-it-works-title">{t.howItWorks.title}</h2>
           </AnimateOnScroll>
           <div className="drs__how-it-works-grid">
             {howItWorksSteps.map((step, index) => (

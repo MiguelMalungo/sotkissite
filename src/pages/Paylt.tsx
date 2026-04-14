@@ -26,77 +26,34 @@ export const Paylt: React.FC = () => {
     setIsVideoModalOpen(false);
   };
 
+  const tAny = t as any;
+
   // Software Carousel Features
-  const softwareFeatures = [
-    {
-      id: '1',
-      label: 'Dashboards interativos',
-      description: 'Dashboards e informação para otimização de recursos e redução de custos',
-      image: softDashImg
-    },
-    {
-      id: '2',
-      label: 'Aplicação de cidadão',
-      description: 'Aplicação móvel integrada com o hardware e ferramentas de gamificação',
-      image: softAppImg
-    },
-    {
-      id: '3',
-      label: 'Marketplace',
-      description: 'Marketplace integrado com benefícios, recompensas e funcionalidades digitais',
-      image: softMarketImg
-    },
-    {
-      id: '4',
-      label: 'PAYT',
-      description: 'Soluções para implementação transparente de modelos PAYT/RAYT/SAYT',
-      image: techPolicyImg
-    }
-  ];
+  const softwareImages = [softDashImg, softAppImg, softMarketImg, techPolicyImg];
+  const softwareFeatures = tAny.software.features.map((f: { label: string; description: string }, i: number) => ({
+    id: String(i + 1),
+    label: f.label,
+    description: f.description,
+    image: softwareImages[i]
+  }));
 
   // Hardware Carousel Features
-  const hardwareFeatures = [
-    {
-      id: '1',
-      label: 'Sensores de nível',
-      description: 'Sensores para deteção do nível de enchimento dos contentores',
-      image: hardIotImg
-    },
-    {
-      id: '2',
-      label: 'Controlo de acessos',
-      description: 'Dispositivos para controlo do acesso aos contentores',
-      image: hardAccessImg
-    },
-    {
-      id: '3',
-      label: 'Restritores de volume',
-      description: 'Restritores volumétricos que viabilizam a implementação do princípio PAYT.',
-      image: hardIotImg
-    },
-    {
-      id: '4',
-      label: 'Sensores de deteção',
-      description: 'Sensores DRS que registam cada deposição de embalagens',
-      image: hardAccessImg
-    }
-  ];
+  const hardwareImages = [hardIotImg, hardAccessImg, hardIotImg, hardAccessImg];
+  const hardwareFeatures = tAny.hardware.features.map((f: { label: string; description: string }, i: number) => ({
+    id: String(i + 1),
+    label: f.label,
+    description: f.description,
+    image: hardwareImages[i]
+  }));
 
   // Benefits Features
-  const benefitsFeatures = [
-    {
-      id: '1',
-      label: 'MUNICÍPIO',
-      description: 'REDUZ as taxas de aterro ao aumentar a separação',
-      image: softDashImg
-    },
-    {
-      id: '2',
-      label: 'CIDADÃO',
-      description: 'POUPA nas faturas ou recebe benefícios pela reciclagem',
-      image: softAppImg
-    }
-  ];
+  const benefitsImages = [softDashImg, softAppImg];
+  const benefitsFeatures = tAny.benefits.features.map((f: { label: string; description: string }, i: number) => ({
+    id: String(i + 1),
+    label: f.label,
+    description: f.description,
+    image: benefitsImages[i]
+  }));
 
   return (
     <div className="paylt">
@@ -144,7 +101,7 @@ export const Paylt: React.FC = () => {
       <section className="paylt__contentores-section section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__section-title">Uma solução para todo o tipo de contentores!</h2>
+            <h2 className="paylt__section-title">{t.contentores.title}</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
             <img
@@ -164,38 +121,38 @@ export const Paylt: React.FC = () => {
               {/* Column 1 - Billing */}
               <div className="paylt__scheme-card paylt__scheme-card--billing">
                 <div className="paylt__scheme-card-header">
-                  <h3>Faturação por deposição de resíduos indiferenciados</h3>
+                  <h3>{t.scheme.billingTitle}</h3>
                 </div>
                 <div className="paylt__scheme-card-highlight">
-                  <span>1 ABERTURA = REGISTO</span>
+                  <span>{t.scheme.billingHighlight}</span>
                 </div>
                 <div className="paylt__scheme-card-detail">
-                  <p>Restrição de volume (30 a 100 Litros)</p>
+                  <p>{t.scheme.billingDetail}</p>
                 </div>
               </div>
 
               {/* Column 2 - Points (Packaging) */}
               <div className="paylt__scheme-card paylt__scheme-card--points">
                 <div className="paylt__scheme-card-header">
-                  <h3>Trocar pontos em compras marketplace</h3>
+                  <h3>{t.scheme.pointsTitle}</h3>
                 </div>
                 <div className="paylt__scheme-card-highlight">
-                  <span>1 EMBALAGEM = 1 PONTO</span>
+                  <span>{t.scheme.pointsHighlight}</span>
                 </div>
                 <div className="paylt__scheme-card-detail">
-                  <p>Pontos por deposição individual de embalagens de vidro</p>
-                  <p>Pontos por deposição individual de embalagens de plástico e metal</p>
+                  <p>{t.scheme.pointsDetail1}</p>
+                  <p>{t.scheme.pointsDetail2}</p>
                 </div>
               </div>
 
               {/* Column 3 - Points (Opening) */}
               <div className="paylt__scheme-card paylt__scheme-card--points-open">
                 <div className="paylt__scheme-card-highlight">
-                  <span>1 ABERTURA = 1 PONTO</span>
+                  <span>{t.scheme.openingHighlight}</span>
                 </div>
                 <div className="paylt__scheme-card-detail">
-                  <p>Pontos por abertura para depósito de papel e cartão</p>
-                  <p>Pontos por abertura para depósito de resíduos orgânicos</p>
+                  <p>{t.scheme.openingDetail1}</p>
+                  <p>{t.scheme.openingDetail2}</p>
                 </div>
               </div>
             </div>
@@ -215,14 +172,14 @@ export const Paylt: React.FC = () => {
       <section className="paylt__componentes-section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__section-title">Componentes da Solução</h2>
+            <h2 className="paylt__section-title">{tAny.componentesTitle}</h2>
           </AnimateOnScroll>
         </div>
 
         {/* Software Carousel */}
         <FeatureCarousel
-          title="Software Inteligente que gera impacto"
-          subtitle="Uma infraestrutura dinâmica e escalável que integra:"
+          title={tAny.software.title}
+          subtitle={tAny.software.subtitle}
           features={softwareFeatures}
           imagePosition="right"
           backgroundColor="#F4FBFC"
@@ -231,8 +188,8 @@ export const Paylt: React.FC = () => {
 
         {/* Hardware Carousel */}
         <FeatureCarousel
-          title="Hardware Avançado simples de integrar"
-          subtitle="Dispositivos inteligentes instalados em qualquer tipo de contentor, incluindo:"
+          title={tAny.hardware.title}
+          subtitle={tAny.hardware.subtitle}
           features={hardwareFeatures}
           imagePosition="left"
           backgroundColor="#F4FBFC"
@@ -241,7 +198,7 @@ export const Paylt: React.FC = () => {
 
         {/* Benefits Carousel */}
         <FeatureCarousel
-          title="Benefícios para Municípios e Cidadãos"
+          title={tAny.benefits.title}
           features={benefitsFeatures}
           imagePosition="right"
           backgroundColor="#F4FBFC"

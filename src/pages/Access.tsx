@@ -142,18 +142,18 @@ export const Access: React.FC = () => {
         <div className="container">
           <div className="access__technical-content">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>Características técnicas</h2>
+              <h2>{t.technical.title}</h2>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
               <p>
-                O SOTKIS Access integra uma fechadura eletromecânica e um módulo eletrónico que inclui as antenas e baterias. Num horário predefinido, o sistema envia as informações das sessões de depósito para a plataforma web usando uma comunicação GSM.
+                {t.technical.text}
               </p>
             </AnimateOnScroll>
             <div className="access__technical-layout">
               <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__technical-item">
                 <div>
-                  <h3>Fechadura eletromecânica</h3>
-                  <p>Bloqueia a tampa do marco de deposição e, assim, restringe o acesso ao contentor de resíduos.</p>
+                  <h3>{t.technical.lock.title}</h3>
+                  <p>{t.technical.lock.description}</p>
                 </div>
               </AnimateOnScroll>
               <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9} className="access__technical-image-wrapper">
@@ -161,8 +161,8 @@ export const Access: React.FC = () => {
               </AnimateOnScroll>
               <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="access__technical-item">
                 <div>
-                  <h3>Caixa eletrónica</h3>
-                  <p>É composta pelo quadro eletrónico principal e inclui o leitor RFID, as baterias, os módulos GSM e as antenas.</p>
+                  <h3>{t.technical.box.title}</h3>
+                  <p>{t.technical.box.description}</p>
                 </div>
               </AnimateOnScroll>
             </div>
@@ -170,7 +170,7 @@ export const Access: React.FC = () => {
             {/* Devices sub-section */}
             <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__devices">
               <div className="access__devices-text">
-                <p>O sistema admite múltiplos formatos de identificação para garantir flexibilidade operacional.</p>
+                <p>{t.technical.devicesText}</p>
               </div>
               <div className="access__devices-grid">
                 <div className="access__device-item">
@@ -205,11 +205,11 @@ export const Access: React.FC = () => {
         <div className="container">
           <div className="access__restrictor-content">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>SOTKIS ACCESS COM RESTRITOR DE VOLUME</h2>
+              <h2>{t.restrictor.title}</h2>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
               <p>
-                O SOTKIS Access, por meio da instalação de um restritor volumétrico no marco de deposição, viabiliza a implementação do princípio PAYT. O "pay-as-you-throw" é um sistema em que os residentes pagam pelos resíduos de acordo com a quantidade que produzem, sendo considerado um sistema de pagamento mais justo. Dependendo do marco de deposição ou do contentor existem diferentes restritores de volume disponíveis.
+                {t.restrictor.text}
               </p>
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
@@ -223,13 +223,13 @@ export const Access: React.FC = () => {
         <div className="container">
           <div className="access__how-it-works-content">
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2>Como Funciona</h2>
+              <h2>{t.howItWorks.title}</h2>
             </AnimateOnScroll>
 
             {/* Sequence 1 - Tambor duplo — Desktop */}
             <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8} className="access__how-sequence access__how-desktop">
               <div className="access__how-sequence-text">
-                <p>Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.</p>
+                <p>{t.howItWorks.tamborDesc}</p>
               </div>
               <div className="access__how-sequence-steps">
                 <div className="access__how-step">
@@ -237,7 +237,7 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-number">1</div>
                     <div className="access__how-step-arrow"></div>
                   </div>
-                  <p className="access__how-step-label"><strong>Conectar</strong></p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step1 }} />
                   <div className="access__how-step-image">
                     <img src={conectarImage} alt="Conectar" />
                   </div>
@@ -247,7 +247,7 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-number">2</div>
                     <div className="access__how-step-arrow"></div>
                   </div>
-                  <p className="access__how-step-label"><strong>Abrir, rodar o tambor</strong> e depositar sobre a superfície interior do tambor</p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
                   <div className="access__how-step-image">
                     <img src={tambor1Image} alt="Rodar o tambor" />
                   </div>
@@ -256,7 +256,7 @@ export const Access: React.FC = () => {
                   <div className="access__how-step-top">
                     <div className="access__how-step-number">3</div>
                   </div>
-                  <p className="access__how-step-label"><strong>Rodar o tambor e fechar completamente</strong> o sistema, permitindo a entrada dos resíduos no contentor</p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Tambor }} />
                   <div className="access__how-step-image access__how-step-image--double">
                     <img src={tambor1Image} alt="Tambor fechado" />
                     <img src={tambor2Image} alt="Resíduos no contentor" />
@@ -267,25 +267,25 @@ export const Access: React.FC = () => {
 
             {/* Sequence 1 - Tambor duplo — Mobile */}
             <div className="access__how-mobile">
-              <p className="access__how-mobile-desc">Para a sua implementação, é necessário um tambor duplo aplicado no contentor enterrado, semienterrado ou de superfície, equipado com o módulo de acesso SOTKIS. O tambor, que varia de 30 a 100 litros, restringe o volume das deposições e só autoriza um depósito por conexão.</p>
+              <p className="access__how-mobile-desc">{t.howItWorks.tamborDesc}</p>
               <MobileCarousel>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">1</div>
-                  <p className="access__how-slide-label"><strong>Conectar</strong></p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step1 }} />
                   <div className="access__how-slide-image">
                     <img src={conectarImage} alt="Conectar" />
                   </div>
                 </div>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">2</div>
-                  <p className="access__how-slide-label"><strong>Abrir, rodar o tambor</strong> e depositar sobre a superfície interior do tambor</p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
                   <div className="access__how-slide-image">
                     <img src={tambor1Image} alt="Rodar o tambor" />
                   </div>
                 </div>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">3</div>
-                  <p className="access__how-slide-label"><strong>Rodar o tambor e fechar completamente</strong> o sistema, permitindo a entrada dos resíduos no contentor</p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Tambor }} />
                   <div className="access__how-slide-image access__how-slide-image--double">
                     <img src={tambor1Image} alt="Tambor fechado" />
                     <img src={tambor2Image} alt="Resíduos no contentor" />
@@ -297,8 +297,8 @@ export const Access: React.FC = () => {
             {/* Sequence 2 - Alçapão — Desktop */}
             <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__how-sequence access__how-desktop">
               <div className="access__how-sequence-text">
-                <p>Para sistemas enterrados, pode também ser implementado um alçapão interior no marco de deposição, com restritor de volume, equipado com o módulo de acesso SOTKIS.</p>
-                <p>Do mesmo modo, após a abertura do Sotkis Access, o alçapão de 35 litros, limita o volume das deposições e só autoriza um depósito por conexão.</p>
+                <p>{t.howItWorks.alcapaoDesc1}</p>
+                <p>{t.howItWorks.alcapaoDesc2}</p>
               </div>
               <div className="access__how-sequence-steps">
                 <div className="access__how-step">
@@ -306,7 +306,7 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-number">1</div>
                     <div className="access__how-step-arrow"></div>
                   </div>
-                  <p className="access__how-step-label"><strong>Conectar</strong></p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step1 }} />
                   <div className="access__how-step-image">
                     <img src={conectarImage} alt="Conectar" />
                   </div>
@@ -316,7 +316,7 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-number">2</div>
                     <div className="access__how-step-arrow"></div>
                   </div>
-                  <p className="access__how-step-label"><strong>Abrir a tampa</strong> superior e <strong>depositar</strong> sobre o alçapão interior</p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Alcapao }} />
                   <div className="access__how-step-image">
                     <img src={alcapao1Image} alt="Abrir e depositar" />
                   </div>
@@ -325,7 +325,7 @@ export const Access: React.FC = () => {
                   <div className="access__how-step-top">
                     <div className="access__how-step-number">3</div>
                   </div>
-                  <p className="access__how-step-label"><strong>Fechar completamente a tampa,</strong> permitindo a entrada dos resíduos no contentor</p>
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Alcapao }} />
                   <div className="access__how-step-image access__how-step-image--double">
                     <img src={alcapao2Image} alt="Tampa fechada" />
                     <img src={alcapao3Image} alt="Resíduos no contentor" />
@@ -336,25 +336,25 @@ export const Access: React.FC = () => {
 
             {/* Sequence 2 - Alçapão — Mobile */}
             <div className="access__how-mobile">
-              <p className="access__how-mobile-desc">Para sistemas enterrados, pode também ser implementado um alçapão interior no marco de deposição, com restritor de volume, equipado com o módulo de acesso SOTKIS. Após a abertura do Sotkis Access, o alçapão de 35 litros limita o volume das deposições e só autoriza um depósito por conexão.</p>
+              <p className="access__how-mobile-desc">{t.howItWorks.alcapaoDescMobile}</p>
               <MobileCarousel>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">1</div>
-                  <p className="access__how-slide-label"><strong>Conectar</strong></p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step1 }} />
                   <div className="access__how-slide-image">
                     <img src={conectarImage} alt="Conectar" />
                   </div>
                 </div>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">2</div>
-                  <p className="access__how-slide-label"><strong>Abrir a tampa</strong> superior e <strong>depositar</strong> sobre o alçapão interior</p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Alcapao }} />
                   <div className="access__how-slide-image">
                     <img src={alcapao1Image} alt="Abrir e depositar" />
                   </div>
                 </div>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">3</div>
-                  <p className="access__how-slide-label"><strong>Fechar completamente a tampa,</strong> permitindo a entrada dos resíduos no contentor</p>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Alcapao }} />
                   <div className="access__how-slide-image access__how-slide-image--double">
                     <img src={alcapao2Image} alt="Tampa fechada" />
                     <img src={alcapao3Image} alt="Resíduos no contentor" />

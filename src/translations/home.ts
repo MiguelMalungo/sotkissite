@@ -41,7 +41,7 @@ export const homeTranslations = {
   },
   en: {
     hero: {
-      title: "Discover our intelligent waste management systems",
+      title: "The future of<br />recycling",
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
     },
     riseAbove: {
@@ -81,118 +81,118 @@ export const homeTranslations = {
   },
   es: {
     hero: {
-      title: "Discover our intelligent waste management systems",
-      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
+      title: "El futuro del<br />reciclaje",
+      description: "Prepárese para crear ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia del usuario final."
     },
     riseAbove: {
-      title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. The portal and app were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.",
-      button: "Explore the Platform"
+      title: "Plataforma Digital",
+      text: "La plataforma SOTKIS, que incluye el portal en línea y la aplicación, consiste en un sistema integrado de gestión que recopila y trata información sobre los diversos procesos implicados en el depósito y/o recogida de residuos.",
+      button: "Explorar la Plataforma"
     },
     access: {
       title: "Access",
-      description: "The SOTKIS ACCESS module features an RFID reader and locks that restrict access to the container. It can be easily installed in an existing system and is the perfect solution for cities wishing to introduce a PAYT waste charging system.",
-      button: "Explore Access"
+      description: "Los controles de acceso que restringen el acceso al contenedor de residuos son la solución perfecta para ciudades que deseen introducir un sistema de tarifación de residuos PAYT.",
+      button: "Explorar Access"
     },
     level: {
       title: "Level",
-      description: "Intelligent module that monitors the fill level of waste in containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container, thus optimizing the efficiency of your operations.",
-      button: "Explore Level"
+      description: "Módulo que monitoriza el nivel de llenado de los contenedores. Obtenga información precisa, actualizada y fácilmente accesible sobre la cantidad de residuos en cada contenedor, optimizando así la eficiencia de sus operaciones.",
+      button: "Explorar Level"
     },
     drs: {
       title: "DRS",
-      description: "The \"Digital Return System\" is an innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users. It is an instrument that drives the increase in recycling rates.",
-      button: "Explore DRS"
+      description: "Tecnología innovadora que identifica individualmente cada envase de depósito selectivo y permite la asignación de incentivos a los usuarios.",
+      button: "Explorar DRS"
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
-      button: "Explore P(L)ayt"
+      description: "Todas las soluciones SOTKIS en un único ecosistema.",
+      button: "Explorar P(L)ayt"
     },
     t4g: {
-      title: "CITIZEN APP",
-      description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
-      button: "Explore T4G"
+      title: "APP CIUDADANO",
+      description: "Trash4Goods es una aplicación móvil que transforma el reciclaje en una experiencia envolvente y gratificante. A través de la app, los usuarios registran sus acciones de reciclaje y acumulan recompensas por la correcta separación de residuos.",
+      button: "Explorar App Ciudadano"
     },
     app: {
-      title: "DOWNLOAD THE SOTKIS APP",
-      description: "Connect easily to your municipality's waste management services!"
+      title: "DESCARGUE LA\nAPP SOTKIS",
+      description: "¡Conéctese fácilmente a los servicios de gestión de residuos de su municipio!"
     }
   },
   fr: {
     hero: {
-      title: "Discover our intelligent waste management systems",
-      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
+      title: "L'avenir du<br />recyclage",
+      description: "Préparez-vous à créer des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience de l'utilisateur final."
     },
     riseAbove: {
-      title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. The portal and app were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.",
-      button: "Explore the Platform"
+      title: "Plateforme Digitale",
+      text: "La plateforme SOTKIS, qui comprend le portail en ligne et l'application, est un système de gestion intégré qui collecte et traite les informations sur les divers processus impliqués dans le dépôt et/ou la collecte des déchets.",
+      button: "Explorer la Plateforme"
     },
     access: {
       title: "Access",
-      description: "The SOTKIS ACCESS module features an RFID reader and locks that restrict access to the container. It can be easily installed in an existing system and is the perfect solution for cities wishing to introduce a PAYT waste charging system.",
-      button: "Explore Access"
+      description: "Les contrôles d'accès qui restreignent l'accès au conteneur à déchets sont la solution idéale pour les villes souhaitant introduire un système de facturation des déchets PAYT.",
+      button: "Explorer Access"
     },
     level: {
       title: "Level",
-      description: "Intelligent module that monitors the fill level of waste in containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container, thus optimizing the efficiency of your operations.",
-      button: "Explore Level"
+      description: "Module qui surveille le niveau de remplissage des conteneurs. Obtenez des informations précises, à jour et facilement accessibles sur la quantité de déchets dans chaque conteneur, optimisant ainsi l'efficacité de vos opérations.",
+      button: "Explorer Level"
     },
     drs: {
       title: "DRS",
-      description: "The \"Digital Return System\" is an innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users. It is an instrument that drives the increase in recycling rates.",
-      button: "Explore DRS"
+      description: "Technologie innovante qui identifie individuellement chaque emballage de dépôt sélectif et permet l'attribution d'incitations aux utilisateurs.",
+      button: "Explorer DRS"
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
-      button: "Explore P(L)ayt"
+      description: "Toutes les solutions SOTKIS dans un seul écosystème.",
+      button: "Explorer P(L)ayt"
     },
     t4g: {
-      title: "CITIZEN APP",
-      description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
-      button: "Explore T4G"
+      title: "APP CITOYEN",
+      description: "Trash4Goods est une application mobile qui transforme le recyclage en une expérience engageante et gratifiante. Via l'application, les utilisateurs enregistrent leurs actions de recyclage et accumulent des récompenses pour le tri correct des déchets.",
+      button: "Explorer l'App Citoyen"
     },
     app: {
-      title: "DOWNLOAD THE SOTKIS APP",
-      description: "Connect easily to your municipality's waste management services!"
+      title: "TÉLÉCHARGEZ\nL'APP SOTKIS",
+      description: "Connectez-vous facilement aux services de gestion des déchets de votre municipalité !"
     }
   },
   gr: {
     hero: {
-      title: "Discover our intelligent waste management systems",
-      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
+      title: "The future of<br />recycling",
+      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
     riseAbove: {
       title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. The portal and app were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.",
+      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
       button: "Explore the Platform"
     },
     access: {
       title: "Access",
-      description: "The SOTKIS ACCESS module features an RFID reader and locks that restrict access to the container. It can be easily installed in an existing system and is the perfect solution for cities wishing to introduce a PAYT waste charging system.",
+      description: "Access controls that restrict access to the waste container and are the perfect solution for cities wishing to introduce a PAYT waste charging system.",
       button: "Explore Access"
     },
     level: {
       title: "Level",
-      description: "Intelligent module that monitors the fill level of waste in containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container, thus optimizing the efficiency of your operations.",
+      description: "Module that monitors the fill level of containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container.",
       button: "Explore Level"
     },
     drs: {
       title: "DRS",
-      description: "The \"Digital Return System\" is an innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users. It is an instrument that drives the increase in recycling rates.",
+      description: "Innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users.",
       button: "Explore DRS"
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
+      description: "All SOTKIS solutions in a single ecosystem.",
       button: "Explore P(L)ayt"
     },
     t4g: {
       title: "CITIZEN APP",
-      description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
-      button: "Explore T4G"
+      description: "Trash4Goods is a mobile app that transforms recycling into an engaging and rewarding experience.",
+      button: "Explore Citizen App"
     },
     app: {
       title: "DOWNLOAD THE SOTKIS APP",
@@ -201,38 +201,38 @@ export const homeTranslations = {
   },
   cr: {
     hero: {
-      title: "Discover our intelligent waste management systems",
-      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems.<br />By using the systems associated with SOTKIS, the entity responsible for the operation can obtain information about the fill level of waste containers, plan collection routes much more efficiently, know deposition frequencies and types of waste deposited, among many other variables. Are you ready to lead your city to a sustainable future through waste management?"
+      title: "The future of<br />recycling",
+      description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
     riseAbove: {
       title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. The portal and app were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.",
+      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
       button: "Explore the Platform"
     },
     access: {
       title: "Access",
-      description: "The SOTKIS ACCESS module features an RFID reader and locks that restrict access to the container. It can be easily installed in an existing system and is the perfect solution for cities wishing to introduce a PAYT waste charging system.",
+      description: "Access controls that restrict access to the waste container and are the perfect solution for cities wishing to introduce a PAYT waste charging system.",
       button: "Explore Access"
     },
     level: {
       title: "Level",
-      description: "Intelligent module that monitors the fill level of waste in containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container, thus optimizing the efficiency of your operations.",
+      description: "Module that monitors the fill level of containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container.",
       button: "Explore Level"
     },
     drs: {
       title: "DRS",
-      description: "The \"Digital Return System\" is an innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users. It is an instrument that drives the increase in recycling rates.",
+      description: "Innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users.",
       button: "Explore DRS"
     },
     paylt: {
       title: "P(L)ayt",
-      description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
+      description: "All SOTKIS solutions in a single ecosystem.",
       button: "Explore P(L)ayt"
     },
     t4g: {
       title: "CITIZEN APP",
-      description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
-      button: "Explore T4G"
+      description: "Trash4Goods is a mobile app that transforms recycling into an engaging and rewarding experience.",
+      button: "Explore Citizen App"
     },
     app: {
       title: "DOWNLOAD THE SOTKIS APP",
@@ -240,7 +240,3 @@ export const homeTranslations = {
     }
   }
 };
-
-
-
-

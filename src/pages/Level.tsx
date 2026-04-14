@@ -117,15 +117,15 @@ export const Level: React.FC = () => {
           <div className="level__sensor-layout">
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__sensor-specs level__sensor-specs--left">
               <div>
-                <h4>Tecnologia de sensor:</h4>
-                <p>Tecnologia ultrassónica ou laser</p>
-                <h4>Conectividade</h4>
+                <h4>{t.specs.sensorTech.label}</h4>
+                <p>{t.specs.sensorTech.value}</p>
+                <h4>{t.specs.connectivity.label}</h4>
                 <ul>
                   <li>LTE Cat M1 (4G)</li>
                   <li>GSM-fallback (2G)</li>
                 </ul>
-                <h4>Fonte de alimentação:</h4>
-                <p>Bateria de lítio de 3,6 V</p>
+                <h4>{t.specs.power.label}</h4>
+                <p>{t.specs.power.value}</p>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9} className="level__sensor-image-wrapper">
@@ -133,12 +133,12 @@ export const Level: React.FC = () => {
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="level__sensor-specs level__sensor-specs--right">
               <div>
-                <h4>Proteção:</h4>
-                <p>IP 69 1K10</p>
-                <h4>Material:</h4>
-                <p>Poliuretano</p>
-                <h4>Temperatura de Trabalho:</h4>
-                <p>-40 a +80°C</p>
+                <h4>{t.specs.protection.label}</h4>
+                <p>{t.specs.protection.value}</p>
+                <h4>{t.specs.material.label}</h4>
+                <p>{t.specs.material.value}</p>
+                <h4>{t.specs.workTemp.label}</h4>
+                <p>{t.specs.workTemp.value}</p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -155,17 +155,12 @@ export const Level: React.FC = () => {
           <div className="level__stages-desktop">
             {/* Timeline row */}
             <div className="level__stages-timeline">
-              {[
-                { text: 'Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.' },
-                { text: 'O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.' },
-                { text: 'O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.' },
-                { text: 'O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.' },
-              ].map((step, i) => (
+              {t.stageItems.map((text, i) => (
                 <AnimateOnScroll key={i} animation="fadeSlideUp" delay={i * 150} duration={0.8} className="level__timeline-step">
                   <div className="level__timeline-dot-row">
                     <div className="level__timeline-dot"></div>
                   </div>
-                  <p className="level__stage-item-text">{step.text}</p>
+                  <p className="level__stage-item-text">{text}</p>
                 </AnimateOnScroll>
               ))}
             </div>
@@ -190,22 +185,12 @@ export const Level: React.FC = () => {
           {/* Mobile carousel: each slide has text + image together */}
           <div className="level__stages-mobile">
             <MobileCarousel>
-              <div className="level__stage-slide">
-                <p className="level__stage-slide-text">Os sensores monitorizam os níveis de enchimento e enviam dados para o servidor.</p>
-                <img src={sotkisLevel3} alt="Monitorização de enchimento" className="level__stage-slide-image" />
-              </div>
-              <div className="level__stage-slide">
-                <p className="level__stage-slide-text">O sistema calcula as rotas mais adequadas, reduzindo o trabalho de backoffice.</p>
-                <img src={sotkisLevel2} alt="Cálculo de rotas" className="level__stage-slide-image" />
-              </div>
-              <div className="level__stage-slide">
-                <p className="level__stage-slide-text">O acesso fácil aos dados permite a recolha de estatísticas e análise da eficácia da recolha.</p>
-                <img src={sotkisLevel1} alt="Estatísticas e análise" className="level__stage-slide-image" />
-              </div>
-              <div className="level__stage-slide">
-                <p className="level__stage-slide-text">O condutor do veículo de recolha recebe um itinerário eficiente para o percurso com navegação passo a passo.</p>
-                <img src={sotkisLevel} alt="Navegação eficiente" className="level__stage-slide-image" />
-              </div>
+              {[sotkisLevel3, sotkisLevel2, sotkisLevel1, sotkisLevel].map((img, i) => (
+                <div key={i} className="level__stage-slide">
+                  <p className="level__stage-slide-text">{t.stageItems[i]}</p>
+                  <img src={img} alt={t.stageItems[i]} className="level__stage-slide-image" />
+                </div>
+              ))}
             </MobileCarousel>
           </div>
         </div>

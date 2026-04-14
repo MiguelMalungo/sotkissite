@@ -7,22 +7,10 @@ export const contactTranslations = {
       newsletter: "Ao introduzir os meus dados, autorizo a receção da newsletter da Sotkon"
     },
     form: {
-      name: {
-        label: "Nome *",
-        placeholder: "O seu nome"
-      },
-      email: {
-        label: "Correio Eletrónico *",
-        placeholder: "exemplo@email.com"
-      },
-      phone: {
-        label: "Telefone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Empresa",
-        placeholder: "Nome da empresa"
-      },
+      name: { label: "Nome *", placeholder: "O seu nome" },
+      email: { label: "Correio Eletrónico *", placeholder: "exemplo@email.com" },
+      phone: { label: "Telefone", placeholder: "+351 900 000 000" },
+      company: { label: "Empresa", placeholder: "Nome da empresa" },
       service: {
         label: "Serviço de Interesse *",
         placeholder: "Selecione um serviço",
@@ -38,14 +26,8 @@ export const contactTranslations = {
           { value: "integration", label: "Integrações com plataformas externas" }
         ]
       },
-      message: {
-        label: "Mensagem *",
-        placeholder: "Conte-nos sobre o seu projeto..."
-      },
-      file: {
-        label: "Anexar Ficheiro",
-        button: "Escolher Ficheiro"
-      },
+      message: { label: "Mensagem *", placeholder: "Conte-nos sobre o seu projeto..." },
+      file: { label: "Anexar Ficheiro", button: "Escolher Ficheiro" },
       submit: "Enviar Mensagem"
     }
   },
@@ -57,22 +39,10 @@ export const contactTranslations = {
       newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
     },
     form: {
-      name: {
-        label: "Name *",
-        placeholder: "Your name"
-      },
-      email: {
-        label: "Email *",
-        placeholder: "example@email.com"
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Company",
-        placeholder: "Company name"
-      },
+      name: { label: "Name *", placeholder: "Your name" },
+      email: { label: "Email *", placeholder: "example@email.com" },
+      phone: { label: "Phone", placeholder: "+351 900 000 000" },
+      company: { label: "Company", placeholder: "Company name" },
       service: {
         label: "Service of Interest *",
         placeholder: "Select a service",
@@ -88,14 +58,8 @@ export const contactTranslations = {
           { value: "integration", label: "Integrations with external platforms" }
         ]
       },
-      message: {
-        label: "Message *",
-        placeholder: "Tell us about your project..."
-      },
-      file: {
-        label: "Attach File",
-        button: "Choose File"
-      },
+      message: { label: "Message *", placeholder: "Tell us about your project..." },
+      file: { label: "Attach File", button: "Choose File" },
       submit: "Send Message"
     }
   },
@@ -107,46 +71,28 @@ export const contactTranslations = {
       newsletter: "Al introducir mis datos, autorizo la recepción del boletín de Sotkon"
     },
     form: {
-      name: {
-        label: "Name *",
-        placeholder: "Your name"
-      },
-      email: {
-        label: "Email *",
-        placeholder: "example@email.com"
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Company",
-        placeholder: "Company name"
-      },
+      name: { label: "Nombre *", placeholder: "Su nombre" },
+      email: { label: "Correo Electrónico *", placeholder: "ejemplo@email.com" },
+      phone: { label: "Teléfono", placeholder: "+351 900 000 000" },
+      company: { label: "Empresa", placeholder: "Nombre de la empresa" },
       service: {
-        label: "Service of Interest *",
-        placeholder: "Select a service",
+        label: "Servicio de Interés *",
+        placeholder: "Seleccione un servicio",
         options: [
-          { value: "", label: "Select a service" },
-          { value: "complete_solution", label: "Sotkis Complete Solution" },
-          { value: "level", label: "Sotkis Level - Fill Sensors" },
-          { value: "access", label: "Sotkis Access - Access Controls" },
-          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
-          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
-          { value: "payt", label: "Sotkis PLAYT Solution" },
-          { value: "t4g", label: "Trash4Goods Citizen App" },
-          { value: "integration", label: "Integrations with external platforms" }
+          { value: "", label: "Seleccione un servicio" },
+          { value: "complete_solution", label: "Solución completa Sotkis" },
+          { value: "level", label: "Sotkis Level - Sensores de llenado" },
+          { value: "access", label: "Sotkis Access - Controles de acceso" },
+          { value: "access_payt", label: "Sotkis Access - Controles de acceso PAYT" },
+          { value: "drs", label: "Sotkis DRS – Sistemas de detección de depósito" },
+          { value: "payt", label: "Solución Sotkis PLAYT" },
+          { value: "t4g", label: "App Ciudadano Trash4Goods" },
+          { value: "integration", label: "Integraciones con plataformas externas" }
         ]
       },
-      message: {
-        label: "Message *",
-        placeholder: "Tell us about your project..."
-      },
-      file: {
-        label: "Attach File",
-        button: "Choose File"
-      },
-      submit: "Send Message"
+      message: { label: "Mensaje *", placeholder: "Cuéntenos sobre su proyecto..." },
+      file: { label: "Adjuntar Archivo", button: "Elegir Archivo" },
+      submit: "Enviar Mensaje"
     }
   },
   fr: {
@@ -157,46 +103,28 @@ export const contactTranslations = {
       newsletter: "En saisissant mes données, j'autorise la réception de la newsletter de Sotkon"
     },
     form: {
-      name: {
-        label: "Name *",
-        placeholder: "Your name"
-      },
-      email: {
-        label: "Email *",
-        placeholder: "example@email.com"
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Company",
-        placeholder: "Company name"
-      },
+      name: { label: "Nom *", placeholder: "Votre nom" },
+      email: { label: "Email *", placeholder: "exemple@email.com" },
+      phone: { label: "Téléphone", placeholder: "+351 900 000 000" },
+      company: { label: "Entreprise", placeholder: "Nom de l'entreprise" },
       service: {
-        label: "Service of Interest *",
-        placeholder: "Select a service",
+        label: "Service d'Intérêt *",
+        placeholder: "Sélectionnez un service",
         options: [
-          { value: "", label: "Select a service" },
-          { value: "complete_solution", label: "Sotkis Complete Solution" },
-          { value: "level", label: "Sotkis Level - Fill Sensors" },
-          { value: "access", label: "Sotkis Access - Access Controls" },
-          { value: "access_payt", label: "Sotkis Access - PAYT Access Controls" },
-          { value: "drs", label: "Sotkis DRS – Deposition Detection Systems" },
-          { value: "payt", label: "Sotkis PLAYT Solution" },
-          { value: "t4g", label: "Trash4Goods Citizen App" },
-          { value: "integration", label: "Integrations with external platforms" }
+          { value: "", label: "Sélectionnez un service" },
+          { value: "complete_solution", label: "Solution complète Sotkis" },
+          { value: "level", label: "Sotkis Level - Capteurs de remplissage" },
+          { value: "access", label: "Sotkis Access - Contrôles d'accès" },
+          { value: "access_payt", label: "Sotkis Access - Contrôles d'accès PAYT" },
+          { value: "drs", label: "Sotkis DRS – Systèmes de détection de dépôt" },
+          { value: "payt", label: "Solution Sotkis PLAYT" },
+          { value: "t4g", label: "App Citoyen Trash4Goods" },
+          { value: "integration", label: "Intégrations avec des plateformes externes" }
         ]
       },
-      message: {
-        label: "Message *",
-        placeholder: "Tell us about your project..."
-      },
-      file: {
-        label: "Attach File",
-        button: "Choose File"
-      },
-      submit: "Send Message"
+      message: { label: "Message *", placeholder: "Parlez-nous de votre projet..." },
+      file: { label: "Joindre un Fichier", button: "Choisir un Fichier" },
+      submit: "Envoyer le Message"
     }
   },
   gr: {
@@ -207,22 +135,10 @@ export const contactTranslations = {
       newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
     },
     form: {
-      name: {
-        label: "Name *",
-        placeholder: "Your name"
-      },
-      email: {
-        label: "Email *",
-        placeholder: "example@email.com"
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Company",
-        placeholder: "Company name"
-      },
+      name: { label: "Name *", placeholder: "Your name" },
+      email: { label: "Email *", placeholder: "example@email.com" },
+      phone: { label: "Phone", placeholder: "+351 900 000 000" },
+      company: { label: "Company", placeholder: "Company name" },
       service: {
         label: "Service of Interest *",
         placeholder: "Select a service",
@@ -238,14 +154,8 @@ export const contactTranslations = {
           { value: "integration", label: "Integrations with external platforms" }
         ]
       },
-      message: {
-        label: "Message *",
-        placeholder: "Tell us about your project..."
-      },
-      file: {
-        label: "Attach File",
-        button: "Choose File"
-      },
+      message: { label: "Message *", placeholder: "Tell us about your project..." },
+      file: { label: "Attach File", button: "Choose File" },
       submit: "Send Message"
     }
   },
@@ -257,22 +167,10 @@ export const contactTranslations = {
       newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
     },
     form: {
-      name: {
-        label: "Name *",
-        placeholder: "Your name"
-      },
-      email: {
-        label: "Email *",
-        placeholder: "example@email.com"
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "+351 900 000 000"
-      },
-      company: {
-        label: "Company",
-        placeholder: "Company name"
-      },
+      name: { label: "Name *", placeholder: "Your name" },
+      email: { label: "Email *", placeholder: "example@email.com" },
+      phone: { label: "Phone", placeholder: "+351 900 000 000" },
+      company: { label: "Company", placeholder: "Company name" },
       service: {
         label: "Service of Interest *",
         placeholder: "Select a service",
@@ -288,19 +186,9 @@ export const contactTranslations = {
           { value: "integration", label: "Integrations with external platforms" }
         ]
       },
-      message: {
-        label: "Message *",
-        placeholder: "Tell us about your project..."
-      },
-      file: {
-        label: "Attach File",
-        button: "Choose File"
-      },
+      message: { label: "Message *", placeholder: "Tell us about your project..." },
+      file: { label: "Attach File", button: "Choose File" },
       submit: "Send Message"
     }
   }
 };
-
-
-
-

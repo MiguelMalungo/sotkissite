@@ -143,9 +143,7 @@ export const Platform: React.FC = () => {
                 </>
               ) : t.access.text}
             </p>
-            <p className="platform-hero-root__tagline">
-              {language === 'pt' ? 'Uma solução para todo o tipo de contentores' : 'A solution for all types of containers'}
-            </p>
+            <p className="platform-hero-root__tagline">{t.heroTagline}</p>
             <button className="platform-hero-root__cta" onClick={openVideoModal}>
               <span>{t.access.buttonText}</span>
               <div className="platform-hero-root__cta-icon">
@@ -293,7 +291,7 @@ export const Platform: React.FC = () => {
       <section className="platform__modules section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="platform__modules-title">{language === 'pt' ? 'Módulos da Plataforma' : 'Platform Modules'}</h2>
+            <h2 className="platform__modules-title">{t.modulesTitle}</h2>
           </AnimateOnScroll>
           <div className="platform__modules-wrapper">
             <Tabs
@@ -301,7 +299,7 @@ export const Platform: React.FC = () => {
                 {
                   title: "Level",
                   value: "level",
-                  description: language === 'pt' ? "Solução Inteligente de Monitorização de Nível de Enchimento" : "Intelligent Fill Level Monitoring Solution",
+                  description: t.modules[0].description,
                   content: (
                     <div className="platform__module-content">
                       <img
@@ -316,7 +314,7 @@ export const Platform: React.FC = () => {
                 {
                   title: "Access",
                   value: "access",
-                  description: language === 'pt' ? "Sistema Inteligente de Controlo de Acesso" : "Smart Access Control System",
+                  description: t.modules[1].description,
                   content: (
                     <div className="platform__module-content">
                       <img
@@ -331,7 +329,7 @@ export const Platform: React.FC = () => {
                 {
                   title: "DRS",
                   value: "drs",
-                  description: language === 'pt' ? "Solução de Sistema de Depósito e Retorno" : "Deposit Return System Solution",
+                  description: t.modules[2].description,
                   content: (
                     <div className="platform__module-content">
                       <img
@@ -346,7 +344,7 @@ export const Platform: React.FC = () => {
                 {
                   title: "Sotcare",
                   value: "sotcare",
-                  description: language === 'pt' ? "Gestão Completa de Manutenção" : "Comprehensive Maintenance Management",
+                  description: t.modules[3].description,
                   content: (
                     <div className="platform__module-content">
                       <img
@@ -361,7 +359,7 @@ export const Platform: React.FC = () => {
                 {
                   title: "P(L)ayt",
                   value: "playt",
-                  description: language === 'pt' ? "Sistema de Gestão Pay-As-You-Throw" : "Pay-As-You-Throw Management System",
+                  description: t.modules[4].description,
                   content: (
                     <div className="platform__module-content">
                       <img
@@ -374,9 +372,9 @@ export const Platform: React.FC = () => {
                   )
                 },
                 {
-                  title: "Routes",
+                  title: t.modules[5].title,
                   value: "routes",
-                  description: language === 'pt' ? "Sistema Otimizado de Planeamento de Rotas" : "Optimized Route Planning System",
+                  description: t.modules[5].description,
                   content: (
                     <div className="platform__module-content">
                       <img
