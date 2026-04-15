@@ -88,9 +88,9 @@ export const Level: React.FC = () => {
               <p>
                 {t.intro.description}
               </p>
-              {t.intro.description2 && (
+              {('description2' in t.intro) && (t.intro as any).description2 && (
                 <p style={{ marginTop: '1rem' }}>
-                  {t.intro.description2}
+                  {(t.intro as any).description2}
                 </p>
               )}
             </AnimateOnScroll>
