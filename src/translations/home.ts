@@ -2,8 +2,10 @@ export const homeTranslations = {
   pt: {
     hero: {
       title: "O futuro da<br />reciclagem",
-      description: "Prepare-se para criar cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência do utilizador final."
+      subtitle: "Transforme a gestão de resíduos de sua comunidade!",
+      description: "Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
     },
+    hardwareIntro: "A Sotkon disponibiliza um conjunto de dispositivos inteligentes para colocação na ilha de deposição de resíduos, que permitem a monitorização eficiente dos contentores. É a infraestrutura física que liga os equipamentos à gestão digital.",
     riseAbove: {
       title: "Software",
       text: "A plataforma SOTKIS, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",

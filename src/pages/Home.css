@@ -25,6 +25,17 @@
   }
 }
 
+@keyframes heroScaleDown {
+  from {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .home__hero-animate {
   opacity: 0;
   animation-fill-mode: forwards;
@@ -40,6 +51,12 @@
 .home__hero-animate--2 {
   animation-name: heroFadeIn;
   animation-duration: 1.2s;
+  animation-delay: 0.95s;
+}
+
+.home__hero-animate--capa {
+  animation-name: heroScaleDown;
+  animation-duration: 1.4s;
   animation-delay: 0.95s;
 }
 
@@ -230,7 +247,7 @@
 
 .home__hero-content {
   position: relative;
-  z-index: 5;
+  z-index: 12;
   width: 100%;
   max-width: 1600px;
   display: flex;
@@ -308,6 +325,16 @@
   color: #ffffff !important;
   text-align: left;
   line-height: 1.7;
+}
+
+.home__hero-subtitle {
+  color: #ffffff !important;
+  font-size: clamp(1.46rem, 1.85vw, 1.69rem);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+  z-index: 12;
 }
 
 .home__hero-cta {
@@ -751,7 +778,7 @@
 }
 
 .home__section-content--yellow {
-  background-color: #FDE363;
+  background-color: #94C11F;
   border-radius: 0.75rem;
   padding: var(--spacing-3xl);
 }
@@ -861,6 +888,79 @@
 .home__section-image-placeholder--full::after {
   display: none;
   /* Remove overlay for full images */
+}
+
+/* Scheme Section */
+.home__scheme-section {
+  background-color: #F1FFF7;
+  padding: var(--spacing-4xl) 0;
+}
+
+.home__scheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.home__scheme-items {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.home__scheme-pill {
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background-color: #e8e8e8;
+  white-space: nowrap;
+}
+
+.home__scheme-pill--dark {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.home__scheme-plus {
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  color: #94C11F;
+}
+
+.home__scheme-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.home__scheme-logo {
+  display: flex;
+  align-items: center;
+}
+
+.home__scheme-logo img {
+  height: 94px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .home__scheme {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .home__scheme-items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home__scheme-arrow {
+    transform: rotate(90deg);
+  }
 }
 
 /* Cards Grid Section */
@@ -1014,7 +1114,7 @@
   align-items: flex-start;
   justify-content: space-between;
   opacity: 0;
-  background-color: #FDE363;
+  background-color: #94C11F;
   transition: opacity 0.4s ease;
   z-index: 3;
   pointer-events: none;

@@ -19,6 +19,7 @@ import cidadaoMunicipioImage from '../assets/cidadao_municipio.webp';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
+import logoPlayt from '../assets/logo-playt.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -154,10 +155,41 @@ export const Home: React.FC = () => {
         <div className="home__hero-overlay"></div>
         <div className="home__hero-content container">
           <h1 className="home__hero-heading home__hero-animate home__hero-animate--1" dangerouslySetInnerHTML={{ __html: t.hero.title }} />
-          <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--2" />
+          {'subtitle' in t.hero && t.hero.subtitle && (
+            <p className="home__hero-subtitle home__hero-animate home__hero-animate--2">{t.hero.subtitle}</p>
+          )}
+          <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--capa" />
           <div className="home__hero-description home__hero-animate home__hero-animate--3">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
+        </div>
+      </section>
+
+      {/* Scheme Section - Hardware + Software + App Cidadão → P(L)AYT */}
+      <section className="home__scheme-section">
+        <div className="container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <div className="home__scheme">
+              <div className="home__scheme-items">
+                <div className="home__scheme-pill">Hardware</div>
+                <span className="home__scheme-plus">+</span>
+                <div className="home__scheme-pill">Software</div>
+                <span className="home__scheme-plus">+</span>
+                <div className="home__scheme-pill home__scheme-pill--dark">App Cidadão</div>
+              </div>
+              <div className="home__scheme-arrow">
+                <svg width="40" height="2" viewBox="0 0 40 2" fill="none">
+                  <line x1="0" y1="1" x2="40" y2="1" stroke="#94C11F" strokeWidth="2" />
+                </svg>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
+                </svg>
+              </div>
+              <div className="home__scheme-logo">
+                <img src={logoPlayt} alt="P(L)AYT" />
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -166,6 +198,9 @@ export const Home: React.FC = () => {
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="home__cards-section-title">Hardware</h2>
+            {'hardwareIntro' in t && t.hardwareIntro && (
+              <p className="home__cards-section-description">{t.hardwareIntro}</p>
+            )}
           </AnimateOnScroll>
           <div className="home__cards-grid home__cards-grid--desktop">
             {/* Level Card */}
@@ -175,7 +210,7 @@ export const Home: React.FC = () => {
                   <img
                     src={levelSmImage}
                     alt="Level monitoring sensors"
-                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
+                    style={{ transform: `translateY(${(scrollY - 800) * 0.03}px)` }}
                   />
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.level.title}</h3>

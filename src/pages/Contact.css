@@ -363,7 +363,7 @@
 .contact__info-title {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: #FDE363;
+  color: #94C11F;
   margin-bottom: var(--spacing-md);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -394,11 +394,11 @@
 }
 
 .contact__info-link:hover {
-  color: #FDE363;
+  color: #94C11F;
 }
 
 .contact__info-link:focus-visible {
-  outline: 2px solid #FDE363;
+  outline: 2px solid #94C11F;
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
@@ -441,7 +441,7 @@
   width: 40px;
   height: 40px;
   min-width: 40px;
-  background-color: #FDE363;
+  background-color: #94C11F;
   color: #2c3e3c;
   border-radius: 50%;
   font-weight: var(--font-weight-bold);
@@ -516,14 +516,14 @@
 .contact__form-textarea:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.12);
-  border-color: #FDE363;
+  border-color: #94C11F;
   box-shadow: 0 0 0 3px rgba(253, 227, 99, 0.1);
 }
 
 .contact__form-input:focus-visible,
 .contact__form-select:focus-visible,
 .contact__form-textarea:focus-visible {
-  outline: 2px solid #FDE363;
+  outline: 2px solid #94C11F;
   outline-offset: 2px;
 }
 
@@ -606,14 +606,14 @@
 }
 
 .contact__form-file-input:focus-visible+.contact__form-file-label {
-  outline: 2px solid #FDE363;
+  outline: 2px solid #94C11F;
   outline-offset: 2px;
 }
 
 .contact__form-file-label svg {
   width: 20px;
   height: 20px;
-  color: #FDE363;
+  color: #94C11F;
 }
 
 /* Submit Button */
@@ -626,7 +626,7 @@
 
 .contact__form-submit {
   padding: 10px 32px;
-  background-color: #FDE363;
+  background-color: #94C11F;
   color: #2c3e3c;
   border: none;
   border-radius: var(--radius-md);
@@ -642,7 +642,7 @@
 }
 
 .contact__form-submit:hover {
-  background-color: #d4af37;
+  background-color: #7DA519;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(253, 227, 99, 0.3);
 }
@@ -663,7 +663,7 @@
 }
 
 .contact__form-submit:disabled:hover {
-  background-color: #FDE363;
+  background-color: #94C11F;
   transform: none;
   box-shadow: 0 10px 25px rgba(253, 227, 99, 0.3);
 }
@@ -700,8 +700,8 @@
 }
 
 .contact__privacy-checkbox:checked {
-  background-color: #FDE363;
-  border-color: #FDE363;
+  background-color: #94C11F;
+  border-color: #94C11F;
 }
 
 .contact__privacy-checkbox:checked::after {
@@ -718,7 +718,7 @@
 }
 
 .contact__privacy-checkbox:focus-visible {
-  outline: 2px solid #FDE363;
+  outline: 2px solid #94C11F;
   outline-offset: 2px;
 }
 
@@ -730,7 +730,7 @@
 }
 
 .contact__privacy-link {
-  color: #FDE363;
+  color: #94C11F;
   text-decoration: none;
   transition: color var(--transition-base);
 }

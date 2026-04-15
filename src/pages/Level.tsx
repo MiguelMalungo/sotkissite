@@ -88,6 +88,11 @@ export const Level: React.FC = () => {
               <p>
                 {t.intro.description}
               </p>
+              {t.intro.description2 && (
+                <p style={{ marginTop: '1rem' }}>
+                  {t.intro.description2}
+                </p>
+              )}
             </AnimateOnScroll>
           </div>
           <div className="level__intro-images">
@@ -120,10 +125,8 @@ export const Level: React.FC = () => {
                 <h4>{t.specs.sensorTech.label}</h4>
                 <p>{t.specs.sensorTech.value}</p>
                 <h4>{t.specs.connectivity.label}</h4>
-                <ul>
-                  <li>LTE Cat M1 (4G)</li>
-                  <li>GSM-fallback (2G)</li>
-                </ul>
+                <p>LTE Cat M1 (4G)</p>
+                <p>GSM-fallback (2G)</p>
                 <h4>{t.specs.power.label}</h4>
                 <p>{t.specs.power.value}</p>
               </div>

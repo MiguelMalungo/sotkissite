@@ -32,7 +32,7 @@ export const drsTranslations = {
     ],
     technical: {
       title: "Características técnicas",
-      text: "O SOTKIS DRS integra um anel com a tecnologia de deteção acústica e módulo eletrónico que inclui as antenas e baterias. Cada sessão de depósito é enviada para a plataforma web usando uma comunicação GSM do telemóvel do utilizador.",
+      text: "O SOTKIS DRS integra um anel com a tecnologia de deteção acústica e um módulo eletrónico que inclui as antenas e baterias. Cada sessão de deposição é enviada para a plataforma web usando uma comunicação GSM do telemóvel do utilizador.",
       box: {
         title: "Caixa Eletrónica",
         description: "Contém a placa principal, leitor RFID, baterias e antenas, suportando integração com leitura de códigos de barras."
@@ -52,7 +52,7 @@ export const drsTranslations = {
       },
       {
         title: "Tecnologias de leitura",
-        description: "Os cidadãos podem-se conectar via Bluetooth ou de um cartão RFID. O dispositivo pode incluir um scanner para leitura do código de barras das embalagens."
+        description: "Os cidadãos podem-se conectar via Smart Card (RFID) ou Smartphone (Bluetooth). O dispositivo também pode incluir um scanner para a leitura do código de barras das embalagens."
       },
       {
         title: "Deteção sonora",

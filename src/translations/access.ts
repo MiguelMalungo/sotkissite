@@ -12,16 +12,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "Registo de todos os depósitos",
-        description: "O sistema regista cada utilização, recolhendo informação relevante com cada depósito. Estes registos são transmitidos de forma segura, utilizando a rede GSM, para a plataforma de gestão centralizada."
+        title: "Registo de deposições",
+        description: "O sistema regista cada utilização, recolhendo informação relevante com cada deposição. Estes registos são transmitidos de forma segura, utilizando a rede GSM, para a plataforma de gestão centralizada."
       },
       {
         title: "Compatibilidade com sistemas existentes",
-        description: "O módulo de acesso Sotkis adapta-se a diferentes tipos de contentores, garantindo a sua integração em diversos contextos de deposição de resíduos."
+        description: "O módulo de acesso SOTKIS adapta-se a diferentes tipos de contentores, garantindo a sua integração em diversos contextos de deposição de resíduos."
       },
       {
         title: "Tecnologias de acesso",
-        description: "Os controlos de acesso podem ser ativados de forma eficiente por meio da aproximação do cartão ou tag ou por Bluetooth através da aplicação dedicada ao cidadão, garantindo praticidade e segurança na utilização."
+        description: "Os controlos de acesso podem ser ativados de forma eficiente por meio da aproximação de Smart Tag (RFID), Smart Card (RFID) ou Smartphone (Bluetooth), através da aplicação dedicada ao cidadão, garantindo praticidade e segurança na utilização."
       }
     ],
     compatibility: {
@@ -29,7 +29,7 @@ export const accessTranslations = {
     },
     technical: {
       title: "Características técnicas",
-      text: "O SOTKIS Access integra uma fechadura eletromecânica e um módulo eletrónico que inclui as antenas e baterias. Num horário predefinido, o sistema envia as informações das sessões de depósito para a plataforma web usando uma comunicação GSM.",
+      text: "Num horário predefinido, o sistema envia as informações das aberturas dos controlos de acesso para a plataforma web usando uma comunicação GSM.",
       lock: {
         title: "Fechadura eletromecânica",
         description: "Bloqueia a tampa do marco de deposição e, assim, restringe o acesso ao contentor de resíduos."

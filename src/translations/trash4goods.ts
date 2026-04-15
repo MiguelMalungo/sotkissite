@@ -8,7 +8,8 @@ export const trash4goodsTranslations = {
         intro: {
             title: "App Trash4Goods",
             text1: "Para complementar a gestão municipal de resíduos, o Sotkis integra-se com a Trash4Goods (T4G), uma aplicação móvel desenvolvida especificamente para os cidadãos. A Trash4Goods é uma solução digital que utiliza recompensas e gamificação para incentivar a reciclagem.",
-            text2: "A app permite que qualquer munícipe participe ativamente no processo de deposição seletiva, aceda a informação sobre os pontos de recolha e acompanhe o seu desempenho ambiental."
+            text2: "A app permite que qualquer munícipe participe ativamente no processo de deposição seletiva, aceda a informação sobre os pontos de recolha e acompanhe o seu desempenho ambiental.",
+            text3: "Esta solução garante aos municípios uma ferramenta moderna e eficaz para envolver os cidadãos, promovendo comportamentos mais sustentáveis e contribuindo para o aumento das taxas de reciclagem."
         },
         howItWorks: {
             title: "Como funciona?"

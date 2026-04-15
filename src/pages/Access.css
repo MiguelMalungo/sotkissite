@@ -291,7 +291,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: #FDE363;
+  background-color: #94C11F;
   border-radius: 50%;
   transition: all 0.3s ease;
   color: #000000;
@@ -890,9 +890,31 @@
 
 /* Constrain step 2 image height */
 .access__how-step:nth-child(2) .access__how-step-image img {
-  max-height: 387px;
+  height: 220px;
   width: auto;
   max-width: 100%;
+  object-fit: contain;
+}
+
+/* Step 3 double images — same height as step 2 (tambor) */
+.access__how-sequence-steps--tambor .access__how-step:nth-child(3) .access__how-step-image--double img {
+  height: 220px;
+  width: auto;
+  max-width: 48%;
+  object-fit: contain;
+}
+
+/* Step 2 image — 20% larger for alçapão */
+.access__how-sequence-steps:not(.access__how-sequence-steps--tambor) .access__how-step:nth-child(2) .access__how-step-image img {
+  height: 264px;
+}
+
+/* Step 3 double images — 20% smaller than step 2 (alçapão) */
+.access__how-sequence-steps:not(.access__how-sequence-steps--tambor) .access__how-step:nth-child(3) .access__how-step-image--double img {
+  max-height: 179px;
+  width: auto;
+  max-width: 48%;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {

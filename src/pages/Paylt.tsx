@@ -85,7 +85,7 @@ export const Paylt: React.FC = () => {
             </AnimateOnScroll>
             {t.intro.text2 && (
               <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-                <h2>{t.intro.text2}</h2>
+                <p>{t.intro.text2}</p>
               </AnimateOnScroll>
             )}
             <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
@@ -171,16 +171,17 @@ export const Paylt: React.FC = () => {
       {/* Componentes da Solução Section */}
       <section className="paylt__componentes-section">
         <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__section-title">{tAny.componentesTitle}</h2>
-          </AnimateOnScroll>
+          {tAny.componentesTitle && (
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="paylt__section-title">{tAny.componentesTitle}</h2>
+            </AnimateOnScroll>
+          )}
         </div>
 
-        {/* Software Carousel */}
+        {/* Benefits Carousel */}
         <FeatureCarousel
-          title={tAny.software.title}
-          subtitle={tAny.software.subtitle}
-          features={softwareFeatures}
+          title={tAny.benefits.title}
+          features={benefitsFeatures}
           imagePosition="right"
           backgroundColor="#F4FBFC"
           variant="full-background"
@@ -196,10 +197,11 @@ export const Paylt: React.FC = () => {
           variant="full-background"
         />
 
-        {/* Benefits Carousel */}
+        {/* Software Carousel */}
         <FeatureCarousel
-          title={tAny.benefits.title}
-          features={benefitsFeatures}
+          title={tAny.software.title}
+          subtitle={tAny.software.subtitle}
+          features={softwareFeatures}
           imagePosition="right"
           backgroundColor="#F4FBFC"
           variant="full-background"

@@ -62,9 +62,14 @@ export const Trash4Goods: React.FC = () => {
                         <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
                             <p>{t.intro.text1}</p>
                         </AnimateOnScroll>
-                        {'text2' in t.intro && (
+                        {'text2' in t.intro && t.intro.text2 && (
                           <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
                               <p>{t.intro.text2}</p>
+                          </AnimateOnScroll>
+                        )}
+                        {'text3' in t.intro && t.intro.text3 && (
+                          <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
+                              <p>{t.intro.text3}</p>
                           </AnimateOnScroll>
                         )}
                     </div>

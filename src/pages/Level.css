@@ -108,7 +108,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: #FDE363;
+  background-color: #94C11F;
   border-radius: 50%;
   transition: all 0.3s ease;
   color: #000000;
@@ -264,11 +264,6 @@
 }
 
 .level__sensor-specs--left {
-  background-color: #FDE363;
-  border-radius: 1.5rem;
-  padding: var(--spacing-xl);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  text-align: center;
   justify-content: center;
 }
 
@@ -278,6 +273,15 @@
   text-align: center;
   list-style: none;
   padding-left: 0;
+  margin-left: 0;
+  display: block;
+  width: 100%;
+}
+
+.level__sensor-specs--left li {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
 }
 
 .level__sensor-specs h4 {

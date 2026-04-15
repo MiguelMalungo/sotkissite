@@ -6,7 +6,8 @@ export const levelTranslations = {
     },
     intro: {
       title: "SOTKIS LEVEL",
-      description: "SOTKIS LEVEL\nA gestão do nível de enchimento SOTKIS utiliza um sensor para fornecer informações sobre o nível de resíduos nos contentores. Cada sensor inteligente é instalado no interior do contentor, protegido contra danos, garantindo elevada resistência e durabilidade operacional. O sistema envia informações para a plataforma web e permite assim alocar recursos de forma estratégica, eliminando deslocações desnecessárias e otimizando rotas, assegurando uma gestão económica e sustentável."
+      description: "A gestão do nível de enchimento SOTKIS utiliza um sensor para fornecer informações sobre o nível de resíduos nos contentores. Cada sensor inteligente é instalado no interior do contentor, protegido contra danos, garantindo elevada resistência e durabilidade operacional.",
+      description2: "O sistema envia informações para a plataforma web e permite assim alocar recursos de forma estratégica, eliminando deslocações desnecessárias e otimizando rotas, assegurando uma gestão económica e sustentável."
     },
     sensor: {
       title: "Características técnicas",

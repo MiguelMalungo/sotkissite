@@ -99,14 +99,14 @@
 
 /* Active pill - Yellow background */
 .feature-carousel__feature-pill--active {
-  background-color: #FDE363;
-  border-color: #FDE363;
+  background-color: #94C11F;
+  border-color: #94C11F;
   color: var(--color-primary-dark);
   box-shadow: 0 4px 16px rgba(253, 227, 99, 0.4);
 }
 
 .feature-carousel__feature-pill--active:hover {
-  background-color: #FDE363;
+  background-color: #94C11F;
   transform: none;
 }
 

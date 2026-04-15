@@ -81,7 +81,7 @@
 }
 
 .header__enquire-btn {
-  background: #FDE363;
+  background: #94C11F;
   color: #000;
   border: none;
   border-radius: 28px;
@@ -383,12 +383,12 @@
 }
 
 .header__nav-dropdown-link--active {
-  background-color: #FDE363;
+  background-color: #94C11F;
   font-weight: 500;
 }
 
 .header__nav-dropdown-link--active:hover {
-  background-color: #FDE363;
+  background-color: #94C11F;
 }
 
 /* Hide mobile language toggle on desktop */

@@ -2,7 +2,7 @@ export const platformTranslations = {
   pt: {
     intro: {
       title: "Plataforma Digital SOTKIS",
-      text1: "A plataforma SOTKIS, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
+      text1: "Através de um portal online e de uma aplicação móvel, o SOTKIS permite monitorizar e gerir, de forma integrada, os dados associados à gestão de resíduos, desde a deposição até à recolha.",
       text2: ""
     },
     features: {
@@ -33,7 +33,7 @@ export const platformTranslations = {
       ]
     },
     access: {
-      text: "SOTKIS Software\nAcesso através de https://sotkis.com/login ou através da app Sotkis.",
+      text: "SOTKIS SOFTWARE\nAceda ao software Sotkis através da app ou do site: https://sotkis.com/login",
       buttonText: "Play Video"
     },
     heroTagline: "Uma solução para todo o tipo de contentores",

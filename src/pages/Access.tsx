@@ -231,7 +231,7 @@ export const Access: React.FC = () => {
               <div className="access__how-sequence-text">
                 <p>{t.howItWorks.tamborDesc}</p>
               </div>
-              <div className="access__how-sequence-steps">
+              <div className="access__how-sequence-steps access__how-sequence-steps--tambor">
                 <div className="access__how-step">
                   <div className="access__how-step-top">
                     <div className="access__how-step-number">1</div>

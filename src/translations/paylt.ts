@@ -2,12 +2,12 @@ export const payltTranslations = {
   pt: {
     hero: {
       title: "P(L)AYT",
-      subtitle: "Todas as soluções SOTKIS num único ecossistema."
+      subtitle: ""
     },
     intro: {
-      title: "P(L)AYT",
-      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva, desenvolvida para ser universal e modular, adaptando-se a diferentes realidades municipais, fabricantes de contentores e contextos de implementação. Esta solução combina software e hardware num ecossistema universal, monitorizando cada etapa do processo de deposição e recolha, possibilitando a análise dos hábitos envolvidos.",
-      text2: "",
+      title: "Sotkis P(L)AYT",
+      text1: "O Sotkis P(L)AYT (Pay Less As You Throw) é uma solução inovadora e disruptiva, desenvolvida para ser universal e modular, adaptando-se a diferentes realidades municipais, fabricantes de contentores e contextos de implementação.",
+      text2: "Esta solução combina software e hardware num ecossistema universal, monitorizando cada etapa do processo de deposição e recolha, possibilitando a análise dos hábitos envolvidos.",
       text3: "É possível criar incentivos positivos através de gamificação e recompensas, promovendo mudanças reais nos comportamentos dos cidadãos, otimizar políticas públicas e fortalecer a colaboração entre utilizadores, municípios e empresas.",
       text4: "",
       text5: ""
@@ -65,7 +65,7 @@ export const payltTranslations = {
     contentores: {
       title: "Uma solução para todo o tipo de contentores!"
     },
-    componentesTitle: "Componentes da Solução",
+    componentesTitle: "",
     software: {
       title: "Software Inteligente que gera impacto",
       subtitle: "Uma infraestrutura dinâmica e escalável que integra:",
