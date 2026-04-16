@@ -169,6 +169,7 @@ export const Home: React.FC = () => {
       <section className="home__scheme-section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__scheme-title">P(L)AYT</h2>
             <div className="home__scheme">
               <div className="home__scheme-items">
                 <div className="home__scheme-pill">Hardware</div>

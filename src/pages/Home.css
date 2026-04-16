@@ -896,6 +896,16 @@
   padding: var(--spacing-4xl) 0;
 }
 
+.home__scheme-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-2xl);
+  letter-spacing: 0.05em;
+}
+
 .home__scheme {
   display: flex;
   align-items: center;
