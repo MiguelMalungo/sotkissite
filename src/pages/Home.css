@@ -1146,13 +1146,12 @@
 }
 
 .home__card-description {
-  font-size: calc(var(--font-size-base) + 2px);
+  font-size: calc(var(--font-size-base) - 2px);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.3;
   margin: 0;
   text-align: left;
   font-weight: 400;
-  /* Regular font weight */
 }
 
 .home__card-button-wrapper {
