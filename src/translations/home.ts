@@ -27,7 +27,7 @@ export const homeTranslations = {
       button: "Explorar o DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "Todas as soluções SOTKIS num único ecossistema.",
       button: "Explorar o P(L)ayt"
     },
@@ -67,7 +67,7 @@ export const homeTranslations = {
       button: "Explore DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
       button: "Explore P(L)ayt"
     },
@@ -107,7 +107,7 @@ export const homeTranslations = {
       button: "Explorar DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "Todas las soluciones SOTKIS en un único ecosistema.",
       button: "Explorar P(L)ayt"
     },
@@ -147,7 +147,7 @@ export const homeTranslations = {
       button: "Explorer DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "Toutes les solutions SOTKIS dans un seul écosystème.",
       button: "Explorer P(L)ayt"
     },
@@ -187,7 +187,7 @@ export const homeTranslations = {
       button: "Explore DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "All SOTKIS solutions in a single ecosystem.",
       button: "Explore P(L)ayt"
     },
@@ -227,7 +227,7 @@ export const homeTranslations = {
       button: "Explore DRS"
     },
     paylt: {
-      title: "P(L)ayt",
+      title: "P(L)AYT",
       description: "All SOTKIS solutions in a single ecosystem.",
       button: "Explore P(L)ayt"
     },
