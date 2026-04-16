@@ -223,6 +223,10 @@
     max-width: 100%;
     width: 100%;
   }
+
+  .level__intro-wrapper--right {
+    display: none;
+  }
 }
 
 /* Sensor Section */
