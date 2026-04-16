@@ -208,9 +208,15 @@ export const Access: React.FC = () => {
               <h2>{t.restrictor.title}</h2>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p>
-                {t.restrictor.text}
-              </p>
+              {language === 'pt' ? (
+                <p>
+                  O SOTKIS Access, por meio da instalação de um restritor volumétrico no marco de deposição, <strong>viabiliza a implementação do princípio PAYT.</strong> O &quot;pay-as-you-throw&quot; é um sistema em que os residentes pagam pelos resíduos de acordo com a quantidade que produzem, sendo considerado um sistema de pagamento mais justo.
+                  <br /><br />
+                  Dependendo do marco de deposição ou do contentor existem diferentes restritores de volume disponíveis.
+                </p>
+              ) : (
+                <p>{t.restrictor.text}</p>
+              )}
             </AnimateOnScroll>
             <AnimateOnScroll animation="scaleUp" delay={200} duration={0.9}>
               <img src={restrictor0042Image} alt="Restritor de volume" className="access__restrictor-image" />
