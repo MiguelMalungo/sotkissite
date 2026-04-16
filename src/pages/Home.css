@@ -497,7 +497,8 @@
 
 .home__rise-video-overlay {
   display: block;
-  width: 100%;
+  width: 103%;
+  margin-left: -1.5%;
   height: auto;
   mix-blend-mode: multiply;
   margin-bottom: -5%;
