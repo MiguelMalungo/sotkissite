@@ -209,13 +209,13 @@
 }
 
 .level__intro-wrapper--left {
-  flex: 1.3;
-  max-width: calc(65% - 13px);
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
 }
 
 .level__intro-wrapper--right {
-  flex: 0.7;
-  max-width: calc(35% - 7px);
+  display: none;
 }
 
 /* Mobile: both wrappers full width */
