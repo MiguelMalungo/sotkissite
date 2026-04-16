@@ -52,6 +52,7 @@
 .drs__content {
   background-color: #F1FFF7;
   padding-top: 0;
+  padding-bottom: 2rem;
 }
 
 .drs__text-content {
@@ -213,13 +214,13 @@
 /* Cards Section */
 .drs__cards {
   background-color: #F1FFF7;
-  padding: 3.2rem 0 3.2rem 0;
+  padding: 1rem 0 3.2rem 0;
 }
 
 .drs__cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 1.5rem;
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
