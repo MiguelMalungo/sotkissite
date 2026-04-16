@@ -219,7 +219,7 @@
 .drs__cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-2xl);
+  gap: 1.5rem;
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
@@ -359,6 +359,7 @@
   color: var(--color-primary-dark);
   margin-bottom: var(--spacing-3xl);
   font-weight: var(--font-weight-bold);
+  text-align: center;
 }
 
 .drs__how-it-works-grid {
