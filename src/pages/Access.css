@@ -904,6 +904,22 @@
   object-fit: contain;
 }
 
+/* Step 2 double images height (tambor) */
+.access__how-sequence-steps--tambor .access__how-step:nth-child(2) .access__how-step-image--double img {
+  height: 220px;
+  width: auto;
+  max-width: 48%;
+  object-fit: contain;
+}
+
+/* Step 3 single image — reduced size (tambor) */
+.access__how-sequence-steps--tambor .access__how-step:nth-child(3) .access__how-step-image:not(.access__how-step-image--double) img {
+  height: 176px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 /* Step 2 image — 20% larger for alçapão */
 .access__how-sequence-steps:not(.access__how-sequence-steps--tambor) .access__how-step:nth-child(2) .access__how-step-image img {
   height: 264px;
