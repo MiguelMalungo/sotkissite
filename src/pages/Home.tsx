@@ -5,7 +5,7 @@ import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { WaveCanvas } from '../components/ui/WaveCanvas';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeTranslations } from '../translations/home';
-const videoplatVideo = new URL('../assets/videoplat2.mp4', import.meta.url).href;
+const videoplatVideo = new URL('../assets/platfvid.mp4', import.meta.url).href;
 import heroImage1 from '../assets/11.webp';
 import heroImage2 from '../assets/2.webp';
 import heroImage3 from '../assets/3.webp';
@@ -15,7 +15,6 @@ import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods-pic.webp';
 import payltInfoImage from '../assets/playt-rainbow.webp';
-import cidadaoMunicipioImage from '../assets/cidadao_municipio.webp';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
@@ -85,6 +84,7 @@ export const Home: React.FC = () => {
     // Ensure video is ready
     const handleCanPlay = () => {
       if (videoElement) {
+        videoElement.playbackRate = 2;
         videoElement.play().catch(err => {
           console.error('Video play error:', err);
         });
@@ -99,6 +99,7 @@ export const Home: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && videoElement) {
             videoElement.currentTime = 0; // Reset to start
+            videoElement.playbackRate = 2;
             videoElement.play().catch(err => {
               console.error('Video play error:', err);
             });
@@ -485,32 +486,19 @@ export const Home: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            {/* APP CIDADÃO - Contains the inner card */}
+            {/* Rainbow image with overlaid CTA */}
             <AnimateOnScroll animation="fadeIn" delay={300} duration={0.6}>
-              <div className="playt-layers__card playt-layers__card--app">
-                <span className="playt-layers__card-title">APP CIDADÃO</span>
-
-                {/* Inner card - Contains the circle image */}
-                <AnimateOnScroll animation="fadeIn" delay={600} duration={0.6}>
-                  <div className="playt-layers__card playt-layers__card--software">
-                    <div className="playt-layers__circle-image">
-                      <img src={payltInfoImage} alt="Playt ecosystem" />
-                    </div>
-                  </div>
-                </AnimateOnScroll>
+              <div className="playt-layers__image-only">
+                <img src={payltInfoImage} alt="Playt ecosystem" />
+                <div className="playt-layers__overlay-cta">
+                  <Button href="/paylt" variant="primary" size="sm" className="playt-layers__cta-btn">
+                    {t.paylt.button}
+                    <ArrowIcon />
+                  </Button>
+                </div>
               </div>
             </AnimateOnScroll>
           </div>
-          {/* Phone image - always visible on mobile now */}
-          <div className="playt-layers__phone-image">
-            <img src={cidadaoMunicipioImage} alt="Cidadão Município App" />
-          </div>
-          <AnimateOnScroll animation="fadeIn" delay={900} duration={0.6}>
-            <Button href="/paylt" variant="primary" size="sm">
-              {t.paylt.button}
-              <ArrowIcon />
-            </Button>
-          </AnimateOnScroll>
         </div>
       </section>
 
