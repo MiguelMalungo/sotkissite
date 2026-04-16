@@ -253,19 +253,19 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-number">2</div>
                     <div className="access__how-step-arrow"></div>
                   </div>
-                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
-                  <div className="access__how-step-image">
-                    <img src={tambor1Image} alt="Rodar o tambor" />
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Tambor }} />
+                  <div className="access__how-step-image access__how-step-image--double">
+                    <img src={tambor1Image} alt="Tambor fechado" />
+                    <img src={tambor2Image} alt="Resíduos no contentor" />
                   </div>
                 </div>
                 <div className="access__how-step access__how-step--last">
                   <div className="access__how-step-top">
                     <div className="access__how-step-number">3</div>
                   </div>
-                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Tambor }} />
-                  <div className="access__how-step-image access__how-step-image--double">
-                    <img src={tambor1Image} alt="Tambor fechado" />
-                    <img src={tambor2Image} alt="Resíduos no contentor" />
+                  <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
+                  <div className="access__how-step-image">
+                    <img src={tambor1Image} alt="Rodar o tambor" />
                   </div>
                 </div>
               </div>
@@ -284,17 +284,17 @@ export const Access: React.FC = () => {
                 </div>
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">2</div>
-                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
-                  <div className="access__how-slide-image">
-                    <img src={tambor1Image} alt="Rodar o tambor" />
-                  </div>
-                </div>
-                <div className="access__how-slide">
-                  <div className="access__how-slide-number">3</div>
                   <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step3Tambor }} />
                   <div className="access__how-slide-image access__how-slide-image--double">
                     <img src={tambor1Image} alt="Tambor fechado" />
                     <img src={tambor2Image} alt="Resíduos no contentor" />
+                  </div>
+                </div>
+                <div className="access__how-slide">
+                  <div className="access__how-slide-number">3</div>
+                  <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
+                  <div className="access__how-slide-image">
+                    <img src={tambor1Image} alt="Rodar o tambor" />
                   </div>
                 </div>
               </MobileCarousel>
