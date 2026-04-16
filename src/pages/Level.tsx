@@ -118,6 +118,9 @@ export const Level: React.FC = () => {
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="level__sensor-title">{t.sensor.title}</h2>
+            {('description' in t.sensor) && (t.sensor as any).description && (
+              <p className="level__sensor-description">{(t.sensor as any).description}</p>
+            )}
           </AnimateOnScroll>
           <div className="level__sensor-layout">
             <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8} className="level__sensor-specs level__sensor-specs--left">

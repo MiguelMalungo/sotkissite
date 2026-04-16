@@ -168,6 +168,10 @@
   padding-bottom: var(--spacing-4xl);
 }
 
+.level__intro .container {
+  max-width: 780px;
+}
+
 .level__intro-content {
   width: 100%;
   margin: 0;
@@ -234,6 +238,18 @@
   background-color: #ffffff;
   padding-top: var(--spacing-4xl);
   padding-bottom: var(--spacing-4xl);
+}
+
+.level__sensor-section .container {
+  max-width: 780px;
+}
+
+.level__sensor-description {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .level__sensor-title {
