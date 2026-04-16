@@ -893,6 +893,14 @@
   padding: var(--spacing-4xl) 0;
 }
 
+.home__scheme-section .container {
+  max-width: 780px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home__scheme-title {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
@@ -977,7 +985,7 @@
 }
 
 .home__cards-section .container {
-  max-width: calc(84.7% + 20px);
+  max-width: 780px;
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
@@ -988,7 +996,7 @@
   font-size: var(--font-size-4xl);
   color: var(--color-primary-dark);
   font-weight: var(--font-weight-bold);
-  text-align: left;
+  text-align: center;
   margin-bottom: var(--spacing-3xl);
   width: 100%;
   max-width: none;
