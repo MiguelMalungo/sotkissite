@@ -213,7 +213,7 @@
 /* Cards Section */
 .drs__cards {
   background-color: #F1FFF7;
-  padding: 6.4rem 0 3.2rem 0;
+  padding: 3.2rem 0 3.2rem 0;
 }
 
 .drs__cards-grid {
@@ -258,7 +258,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
+}
+
+.drs__card:first-child .drs__card-image img {
+  object-position: left;
 }
 
 .drs__card:hover .drs__card-image img {
