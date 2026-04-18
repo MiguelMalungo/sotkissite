@@ -2,7 +2,7 @@ export const payltTranslations = {
   pt: {
     hero: {
       title: "P(L)AYT",
-      subtitle: ""
+      subtitle: "Soluções para o sistema de pagamento de resíduos PAYT!"
     },
     intro: {
       title: "Sotkis P(L)AYT",
@@ -14,7 +14,7 @@ export const payltTranslations = {
     },
     howItWorks: {
       title: "Como funciona?",
-      description: ""
+      description: "O Sotkis P(L)AYT combina software e hardware num ecossistema universal, compatível com qualquer tipo de contentor e fabricante. A plataforma acompanha todas as etapas do processo de deposição e recolha, permitindo o acompanhamento dos hábitos envolvidos. Consequentemente, é possível criar incentivos positivos e ajustar as políticas públicas de forma eficiente."
     },
     carousel: [
       {
@@ -65,7 +65,7 @@ export const payltTranslations = {
     contentores: {
       title: "Uma solução para todo o tipo de contentores!"
     },
-    componentesTitle: "",
+    componentesTitle: "Componentes da Solução",
     software: {
       title: "Software Inteligente que gera impacto",
       subtitle: "Uma infraestrutura dinâmica e escalável que integra:",

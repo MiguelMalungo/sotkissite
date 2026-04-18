@@ -70,16 +70,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "PAYT Solution",
-        description: "This is the ideal solution for cities that want to introduce a PAYT pricing system! The SOTKIS access module is easily installed in any existing Sotkon underground system and allows the collection and transmission of data for billing based on the volume of waste deposited, and according to local requirements."
+        title: "Deposit Registration",
+        description: "The system records each use, collecting relevant information with each deposit. These records are securely transmitted via the GSM network to the centralised management platform."
       },
       {
-        title: "Data Collection",
-        description: "Thus, the system collects information whenever a user identifies themselves in the system and converts this data into information that is useful for defining municipal policies and increasing overall efficiency in waste management."
+        title: "Compatibility with Existing Systems",
+        description: "The SOTKIS access module adapts to different types of containers, ensuring its integration in diverse waste disposal contexts."
       },
       {
-        title: "Data Transfer",
-        description: "Data transfer is done via GPRS/GSM/Bluetooth and these are centralized and presented on an online portal managed by the municipality or the operating company."
+        title: "Access Technologies",
+        description: "Access controls can be efficiently activated via a Smart Tag (RFID), Smart Card (RFID) or Smartphone (Bluetooth), through the dedicated citizen application, ensuring practicality and security."
       }
     ],
     compatibility: {
@@ -128,16 +128,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "Solución PAYT",
-        description: "¡Esta es la solución ideal para ciudades que deseen introducir un sistema de tarifación PAYT! El módulo de acceso SOTKIS se instala fácilmente en cualquier sistema Sotkon existente y permite la recopilación y transmisión de datos para la facturación basada en el volumen de residuos depositados."
+        title: "Registro de deposiciones",
+        description: "El sistema registra cada uso, recopilando información relevante con cada depósito. Estos registros se transmiten de forma segura a través de la red GSM a la plataforma de gestión centralizada."
       },
       {
-        title: "Recopilación de datos",
-        description: "El sistema recopila información cada vez que un usuario se identifica en el sistema y convierte estos datos en información útil para definir políticas municipales y aumentar la eficiencia general en la gestión de residuos."
+        title: "Compatibilidad con sistemas existentes",
+        description: "El módulo de acceso SOTKIS se adapta a diferentes tipos de contenedores, garantizando su integración en diversos contextos de depósito de residuos."
       },
       {
-        title: "Transferencia de datos",
-        description: "La transferencia de datos se realiza a través de GPRS/GSM/Bluetooth y se centraliza y presenta en un portal en línea gestionado por el municipio o la empresa operadora."
+        title: "Tecnologías de acceso",
+        description: "Los controles de acceso pueden activarse eficientemente mediante Smart Tag (RFID), Smart Card (RFID) o Smartphone (Bluetooth), a través de la aplicación ciudadana dedicada, garantizando practicidad y seguridad."
       }
     ],
     compatibility: {
@@ -186,16 +186,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "Solution PAYT",
-        description: "C'est la solution idéale pour les villes souhaitant introduire un système de tarification PAYT ! Le module d'accès SOTKIS s'installe facilement dans tout système Sotkon existant et permet la collecte et la transmission de données pour la facturation basée sur le volume de déchets déposés."
+        title: "Enregistrement des dépôts",
+        description: "Le système enregistre chaque utilisation, collectant les informations pertinentes à chaque dépôt. Ces enregistrements sont transmis de manière sécurisée via le réseau GSM vers la plateforme de gestion centralisée."
       },
       {
-        title: "Collecte de données",
-        description: "Le système collecte des informations chaque fois qu'un utilisateur s'identifie et convertit ces données en informations utiles pour définir les politiques municipales et augmenter l'efficacité globale de la gestion des déchets."
+        title: "Compatibilité avec les systèmes existants",
+        description: "Le module d'accès SOTKIS s'adapte à différents types de conteneurs, garantissant son intégration dans divers contextes de dépôt de déchets."
       },
       {
-        title: "Transfert de données",
-        description: "Le transfert de données s'effectue via GPRS/GSM/Bluetooth et ces données sont centralisées et présentées sur un portail en ligne géré par la municipalité ou la société opératrice."
+        title: "Technologies d'accès",
+        description: "Les contrôles d'accès peuvent être activés efficacement via une Smart Tag (RFID), Smart Card (RFID) ou Smartphone (Bluetooth), à travers l'application citoyenne dédiée, garantissant praticité et sécurité."
       }
     ],
     compatibility: {
@@ -244,16 +244,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "PAYT Solution",
-        description: "This is the ideal solution for cities that want to introduce a PAYT pricing system! The SOTKIS access module is easily installed in any existing Sotkon underground system and allows the collection and transmission of data for billing based on the volume of waste deposited."
+        title: "Deposit Registration",
+        description: "The system records each use, collecting relevant information with each deposit. These records are securely transmitted via the GSM network to the centralised management platform."
       },
       {
-        title: "Data Collection",
-        description: "The system collects information whenever a user identifies themselves in the system and converts this data into information that is useful for defining municipal policies and increasing overall efficiency in waste management."
+        title: "Compatibility with Existing Systems",
+        description: "The SOTKIS access module adapts to different types of containers, ensuring its integration in diverse waste disposal contexts."
       },
       {
-        title: "Data Transfer",
-        description: "Data transfer is done via GPRS/GSM/Bluetooth and these are centralized and presented on an online portal managed by the municipality or the operating company."
+        title: "Access Technologies",
+        description: "Access controls can be efficiently activated via a Smart Tag (RFID), Smart Card (RFID) or Smartphone (Bluetooth), through the dedicated citizen application."
       }
     ],
     compatibility: {
@@ -296,16 +296,16 @@ export const accessTranslations = {
     },
     carousel: [
       {
-        title: "PAYT Solution",
-        description: "This is the ideal solution for cities that want to introduce a PAYT pricing system!"
+        title: "Deposit Registration",
+        description: "The system records each use, collecting relevant information with each deposit. These records are securely transmitted via the GSM network to the centralised management platform."
       },
       {
-        title: "Data Collection",
-        description: "The system collects information whenever a user identifies themselves in the system."
+        title: "Compatibility with Existing Systems",
+        description: "The SOTKIS access module adapts to different types of containers, ensuring its integration in diverse waste disposal contexts."
       },
       {
-        title: "Data Transfer",
-        description: "Data transfer is done via GPRS/GSM/Bluetooth and these are centralized on an online portal."
+        title: "Access Technologies",
+        description: "Access controls can be efficiently activated via a Smart Tag (RFID), Smart Card (RFID) or Smartphone (Bluetooth), through the dedicated citizen application."
       }
     ],
     compatibility: {

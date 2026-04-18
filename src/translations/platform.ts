@@ -3,7 +3,7 @@ export const platformTranslations = {
     intro: {
       title: "Plataforma Digital SOTKIS",
       text1: "Através de um portal online e de uma aplicação móvel, o SOTKIS permite monitorizar e gerir, de forma integrada, os dados associados à gestão de resíduos, desde a deposição até à recolha.",
-      text2: ""
+      text2: "Esta plataforma permite gerir a sua frota de contentores online, onde, através dos vários módulos de gestão de resíduos, é possível otimizar a eficiência dos recursos alocados, aumentar a rentabilidade operacional, melhorar as taxas de reciclagem e a qualidade dos resíduos."
     },
     features: {
       intro: "Através dos módulos existentes na plataforma SOTKIS a entidade responsável pela operação pode aceder de forma simples a várias funcionalidades:",
@@ -322,7 +322,28 @@ export const platformTranslations = {
       { title: "Sotcare", description: "Comprehensive Maintenance Management" },
       { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
       { title: "Routes", description: "Optimized Route Planning System" }
-    ]
+    ],
+    funcionalidades: {
+      title: "Platform features",
+      items: [
+        {
+          title: "Operation control dashboards",
+          description: "The interface provides real-time dashboards of key indicators, such as recycling rates, accumulated savings and environmental goals. The system analyses equipment usage, with user identification, schedules and deposit frequency, also incorporating automatic alerts and recommendations."
+        },
+        {
+          title: "Route and fill level management",
+          description: "These features allow tracking container fill levels and planning collection based on real data. The platform offers maps, alerts, histories and creates adaptive routes, optimising operations, reducing costs and avoiding unnecessary collections."
+        },
+        {
+          title: "SOTCARE maintenance management",
+          description: "The Sotcare module enables efficient management of the entire container fleet, integrating IoT device alerts and failure prediction algorithms based on historical data. Maintenance history can be consulted, interventions requested and needs anticipated, reducing equipment downtime and improving service quality for citizens."
+        },
+        {
+          title: "Recycling Gamification",
+          description: "Sotkis software, which centralises the intelligence of the P(L)AYT system, tracks selective collection performance through metrics of citizen participation, quality of deposited waste and adherence to incentive programmes. This structured information supports awareness campaigns and environmental goals."
+        }
+      ]
+    }
   },
   cr: {
     intro: {
@@ -368,6 +389,27 @@ export const platformTranslations = {
       { title: "Sotcare", description: "Comprehensive Maintenance Management" },
       { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
       { title: "Routes", description: "Optimized Route Planning System" }
-    ]
+    ],
+    funcionalidades: {
+      title: "Platform features",
+      items: [
+        {
+          title: "Operation control dashboards",
+          description: "The interface provides real-time dashboards of key indicators, such as recycling rates, accumulated savings and environmental goals. The system analyses equipment usage, with user identification, schedules and deposit frequency, also incorporating automatic alerts and recommendations."
+        },
+        {
+          title: "Route and fill level management",
+          description: "These features allow tracking container fill levels and planning collection based on real data. The platform offers maps, alerts, histories and creates adaptive routes, optimising operations, reducing costs and avoiding unnecessary collections."
+        },
+        {
+          title: "SOTCARE maintenance management",
+          description: "The Sotcare module enables efficient management of the entire container fleet, integrating IoT device alerts and failure prediction algorithms based on historical data. Maintenance history can be consulted, interventions requested and needs anticipated, reducing equipment downtime and improving service quality for citizens."
+        },
+        {
+          title: "Recycling Gamification",
+          description: "Sotkis software, which centralises the intelligence of the P(L)AYT system, tracks selective collection performance through metrics of citizen participation, quality of deposited waste and adherence to incentive programmes. This structured information supports awareness campaigns and environmental goals."
+        }
+      ]
+    }
   }
 };
