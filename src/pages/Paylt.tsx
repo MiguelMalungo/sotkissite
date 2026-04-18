@@ -8,10 +8,10 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
 
-import softDashImg from '../assets/PLATAFORMA-Dashboards.webp';
-import softAppImg from '../assets/Sotkis-APP-DSC08537-new.webp';
-import softMarketImg from '../assets/T4G-marketplace-pt.webp';
-import softPaytImg from '../assets/fatura.webp';
+import softDashImg from '../assets/data.webp';
+import softAppImg from '../assets/paylt_software_mobile_app.png';
+import softMarketImg from '../assets/paylt_software_marketplace.png';
+import techPolicyImg from '../assets/paylt_tech_policies.png';
 import hardLevelImg from '../assets/ModuloSotkisLevel.webp';
 import hardAccessImg from '../assets/ModuloSotkisAccess.webp';
 import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
@@ -33,7 +33,7 @@ export const Paylt: React.FC = () => {
   const tAny = t as any;
 
   // Software Carousel Features
-  const softwareImages = [softDashImg, softAppImg, softMarketImg, softPaytImg];
+  const softwareImages = [softDashImg, softAppImg, softMarketImg, techPolicyImg];
   const softwareFeatures = tAny.software.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
