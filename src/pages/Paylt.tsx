@@ -13,6 +13,8 @@ import softAppImg from '../assets/paylt_software_mobile_app.png';
 import softMarketImg from '../assets/paylt_software_marketplace.png';
 import hardIotImg from '../assets/newAccess.webp';
 import hardAccessImg from '../assets/paylt_hardware_access.png';
+import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
+import hardDrsImg from '../assets/ModuloSotkisDRS.webp';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
 import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
@@ -38,7 +40,7 @@ export const Paylt: React.FC = () => {
   }));
 
   // Hardware Carousel Features
-  const hardwareImages = [hardIotImg, hardAccessImg, hardIotImg, hardAccessImg];
+  const hardwareImages = [hardIotImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
   const hardwareFeatures = tAny.hardware.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,

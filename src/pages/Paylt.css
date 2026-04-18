@@ -915,20 +915,20 @@
 
 /* Componentes carousels — dark base + toned imagery */
 .paylt__componentes-section .feature-carousel--full-background {
-  background-color: #0d1a0d;
+  background-color: #111d11;
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image {
   opacity: 0;
-  filter: saturate(0.75);
+  filter: saturate(0.8);
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image--active {
-  opacity: 0.45;
+  opacity: 0.65;
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__overlay {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.32);
   background-image: none;
   opacity: 1;
 }
