@@ -4,6 +4,7 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
+import { CTASection } from '../components/common/CTASection';
 import accessHeroImage from '../assets/0058-frame.webp';
 import access1Image from '../assets/access1.webp';
 import accessSuperficieImage from '../assets/AccessSuperficie.webp';
@@ -371,6 +372,8 @@ export const Access: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <CTASection />
 
       {/* Video Modal */}
       {isVideoModalOpen && (

@@ -14,6 +14,7 @@ import t4gMap from '../assets/T4G-map-pt.webp';
 import t4gRecycling from '../assets/T4G-recycling-location-pt.webp';
 import t4gDrs from '../assets/T4G-drs-recycle-success-pt.webp';
 import t4gMarketplace from '../assets/T4G-marketplace-pt.webp';
+import { CTASection } from '../components/common/CTASection';
 import './Trash4Goods.css';
 
 export const Trash4Goods: React.FC = () => {
@@ -198,6 +199,18 @@ export const Trash4Goods: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {('closing' in t) && t.closing && (
+                <section className="trash4goods__closing section">
+                    <div className="container">
+                        <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                            <p className="trash4goods__closing-text">{(t as any).closing}</p>
+                        </AnimateOnScroll>
+                    </div>
+                </section>
+            )}
+
+            <CTASection />
 
             {/* Video Modal */}
             {isVideoModalOpen && (

@@ -7,7 +7,6 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
-import playtRainbow from '../assets/playt-rainbow.webp';
 
 import softDashImg from '../assets/data.webp';
 import softAppImg from '../assets/paylt_software_mobile_app.png';
@@ -15,6 +14,7 @@ import softMarketImg from '../assets/paylt_software_marketplace.png';
 import hardIotImg from '../assets/newAccess.webp';
 import hardAccessImg from '../assets/paylt_hardware_access.png';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
+import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -68,6 +68,34 @@ export const Paylt: React.FC = () => {
           <div className="paylt__hero-text-content">
             <img src={logoPlayt} alt="P(L)AYT Logo" className="paylt__hero-logo" />
             <p className="paylt__hero-subtitle">{t.hero.subtitle}</p>
+
+            {/* Ecosystem scheme */}
+            <div className="paylt__scheme" aria-label="SOTKIS ecosystem">
+              <h2 className="paylt__scheme-heading">
+                Todas as soluções <span className="paylt__scheme-heading-pill">SOTKIS</span> num único ecossistema
+              </h2>
+              <div className="paylt__scheme-flow">
+                <div className="paylt__scheme-arrow" aria-hidden="true">
+                  <svg width="48" height="2" viewBox="0 0 48 2" fill="none">
+                    <line x1="0" y1="1" x2="48" y2="1" stroke="#94C11F" strokeWidth="2" />
+                  </svg>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
+                  </svg>
+                </div>
+                <div className="paylt__scheme-items">
+                  <div className="paylt__scheme-pill">Hardware</div>
+                  <span className="paylt__scheme-plus" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+                  </span>
+                  <div className="paylt__scheme-pill">Software</div>
+                  <span className="paylt__scheme-plus" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+                  </span>
+                  <div className="paylt__scheme-pill paylt__scheme-pill--dark">App Cidadão</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -113,71 +141,8 @@ export const Paylt: React.FC = () => {
         </div>
       </section>
 
-      {/* Billing / Points Scheme Section */}
-      <section className="paylt__scheme-section section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <div className="paylt__scheme-grid">
-              {/* Column 1 - Billing */}
-              <div className="paylt__scheme-card paylt__scheme-card--billing">
-                <div className="paylt__scheme-card-header">
-                  <h3>{t.scheme.billingTitle}</h3>
-                </div>
-                <div className="paylt__scheme-card-highlight">
-                  <span>{t.scheme.billingHighlight}</span>
-                </div>
-                <div className="paylt__scheme-card-detail">
-                  <p>{t.scheme.billingDetail}</p>
-                </div>
-              </div>
-
-              {/* Column 2 - Points (Packaging) */}
-              <div className="paylt__scheme-card paylt__scheme-card--points">
-                <div className="paylt__scheme-card-header">
-                  <h3>{t.scheme.pointsTitle}</h3>
-                </div>
-                <div className="paylt__scheme-card-highlight">
-                  <span>{t.scheme.pointsHighlight}</span>
-                </div>
-                <div className="paylt__scheme-card-detail">
-                  <p>{t.scheme.pointsDetail1}</p>
-                  <p>{t.scheme.pointsDetail2}</p>
-                </div>
-              </div>
-
-              {/* Column 3 - Points (Opening) */}
-              <div className="paylt__scheme-card paylt__scheme-card--points-open">
-                <div className="paylt__scheme-card-highlight">
-                  <span>{t.scheme.openingHighlight}</span>
-                </div>
-                <div className="paylt__scheme-card-detail">
-                  <p>{t.scheme.openingDetail1}</p>
-                  <p>{t.scheme.openingDetail2}</p>
-                </div>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll animation="fadeBlur" delay={300} duration={1}>
-            <img
-              src={playtRainbow}
-              alt="PAYT Scheme"
-              className="paylt__rainbow-image"
-            />
-          </AnimateOnScroll>
-        </div>
-      </section>
-
       {/* Componentes da Solução Section */}
       <section className="paylt__componentes-section">
-        <div className="container">
-          {tAny.componentesTitle && (
-            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-              <h2 className="paylt__section-title">{tAny.componentesTitle}</h2>
-            </AnimateOnScroll>
-          )}
-        </div>
-
         {/* Benefits Carousel */}
         <FeatureCarousel
           title={tAny.benefits.title}
@@ -207,6 +172,8 @@ export const Paylt: React.FC = () => {
           variant="full-background"
         />
       </section>
+
+      <CTASection />
 
       {/* Video Modal */}
       {isVideoModalOpen && (

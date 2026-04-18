@@ -14,6 +14,7 @@ import depositarIcon from '../assets/icon-2.webp';
 import pontuarIcon from '../assets/prize.webp';
 import trocarIcon from '../assets/DRS.webp';
 import drsSc from '../assets/drsSc.png';
+import { CTASection } from '../components/common/CTASection';
 import './DRS.css';
 
 export const DRS: React.FC = () => {
@@ -191,6 +192,8 @@ export const DRS: React.FC = () => {
           </AnimateOnScroll>
         </div>
       </section>
+
+      <CTASection />
 
       {/* Video Modal */}
       {isVideoModalOpen && (

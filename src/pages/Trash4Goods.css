@@ -674,3 +674,43 @@
         visibility: visible !important;
     }
 }
+
+/* Closing Section */
+.trash4goods__closing {
+    background-color: #F1FFF7;
+    padding: var(--spacing-4xl) 0;
+}
+
+.trash4goods__closing-text {
+    max-width: 820px;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.75;
+    color: var(--color-primary-dark, #1a1a1a);
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+    border-left: 4px solid #94C11F;
+    border-right: 4px solid #94C11F;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(148, 193, 31, 0.06) 0%, rgba(212, 232, 178, 0.1) 100%);
+}
+
+@media (max-width: 768px) {
+    .trash4goods__closing {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .trash4goods__closing-text {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-xl) var(--spacing-lg);
+        border-left-width: 3px;
+        border-right-width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trash4goods__closing {
+        padding: var(--spacing-2xl) 0;
+    }
+}

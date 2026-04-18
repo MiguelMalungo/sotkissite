@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
-import { Tabs } from '../components/ui/Tabs';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
@@ -22,6 +21,7 @@ import moduloDRS from '../assets/ModuloSotkisDRS.webp';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
+import { CTASection } from '../components/common/CTASection';
 import './Platform.css';
 import './Home.css';
 
@@ -33,6 +33,25 @@ export const Platform: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [lightbox, setLightbox] = useState<{
+    items: { image: string; title: string; description: string }[];
+    index: number;
+  } | null>(null);
+
+  const closeLightbox = () => setLightbox(null);
+  const prevLightbox = () => setLightbox(lb => lb ? { ...lb, index: (lb.index - 1 + lb.items.length) % lb.items.length } : lb);
+  const nextLightbox = () => setLightbox(lb => lb ? { ...lb, index: (lb.index + 1) % lb.items.length } : lb);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') prevLightbox();
+      else if (e.key === 'ArrowRight') nextLightbox();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightbox]);
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const appVideoRef = React.useRef<HTMLVideoElement>(null);
 
@@ -249,13 +268,30 @@ export const Platform: React.FC = () => {
                 <div className="platform__funcionalidades-images-row">
                   {funcImages.map((img, index) => (
                     <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 100 + 200} duration={0.8}>
-                      <div className="platform__funcionalidades-image-card">
+                      <button
+                        type="button"
+                        className="platform__funcionalidades-image-card platform__funcionalidades-image-card--button"
+                        onClick={() => setLightbox({
+                          items: funcData.items.map((it: { title: string; description: string }, i: number) => ({
+                            image: funcImages[i],
+                            title: it.title,
+                            description: it.description,
+                          })),
+                          index,
+                        })}
+                        aria-label={`${funcData.items[index]?.title || 'Feature'} — enlarge`}
+                      >
                         <img
                           src={img}
                           alt={funcData.items[index]?.title || ''}
                           className="platform__funcionalidades-image"
                         />
-                      </div>
+                        <span className="platform__funcionalidades-image-zoom" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </button>
                     </AnimateOnScroll>
                   ))}
                 </div>
@@ -271,13 +307,30 @@ export const Platform: React.FC = () => {
                       </div>
                       <h3 className="platform__funcionalidades-col-title">{item.title}</h3>
                       <p className="platform__funcionalidades-col-description">{item.description}</p>
-                      <div className="platform__funcionalidades-image-card">
+                      <button
+                        type="button"
+                        className="platform__funcionalidades-image-card platform__funcionalidades-image-card--button"
+                        onClick={() => setLightbox({
+                          items: funcData.items.map((it: { title: string; description: string }, i: number) => ({
+                            image: funcImages[i],
+                            title: it.title,
+                            description: it.description,
+                          })),
+                          index,
+                        })}
+                        aria-label={`${item.title} — enlarge`}
+                      >
                         <img
                           src={funcImages[index]}
                           alt={item.title}
                           className="platform__funcionalidades-image"
                         />
-                      </div>
+                        <span className="platform__funcionalidades-image-zoom" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </button>
                     </div>
                   </AnimateOnScroll>
                 ))}
@@ -288,109 +341,58 @@ export const Platform: React.FC = () => {
       })()}
 
       {/* Platform Modules Section */}
-      <section className="platform__modules section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="platform__modules-title">{t.modulesTitle}</h2>
-          </AnimateOnScroll>
-          <div className="platform__modules-wrapper">
-            <Tabs
-              tabs={[
-                {
-                  title: "Level",
-                  value: "level",
-                  description: t.modules[0].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloLevel}
-                        alt="Level Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                },
-                {
-                  title: "Access",
-                  value: "access",
-                  description: t.modules[1].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloAccess}
-                        alt="Access Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                },
-                {
-                  title: "DRS",
-                  value: "drs",
-                  description: t.modules[2].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloDRS}
-                        alt="DRS Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                },
-                {
-                  title: "Sotcare",
-                  value: "sotcare",
-                  description: t.modules[3].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloSotcare}
-                        alt="Sotcare Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                },
-                {
-                  title: "P(L)ayt",
-                  value: "playt",
-                  description: t.modules[4].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloPlayt}
-                        alt="Playt Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                },
-                {
-                  title: t.modules[5].title,
-                  value: "routes",
-                  description: t.modules[5].description,
-                  content: (
-                    <div className="platform__module-content">
-                      <img
-                        src={moduloRoutes}
-                        alt="Routes Module"
-                        className="platform__module-image"
-                        style={{ width: '100%', borderRadius: '8px' }}
-                      />
-                    </div>
-                  )
-                }
-              ]}
-            />
-          </div>
-        </div>
-      </section>
+      {(() => {
+        const moduleImages = [moduloLevel, moduloAccess, moduloDRS, moduloSotcare, moduloPlayt, moduloRoutes];
+        const moduleTitles = ["Level", "Access", "DRS", "Sotcare", "P(L)ayt", t.modules[5].title];
+        return (
+          <section className="platform__modules-grid section">
+            <div className="container">
+              <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+                <h2 className="platform__modules-grid-title">{t.modulesTitle}</h2>
+              </AnimateOnScroll>
+              <div className="platform__modules-grid-wrapper">
+                {t.modules.map((mod: { title: string; description: string }, index: number) => (
+                  <AnimateOnScroll key={index} animation="fadeSlideUp" delay={index * 80} duration={0.7}>
+                    <button
+                      type="button"
+                      className="platform__module-card"
+                      onClick={() => setLightbox({
+                        items: t.modules.map((m: { title: string; description: string }, i: number) => ({
+                          image: moduleImages[i],
+                          title: moduleTitles[i],
+                          description: m.description,
+                        })),
+                        index,
+                      })}
+                      aria-label={`${moduleTitles[index]} - ${mod.description}`}
+                    >
+                      <div className="platform__module-card-media">
+                        <span className="platform__module-card-number">{String(index + 1).padStart(2, '0')}</span>
+                        <img
+                          src={moduleImages[index]}
+                          alt={`${moduleTitles[index]} Module`}
+                          className="platform__module-card-image"
+                          loading="lazy"
+                        />
+                        <span className="platform__module-card-zoom" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </div>
+                      <div className="platform__module-card-body">
+                        <h3 className="platform__module-card-title">{moduleTitles[index]}</h3>
+                        <p className="platform__module-card-description">{mod.description}</p>
+                      </div>
+                    </button>
+                  </AnimateOnScroll>
+                ))}
+              </div>
+            </div>
+
+          </section>
+        );
+      })()}
 
       {/* Video Modal */}
       {isVideoModalOpen && (
@@ -485,6 +487,63 @@ export const Platform: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {lightbox && (
+        <div
+          className="platform__module-lightbox"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="platform__module-lightbox-close"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div
+            className="platform__module-lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightbox.items[lightbox.index].image}
+              alt={lightbox.items[lightbox.index].title}
+              className="platform__module-lightbox-image"
+            />
+            <div className="platform__module-lightbox-caption">
+              <h3 className="platform__module-lightbox-title">{lightbox.items[lightbox.index].title}</h3>
+              <p className="platform__module-lightbox-description">{lightbox.items[lightbox.index].description}</p>
+            </div>
+            {lightbox.items.length > 1 && (
+              <>
+                <button
+                  className="platform__module-lightbox-nav platform__module-lightbox-nav--prev"
+                  onClick={prevLightbox}
+                  aria-label="Previous"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <button
+                  className="platform__module-lightbox-nav platform__module-lightbox-nav--next"
+                  onClick={nextLightbox}
+                  aria-label="Next"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      <CTASection />
 
     </div>
   );

@@ -307,7 +307,7 @@
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
   margin-bottom: calc(var(--spacing-3xl) / 2);
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .drs__tech-specs-layout {

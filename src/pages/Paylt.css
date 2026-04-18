@@ -765,6 +765,189 @@
   margin-bottom: calc(var(--spacing-3xl) * -0.3);
 }
 
+/* Hero Ecosystem Scheme — heading with inline SOTKIS pill, arrow, then solution pills */
+.paylt__scheme {
+  margin-top: var(--spacing-xl);
+  display: block;
+  width: calc(100vw - 4rem);
+  max-width: 680px;
+  color: #ffffff;
+  font-size: calc(var(--font-size-3xl) * 0.9);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.9;
+  letter-spacing: -0.005em;
+}
+
+.paylt__scheme-heading {
+  display: inline;
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+.paylt__scheme-heading-pill {
+  display: inline-block;
+  padding: 0.12em 0.55em;
+  margin: 0 0.08em;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, #0f172a 0%, #263238 45%, #94C11F 120%);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.paylt__scheme-flow {
+  display: inline;
+  margin-left: 0.4em;
+}
+
+.paylt__scheme-flow > * {
+  vertical-align: middle;
+}
+
+.paylt__scheme-flow .paylt__scheme-items {
+  display: inline;
+  white-space: nowrap;
+}
+
+.paylt__scheme-flow .paylt__scheme-items > * {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.paylt__scheme-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+  margin-right: 14px;
+}
+
+.paylt__scheme-items {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.paylt__scheme-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0f172a;
+  background-color: #ffffff;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.paylt__scheme-pill--dark {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.paylt__scheme-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #94C11F;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .paylt__scheme {
+    font-size: var(--font-size-3xl);
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .paylt__scheme {
+    width: 100%;
+    font-size: var(--font-size-2xl);
+    line-height: 1.55;
+  }
+
+  .paylt__scheme-flow {
+    display: block;
+    margin-top: var(--spacing-md);
+    margin-left: 0;
+  }
+
+  .paylt__scheme-flow .paylt__scheme-items {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .paylt__scheme-flow .paylt__scheme-items > * {
+    margin-right: 0;
+  }
+
+  .paylt__scheme-arrow {
+    display: none;
+  }
+
+  .paylt__scheme-items {
+    flex-wrap: wrap;
+  }
+
+  .paylt__scheme-pill {
+    padding: 8px 16px;
+    font-size: var(--font-size-sm);
+  }
+
+  .paylt__scheme-plus {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Componentes carousels — tone down imagery, center description with pills */
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image {
+  opacity: 0.35;
+  filter: saturate(0.85);
+}
+
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__overlay {
+  background: linear-gradient(135deg, rgba(18, 38, 32, 0.72) 0%, rgba(18, 38, 32, 0.55) 100%);
+}
+
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__content {
+  align-items: center;
+}
+
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__active-description {
+  align-self: center;
+  max-width: 480px;
+}
+
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__active-description p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  opacity: 0.92;
+}
+
+.paylt__componentes-section .feature-carousel__title {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .paylt__componentes-section .feature-carousel__title {
+    white-space: normal;
+  }
+}
+
 /* Section Titles */
 .paylt__section-title {
   font-size: var(--font-size-4xl);
@@ -772,6 +955,10 @@
   font-weight: var(--font-weight-bold);
   margin: 0 0 var(--spacing-md) 0;
   text-align: left;
+}
+
+.paylt__contentores-section .paylt__section-title {
+  text-align: center;
 }
 
 .paylt__tecnologia-title-outside {

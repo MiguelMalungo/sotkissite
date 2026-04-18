@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { CTASection } from '../components/common/CTASection';
 import './MobileApp.css';
 
 export const MobileApp: React.FC = () => {
@@ -19,6 +20,8 @@ export const MobileApp: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 };

@@ -89,7 +89,7 @@ export const payltTranslations = {
     benefits: {
       title: "Benefícios para Municípios e Cidadãos",
       features: [
-        { label: "MUNICÍPIO", description: "REDUZ as taxas de aterro ao aumentar a separação" },
+        { label: "MUNICÍPIO", description: "REDUZ taxas de aterro ao aumentar a separação na fonte" },
         { label: "CIDADÃO", description: "POUPA nas faturas ou recebe benefícios pela reciclagem" }
       ]
     }

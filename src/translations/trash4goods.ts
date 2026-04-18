@@ -24,7 +24,8 @@ export const trash4goodsTranslations = {
         app: {
             description: "Recicle, ganhe pontos e troque-os pelos seus prémios favoritos.",
             cta: "Conhecer a Trash4Goods"
-        }
+        },
+        closing: "Esta solução garante aos municípios uma ferramenta moderna e eficaz para envolver os cidadãos, promovendo comportamentos mais sustentáveis e contribuindo para o aumento das taxas de reciclagem."
     },
     en: {
         hero: {
