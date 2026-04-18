@@ -933,6 +933,16 @@
   opacity: 1;
 }
 
+/* Crop bottom 5% of the last parallax image (PAYT — last feature of the
+   last/Software carousel). Scale up 5% anchored to the top so the bottom
+   slides out of the overflow:hidden container — no distortion of width. */
+.paylt__componentes-section .feature-carousel--full-background:last-of-type
+  .feature-carousel__background-image-container
+  .feature-carousel__background-image:last-child {
+  transform: scaleY(1.0526);
+  transform-origin: center top;
+}
+
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__content {
   align-items: center;
 }
