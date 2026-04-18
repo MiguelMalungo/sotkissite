@@ -8,7 +8,7 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
 
-import softDashImg from '../assets/data.webp';
+import softDashImg from '../assets/summer.webp';
 import softAppImg from '../assets/paylt_software_mobile_app.png';
 import softMarketImg from '../assets/paylt_software_marketplace.png';
 import hardIotImg from '../assets/newAccess.webp';
