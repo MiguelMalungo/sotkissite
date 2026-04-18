@@ -913,18 +913,24 @@
   }
 }
 
-/* Componentes carousels — tone down imagery, center description with pills */
+/* Componentes carousels — dark base + toned imagery */
+.paylt__componentes-section .feature-carousel--full-background {
+  background-color: #0d1a0d;
+}
+
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image {
   opacity: 0;
-  filter: saturate(0.85);
+  filter: saturate(0.75);
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image--active {
-  opacity: 0.35;
+  opacity: 0.45;
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__overlay {
-  background: linear-gradient(135deg, rgba(18, 38, 32, 0.72) 0%, rgba(18, 38, 32, 0.55) 100%);
+  background-color: rgba(0, 0, 0, 0.55);
+  background-image: none;
+  opacity: 1;
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__content {
