@@ -11,13 +11,11 @@ import playtContentores from '../assets/playt-contentores.webp';
 import softDashImg from '../assets/data.webp';
 import softAppImg from '../assets/paylt_software_mobile_app.png';
 import softMarketImg from '../assets/paylt_software_marketplace.png';
-import techPolicyImg from '../assets/paylt_tech_policies.png';
-import hardLevelImg from '../assets/ModuloSotkisLevel.webp';
-import hardAccessImg from '../assets/ModuloSotkisAccess.webp';
+import hardIotImg from '../assets/newAccess.webp';
+import hardAccessImg from '../assets/paylt_hardware_access.png';
 import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
 import hardDrsImg from '../assets/ModuloSotkisDRS.webp';
-import benefitMunicipioImg from '../assets/municipio.webp';
-import benefitCidadaoImg from '../assets/cidadao.webp';
+import techPolicyImg from '../assets/paylt_tech_policies.png';
 import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
 
@@ -42,7 +40,7 @@ export const Paylt: React.FC = () => {
   }));
 
   // Hardware Carousel Features
-  const hardwareImages = [hardLevelImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
+  const hardwareImages = [hardIotImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
   const hardwareFeatures = tAny.hardware.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
@@ -51,7 +49,7 @@ export const Paylt: React.FC = () => {
   }));
 
   // Benefits Features
-  const benefitsImages = [benefitMunicipioImg, benefitCidadaoImg];
+  const benefitsImages = [softDashImg, softAppImg];
   const benefitsFeatures = tAny.benefits.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
