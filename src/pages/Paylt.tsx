@@ -8,14 +8,16 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
 
-import softDashImg from '../assets/data.webp';
-import softAppImg from '../assets/paylt_software_mobile_app.png';
-import softMarketImg from '../assets/paylt_software_marketplace.png';
-import hardIotImg from '../assets/newAccess.webp';
-import hardAccessImg from '../assets/paylt_hardware_access.png';
+import softDashImg from '../assets/PLATAFORMA-Dashboards.webp';
+import softAppImg from '../assets/Sotkis-APP-DSC08537-new.webp';
+import softMarketImg from '../assets/T4G-marketplace-pt.webp';
+import softPaytImg from '../assets/fatura.webp';
+import hardLevelImg from '../assets/ModuloSotkisLevel.webp';
+import hardAccessImg from '../assets/ModuloSotkisAccess.webp';
 import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
 import hardDrsImg from '../assets/ModuloSotkisDRS.webp';
-import techPolicyImg from '../assets/paylt_tech_policies.png';
+import benefitMunicipioImg from '../assets/municipio.webp';
+import benefitCidadaoImg from '../assets/cidadao.webp';
 import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
 
@@ -31,7 +33,7 @@ export const Paylt: React.FC = () => {
   const tAny = t as any;
 
   // Software Carousel Features
-  const softwareImages = [softDashImg, softAppImg, softMarketImg, techPolicyImg];
+  const softwareImages = [softDashImg, softAppImg, softMarketImg, softPaytImg];
   const softwareFeatures = tAny.software.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
@@ -40,7 +42,7 @@ export const Paylt: React.FC = () => {
   }));
 
   // Hardware Carousel Features
-  const hardwareImages = [hardIotImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
+  const hardwareImages = [hardLevelImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
   const hardwareFeatures = tAny.hardware.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
@@ -49,7 +51,7 @@ export const Paylt: React.FC = () => {
   }));
 
   // Benefits Features
-  const benefitsImages = [softDashImg, softAppImg];
+  const benefitsImages = [benefitMunicipioImg, benefitCidadaoImg];
   const benefitsFeatures = tAny.benefits.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
