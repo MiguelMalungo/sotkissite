@@ -16,6 +16,8 @@ import hardAccessImg from '../assets/paylt_hardware_access.png';
 import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
 import hardDrsImg from '../assets/ModuloSotkisDRS.webp';
 import techPolicyImg from '../assets/paylt_tech_policies.png';
+import benefitMunicipioImg from '../assets/summer.webp';
+import benefitCidadaoImg from '../assets/paylt_software_mobile_app.png';
 import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
 
@@ -49,8 +51,8 @@ export const Paylt: React.FC = () => {
     image: hardwareImages[i]
   }));
 
-  // Benefits Features
-  const benefitsImages = [softDashImg, softAppImg];
+  // Benefits Features — independent imports so changes to software/dashboards don't leak here
+  const benefitsImages = [benefitMunicipioImg, benefitCidadaoImg];
   const benefitsFeatures = tAny.benefits.features.map((f: { label: string; description: string }, i: number) => ({
     id: String(i + 1),
     label: f.label,
