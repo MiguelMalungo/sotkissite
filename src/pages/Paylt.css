@@ -915,8 +915,12 @@
 
 /* Componentes carousels — tone down imagery, center description with pills */
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image {
-  opacity: 0.35;
+  opacity: 0;
   filter: saturate(0.85);
+}
+
+.paylt__componentes-section .feature-carousel--full-background .feature-carousel__background-image--active {
+  opacity: 0.35;
 }
 
 .paylt__componentes-section .feature-carousel--full-background .feature-carousel__overlay {
