@@ -8,7 +8,7 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
 
-import softDashImg from '../assets/summer.webp';
+import softDashImg from '../assets/Image_Animation.mp4';
 import softAppImg from '../assets/paylt_software_mobile_app.png';
 import softMarketImg from '../assets/paylt_software_marketplace.png';
 import hardIotImg from '../assets/newAccess.webp';
@@ -36,7 +36,8 @@ export const Paylt: React.FC = () => {
     id: String(i + 1),
     label: f.label,
     description: f.description,
-    image: softwareImages[i]
+    image: softwareImages[i],
+    isVideo: i === 0
   }));
 
   // Hardware Carousel Features
