@@ -7,17 +7,19 @@ import payltHeroImage from '../assets/SFS06471-copy.webp';
 
 import logoPlayt from '../assets/logo-playtW.png';
 import playtContentores from '../assets/playt-contentores.webp';
+import playtCompleto from '../assets/playt_competo.webp';
+import playtCompletoEn from '../assets/Software_PLAYT_EN.webp';
 
-import softDashImg from '../assets/Image_Animation.mp4';
-import softAppImg from '../assets/paylt_software_mobile_app.png';
-import softMarketImg from '../assets/paylt_software_marketplace.png';
-import hardIotImg from '../assets/newAccess.webp';
-import hardAccessImg from '../assets/paylt_hardware_access.png';
-import hardRestrictorImg from '../assets/access-com-restritor-volume.webp';
-import hardDrsImg from '../assets/ModuloSotkisDRS.webp';
-import techPolicyImg from '../assets/paylt_tech_policies.png';
+import softDashImg from '../assets/Software_DashboardsInterativos.mp4';
+import softAppImg from '../assets/Software_AplicaçãoCidadão.webp';
+import softMarketImg from '../assets/Software_marketplace-video.mp4';
+import hardIotImg from '../assets/Hardware_sensoresnivel.mp4';
+import hardAccessImg from '../assets/Hardware_controlosAcesso2.webp';
+import hardRestrictorImg from '../assets/Hardware_retritorVolume.webp';
+import hardDrsImg from '../assets/Hardware_sensoresDeteção.webp';
+import techPolicyImg from '../assets/Software_PLAYT.webp';
 import benefitMunicipioImg from '../assets/summer.webp';
-import benefitCidadaoImg from '../assets/paylt_software_mobile_app.png';
+import benefitCidadaoImg from '../assets/Cidadão_Beneficios.webp';
 import { CTASection } from '../components/common/CTASection';
 import './Paylt.css';
 
@@ -32,15 +34,13 @@ export const Paylt: React.FC = () => {
 
   const tAny = t as any;
 
-  // Software Carousel Features
-  const softwareImages = [softDashImg, softAppImg, softMarketImg, techPolicyImg];
-  const softwareFeatures = tAny.software.features.map((f: { label: string; description: string }, i: number) => ({
-    id: String(i + 1),
-    label: f.label,
-    description: f.description,
-    image: softwareImages[i],
-    isVideo: i === 0
-  }));
+  // Software Carousel Features — order: Cidadão (image), Dashboard (video), Marketplace (video), PAYT (photo)
+  const softwareFeatures = [
+    { id: '1', label: tAny.software.features[1].label, description: tAny.software.features[1].description, image: softAppImg, isVideo: false },
+    { id: '2', label: tAny.software.features[0].label, description: tAny.software.features[0].description, image: softDashImg, isVideo: true },
+    { id: '3', label: tAny.software.features[2].label, description: tAny.software.features[2].description, image: softMarketImg, isVideo: true },
+    { id: '4', label: tAny.software.features[3].label, description: tAny.software.features[3].description, image: techPolicyImg, isVideo: false },
+  ];
 
   // Hardware Carousel Features
   const hardwareImages = [hardIotImg, hardAccessImg, hardRestrictorImg, hardDrsImg];
@@ -48,7 +48,8 @@ export const Paylt: React.FC = () => {
     id: String(i + 1),
     label: f.label,
     description: f.description,
-    image: hardwareImages[i]
+    image: hardwareImages[i],
+    isVideo: i === 0
   }));
 
   // Benefits Features — independent imports so changes to software/dashboards don't leak here
@@ -62,7 +63,7 @@ export const Paylt: React.FC = () => {
 
   return (
     <div className="paylt">
-      <section className="paylt__hero">
+      <section className="paylt__hero paylt__hero--simple">
         <img
           src={payltHeroImage}
           alt="SOTKIS Paylt"
@@ -71,39 +72,41 @@ export const Paylt: React.FC = () => {
         <div className="paylt__hero-overlay"></div>
         <div className="paylt__hero-content container">
           <div className="paylt__hero-text-content">
-            <img src={logoPlayt} alt="P(L)AYT Logo" className="paylt__hero-logo" />
-            <p className="paylt__hero-subtitle">{t.hero.subtitle}</p>
-
-            {/* Ecosystem scheme */}
-            <div className="paylt__scheme" aria-label="SOTKIS ecosystem">
-              <h2 className="paylt__scheme-heading">
-                Todas as soluções <span className="paylt__scheme-heading-pill">SOTKIS</span> num único ecossistema
-              </h2>
-              <div className="paylt__scheme-flow">
-                <div className="paylt__scheme-arrow" aria-hidden="true">
-                  <svg width="48" height="2" viewBox="0 0 48 2" fill="none">
-                    <line x1="0" y1="1" x2="48" y2="1" stroke="#94C11F" strokeWidth="2" />
-                  </svg>
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                    <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
-                  </svg>
-                </div>
-                <div className="paylt__scheme-items">
-                  <div className="paylt__scheme-pill">Hardware</div>
-                  <span className="paylt__scheme-plus" aria-hidden="true">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                  </span>
-                  <div className="paylt__scheme-pill">Software</div>
-                  <span className="paylt__scheme-plus" aria-hidden="true">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                  </span>
-                  <div className="paylt__scheme-pill paylt__scheme-pill--dark">App Cidadão</div>
-                </div>
+            <div className="paylt__hero-scheme" aria-label="SOTKIS ecosystem">
+              <div className="paylt__hero-scheme-items">
+                <div className="paylt__hero-scheme-pill">Hardware</div>
+                <span className="paylt__hero-scheme-plus">+</span>
+                <div className="paylt__hero-scheme-pill">Software</div>
+                <span className="paylt__hero-scheme-plus">+</span>
+                <div className="paylt__hero-scheme-pill paylt__hero-scheme-pill--dark">App Cidadão</div>
+              </div>
+              <div className="paylt__hero-scheme-arrow">
+                <svg width="40" height="2" viewBox="0 0 40 2" fill="none">
+                  <line x1="0" y1="1" x2="40" y2="1" stroke="#94C11F" strokeWidth="2" />
+                </svg>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
+                </svg>
+              </div>
+              <div className="paylt__hero-scheme-logo">
+                <img src={logoPlayt} alt="P(L)AYT" />
               </div>
             </div>
+            <h2 className="paylt__scheme-heading paylt__scheme-heading--hero">
+              Todas as soluções <span className="paylt__scheme-heading-pill">SOTKIS</span> num único ecossistema
+            </h2>
+            <button className="paylt__hero-button" onClick={() => setIsVideoModalOpen(true)}>
+              <span>{tAny.video?.button || 'Play Video'}</span>
+              <div className="paylt__hero-button-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </button>
           </div>
         </div>
       </section>
+
 
       <section className="paylt__intro section">
         <div className="container">
@@ -130,17 +133,18 @@ export const Paylt: React.FC = () => {
         </div>
       </section>
 
-      {/* PAYT Scheme Section - Contentores */}
-      <section className="paylt__contentores-section section">
+
+      {/* Como Funciona Section */}
+      <section className="paylt__how-it-works-section section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="paylt__section-title">{t.contentores.title}</h2>
+            <h2 className="paylt__section-title">Uma solução para todo o tipo de contentores!</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
             <img
-              src={playtContentores}
-              alt="Contentores PAYT"
-              className="paylt__contentores-image"
+              src={language === 'pt' ? playtCompleto : playtCompletoEn}
+              alt="P(L)AYT Como Funciona"
+              className="paylt__how-it-works-image"
             />
           </AnimateOnScroll>
         </div>

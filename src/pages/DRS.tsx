@@ -9,11 +9,12 @@ import dsc5571Image from '../assets/-DSC5571.webp';
 import dsc6216Image from '../assets/-DSC6216.webp';
 import sfs06884Image from '../assets/SFS06884.webp';
 import drsExplodImage from '../assets/2101-100-020-m-EXPLOD.113.webp';
-import conectarDrsImage from '../assets/conectar.webp';
+import smartTagIcon from '../assets/smart-tag.webp';
 import depositarIcon from '../assets/icon-2.webp';
 import pontuarIcon from '../assets/prize.webp';
 import trocarIcon from '../assets/DRS.webp';
-import drsSc from '../assets/drsSc.png';
+import drsSc from '../assets/drsesq.png';
+import drsScEn from '../assets/drsesq_en.png';
 import { CTASection } from '../components/common/CTASection';
 import './DRS.css';
 
@@ -38,7 +39,7 @@ export const DRS: React.FC = () => {
     description: card.description,
   }));
 
-  const stepImages = [conectarDrsImage, depositarIcon, pontuarIcon, trocarIcon];
+  const stepImages = [smartTagIcon, depositarIcon, pontuarIcon, trocarIcon];
   const howItWorksSteps = t.steps.map((step, i) => ({
     id: String(i + 1),
     number: String(i + 1).padStart(2, '0'),
@@ -172,7 +173,7 @@ export const DRS: React.FC = () => {
                   <span className="drs__how-it-works-number">{step.number}</span>
                   <h3 className="drs__how-it-works-step-title">{step.title}</h3>
                   <p className="drs__how-it-works-step-description">{step.description}</p>
-                  {step.id === '3' && (
+                  {(step.id === '1' || step.id === '2' || step.id === '3') && (
                     <img src={step.image} alt={step.title} className="drs__how-it-works-inline-icon" />
                   )}
                 </div>
@@ -188,7 +189,7 @@ export const DRS: React.FC = () => {
             <h2 className="drs__cycle-scheme-title">{t.cycle.title}</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="scaleUp" delay={150} duration={0.9}>
-            <img src={drsSc} alt={t.cycle.title} className="drs__cycle-scheme-image" />
+            <img src={language === 'pt' ? drsSc : drsScEn} alt={t.cycle.title} className="drs__cycle-scheme-image" />
           </AnimateOnScroll>
         </div>
       </section>

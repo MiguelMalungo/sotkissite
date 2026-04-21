@@ -977,8 +977,129 @@
   text-align: left;
 }
 
-.paylt__contentores-section .paylt__section-title {
+.paylt__contentores-section .paylt__section-title,
+.paylt__how-it-works-section .paylt__section-title {
   text-align: center;
+}
+
+.paylt__how-it-works-section {
+  background-color: #F4FBFC;
+}
+
+.paylt__how-it-works-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  margin: var(--spacing-xl) auto 0;
+}
+
+.paylt__scheme--standalone {
+  color: var(--color-primary-dark);
+  margin-top: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.paylt__scheme--standalone .paylt__scheme-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.paylt__scheme--standalone .paylt__scheme-items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.paylt__scheme-heading--hero {
+  display: block;
+  color: #ffffff;
+  font-size: calc(var(--font-size-3xl) * 0.9);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  margin-top: var(--spacing-lg);
+}
+
+.paylt__hero-scheme {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+}
+
+.paylt__hero-scheme-items {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.paylt__hero-scheme-pill {
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background-color: #e8e8e8;
+  white-space: nowrap;
+}
+
+.paylt__hero-scheme-pill--dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.paylt__hero-scheme-plus {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: #94C11F;
+}
+
+.paylt__hero-scheme-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.paylt__hero-scheme-logo {
+  display: flex;
+  align-items: center;
+}
+
+.paylt__hero-scheme-logo img {
+  height: 112px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .paylt__hero-scheme {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .paylt__hero-scheme-items {
+    flex-wrap: wrap;
+  }
+
+  .paylt__hero-scheme-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .paylt__scheme-heading--hero {
+    font-size: var(--font-size-2xl);
+  }
+
+  .paylt__how-it-works-image {
+    max-width: 100%;
+  }
 }
 
 .paylt__tecnologia-title-outside {
