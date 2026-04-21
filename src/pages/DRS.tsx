@@ -9,7 +9,7 @@ import dsc5571Image from '../assets/-DSC5571.webp';
 import dsc6216Image from '../assets/-DSC6216.webp';
 import sfs06884Image from '../assets/SFS06884.webp';
 import drsExplodImage from '../assets/2101-100-020-m-EXPLOD.113.webp';
-import smartTagIcon from '../assets/smart-tag.webp';
+import smartTagIcon from '../assets/conectar.webp';
 import depositarIcon from '../assets/icon-2.webp';
 import pontuarIcon from '../assets/prize.webp';
 import trocarIcon from '../assets/DRS.webp';
@@ -174,7 +174,7 @@ export const DRS: React.FC = () => {
                   <h3 className="drs__how-it-works-step-title">{step.title}</h3>
                   <p className="drs__how-it-works-step-description">{step.description}</p>
                   {(step.id === '1' || step.id === '2' || step.id === '3') && (
-                    <img src={step.image} alt={step.title} className="drs__how-it-works-inline-icon" />
+                    <img src={step.image} alt={step.title} className={`drs__how-it-works-inline-icon${step.id === '1' ? ' drs__how-it-works-inline-icon--lg' : step.id === '3' ? ' drs__how-it-works-inline-icon--md' : ''}`} />
                   )}
                 </div>
               </AnimateOnScroll>

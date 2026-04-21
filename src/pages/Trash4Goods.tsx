@@ -68,9 +68,9 @@ export const Trash4Goods: React.FC = () => {
                               <p>{t.intro.text2}</p>
                           </AnimateOnScroll>
                         )}
-                        {'text3' in t.intro && t.intro.text3 && (
+                        {'text3' in t.intro && (t.intro as any).text3 && (
                           <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
-                              <p>{t.intro.text3}</p>
+                              <p>{(t.intro as any).text3}</p>
                           </AnimateOnScroll>
                         )}
                     </div>
@@ -199,16 +199,6 @@ export const Trash4Goods: React.FC = () => {
                     </div>
                 </div>
             </section>
-
-            {('closing' in t) && t.closing && (
-                <section className="trash4goods__closing section">
-                    <div className="container">
-                        <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-                            <p className="trash4goods__closing-text">{(t as any).closing}</p>
-                        </AnimateOnScroll>
-                    </div>
-                </section>
-            )}
 
             <CTASection />
 

@@ -70,10 +70,6 @@ export const Platform: React.FC = () => {
 
 
 
-  const openVideoModal = () => {
-    setIsVideoModalOpen(true);
-    setIsVideoPlaying(true);
-  };
 
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
@@ -150,27 +146,21 @@ export const Platform: React.FC = () => {
         </div>
         <div className="platform-hero-root__content container">
           <div className="platform-hero-root__text-content">
-            <AnimatedHeroTitle text="SOTKIS Software" className="platform-hero-root__title" delay={0} />
-            <p className="platform-hero-root__subtitle">
-              {language === 'pt' ? (
-                <>
-                  {'Acesso através de '}
-                  <a href="https://sotkis.com/login" className="platform-hero-root__link" target="_blank" rel="noopener noreferrer">
-                    https://sotkis.com/login
-                  </a>
-                  <br />{'ou através da app Sotkis.'}
-                </>
-              ) : t.access.text}
-            </p>
+            <AnimatedHeroTitle text="SOTKIS SOFTWARE" className="platform-hero-root__title" delay={0} />
             <p className="platform-hero-root__tagline">{t.heroTagline}</p>
-            <button className="platform-hero-root__cta" onClick={openVideoModal}>
-              <span>{t.access.buttonText}</span>
+            <a
+              href="https://sotkis.com/login"
+              className="platform-hero-root__login-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {language === 'pt' ? 'Aceder ao login' : 'Login'}
               <div className="platform-hero-root__cta-icon">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-            </button>
+            </a>
           </div>
         </div>
         <img src={seloImage} alt="Selo SOTKIS" className="platform-hero-root__selo" />

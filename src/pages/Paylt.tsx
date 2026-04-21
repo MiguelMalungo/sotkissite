@@ -6,7 +6,6 @@ import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/SFS06471-copy.webp';
 
 import logoPlayt from '../assets/logo-playtW.png';
-import playtContentores from '../assets/playt-contentores.webp';
 import playtCompleto from '../assets/playt_competo.webp';
 import playtCompletoEn from '../assets/Software_PLAYT_EN.webp';
 

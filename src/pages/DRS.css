@@ -381,6 +381,16 @@
   margin-top: var(--spacing-md);
 }
 
+.drs__how-it-works-inline-icon--lg {
+  width: 144px;
+  height: 144px;
+}
+
+.drs__how-it-works-inline-icon--md {
+  width: 94px;
+  height: 94px;
+}
+
 .drs__how-it-works-number {
   display: inline-block;
   font-size: var(--font-size-3xl);
