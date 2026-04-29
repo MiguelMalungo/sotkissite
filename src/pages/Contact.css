@@ -22,18 +22,9 @@
   }
 }
 
-/* Signal emission ripple effect - top right */
+/* Signal emission ripple effect - top right (removed) */
 .contact::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(253, 227, 99, 0.6) 0%, rgba(253, 227, 99, 0.3) 50%, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
+  display: none;
 }
 
 /* Signal emission ripple effect - bottom left */

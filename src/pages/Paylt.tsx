@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -6,20 +8,27 @@ import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/SFS06471-copy.webp';
 
 import logoPlayt from '../assets/logo-playtW.png';
-import playtCompleto from '../assets/playt_competo.webp';
-import playtCompletoEn from '../assets/Software_PLAYT_EN.webp';
+import playtContentoresImg from '../assets/playt-contentores.webp';
+import iconAccessBag from '../assets/icon-1.webp';
+import iconDrsGlass from '../assets/icon-2.webp';
+import iconDrsPlastic from '../assets/icon-4.webp';
+import iconAccessPaper from '../assets/icon-3.webp';
+import iconAccessOrganic from '../assets/icon-4-1.webp';
+import iconConectar from '../assets/conectar.webp';
+import iconFatura from '../assets/fatura.webp';
+import iconPontos from '../assets/pontos.webp';
+import iconPrize from '../assets/prize.webp';
 
 import softDashImg from '../assets/Software_DashboardsInterativos.mp4';
-import softAppImg from '../assets/Software_AplicaçãoCidadão.webp';
+import softAppImg from '../assets/Software_AplicacaoCidadao.webp';
 import softMarketImg from '../assets/Software_marketplace-video.mp4';
 import hardIotImg from '../assets/Hardware_sensoresnivel.mp4';
 import hardAccessImg from '../assets/Hardware_controlosAcesso2.webp';
 import hardRestrictorImg from '../assets/Hardware_retritorVolume.webp';
 import hardDrsImg from '../assets/Hardware_sensoresDeteção.webp';
 import techPolicyImg from '../assets/Software_PLAYT.webp';
-import benefitMunicipioImg from '../assets/summer.webp';
-import benefitCidadaoImg from '../assets/Cidadão_Beneficios.webp';
-import { CTASection } from '../components/common/CTASection';
+import benefitMunicipioImg from '../assets/municipios-parallax.webp';
+import benefitCidadaoImg from '../assets/Cidadao_Beneficios.webp';
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -62,6 +71,7 @@ export const Paylt: React.FC = () => {
 
   return (
     <div className="paylt">
+      <SEO {...seoConfig.paylt} lang={language === 'pt' ? 'pt' : 'en'} />
       <section className="paylt__hero paylt__hero--simple">
         <img
           src={payltHeroImage}
@@ -134,17 +144,118 @@ export const Paylt: React.FC = () => {
 
 
       {/* Como Funciona Section */}
-      <section className="paylt__how-it-works-section section">
+      <section className="paylt__how-it-works-section paylt__how-it-works-section--rebuilt section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="paylt__section-title">Uma solução para todo o tipo de contentores!</h2>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
-            <img
-              src={language === 'pt' ? playtCompleto : playtCompletoEn}
-              alt="P(L)AYT Como Funciona"
-              className="paylt__how-it-works-image"
-            />
+
+          <AnimateOnScroll animation="fadeSlideUp" delay={100} duration={0.8}>
+            <div className="paylt__rebuilt">
+              {/* Como Funciona pill */}
+              <div className="paylt__rebuilt-badge">Como Funciona</div>
+
+              {/* Two top headers: Faturação / Pontos */}
+              <div className="paylt__rebuilt-header">
+                <div className="paylt__rebuilt-header-col">
+                  <div className="paylt__rebuilt-header-icon">
+                    <img src={iconFatura} alt="" />
+                  </div>
+                  <div className="paylt__rebuilt-header-text">
+                    <strong>{t.scheme.billingTitle.split(' ').slice(0, 3).join(' ')}</strong>
+                    <span>{t.scheme.billingTitle.split(' ').slice(3).join(' ')}</span>
+                  </div>
+                </div>
+                <div className="paylt__rebuilt-header-col">
+                  <div className="paylt__rebuilt-header-icon">
+                    <img src={iconPontos} alt="" />
+                  </div>
+                  <div className="paylt__rebuilt-header-text">
+                    <strong>{t.scheme.pointsTitle}</strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* Three highlight pills */}
+              <div className="paylt__rebuilt-pills">
+                <div className="paylt__rebuilt-pill-wrap">
+                  <div className="paylt__rebuilt-pill">{t.scheme.billingHighlight}</div>
+                </div>
+                <div className="paylt__rebuilt-pill-wrap">
+                  <img src={iconPrize} alt="" className="paylt__rebuilt-trophy" aria-hidden="true" />
+                  <div className="paylt__rebuilt-pill">{t.scheme.pointsHighlight}</div>
+                </div>
+                <div className="paylt__rebuilt-pill-wrap">
+                  <img src={iconPrize} alt="" className="paylt__rebuilt-trophy" aria-hidden="true" />
+                  <div className="paylt__rebuilt-pill">{t.scheme.openingHighlight}</div>
+                </div>
+              </div>
+
+              {/* 5-column details grid */}
+              <div className="paylt__rebuilt-details">
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>{t.scheme.billingDetail.split('(')[0].trim()}</strong></p>
+                  {t.scheme.billingDetail.includes('(') && (
+                    <p className="paylt__rebuilt-detail-sub">({t.scheme.billingDetail.split('(')[1]}</p>
+                  )}
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por deposição individual de embalagens <strong>de vidro</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por deposição individual de embalagens de <strong>plástico e metal</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por abertura para depósito de <strong>papel e cartão</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por abertura para depósito de <strong>resíduos orgânicos</strong></p>
+                </div>
+              </div>
+
+              {/* Icon labels row */}
+              <div className="paylt__rebuilt-icons">
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon">
+                    <img src={iconAccessBag} alt="" />
+                  </div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                  <p className="paylt__rebuilt-icon-sub">c/restritor de volume</p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon">
+                    <img src={iconDrsGlass} alt="" />
+                  </div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon">
+                    <img src={iconDrsPlastic} alt="" />
+                  </div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon">
+                    <img src={iconAccessPaper} alt="" />
+                  </div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon">
+                    <img src={iconAccessOrganic} alt="" />
+                  </div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col paylt__rebuilt-icon-col--access-methods">
+                  <img src={iconConectar} alt="Identificação RFID e Bluetooth" className="paylt__rebuilt-conectar" />
+                </div>
+              </div>
+
+              {/* Containers illustration — reused existing asset */}
+              <div className="paylt__rebuilt-containers">
+                <img src={playtContentoresImg} alt="Contentores P(L)AYT" />
+              </div>
+            </div>
           </AnimateOnScroll>
         </div>
       </section>
@@ -181,7 +292,7 @@ export const Paylt: React.FC = () => {
         />
       </section>
 
-      <CTASection />
+      
 
       {/* Video Modal */}
       {isVideoModalOpen && (

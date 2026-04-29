@@ -148,10 +148,47 @@
   transform: translateX(4px);
 }
 
+.platform-hero-root__login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 8px 8px 25px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 60px;
+  font-size: calc(var(--font-size-base) - 1px);
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: var(--spacing-md);
+}
+
+.platform-hero-root__login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.platform-hero-root__login-btn:hover .platform-hero-root__cta-icon {
+  background-color: #000000;
+  color: white;
+  transform: translateX(4px);
+}
+
 @media (max-width: 1024px) {
   .platform-hero-root__text-content {
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .platform-hero-root__image--desktop {
+    left: -127px;
+    width: calc(100% + 127px);
+    max-width: none;
   }
 }
 
@@ -1719,7 +1756,7 @@
 .home__app-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.45);
   z-index: 2;
   pointer-events: none;
 }
@@ -1813,7 +1850,12 @@
 
 @media (max-width: 768px) {
   .platform__app-section-fullwidth {
-    margin-bottom: 0 !important;
+    width: 100%;
+    position: static;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
   }
@@ -1828,6 +1870,7 @@
 
   .platform__app-section-fullwidth .home__app-video-container {
     overflow: visible;
+    overflow-x: hidden;
     margin-bottom: 0 !important;
   }
 
@@ -1865,9 +1908,11 @@
   .platform__app-section-fullwidth .home__app-background-video {
     object-position: left center;
     transform: scale(0.8);
-    transform-origin: left bottom;
-    width: 125%;
-    left: 0;
+    transform-origin: left top;
+    width: calc(125% + 62px);
+    height: 125%;
+    left: -50px;
+    top: 0;
   }
 }
 

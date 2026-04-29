@@ -23,6 +23,117 @@
   margin: 0 auto;
 }
 
+.mobile-app__hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 60px;
+  font-size: calc(var(--font-size-base, 16px) - 3px);
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-app__hero-button span {
+  padding: 0 20px;
+}
+
+.mobile-app__hero-button:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.mobile-app__hero-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #94C11F;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.mobile-app__hero-button:hover .mobile-app__hero-button-icon {
+  background-color: #000;
+  color: white;
+  transform: translateX(4px);
+}
+
+.mobile-app__hero-button-icon svg {
+  width: 12px;
+  height: 12px;
+  transition: color 0.3s ease;
+}
+
+.mobile-app__video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mobile-app__video-modal-content {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mobile-app__video-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.mobile-app__video-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-app__video-modal-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.mobile-app__video-modal-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 @media (max-width: 768px) {
   .mobile-app__title {
     font-size: 2rem;

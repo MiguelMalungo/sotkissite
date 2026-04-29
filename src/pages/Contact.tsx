@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { contactTranslations } from '../translations/contact';
@@ -59,14 +61,10 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="contact">
+      <SEO {...seoConfig.contact} lang={language === 'pt' ? 'pt' : 'en'} />
       {/* Signal emission ripple animations */}
       <div className="contact__ripples">
-        <div className="contact__ripple-source-1">
-          <div className="contact__ripple-1"></div>
-          <div className="contact__ripple-2"></div>
-          <div className="contact__ripple-3"></div>
-        </div>
-        <div className="contact__ripple-source-2">
+<div className="contact__ripple-source-2">
           <div className="contact__ripple-4"></div>
           <div className="contact__ripple-5"></div>
         </div>

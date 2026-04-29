@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
@@ -15,7 +17,6 @@ import pontuarIcon from '../assets/prize.webp';
 import trocarIcon from '../assets/DRS.webp';
 import drsSc from '../assets/drsesq.png';
 import drsScEn from '../assets/drsesq_en.png';
-import { CTASection } from '../components/common/CTASection';
 import './DRS.css';
 
 export const DRS: React.FC = () => {
@@ -50,6 +51,7 @@ export const DRS: React.FC = () => {
 
   return (
     <div className="drs">
+      <SEO {...seoConfig.drs} lang={language === 'pt' ? 'pt' : 'en'} />
       <section className="drs__hero">
         <img
           src={drsHeroImage}
@@ -194,7 +196,7 @@ export const DRS: React.FC = () => {
         </div>
       </section>
 
-      <CTASection />
+      
 
       {/* Video Modal */}
       {isVideoModalOpen && (
@@ -209,8 +211,8 @@ export const DRS: React.FC = () => {
               <iframe
                 width="853"
                 height="480"
-                src="https://www.youtube.com/embed/M0Gr6pVUz4E"
-                title="SOTKON Intelligent Systems - We present Sotkis"
+                src="https://www.youtube.com/embed/JeTtkIFl3uk"
+                title="SOTKIS DRS"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

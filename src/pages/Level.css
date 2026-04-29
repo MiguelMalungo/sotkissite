@@ -555,7 +555,7 @@
 
 @media (max-width: 768px) {
   .level__hero {
-    min-height: 100vh;
+    min-height: 80vh;
     padding: var(--spacing-3xl) 0;
     padding-top: calc(var(--spacing-4xl) + 60px);
     border-radius: 0 0 2rem 2rem;
@@ -581,7 +581,8 @@
 
   .level__hero-image {
     object-fit: cover;
-    object-position: left center;
+    object-position: calc(50% - 37px) bottom;
+    transform: none;
   }
 
 
@@ -755,7 +756,7 @@
 
 @media (max-width: 480px) {
   .level__hero {
-    min-height: 100vh;
+    min-height: 80vh;
     padding: var(--spacing-2xl) 0;
     padding-top: calc(var(--spacing-3xl) + 50px);
     border-radius: 0 0 1.5rem 1.5rem;
@@ -915,46 +916,19 @@
   transform: scale(1.1);
 }
 
-.level__video-modal-video {
+.level__video-modal-iframe-wrapper {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
+  padding-bottom: 56.25%;
 }
 
-.level__video-modal-controls {
+.level__video-modal-iframe {
   position: absolute;
-  bottom: 50px;
+  top: 0;
   left: 0;
-  right: 0;
-  padding: var(--spacing-lg);
-  background: transparent;
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: center;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.level__video-modal-controls button {
-  width: 44px;
-  height: 44px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
   border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  pointer-events: auto;
-}
-
-.level__video-modal-controls button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

@@ -44,7 +44,7 @@ export const platformTranslations = {
       { title: "DRS", description: "Solução de Sistema de Depósito e Retorno" },
       { title: "Sotcare", description: "Gestão Completa de Manutenção" },
       { title: "P(L)ayt", description: "Sistema de Gestão Pay-As-You-Throw" },
-      { title: "Rotas", description: "Sistema Otimizado de Planeamento de Rotas" }
+      { title: "Routes", description: "Sistema Otimizado de Planeamento de Rotas" }
     ],
     funcionalidades: {
       title: "Funcionalidades da plataforma",
@@ -184,7 +184,7 @@ export const platformTranslations = {
       { title: "DRS", description: "Solución de Sistema de Depósito y Retorno" },
       { title: "Sotcare", description: "Gestión Integral de Mantenimiento" },
       { title: "P(L)ayt", description: "Sistema de Gestión Pay-As-You-Throw" },
-      { title: "Rutas", description: "Sistema Optimizado de Planificación de Rutas" }
+      { title: "Routes", description: "Sistema Optimizado de Planificación de Rutas" }
     ],
     funcionalidades: {
       title: "Funcionalidades de la plataforma",
@@ -254,7 +254,7 @@ export const platformTranslations = {
       { title: "DRS", description: "Solution de Système de Retour de Dépôt" },
       { title: "Sotcare", description: "Gestion Complète de la Maintenance" },
       { title: "P(L)ayt", description: "Système de Gestion Pay-As-You-Throw" },
-      { title: "Itinéraires", description: "Système Optimisé de Planification des Itinéraires" }
+      { title: "Routes", description: "Système Optimisé de Planification des Itinéraires" }
     ],
     funcionalidades: {
       title: "Fonctionnalités de la plateforme",

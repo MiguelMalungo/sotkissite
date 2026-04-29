@@ -631,12 +631,32 @@
         margin-top: 0;
     }
 
+    .trash4goods__app-overlay {
+        padding: var(--spacing-xl) var(--spacing-md);
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
     .trash4goods__app-content {
-        transform: translate(-20px, 10px);
-        padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0;
+        transform: none;
+        padding: var(--spacing-xl) 0;
         text-align: left;
         align-items: flex-start;
         max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .trash4goods__app-badges {
+        flex-wrap: wrap;
+        max-width: 100%;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+
+    .trash4goods__app-badge img {
+        height: 40px;
+        width: auto;
     }
 
     .trash4goods__app-title {
@@ -660,7 +680,7 @@
     .trash4goods__app-background {
         height: 100%;
         min-height: 500px;
-        object-position: center;
+        object-position: right center;
     }
 
     .trash4goods__app-overlay {
@@ -670,8 +690,100 @@
     .trash4goods__cta-button {
         align-self: flex-start;
         margin-top: 0;
-        display: block !important;
+        display: inline-flex !important;
         visibility: visible !important;
+    }
+}
+
+/* Mobile-only App Section */
+.trash4goods__app-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .trash4goods__app-section {
+        display: none;
+    }
+
+    .trash4goods__app-mobile {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        min-height: 580px;
+    }
+
+    .trash4goods__app-mobile-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+    }
+
+    .trash4goods__app-mobile-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .trash4goods__app-mobile-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
+        gap: var(--spacing-sm);
+    }
+
+    .trash4goods__app-mobile-badges {
+        display: flex;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+        align-self: center;
+        justify-content: center;
+    }
+
+    .trash4goods__app-mobile-badges img {
+        height: 38px;
+        width: auto;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    }
+
+    .trash4goods__app-mobile-title {
+        font-size: calc(var(--font-size-4xl) + 4px);
+        font-weight: var(--font-weight-bold);
+        color: white;
+        text-align: center;
+        margin: 0;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+
+    .trash4goods__app-mobile-description {
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-relaxed);
+        color: rgba(255, 255, 255, 0.95);
+        margin: 0 0 var(--spacing-sm) 0;
+        text-align: center;
+    }
+
+    .trash4goods__app-mobile-phone {
+        width: 65%;
+        max-width: 250px;
+        height: auto;
+        display: block;
+        margin: var(--spacing-md) auto;
+        border-radius: 1.5rem;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        align-self: center;
+    }
+
+    .trash4goods__app-mobile-cta {
+        align-self: center;
     }
 }
 

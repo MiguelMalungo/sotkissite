@@ -79,24 +79,22 @@ export const SEO: React.FC<SEOProps> = ({
     }
     canonicalLink.setAttribute('href', currentUrl);
 
-    // Add alternate language links
-    let alternatePt = document.querySelector('link[rel="alternate"][hreflang="pt"]');
-    if (!alternatePt) {
-      alternatePt = document.createElement('link');
-      alternatePt.setAttribute('rel', 'alternate');
-      alternatePt.setAttribute('hreflang', 'pt');
-      document.head.appendChild(alternatePt);
-    }
-    alternatePt.setAttribute('href', currentUrl);
-
-    let alternateEn = document.querySelector('link[rel="alternate"][hreflang="en"]');
-    if (!alternateEn) {
-      alternateEn = document.createElement('link');
-      alternateEn.setAttribute('rel', 'alternate');
-      alternateEn.setAttribute('hreflang', 'en');
-      document.head.appendChild(alternateEn);
-    }
-    alternateEn.setAttribute('href', currentUrl);
+    // Add hreflang alternate links (x-default points to canonical)
+    const hreflangs: Array<{ hreflang: string; href: string }> = [
+      { hreflang: 'x-default', href: currentUrl },
+      { hreflang: 'pt', href: currentUrl },
+      { hreflang: 'en', href: currentUrl },
+    ];
+    hreflangs.forEach(({ hreflang, href }) => {
+      let el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', 'alternate');
+        el.setAttribute('hreflang', hreflang);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', href);
+    });
 
     // Add structured data if provided
     if (structuredData) {

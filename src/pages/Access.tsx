@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { accessTranslations } from '../translations/access';
-import { CTASection } from '../components/common/CTASection';
 import accessHeroImage from '../assets/0058-frame.webp';
 import access1Image from '../assets/access1.webp';
 import accessSuperficieImage from '../assets/AccessSuperficie.webp';
@@ -47,6 +48,7 @@ export const Access: React.FC = () => {
 
   return (
     <div className="access">
+      <SEO {...seoConfig.access} lang={language === 'pt' ? 'pt' : 'en'} />
       <section className="access__hero">
         <img
           src={accessHeroImage}
@@ -255,8 +257,7 @@ export const Access: React.FC = () => {
                     <div className="access__how-step-arrow"></div>
                   </div>
                   <p className="access__how-step-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
-                  <div className="access__how-step-image access__how-step-image--double">
-                    <img src={tambor1Image} alt="Tambor fechado" />
+                  <div className="access__how-step-image">
                     <img src={tambor2Image} alt="Resíduos no contentor" />
                   </div>
                 </div>
@@ -286,8 +287,7 @@ export const Access: React.FC = () => {
                 <div className="access__how-slide">
                   <div className="access__how-slide-number">2</div>
                   <p className="access__how-slide-label" dangerouslySetInnerHTML={{ __html: t.howItWorks.step2Tambor }} />
-                  <div className="access__how-slide-image access__how-slide-image--double">
-                    <img src={tambor1Image} alt="Tambor fechado" />
+                  <div className="access__how-slide-image">
                     <img src={tambor2Image} alt="Resíduos no contentor" />
                   </div>
                 </div>
@@ -373,7 +373,7 @@ export const Access: React.FC = () => {
         </div>
       </section>
 
-      <CTASection />
+      
 
       {/* Video Modal */}
       {isVideoModalOpen && (
@@ -388,8 +388,8 @@ export const Access: React.FC = () => {
               <iframe
                 width="853"
                 height="480"
-                src="https://www.youtube.com/embed/M0Gr6pVUz4E"
-                title="SOTKON Intelligent Systems - We present Sotkis"
+                src="https://www.youtube.com/embed/HS2bHBCLMoY"
+                title="SOTKIS Access"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

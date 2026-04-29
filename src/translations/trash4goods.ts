@@ -8,8 +8,7 @@ export const trash4goodsTranslations = {
         intro: {
             title: "App Trash4Goods",
             text1: "Para complementar a gestão municipal de resíduos, o Sotkis integra-se com a Trash4Goods (T4G), uma aplicação móvel desenvolvida especificamente para os cidadãos. A Trash4Goods é uma solução digital que utiliza recompensas e gamificação para incentivar a reciclagem.",
-            text2: "A app permite que qualquer munícipe participe ativamente no processo de deposição seletiva, aceda a informação sobre os pontos de recolha e acompanhe o seu desempenho ambiental.",
-            text3: "Esta solução garante aos municípios uma ferramenta moderna e eficaz para envolver os cidadãos, promovendo comportamentos mais sustentáveis e contribuindo para o aumento das taxas de reciclagem."
+            text2: "A app permite que qualquer munícipe participe ativamente no processo de deposição seletiva, aceda a informação sobre os pontos de recolha e acompanhe o seu desempenho ambiental."
         },
         howItWorks: {
             title: "Como funciona?"
@@ -25,7 +24,6 @@ export const trash4goodsTranslations = {
             description: "Recicle, ganhe pontos e troque-os pelos seus prémios favoritos.",
             cta: "Conhecer a Trash4Goods"
         },
-        closing: "Esta solução garante aos municípios uma ferramenta moderna e eficaz para envolver os cidadãos, promovendo comportamentos mais sustentáveis e contribuindo para o aumento das taxas de reciclagem."
     },
     en: {
         hero: {
@@ -52,7 +50,6 @@ export const trash4goodsTranslations = {
             description: "Recycle, earn points and exchange them for your favourite rewards.",
             cta: "Discover Trash4Goods"
         },
-        closing: "This solution provides municipalities with a modern and effective tool to engage citizens, promoting more sustainable behaviours and contributing to increased recycling rates."
     },
     es: {
         hero: {
@@ -79,7 +76,6 @@ export const trash4goodsTranslations = {
             description: "Recicle, gane puntos y canjéelos por sus premios favoritos.",
             cta: "Conocer Trash4Goods"
         },
-        closing: "Esta solución proporciona a los municipios una herramienta moderna y eficaz para implicar a los ciudadanos, promoviendo comportamientos más sostenibles y contribuyendo al aumento de las tasas de reciclaje."
     },
     fr: {
         hero: {
@@ -106,7 +102,6 @@ export const trash4goodsTranslations = {
             description: "Recyclez, gagnez des points et échangez-les contre vos récompenses préférées.",
             cta: "Découvrir Trash4Goods"
         },
-        closing: "Cette solution offre aux municipalités un outil moderne et efficace pour impliquer les citoyens, favorisant des comportements plus durables et contribuant à l'augmentation des taux de recyclage."
     },
     gr: {
         hero: {
@@ -133,7 +128,6 @@ export const trash4goodsTranslations = {
             description: "Recycle, earn points and exchange them for rewards.",
             cta: "Discover Trash4Goods"
         },
-        closing: "This solution provides municipalities with a modern and effective tool to engage citizens, promoting more sustainable behaviours and contributing to increased recycling rates."
     },
     cr: {
         hero: {
@@ -160,6 +154,5 @@ export const trash4goodsTranslations = {
             description: "Recycle, earn points and exchange them for rewards.",
             cta: "Discover Trash4Goods"
         },
-        closing: "This solution provides municipalities with a modern and effective tool to engage citizens, promoting more sustainable behaviours and contributing to increased recycling rates."
     }
 };

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
@@ -6,6 +8,7 @@ import { Button } from '../components/common/Button';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trash4goodsTranslations } from '../translations/trash4goods';
 import trash4goodsHeroImage from '../assets/SFS06451.webp';
+import trash4goodsLowImage from '../assets/trash4goods_low.png';
 import appCidadaoImage from '../assets/appcidadao.webp';
 import appleImage from '../assets/apple.webp';
 import googleImage from '../assets/google.webp';
@@ -14,7 +17,6 @@ import t4gMap from '../assets/T4G-map-pt.webp';
 import t4gRecycling from '../assets/T4G-recycling-location-pt.webp';
 import t4gDrs from '../assets/T4G-drs-recycle-success-pt.webp';
 import t4gMarketplace from '../assets/T4G-marketplace-pt.webp';
-import { CTASection } from '../components/common/CTASection';
 import './Trash4Goods.css';
 
 export const Trash4Goods: React.FC = () => {
@@ -32,6 +34,7 @@ export const Trash4Goods: React.FC = () => {
 
     return (
         <div className="trash4goods">
+            <SEO {...seoConfig.trash4goods} lang={language === 'pt' ? 'pt' : 'en'} />
             <section className="trash4goods__hero">
                 <img
                     src={trash4goodsHeroImage}
@@ -200,7 +203,34 @@ export const Trash4Goods: React.FC = () => {
                 </div>
             </section>
 
-            <CTASection />
+            {/* Mobile-only App Section */}
+            <section className="trash4goods__app-mobile">
+                <img src={trash4goodsLowImage} alt="" className="trash4goods__app-mobile-bg" />
+                <div className="trash4goods__app-mobile-overlay" />
+                <div className="trash4goods__app-mobile-content">
+                    <h2 className="trash4goods__app-mobile-title">TRASH<span style={{ color: '#94C11F' }}>4</span>GOODS</h2>
+                    <p className="trash4goods__app-mobile-description">{t.app.description}</p>
+                    <div className="trash4goods__app-mobile-badges">
+                        <a href="#" className="trash4goods__app-badge">
+                            <img src={appleImage} alt="Download on App Store" />
+                        </a>
+                        <a href="#" className="trash4goods__app-badge">
+                            <img src={googleImage} alt="Get it on Google Play" />
+                        </a>
+                    </div>
+                    <img src={t4gHomepage} alt="Trash4Goods app" className="trash4goods__app-mobile-phone" />
+                    <Button
+                        href="https://www.trash4goods.com/"
+                        variant="primary"
+                        size="sm"
+                        className="trash4goods__app-mobile-cta"
+                    >
+                        {t.app.cta}
+                    </Button>
+                </div>
+            </section>
+
+            
 
             {/* Video Modal */}
             {isVideoModalOpen && (

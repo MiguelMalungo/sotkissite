@@ -1099,6 +1099,10 @@
     text-align: left;
   }
 
+  .access__hero-image {
+    object-position: 70% center;
+  }
+
   .access__access {
     padding: var(--spacing-3xl) 0;
   }

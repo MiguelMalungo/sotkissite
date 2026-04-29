@@ -594,6 +594,27 @@
   order: 2;
 }
 
+/* Disable parallax on touch devices (iPads, phones) */
+@media (hover: none) {
+  .feature-carousel--full-background .feature-carousel__background-image {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .feature-carousel--full-background .feature-carousel__background-image {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Reduce carousel height on iPad to avoid heavy image cropping */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .feature-carousel--full-background {
+    min-height: 420px;
+    padding: 4rem 0;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   /* Disable parallax on mobile - iOS Safari doesn't support background-attachment: fixed */

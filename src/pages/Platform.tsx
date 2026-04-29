@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -21,7 +23,6 @@ import moduloDRS from '../assets/ModuloSotkisDRS.webp';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
-import { CTASection } from '../components/common/CTASection';
 import './Platform.css';
 import './Home.css';
 
@@ -130,6 +131,7 @@ export const Platform: React.FC = () => {
 
   return (
     <div className="platform">
+      <SEO {...seoConfig.platform} lang={language === 'pt' ? 'pt' : 'en'} />
       <div id="platform-page-hero" className="platform-hero-root">
         <div className="platform-hero-root__bg-container">
           <img
@@ -533,7 +535,7 @@ export const Platform: React.FC = () => {
         </div>
       )}
 
-      <CTASection />
+      
 
     </div>
   );

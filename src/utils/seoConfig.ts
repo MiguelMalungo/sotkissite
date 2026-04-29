@@ -303,11 +303,6 @@ export const seoConfig: Record<string, PageSEO> = {
         '@type': 'Offer',
         'price': '0',
         'priceCurrency': 'EUR'
-      },
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.8',
-        'ratingCount': '120'
       }
     }
   },
@@ -338,6 +333,121 @@ export const seoConfig: Record<string, PageSEO> = {
       'name': 'Contact Sotkis',
       'description': 'Página de contacto para soluções de gestão de resíduos',
       'url': 'https://miguelmalungo.github.io/sotkissite/contact'
+    }
+  },
+  trash4goods: {
+    title: 'Trash4Goods | App de Reciclagem para Cidadãos',
+    description: 'Trash4Goods é a app cidadã da Sotkis para reciclagem inteligente. Encontre pontos de recolha, participe no DRS e ganhe recompensas pela sua reciclagem.',
+    keywords: [
+      'Trash4Goods',
+      'app reciclagem',
+      'recycling app',
+      'app cidadão',
+      'citizen app',
+      'reciclagem',
+      'recycling',
+      'recompensas reciclagem',
+      'recycling rewards',
+      'DRS',
+      'Digital Return System',
+      'Sotkis',
+      'Sotkon',
+      'cidades inteligentes',
+      'smart cities',
+      'gestão de resíduos',
+      'waste management',
+      'sustentabilidade',
+      'sustainability',
+      'economia circular',
+      'circular economy',
+      'gamificação',
+      'gamification'
+    ],
+    ogImage: '/assets/SFS06451.webp',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'MobileApplication',
+      'name': 'Trash4Goods',
+      'applicationCategory': 'UtilitiesApplication',
+      'description': 'Aplicação móvel para cidadãos participarem na reciclagem inteligente com recompensas',
+      'operatingSystem': 'iOS, Android',
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'EUR'
+      }
+    }
+  },
+  'mobile-app': {
+    title: 'App Mobile Sotkis | Gestão de Resíduos Mobile',
+    description: 'Aplição mobile Sotkis para gestão inteligente de resíduos. Monitorize contentores, gerir operações e aceder a dados em tempo real a partir do seu smartphone.',
+    keywords: [
+      'app mobile Sotkis',
+      'Sotkis mobile app',
+      'gestão resíduos mobile',
+      'waste management app',
+      'monitorização mobile',
+      'mobile monitoring',
+      'IoT',
+      'sistemas inteligentes',
+      'intelligent systems',
+      'cidades inteligentes',
+      'smart cities',
+      'Sotkon',
+      'contentores enterrados',
+      'underground containers'
+    ],
+    ogImage: '/assets/iPhone-Hand-Mockup.webp',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'MobileApplication',
+      'name': 'Sotkis Mobile App',
+      'applicationCategory': 'BusinessApplication',
+      'description': 'Aplicação mobile para gestão inteligente de sistemas de resíduos',
+      'operatingSystem': 'iOS, Android',
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'EUR'
+      }
+    }
+  },
+  landing: {
+    title: 'SOTKIS | Sistemas Inteligentes de Gestão de Resíduos',
+    description: 'SOTKIS by Sotkon Intelligent Systems — soluções IoT para gestão inteligente de resíduos em cidades sustentáveis. Aceda à plataforma ou explore os nossos produtos.',
+    keywords: [
+      'Sotkis',
+      'Sotkon',
+      'sistemas inteligentes',
+      'intelligent systems',
+      'gestão de resíduos',
+      'waste management',
+      'cidades inteligentes',
+      'smart cities',
+      'IoT',
+      'reciclagem',
+      'recycling',
+      'sustentabilidade',
+      'sustainability',
+      'contentores enterrados',
+      'underground waste containers'
+    ],
+    ogImage: '/Hero1.webp',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'Sotkis - Sotkon Intelligent Systems',
+      'url': 'https://miguelmalungo.github.io/sotkissite',
+      'description': 'Sistemas inteligentes para gestão de resíduos em cidades inteligentes',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressCountry': 'PT'
+      },
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'contactType': 'Customer Service',
+        'availableLanguage': ['Portuguese', 'English', 'Spanish', 'French', 'Greek', 'Croatian']
+      }
     }
   }
 };

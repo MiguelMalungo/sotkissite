@@ -1,18 +1,21 @@
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
-import { Landing } from './pages/Landing';
-import { Home } from './pages/Home';
-import { Platform } from './pages/Platform';
-import { Paylt } from './pages/Paylt';
-import { Access } from './pages/Access';
-import { Level } from './pages/Level';
-import { DRS } from './pages/DRS';
-import { Contact } from './pages/Contact';
-import { Trash4Goods } from './pages/Trash4Goods';
-import { MobileApp } from './pages/MobileApp';
+
+const Landing = React.lazy(() => import('./pages/Landing').then(m => ({ default: m.Landing })));
+const Home = React.lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const Platform = React.lazy(() => import('./pages/Platform').then(m => ({ default: m.Platform })));
+const Paylt = React.lazy(() => import('./pages/Paylt').then(m => ({ default: m.Paylt })));
+const Access = React.lazy(() => import('./pages/Access').then(m => ({ default: m.Access })));
+const Level = React.lazy(() => import('./pages/Level').then(m => ({ default: m.Level })));
+const DRS = React.lazy(() => import('./pages/DRS').then(m => ({ default: m.DRS })));
+const Contact = React.lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
+const Trash4Goods = React.lazy(() => import('./pages/Trash4Goods').then(m => ({ default: m.Trash4Goods })));
+const MobileApp = React.lazy(() => import('./pages/MobileApp').then(m => ({ default: m.MobileApp })));
 
 function App() {
   return (
+    <Suspense fallback={null}>
     <Routes>
       {/* Landing page - no layout wrapper */}
       <Route index element={<Landing />} />
@@ -30,6 +33,7 @@ function App() {
         <Route path="trash4goods" element={<Trash4Goods />} />
       </Route>
     </Routes>
+    </Suspense>
   );
 }
 

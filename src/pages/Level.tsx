@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import { useLanguage } from '../contexts/LanguageContext';
 import { levelTranslations } from '../translations/level';
-const levelVideo = new URL('../assets/level.mp4', import.meta.url).href;
 import level2Image from '../assets/level2.webp';
 import levelSondaImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import sotkisAppImage from '../assets/Sotkis-APP-DSC08537-new.webp';
@@ -12,51 +13,19 @@ import sotkisLevel1 from '../assets/sotkis-level-1.webp';
 import sotkisLevel2 from '../assets/sotkis-level-2.webp';
 import sotkisLevel3 from '../assets/sotkis-level-3.webp';
 import sotkisLevel from '../assets/sotkis-level.webp';
-import { CTASection } from '../components/common/CTASection';
 import './Level.css';
 
 export const Level: React.FC = () => {
   const { language } = useLanguage();
   const t = levelTranslations[language];
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [isVideoMuted, setIsVideoMuted] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  const openVideoModal = () => {
-    setIsVideoModalOpen(true);
-    setIsVideoPlaying(true);
-  };
-
-  const closeVideoModal = () => {
-    setIsVideoModalOpen(false);
-    setIsVideoPlaying(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isVideoMuted;
-      setIsVideoMuted(!isVideoMuted);
-    }
-  };
+  const openVideoModal = () => setIsVideoModalOpen(true);
+  const closeVideoModal = () => setIsVideoModalOpen(false);
 
   return (
     <div className="level">
+      <SEO {...seoConfig.level} lang={language === 'pt' ? 'pt' : 'en'} />
       <section className="level__hero">
         <img
           src={level2Image}
@@ -203,7 +172,7 @@ export const Level: React.FC = () => {
         </div>
       </section>
 
-      <CTASection />
+      
 
       {/* Video Modal */}
       {isVideoModalOpen && (
@@ -214,42 +183,18 @@ export const Level: React.FC = () => {
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <video
-              ref={videoRef}
-              className="level__video-modal-video"
-              autoPlay
-              controls
-              onClick={togglePlayPause}
-            >
-              <source src={levelVideo} type="video/mp4" />
-            </video>
-            <div className="level__video-modal-controls">
-              <button onClick={togglePlayPause} aria-label={isVideoPlaying ? "Pause" : "Play"}>
-                {isVideoPlaying ? (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 4H6V20H10V4Z" fill="currentColor" />
-                    <path d="M18 4H14V20H18V4Z" fill="currentColor" />
-                  </svg>
-                ) : (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
-                  </svg>
-                )}
-              </button>
-              <button onClick={toggleMute} aria-label={isVideoMuted ? "Unmute" : "Mute"}>
-                {isVideoMuted ? (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M23 9L17 15M17 9L23 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                ) : (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </button>
+            <div className="level__video-modal-iframe-wrapper">
+              <iframe
+                width="853"
+                height="480"
+                src="https://www.youtube.com/embed/RShrgmn1j0U"
+                title="SOTKIS Level"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="level__video-modal-iframe"
+              ></iframe>
             </div>
           </div>
         </div>

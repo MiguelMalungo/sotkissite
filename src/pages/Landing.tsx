@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { Link } from 'react-router-dom';
 import { WaveCanvas } from '../components/ui/WaveCanvas';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -101,6 +103,7 @@ export const Landing: React.FC = () => {
 
   return (
     <div className="landing">
+      <SEO {...seoConfig.landing} lang={language === 'pt' ? 'pt' : 'en'} />
       <WaveCanvas />
 
       {/* Language flags - upper right corner (desktop) / below cards (mobile) */}

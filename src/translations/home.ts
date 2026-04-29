@@ -1,9 +1,9 @@
 export const homeTranslations = {
   pt: {
     hero: {
-      title: "O futuro da<br />reciclagem",
-      subtitle: "Transforme a gestão de resíduos de sua comunidade!",
-      description: "Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
+      title: "O futuro da <br />reciclagem",
+      subtitle: "",
+      description: "Transforme a gestão de resíduos da sua comunidade. Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
     },
     hardwareIntro: "A Sotkon disponibiliza um conjunto de dispositivos inteligentes para colocação na ilha de deposição de resíduos, que permitem a monitorização eficiente dos contentores. É a infraestrutura física que liga os equipamentos à gestão digital.",
     riseAbove: {
@@ -43,9 +43,9 @@ export const homeTranslations = {
   },
   en: {
     hero: {
-      title: "The future of<br />recycling",
-      subtitle: "Transform your community's waste management!",
-      description: "Get ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the end-user experience."
+      title: "The future of <br />recycling",
+      subtitle: "",
+      description: "Transform your community's waste management. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the end-user experience."
     },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
@@ -85,9 +85,9 @@ export const homeTranslations = {
   },
   es: {
     hero: {
-      title: "El futuro del<br />reciclaje",
-      subtitle: "¡Transforme la gestión de residuos de su comunidad!",
-      description: "Prepárese para crear ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia del usuario final."
+      title: "El futuro del <br />reciclaje",
+      subtitle: "",
+      description: "Transforme la gestión de residuos de su comunidad. Cree ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia del usuario final."
     },
     hardwareIntro: "Sotkon pone a disposición un conjunto de dispositivos inteligentes para su instalación en los puntos de deposición de residuos, que permiten la monitorización eficiente de los contenedores. Es la infraestructura física que conecta los equipos con la gestión digital.",
     riseAbove: {
@@ -127,9 +127,9 @@ export const homeTranslations = {
   },
   fr: {
     hero: {
-      title: "L'avenir du<br />recyclage",
-      subtitle: "Transformez la gestion des déchets de votre communauté !",
-      description: "Préparez-vous à créer des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience de l'utilisateur final."
+      title: "L'avenir du <br />recyclage",
+      subtitle: "",
+      description: "Transformez la gestion des déchets de votre communauté. Créez des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience de l'utilisateur final."
     },
     hardwareIntro: "Sotkon met à disposition un ensemble de dispositifs intelligents pour installation sur les îlots de déchets, permettant une surveillance efficace des conteneurs. C'est l'infrastructure physique qui relie les équipements à la gestion numérique.",
     riseAbove: {
@@ -169,7 +169,7 @@ export const homeTranslations = {
   },
   gr: {
     hero: {
-      title: "The future of<br />recycling",
+      title: "The future of <br />recycling",
       subtitle: "Transform your community's waste management!",
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
@@ -211,7 +211,7 @@ export const homeTranslations = {
   },
   cr: {
     hero: {
-      title: "The future of<br />recycling",
+      title: "The future of <br />recycling",
       subtitle: "Transform your community's waste management!",
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },

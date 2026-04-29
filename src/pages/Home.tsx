@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react';
+import { SEO } from '../components/common/SEO';
+import { seoConfig } from '../utils/seoConfig';
 import { Button } from '../components/common/Button';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
@@ -12,14 +14,14 @@ import heroImage3 from '../assets/3.webp';
 import heroImage4 from '../assets/4.webp';
 import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
-import drsSmImage from '../assets/DRSsm.webp';
+import drsSmImage from '../assets/SFS07103.webp';
 import trash4goodsImage from '../assets/trash4goods-pic.webp';
-import payltInfoImage from '../assets/playt-rainbow.webp';
+import payltInfoImage from '../assets/rainbow_homepage.png';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
 import logoPlayt from '../assets/logo-playt.webp';
-import { CTASection } from '../components/common/CTASection';
+import iphoneHandMockup from '../assets/iPhone-Hand-Mockup.webp';
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -70,11 +72,16 @@ export const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    let rafId: number;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setScrollY(window.scrollY));
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   useEffect(() => {
@@ -82,51 +89,36 @@ export const Home: React.FC = () => {
     const videoElement = videoplatRef.current;
     if (!topEdgeElement || !videoElement) return;
 
-    // Ensure video is ready
-    const handleCanPlay = () => {
-      if (videoElement) {
-        videoElement.playbackRate = 2;
-        videoElement.play().catch(err => {
-          console.error('Video play error:', err);
-        });
-      }
-    };
-
-    videoElement.addEventListener('canplay', handleCanPlay);
-    videoElement.load();
+    let loaded = false;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && videoElement) {
-            videoElement.currentTime = 0; // Reset to start
+            if (!loaded) {
+              loaded = true;
+              videoElement.load();
+            }
+            videoElement.currentTime = 0;
             videoElement.playbackRate = 2;
-            videoElement.play().catch(err => {
-              console.error('Video play error:', err);
-            });
-          } else if (!entry.isIntersecting && videoElement) {
-            // Optionally pause when out of view
-            // videoElement.pause();
+            videoElement.play().catch(() => {});
           }
         });
       },
-      {
-        threshold: 0,
-        rootMargin: '0px 0px 0px 0px'
-      }
+      { threshold: 0, rootMargin: '200px 0px 0px 0px' }
     );
 
     observer.observe(topEdgeElement);
 
     return () => {
       observer.disconnect();
-      videoElement.removeEventListener('canplay', handleCanPlay);
     };
   }, []);
 
 
   return (
     <div className="home">
+      <SEO {...seoConfig.home} lang={language === 'pt' ? 'pt' : 'en'} />
       {/* Hero Section */}
       <section className="home__hero">
         <div className="home__hero-slideshow">
@@ -134,21 +126,25 @@ export const Home: React.FC = () => {
             src={heroImage1}
             alt=""
             className="home__hero-slide home__hero-slide--1"
+            fetchPriority="high"
           />
           <img
             src={heroImage2}
             alt=""
             className="home__hero-slide home__hero-slide--2"
+            loading="lazy"
           />
           <img
             src={heroImage3}
             alt=""
             className="home__hero-slide home__hero-slide--3"
+            loading="lazy"
           />
           <img
             src={heroImage4}
             alt=""
             className="home__hero-slide home__hero-slide--4"
+            loading="lazy"
           />
         </div>
         <img src={heroBgImage} alt="" className="home__hero-bg-image home__hero-bg-image--desktop" />
@@ -161,38 +157,10 @@ export const Home: React.FC = () => {
             <p className="home__hero-subtitle home__hero-animate home__hero-animate--2">{t.hero.subtitle}</p>
           )}
           <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--capa" />
+          <img src={iphoneHandMockup} alt="" className="home__hero-iphone-mockup home__hero-animate home__hero-animate--iphone" loading="lazy" />
           <div className="home__hero-description home__hero-animate home__hero-animate--3">
             <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
           </div>
-        </div>
-      </section>
-
-      {/* Scheme Section - Hardware + Software + App Cidadão → P(L)AYT */}
-      <section className="home__scheme-section">
-        <div className="container">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="home__scheme-title">P(L)AYT</h2>
-            <div className="home__scheme">
-              <div className="home__scheme-items">
-                <div className="home__scheme-pill">Hardware</div>
-                <span className="home__scheme-plus">+</span>
-                <div className="home__scheme-pill">Software</div>
-                <span className="home__scheme-plus">+</span>
-                <div className="home__scheme-pill home__scheme-pill--dark">App Cidadão</div>
-              </div>
-              <div className="home__scheme-arrow">
-                <svg width="40" height="2" viewBox="0 0 40 2" fill="none">
-                  <line x1="0" y1="1" x2="40" y2="1" stroke="#94C11F" strokeWidth="2" />
-                </svg>
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
-                </svg>
-              </div>
-              <div className="home__scheme-logo">
-                <img src={logoPlayt} alt="P(L)AYT" />
-              </div>
-            </div>
-          </AnimateOnScroll>
         </div>
       </section>
 
@@ -213,6 +181,7 @@ export const Home: React.FC = () => {
                   <img
                     src={levelSmImage}
                     alt="Level monitoring sensors"
+                    loading="lazy"
                     style={{ transform: `translateY(${(scrollY - 800) * 0.03}px)` }}
                   />
                   <div className="home__card-overlay"></div>
@@ -243,6 +212,7 @@ export const Home: React.FC = () => {
                   <img
                     src={accessSmImage}
                     alt="Access control system"
+                    loading="lazy"
                     style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
                   />
                   <div className="home__card-overlay"></div>
@@ -273,6 +243,7 @@ export const Home: React.FC = () => {
                   <img
                     src={drsSmImage}
                     alt="Deposit return system"
+                    loading="lazy"
                     style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
                   />
                   <div className="home__card-overlay"></div>
@@ -302,7 +273,7 @@ export const Home: React.FC = () => {
         <div className="home__cards-carousel">
           <MobileCarousel className="home__cards-carousel-inner">
             {/* Level Card */}
-            <div className="home__card">
+            <div className="home__card home__card--level">
               <a
                 href="/level"
                 className={`home__card-link ${flippedCards.level ? 'home__card-link--flipped' : ''}`}
@@ -395,19 +366,6 @@ export const Home: React.FC = () => {
 
       {/* Rise Above Section */}
       <section className="home__rise-above-container">
-        <div className="home__rise-above-video-wrapper">
-          <div ref={topEdgeRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }} />
-          <video
-            ref={videoplatRef}
-            className="home__rise-video-overlay"
-            muted
-            playsInline
-            loop
-            preload="metadata"
-          >
-            <source src={videoplatVideo} type="video/mp4" />
-          </video>
-        </div>
         <div className="home__rise-above-content">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
@@ -432,32 +390,44 @@ export const Home: React.FC = () => {
             </Button>
           </AnimateOnScroll>
         </div>
+        <div className="home__rise-above-video-wrapper">
+          <div ref={topEdgeRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }} />
+          <video
+            ref={videoplatRef}
+            className="home__rise-video-overlay"
+            muted
+            playsInline
+            loop
+            preload="none"
+          >
+            <source src={videoplatVideo} type="video/mp4" />
+          </video>
+        </div>
       </section>
 
-      {/* T4G App Section */}
+      {/* App Cidadão Section */}
       <section className="home__section home__section--t4g home__section--parallax">
-        <div className="home__section-parallax-bg" style={{ backgroundImage: `url(${trash4goodsImage})` }}></div>
-        <div className="home__section-parallax-overlay"></div>
-        <div className="home__section--t4g-wrapper">
-          <div className="container">
-            <div className="home__section-grid">
-              <div className="home__section-content home__section-content--left">
-                <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
-                  <h2 className="home__section-heading">{t.t4g.title}</h2>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8}>
-                  <p className="home__section-text">
-                    {t.t4g.description}
-                  </p>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
-                  <Button href="/trash4goods" variant="primary" size="sm">
-                    {t.t4g.button}
-                    <ArrowIcon />
-                  </Button>
-                </AnimateOnScroll>
-              </div>
-            </div>
+        <div
+          className="home__section-parallax-bg"
+          style={{ backgroundImage: `url(${trash4goodsImage})` }}
+        />
+        <div className="home__section-parallax-overlay" />
+        <div className="container">
+          <div className="home__section-content home__section-content--center">
+            <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+              <h2 className="home__section-heading home__section-heading--center">{t.t4g.title}</h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+              <p className="home__section-text home__section-text--center">
+                {t.t4g.description}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fadeSlideUp" delay={350} duration={0.8} className="home__button-container">
+              <Button href="/trash4goods" variant="primary" size="sm">
+                {t.t4g.button}
+                <ArrowIcon />
+              </Button>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -475,35 +445,51 @@ export const Home: React.FC = () => {
               </p>
             </AnimateOnScroll>
           </div>
+
+          {/* Scheme: Hardware + Software + App Cidadão → P(L)AYT */}
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <div className="home__scheme home__scheme--paylt">
+              <div className="home__scheme-items">
+                <div className="home__scheme-pill">Hardware</div>
+                <span className="home__scheme-plus">+</span>
+                <div className="home__scheme-pill">Software</div>
+                <span className="home__scheme-plus">+</span>
+                <div className="home__scheme-pill home__scheme-pill--dark">App Cidadão</div>
+              </div>
+              <div className="home__scheme-arrow">
+                <svg width="40" height="2" viewBox="0 0 40 2" fill="none">
+                  <line x1="0" y1="1" x2="40" y2="1" stroke="#94C11F" strokeWidth="2" />
+                </svg>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M0 0L10 5L0 10V0Z" fill="#94C11F" />
+                </svg>
+              </div>
+              <div className="home__scheme-logo">
+                <img src={logoPlayt} alt="P(L)AYT" />
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
 
-        {/* Layered Card Design - Nested Structure with Image */}
+        {/* Rainbow image with municipio/cidadao advantages; CTA below */}
         <div className="playt-layers-container playt-layers-container--wide">
           <div className="playt-layers playt-layers--wide">
-            {/* PLAYT - Outermost container */}
-            <AnimateOnScroll animation="fadeIn" delay={0} duration={0.6}>
-              <div className="playt-layers__header">
-                <h3 className="playt-layers__title">P(L)AYT</h3>
+            <AnimateOnScroll animation="fadeIn" delay={200} duration={0.6}>
+              <div className="playt-layers__image-only">
+                <img src={payltInfoImage} alt="Playt ecosystem" loading="lazy" />
               </div>
             </AnimateOnScroll>
-
-            {/* Rainbow image with overlaid CTA */}
-            <AnimateOnScroll animation="fadeIn" delay={300} duration={0.6}>
-              <div className="playt-layers__image-only">
-                <img src={payltInfoImage} alt="Playt ecosystem" />
-                <div className="playt-layers__overlay-cta">
-                  <Button href="/paylt" variant="primary" size="sm" className="playt-layers__cta-btn">
-                    {t.paylt.button}
-                    <ArrowIcon />
-                  </Button>
-                </div>
+            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.6}>
+              <div className="playt-layers__below-cta">
+                <Button href="/paylt" variant="primary" size="sm" className="playt-layers__cta-btn">
+                  {t.paylt.button}
+                  <ArrowIcon />
+                </Button>
               </div>
             </AnimateOnScroll>
           </div>
         </div>
       </section>
-
-      <CTASection />
 
     </div>
   );
