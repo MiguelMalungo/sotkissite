@@ -242,12 +242,11 @@ export const Trash4Goods: React.FC = () => {
                             </svg>
                         </button>
                         <div className="trash4goods__video-modal-iframe-wrapper">
-                            {/* Placeholder video ID, replace with actual ID if known */}
                             <iframe
                                 width="853"
                                 height="480"
-                                src="https://www.youtube.com/embed/M0Gr6pVUz4E"
-                                title="Trash4Goods Video"
+                                src="https://www.youtube.com/embed/pv3ENJ8CYoY"
+                                title="App Cidadão"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"
